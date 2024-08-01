@@ -4,7 +4,7 @@
 To clone this repo with all the needed submodules you can run the command:
 
 ```bash
-git clone --recurse-submodules https://github.com/andrealaffly/ACSL_flightstack_X8.git
+git clone --recurse-submodules https://github.com/andrealaffly/acsl-flightstack-aero.git
 ```
 
 ## Introduction
@@ -62,7 +62,6 @@ This flight stack is compatible with **ROS2 (Galactic and above)** and has been 
 For more information, visit [https://lafflitto.com](https://lafflitto.com).
 
 [![ACSL Flight Stack Logo](https://lafflitto.com/images/ACSL_Logo.jpg)](https://lafflitto.com/ACSL.html)
-
 
 ---
 
