@@ -16,7 +16,7 @@ We strongly encourage control practitioners, researchers, and UAV enthusiasts to
 - **Use this code**
 - **Improve it**
 - **Provide constructive feedback**
-- **Propose edits through [GitHub](https://github.com/andrealaffly/ACSL_flightstack_X8.git)**
+- **Propose edits through [GitHub](https://github.com/andrealaffly/ACSL_flightstack-aero.git)**
 
 At the moment, this code is designed for quad-biplanes (QRBPs), which are quadcopters with two parallel wings. By adjusting the mixer matrix, which determines the relationship between total thrust, thrust moment, and thrust from each motor, this software can be expanded to support other types of UAV configurations in future versions. This flight stack is also compatible with autonomous UAVs equipped with collinear propellers, including quadcopters, X8-copters, and hexacopters. It currently supports up to 8 motors.
 
