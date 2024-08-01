@@ -18,11 +18,11 @@ We strongly encourage control practitioners, researchers, and UAV enthusiasts to
 - **Provide constructive feedback**
 - **Propose edits through [GitHub](https://github.com/andrealaffly/ACSL_flightstack_X8.git)**
 
-Presently, this code applies to quad-biplanes (QRBPs), that is, quadcopters equipped with two parallel wings. Future versions of this code will involve different classes of winged UAVs. QRBPs are under-actuated. For this reason, this software comprises an inner loop and an outer loop. The outer loop captures the vehicle's translational dynamics and the inner loop its rotational dynamics. The equations of motion underlying both the inner and the outer loops are nonlinear. This flight stack can also be used for autonomous UAVs with collinear propellers, such as quadcopters, X8-copters, and hexacopters. Currently, it supports up to 8 motors. However, by modifying the mixer matrix—which defines the relationship between total thrust, moment of thrust, and thrust produced by each motor—this software can be extended to other UAV configurations.
+At the moment, this code is designed for quad-biplanes (QRBPs), which are quadcopters with two parallel wings. By adjusting the mixer matrix, which determines the relationship between total thrust, thrust moment, and thrust from each motor, this software can be expanded to support other types of UAV configurations in future versions. This flight stack is also compatible with autonomous UAVs equipped with collinear propellers, including quadcopters, X8-copters, and hexacopters. It currently supports up to 8 motors.
 
 ## Outlook on the Control Architecture
 
-Autonomous UAVs with collinear propellers are inherently under-actuated. To manage this, the software includes:
+QRBPs are inherently under-actuated. To manage this, the software includes:
 
 - **Inner Loop**: Handles rotational dynamics.
 - **Outer Loop**: Manages translational dynamics.
@@ -46,7 +46,7 @@ Future versions of the software will include additional control systems.
 
 ## Hardware Requirements
 
-This flight stack is compatible with **ROS2 (Galactic and above)** and has been tested on an **ODROID M1S, RADXA ZERO, INTEL NUCs** companion computers interfaced with a **Pixhawk 6c**. The companion computer runs **Ubuntu 20.04 Linux**. The firmware version of the flight controller is **PX4 v1.15.0**.
+This flight stack is compatible with **ROS2 (Galactic and above)** and has been tested on an **ODROID M1S, RADXA ZERO, INTEL NUC** companion computers interfaced with a **Pixhawk 6c**. The companion computer runs **Ubuntu 20.04 Linux**. The firmware version of the flight controller is **PX4 v1.15.0**.
 
 ### Assumed UAV State
 
