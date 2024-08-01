@@ -1,0 +1,10 @@
+# include eigen libraries
+[submodule "libeigen"]
+	path = src/acsl_flight/include/utils/eigen
+	url = https://gitlab.com/libeigen/eigen.git
+	branch = 3.4
+
+# include json libraries
+[submodule "libjson"]
+	path = src/acsl_flight/include/utils/json
+	url = https://github.com/nlohmann/json.git
