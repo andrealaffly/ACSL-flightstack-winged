@@ -1,4 +1,4 @@
-# ACSL Flight Stack
+# ACSL Flight Stack - Winged
 [![BSD License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](LICENSE.txt)
 
 To clone this repo with all the needed submodules you can run the command:
@@ -9,7 +9,7 @@ git clone --recurse-submodules https://github.com/andrealaffly/ACSL-flightstack-
 
 ## Introduction
 
-The **Advanced Control Systems Lab (ACSL) Flight Stack - Aero** is a PX4-comaptible offboard flight stack for VTOL (vertical take-off and landing) UAVs (uncrewed aerial vehicles). The scope of this software is to support the UAV control community with a freeware, open-source solution that can serve as a shared platform and hence, facilitate comparison of research results.
+The **Advanced Control Systems Lab (ACSL) Flight Stack - Winged** is a PX4-comaptible offboard flight stack for VTOL (vertical take-off and landing) UAVs (uncrewed aerial vehicles). The scope of this software is to support the UAV control community with a freeware, open-source solution that can serve as a shared platform and hence, facilitate comparison of research results.
 
 We strongly encourage control practitioners, researchers, and UAV enthusiasts to:
 
