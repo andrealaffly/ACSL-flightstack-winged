@@ -18,14 +18,14 @@ We strongly encourage control practitioners, researchers, and UAV enthusiasts to
 - **Provide constructive feedback**
 - **Propose edits through [GitHub](https://github.com/andrealaffly/ACSL_flightstack-aero.git)**
 
-At the moment, this code is designed for quad-biplanes (QRBPs), which are quadcopters with two parallel wings. By adjusting the mixer matrix, which determines the relationship between total thrust, thrust moment, and thrust from each motor, this software can be expanded to support other types of UAV configurations in future versions. This flight stack is also compatible with autonomous UAVs equipped with collinear propellers, including quadcopters, X8-copters, and hexacopters. It currently supports up to 8 motors.
+At the moment, this code is designed for quad-biplanes (QRBPs), which are quadcopters with two parallel wings. This architecture currently supports up to 8 motors and, in the future, will be improved to support additional classes of fixed-wing aircraft.
 
 ## Outlook on the Control Architecture
 
 QRBPs are inherently under-actuated. To manage this, the software includes:
 
-- **Inner Loop**: Handles rotational dynamics.
-- **Outer Loop**: Manages translational dynamics.
+- **Inner Loop**: Handles the rotational dynamics.
+- **Outer Loop**: Manages the translational dynamics.
 
 Both loops are governed by nonlinear equations of motion.
 
@@ -40,6 +40,7 @@ For further details on these control architectures, refer to the following publi
 
 - M. Gramuglia, G. M. Kumar, and A. L'Afflitto, ["Two-Layer Adaptive Funnel MRAC with Applications to the Control of Multi-Rotor UAVs,"](https://doi.org/10.1109/RoMoCo60539.2024.10604361) *2024 13th International Workshop on Robot Motion and Control (RoMoCo),* Poznań, Poland, 2024, pp. 31-36.
 - M. Gramuglia, G. M. Kumar, and A. L’Afflitto, ["A Hybrid Model Reference Adaptive Control System for Multi-Rotor Unmanned Aerial Vehicles,"](https://doi.org/10.2514/6.2024-0755) *AIAA SCITECH 2024 Forum, 2024.*
+- J. A. Marshall, G. I. Carter, and A. L'Afflitto, ["Model Reference Adaptive Control for Prescribed Performance and Longitudinal Control of a Tail-Sitter UAV,"](https://arc.aiaa.org/doi/abs/10.2514/6.2022-1380) *AIAA SCITECH 2024 Forum, 2023.*
 - E. Lavretsky and K. Wise, *"Robust and Adaptive Control: With Aerospace Applications,"*, London, UK: Springer, 2012.
 
 Future versions of the software will include additional control systems.
@@ -56,7 +57,6 @@ This flight stack is compatible with **[ROS2 Galactic](https://docs.ros.org/en/g
 ## Maintenance Team
 
 - [**Andrea L'Afflitto**](https://github.com/andrealaffly)
-- [**Mattia Gramuglia**](https://github.com/mattia-gramuglia)
 - [**Giri M. Kumar**](https://github.com/girimugundankumar)
 
 For more information, visit [https://lafflitto.com](https://lafflitto.com).
