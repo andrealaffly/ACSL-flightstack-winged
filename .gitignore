@@ -1,0 +1,12 @@
+# ignore all directories with the name log
+log/
+
+# ignore all directories with the name build
+build/
+
+# ignore all directories with the name install
+install/
+
+# ignore all directories with the name .vscode
+.vscode/
+
