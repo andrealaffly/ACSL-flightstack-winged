@@ -24,7 +24,7 @@
 
 /***********************************************************************************************************************
  * File:        piecewise_polynomial_trajectory.hpp
- * Author:      Mattia Gramuglia, Giri Mugundan Kumar
+ * Author:      Mattia Gramuglia
  * Date:        June 27, 2024
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu

@@ -24,7 +24,7 @@
 
 /***********************************************************************************************************************
  * File:        PID_OMEGA_logger.cpp
- * Author:      Giri Mugundan Kumar
+ * Author:      Mattia Gramuglia, Giri Mugundan Kumar
  * Date:        July 25, 2024
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu

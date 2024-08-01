@@ -24,7 +24,7 @@
 
 /***********************************************************************************************************************
  * File:        PID_TD_logger.cpp
- * Author:      Giri Mugundan Kumar
+ * Author:      Mattia Gramuglia, Giri Mugundan Kumar
  * Date:        July 10, 2024
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
