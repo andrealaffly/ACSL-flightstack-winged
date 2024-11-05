@@ -33,7 +33,7 @@
  *              members that needs to be utilized with all the functions
  *              in each user defined trajectory.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef USER_DEFINED_TRAJECTORY_BASE_HPP_

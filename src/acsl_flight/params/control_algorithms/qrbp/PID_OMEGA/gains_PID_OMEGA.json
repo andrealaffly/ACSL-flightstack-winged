@@ -1,53 +1,52 @@
 {
-    "BASELINE": {    
-      "KP_translational": {
-        "scaling_coef": 1.2,
-        "matrix": [
-          [15.4, 0.0, 0.0],
-          [0.0, 17.0, 0.0],
-          [0.0, 0.0, 28.0]
-        ]
-      },
-      "KI_translational": {
-        "scaling_coef": 1.0,
-        "matrix": [
-          [1.9, 0.0, 0.0],
-          [0.0, 1.9, 0.0],
-          [0.0, 0.0, 3.4]
-        ]
-      },
-      "KD_translational": {
-        "scaling_coef": 1.0,
-        "matrix": [
-          [9.5, 0.0, 0.0],
-          [0.0, 9.7, 0.0],
-          [0.0, 0.0, 12.4]
-        ]
-      },
-      "KP_rotational": {
-        "scaling_coef": 1.0,
-        "matrix": [
-          [16.51, 0.0, 0.0],
-          [0.0, 16.5, 0.0],
-          [0.0, 0.0, 30.0]
-        ]
-      },
-      "KI_rotational": {
-        "scaling_coef": 1.0,
-        "matrix": [
-          [0.3, 0.0, 0.0],
-          [0.0, 0.3, 0.0],
-          [0.0, 0.0, 0.4]
-        ]
-      },
-      "KD_rotational": {
-        "scaling_coef": 1.0,
-        "matrix": [
-          [5.02, 0.0, 0.0],
-          [0.0, 5.0, 0.0],
-          [0.0, 0.0, 13.0]
-        ]
-      }
+  "BASELINE": {    
+    "KP_translational": {
+      "scaling_coef": 1.0,
+      "matrix": [
+        [18.48, 0.0, 0.0],
+        [0.0, 20.4, 0.0],
+        [0.0, 0.0, 34.8]
+      ]
+    },
+    "KI_translational": {
+      "scaling_coef": 1.0,
+      "matrix": [
+        [1.8, 0.0, 0.0],
+        [0.0, 1.8, 0.0],
+        [0.0, 0.0, 3.0]
+      ]
+    },
+    "KD_translational": {
+      "scaling_coef": 1.0,
+      "matrix": [
+        [9.5, 0.0, 0.0],
+        [0.0, 9.5, 0.0],
+        [0.0, 0.0, 12.6]
+      ]
+    },
+    "KP_rotational": {
+      "scaling_coef": 1.0,
+      "matrix": [
+        [16.5, 0.0, 0.0],
+        [0.0, 16.5, 0.0],
+        [0.0, 0.0, 30.0]
+      ]
+    },
+    "KI_rotational": {
+      "scaling_coef": 1.0,
+      "matrix": [
+        [0.3, 0.0, 0.0],
+        [0.0, 0.3, 0.0],
+        [0.0, 0.0, 0.4]
+      ]
+    },
+    "KD_rotational": {
+      "scaling_coef": 1.0,
+      "matrix": [
+        [5.0, 0.0, 0.0],
+        [0.0, 5.0, 0.0],
+        [0.0, 0.0, 13.0]
+      ]
     }
+  }
 }
-    

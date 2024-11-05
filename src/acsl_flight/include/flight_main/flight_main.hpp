@@ -32,7 +32,7 @@
  * Description: Header file for the main function that just sources all 
  *              the other header files.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef FLIGHT_MAIN_HPP_

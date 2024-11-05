@@ -50,7 +50,7 @@
  * 
  * Description: Utilities for multithreading.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #include "flight_bridge.hpp"
@@ -59,14 +59,16 @@ namespace _flight_bridge_{
 
 flight_bridge::flight_bridge(flight_params* p) : flight_params_ptr(p)
 {
-    std::cout << "Starting Flight Bridge" << std::endl;
+    FLIGHTSTACK_INFO("Starting Flight Bridge");
+    FLIGHTSTACK_INFO("Configuring Global Log Directory");
+    global_log_dir = create_global_log_directory(platform_of_choice);     // From control_config.hpp
+    FLIGHTSTACK_INFO("Configured Global Log Directory");
 }
 
 void flight_bridge::init()
-{
-
+{        
     /// ---------------------------------- MOCAP EKF VISION FUSION MODE ---------------------------------------- ///
-    if (flight_params_ptr->mocap)
+    if (flight_params_ptr->mocap && !flight_params_ptr->vio)
     {
         // Boolean for the mocap node
         bool receiver_started{false};
@@ -86,12 +88,12 @@ void flight_bridge::init()
         auto read_odometry_node = std::make_shared<_read_pix_::read_odometryNode>(&vehicle, flight_params_ptr);
         // create control  node and pass the address to the vehicle object in flight_bridge.hpp and the pointer
         // to the flight_params in flight_bridge.hpp which points to the run_params object in flight_main.cpp
-        auto control_node = std::make_shared<_control_::controlNode>(&vehicle, flight_params_ptr);
+        auto control_node = std::make_shared<_control_::controlNode>(&vehicle, flight_params_ptr, global_log_dir);
         
         // Create IO context thread on cpu_three and then pass it to the UdpReceiverNode
         // Create a single IoContext and pin it on cpu 3.
         _drivers_::_common_::IoContext ctx{1,CPU_THREE}; 
-        auto mocap_node = std::make_shared<_drivers_::_udp_driver_::UdpReceiverNode>(ctx, &vehicle);
+        auto mocap_node = std::make_shared<_drivers_::_udp_driver_::UdpReceiverNode>(ctx, &vehicle, global_log_dir);
                 
         // Add the nodes instances to the executor --------------------------------------------- >>
         // Add the odometry node to the odometry executor
@@ -107,10 +109,10 @@ void flight_bridge::init()
             if (mocap_node->activate().id() == State::PRIMARY_STATE_ACTIVE) {
             receiver_started = true;
             } else {
-            throw std::runtime_error{"Failed to activate UDP receiver."};
+                            FLIGHTSTACK_ERROR("Failed to activate UDP receiver.");
             }
         } else {
-            throw std::runtime_error{"Failed to configure UDP receiver."};
+                    FLIGHTSTACK_ERROR("Failed to configure UDP receiver.");
         }
                 
         // Create a thread for each of the executors ------------------------------------------- >>
@@ -132,47 +134,136 @@ void flight_bridge::init()
         // Attempt to create odometry read thread
         ret = configure_thread(high_prio_odometry_executor_thread, ThreadPriority::HIGH, CPU_ZERO);
         if (!ret) {
-            std::cout << "Odometry executor thread failed to create" << std::endl;
+                    FLIGHTSTACK_ERROR("Odometry executor thread failed to create. Try running as root.");
         }
         else {
-            nanoseconds high_prio_odometry_executor_thread_begin_time = 
-                get_thread_time(high_prio_odometry_executor_thread);
-            
-            std::cout << "Odometry executor thread created at:" << 
-                high_prio_odometry_executor_thread_begin_time.count() << "ns" << std::endl;
+                    nanoseconds high_prio_odometry_executor_thread_begin_time = get_thread_time(high_prio_odometry_executor_thread);
+                    FLIGHTSTACK_INFO("Odometry executor thread created (ns):",high_prio_odometry_executor_thread_begin_time.count());
         }
-        // Attempt to create control publisher thread
         
+        // Attempt to create control publisher thread
         ret = configure_thread(high_prio_control_executor_thread, ThreadPriority::HIGH, CPU_ONE);
         if (!ret) {
-            std::cout << "Control executor thread failed to create" << std::endl;
+                    FLIGHTSTACK_ERROR("Control executor thread failed to create. Try running as root.");
         }
         else {
-            nanoseconds high_prio_control_executor_thread_begin_time = 
-                get_thread_time(high_prio_control_executor_thread);
-
-            std::cout << "Control executor thread created at:" << 
-                high_prio_control_executor_thread_begin_time.count() << "ns" << std::endl;
+                    nanoseconds high_prio_control_executor_thread_begin_time = get_thread_time(high_prio_control_executor_thread);
+                    FLIGHTSTACK_INFO("Control executor thread created (ns):", high_prio_control_executor_thread_begin_time.count());
         }
         
         // Attempt to create mocap publisher thread
         ret = configure_thread(high_prio_mocap_executor_thread, ThreadPriority::HIGH, CPU_TWO);
         if (!ret) {
-            std::cout << "Mocap executor thread failed to create" << std::endl;
+                    FLIGHTSTACK_ERROR("Mocap excutor thread failed to create. Try running as root.");
         }
         else {
-            nanoseconds high_prio_mocap_executor_thread_begin_time = 
-                get_thread_time(high_prio_odometry_executor_thread);
-            
-            std::cout << "Mocap executor thread created at:" << 
-                high_prio_mocap_executor_thread_begin_time.count() << "ns" << std::endl;
+                    nanoseconds high_prio_mocap_executor_thread_begin_time = get_thread_time(high_prio_mocap_executor_thread);
+                    FLIGHTSTACK_INFO("MOCAP executor thread created (ns):", high_prio_mocap_executor_thread_begin_time.count());
         }
-    
+
 
         // Join the threads.
         high_prio_odometry_executor_thread.join();
         high_prio_control_executor_thread.join();
         high_prio_mocap_executor_thread.join();
+    }
+    /// ---------------------------------- VIO EKF VISION FUSION MODE ------------------------------------------- ///
+    else if(!flight_params_ptr->mocap && flight_params_ptr->vio)
+    {
+        // Boolean for VIO 
+        bool pipeline_started{false};
+
+        // Create Executors -------------------------------------------------------------------- >>
+        // -> High priority odometry callback executor.
+        rclcpp::executors::StaticSingleThreadedExecutor high_prio_odometry_executor;
+        // -> High priority control publisher executor.
+        rclcpp::executors::StaticSingleThreadedExecutor high_prio_control_executor;
+        // -> High priority mocap callback executor.
+        rclcpp::executors::SingleThreadedExecutor high_prio_vio_executor;
+
+        // Create the node instances ----------------------------------------------------------- >>
+        // create read_odometry node and pass the address to the vehicle object in flight_bridge.hpp and the pointer
+        // to the flight_params in flight_bridge.hpp which points to the run_params object in flight_main.cpp
+        auto read_odometry_node = std::make_shared<_read_pix_::read_odometryNode>(&vehicle, flight_params_ptr);
+        // create control node and pass the address to the vehicle object in flight_bridge.hpp and the pointer
+        // to the flight_params in flight_bridge.hpp which points to the run_params object in flight_main.cpp
+        auto control_node = std::make_shared<_control_::controlNode>(&vehicle, flight_params_ptr, global_log_dir);
+        // create vio node and pass the address to the vehicle object in flight_bridge.hpp
+        auto vio_node = std::make_shared<_t265_::_vio_::VioT265Node>(&vehicle, global_log_dir);
+
+        // Add the nodes instances to the executor --------------------------------------------- >>
+        // Add the odometry node to the odometry executor
+        high_prio_odometry_executor.add_node(read_odometry_node);
+        // Add the control node to the control executor
+        high_prio_control_executor.add_node(control_node);
+        // Add the udp receiver node tot the mocap executor
+        high_prio_vio_executor.add_node(vio_node->get_node_base_interface());
+        
+        // Check for Lifecycle Node Starts ----------------------------------------------------- >>
+        if (vio_node->configure().id() == State::PRIMARY_STATE_INACTIVE) {
+            if (vio_node->activate().id() == State::PRIMARY_STATE_ACTIVE) {
+            pipeline_started = true;
+            } else {
+                            FLIGHTSTACK_ERROR("Failed to activate VIO pipeline.");
+            }
+        } else {
+                        FLIGHTSTACK_ERROR("Failed to configure VIO pipeline.");
+        }
+
+        // Create a thread for each of the executors ------------------------------------------- >>
+        auto high_prio_odometry_executor_thread = std::thread(
+            [&]() {
+                high_prio_odometry_executor.spin();
+            });
+        auto high_prio_control_executor_thread = std::thread(
+            [&]() {
+                high_prio_control_executor.spin();
+            });
+        auto high_prio_vio_executor_thread = std::thread(
+            [&]() {
+                // Spin the thread only if Lifecycle Node is configured
+                if (pipeline_started) { high_prio_vio_executor.spin(); }
+            });
+
+        // Pin the threads to each CPU core ---------------------------------------------------- >>
+        // Attempt to create odometry read thread
+        ret = configure_thread(high_prio_odometry_executor_thread, ThreadPriority::HIGH, CPU_ZERO);
+        if (!ret) {
+                    FLIGHTSTACK_ERROR("Odometry executor thread failed to create. Try running as root.");
+        }
+        else {
+                    nanoseconds high_prio_odometry_executor_thread_begin_time = 
+                            get_thread_time(high_prio_odometry_executor_thread);
+                    FLIGHTSTACK_INFO("Odometry executor thread created (ns):", high_prio_odometry_executor_thread_begin_time.count());
+        }
+        
+        // Attempt to create control publisher thread
+        ret = configure_thread(high_prio_control_executor_thread, ThreadPriority::HIGH, CPU_ONE);
+        if (!ret) {
+                    FLIGHTSTACK_ERROR("Control executor thread failed to create. Try running as root.");
+        }
+        else {
+                    nanoseconds high_prio_control_executor_thread_begin_time = 
+                            get_thread_time(high_prio_control_executor_thread);
+                    FLIGHTSTACK_INFO("Control executor thread created (ns):", high_prio_control_executor_thread_begin_time.count());
+        }
+        
+        // Attempt to create vio publisher thread
+        ret = configure_thread(high_prio_vio_executor_thread, ThreadPriority::HIGH, CPU_TWO);
+        if (!ret) {
+                    FLIGHTSTACK_ERROR("VIO executor thread failed to create. Try running as root.");
+        }
+        else {
+                    nanoseconds high_prio_vio_executor_thread_begin_time = 
+                            get_thread_time(high_prio_odometry_executor_thread);
+                    FLIGHTSTACK_INFO("VIO executor thread created (ns):", high_prio_vio_executor_thread_begin_time.count());
+        }
+
+        // Join the threads.
+        high_prio_odometry_executor_thread.join();
+        high_prio_control_executor_thread.join();
+        high_prio_vio_executor_thread.join();
+
     }
     /// ---------------------------------- GPS RTK EKF  FUSION MODE -------------------------------------------- ///
     else
@@ -190,7 +281,7 @@ void flight_bridge::init()
         auto read_odometry_node = std::make_shared<_read_pix_::read_odometryNode>(&vehicle, flight_params_ptr);
         // create control  node and pass the address to the vehicle object in flight_bridge.hpp and the pointer
         // to the flight_params in flight_bridge.hpp which points to the run_params object in flight_main.cpp
-        auto control_node = std::make_shared<_control_::controlNode>(&vehicle, flight_params_ptr);
+        auto control_node = std::make_shared<_control_::controlNode>(&vehicle, flight_params_ptr, global_log_dir);
                 
         // Add the nodes instances to the executor --------------------------------------------- >>
         // Add the odometry node to the odometry executor
@@ -212,33 +303,30 @@ void flight_bridge::init()
         // Attempt to create odometry read thread
         ret = configure_thread(high_prio_odometry_executor_thread, ThreadPriority::HIGH, CPU_ZERO);
         if (!ret) {
-            std::cout << "Odometry executor thread failed to create" << std::endl;
+            FLIGHTSTACK_ERROR("Odometry executor thread failed to create. Try running as root.");
         }
         else {
-            nanoseconds high_prio_odometry_executor_thread_begin_time = 
-                get_thread_time(high_prio_odometry_executor_thread);
-            
-            std::cout << "Odometry executor thread created at:" << 
-                high_prio_odometry_executor_thread_begin_time.count() << "ns" << std::endl;
+                    nanoseconds high_prio_odometry_executor_thread_begin_time = 
+                            get_thread_time(high_prio_odometry_executor_thread);
+                    FLIGHTSTACK_INFO("Odometry executor thread created (ns):", high_prio_odometry_executor_thread_begin_time.count());
         }
-        // Attempt to create control publisher thread
         
+        // Attempt to create control publisher thread
         ret = configure_thread(high_prio_control_executor_thread, ThreadPriority::HIGH, CPU_ONE);
         if (!ret) {
-            std::cout << "Control executor thread failed to create" << std::endl;
+                    FLIGHTSTACK_ERROR("Control executor thread failed to create. Try running as root.");
         }
         else {
-            nanoseconds high_prio_control_executor_thread_begin_time = 
-                get_thread_time(high_prio_control_executor_thread);
-
-            std::cout << "Control executor thread created at:" << 
-                high_prio_control_executor_thread_begin_time.count() << "ns" << std::endl;
+                    nanoseconds high_prio_control_executor_thread_begin_time = 
+                            get_thread_time(high_prio_control_executor_thread);
+                    FLIGHTSTACK_INFO("Control executor thread created (ns):", high_prio_control_executor_thread_begin_time.count());
         }        
 
         // Join the threads.
         high_prio_odometry_executor_thread.join();
         high_prio_control_executor_thread.join();
     }
+    
 }
 
 } // namespace _flight_bridge_

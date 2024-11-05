@@ -33,7 +33,7 @@
  *              members that needs to be utilized with all the functions
  *              in each control algorithm.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef FLIGHT_LOG_HPP_
@@ -99,6 +99,9 @@ namespace _flight_log_
 
             // Define the logger for MocapData
             src::logger logger_mocapdata;
+
+            // Define the logger for VioData
+            src::logger logger_viodata;
     };
 
 } // namespace _flight_log_

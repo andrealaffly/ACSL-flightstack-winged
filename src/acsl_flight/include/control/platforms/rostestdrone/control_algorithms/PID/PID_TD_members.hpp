@@ -31,7 +31,7 @@
  * 
  * Description: PID controller class members.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*               _           _      _                      
@@ -47,6 +47,7 @@
 
 #include "Eigen/Dense"
 #include <chrono>
+#include "rostestdrone.hpp"           // Header file for vehicle specific information and some other functions
 
 using namespace Eigen;
 namespace _rostestdrone_{

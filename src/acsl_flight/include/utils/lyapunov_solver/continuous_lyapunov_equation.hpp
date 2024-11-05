@@ -72,11 +72,11 @@
  *              So this code provides the same result as obtained in MATLAB using 
  *              the command: lyap(A', Q)
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
-#ifndef CONTINUOUS_LYAPUNOV_EQUATION_HPP
-#define CONTINUOUS_LYAPUNOV_EQUATION_HPP
+#ifndef CONTINUOUS_LYAPUNOV_EQUATION_HPP_
+#define CONTINUOUS_LYAPUNOV_EQUATION_HPP_
 
 
 #include <Eigen/Dense>
@@ -158,4 +158,4 @@ namespace _lyapunov_solver_{
     }  // namespace internal
 } // namespce _lyapunov_solver_
 
-#endif // CONTINUOUS_LYAPUNOV_EQUATION_HPP
+#endif // CONTINUOUS_LYAPUNOV_EQUATION_HPP_

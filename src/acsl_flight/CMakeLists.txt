@@ -37,7 +37,7 @@ if(NOT CMAKE_C_STANDARD)
   set(CMAKE_C_STANDARD 99)
 endif()
 
-# Default to C++14
+# Default to C++17
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 17)
 endif()
@@ -53,53 +53,62 @@ find_package(std_msgs REQUIRED)
 find_package(px4_msgs REQUIRED)
 find_package(lifecycle_msgs REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
+find_package(realsense2 REQUIRED)  # For VIO                                        
 find_package(Boost 1.86 REQUIRED COMPONENTS log log_setup system filesystem thread)   # Most systems have 1.71.0. Change it to that if needed.
 
 # include directories
 include_directories(${Boost_INCLUDE_DIRS}
+                    ${realsense_INCLUDE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/json/include/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/eigen/
-                    ${CMAKE_CURRENT_SOURCE_DIR}/include/flight_main/
-                    ${CMAKE_CURRENT_SOURCE_DIR}/include/flight_bridge/
-                    ${CMAKE_CURRENT_SOURCE_DIR}/include/read_pix/
-                    ${CMAKE_CURRENT_SOURCE_DIR}/include/vehicle_class/
-                    ${CMAKE_CURRENT_SOURCE_DIR}/include/control/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/flightstack_helpers/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/flight_log/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/lyapunov_solver/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/adaptive_laws/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/control_algorithm_base/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/user_defined_trajectory_base/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/mocap/io_context/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/mocap/udp_driver/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/mocap/udp_socket/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/mocap/
-                    ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/
-                    ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/flight_log/
-                    ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/lyapunov_solver/
-                    ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/control_algorithm_base/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/vio/    
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/flight_main/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/flight_bridge/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/read_pix/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/vehicle_class/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/flight_params/
-                    ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/user_defined_trajectory_base/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/piecewise_polynomial_trajectory/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/control/                  
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/qrbp/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/qrbp/aerodynamics/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/qrbp/control_algorithms/PID/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/qrbp/control_algorithms/MRAC_PID/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/qrbp/control_algorithms/PID_OMEGA/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/qrbp/control_algorithms/MRAC_OMEGA/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/rostestdrone/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/rostestdrone/control_algorithms/PID/)
 
 # add source files
 set(SOURCES
-  src/flight_main/flight_main.cpp
-  src/flight_bridge/flight_bridge.cpp
-  src/read_pix/read_pix.cpp
-  src/control/control.cpp
-  src/vehicle_class/vehicle_class.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/lyapunov_solver/continuous_lyapunov_equation.cpp
   src/mocap/io_context/io_context.cpp
   src/mocap/udp_driver/udp_driver.cpp
   src/mocap/udp_socket/udp_socket.cpp
   src/mocap/mocap.cpp
+  src/vio/vio.cpp
+  src/flight_main/flight_main.cpp
+  src/flight_bridge/flight_bridge.cpp
+  src/read_pix/read_pix.cpp
+  src/vehicle_class/vehicle_class.cpp
+  src/control/control.cpp
   src/flight_params/flight_params.cpp
   src/piecewise_polynomial_trajectory/piecewise_polynomial_trajectory.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/include/utils/lyapunov_solver/continuous_lyapunov_equation.cpp
   src/control/platforms/qrbp/control_algorithms/PID/PID.cpp
   src/control/platforms/qrbp/control_algorithms/PID/PID_logger.cpp
   src/control/platforms/qrbp/control_algorithms/PID_OMEGA/PID_OMEGA.cpp
   src/control/platforms/qrbp/control_algorithms/PID_OMEGA/PID_OMEGA_logger.cpp
+  src/control/platforms/qrbp/control_algorithms/MRAC_OMEGA/MRAC_OMEGA.cpp
+  src/control/platforms/qrbp/control_algorithms/MRAC_OMEGA/MRAC_OMEGA_logger.cpp
   src/control/platforms/qrbp/control_algorithms/MRAC_PID/MRAC_PID.cpp
   src/control/platforms/qrbp/control_algorithms/MRAC_PID/MRAC_PID_logger.cpp
   src/control/platforms/rostestdrone/control_algorithms/PID/PID_TD.cpp
@@ -109,8 +118,8 @@ set(SOURCES
 # add executable
 add_executable(start ${SOURCES})
 
-# Link against Boost libraries
-target_link_libraries(start ${Boost_LIBRARIES})
+# Link against Boost libraries and realsense2 libraries
+target_link_libraries(start ${Boost_LIBRARIES} realsense2::realsense2)
 
 # ament dependencies
 ament_target_dependencies(start rclcpp px4_msgs std_msgs lifecycle_msgs rclcpp_lifecycle)

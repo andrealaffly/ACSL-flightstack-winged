@@ -72,7 +72,7 @@
  *              So this code provides the same result as obtained in MATLAB using 
  *              the command: lyap(A', Q)
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #include "continuous_lyapunov_equation.hpp"

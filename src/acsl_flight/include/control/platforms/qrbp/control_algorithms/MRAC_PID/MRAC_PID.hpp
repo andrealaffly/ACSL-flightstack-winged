@@ -33,7 +33,7 @@
  *              for the basic functionality that is to be used for all 
  *              control algorithms.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*
@@ -71,7 +71,7 @@ class mrac_pid : public controller_base
 {
   public:
     // Constructor
-    mrac_pid(flight_params* p);
+    mrac_pid(flight_params* p, const std::string & controller_log_dir_);
 
     // Destructor
     ~mrac_pid();
@@ -114,6 +114,9 @@ class mrac_pid : public controller_base
     // Function to reset the integrator states
     void reset_integrator_states();
 
+    // Piecewise polynomial trajectory object
+    piecewise_polynomial_trajectory ud;
+
     // Initialize the logger
     mrac_pid_logger logger;
 
@@ -140,19 +143,7 @@ class mrac_pid : public controller_base
     // Define the internal integrated state members of the controller
     controller_integrated_state_members csm; 
 
-    // Piecewise polynomial trajectory object
-    piecewise_polynomial_trajectory ud;
-
   private:
-    // Function to compute the aerodynamic coefficients 
-    void compute_aero_coefficients();
-
-    // Function to compute the aerodynamic forces in the wind frame
-    void compute_aerodynamic_forces();
-
-    // Function to compute the aerodynamic moments in the body frame
-    void compute_aerodynamic_moments();
-
     // Function to compute the outer loop regressor vector
     void compute_outer_loop_regressor();
 

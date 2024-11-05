@@ -50,7 +50,7 @@
  * 
  * Description: Class definition for UDP socket creation using IoContext.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #include "udp_socket.hpp"
@@ -202,10 +202,10 @@ void UdpSocket::open()
   try {
     m_udp_socket.open(udp::v4());
     m_udp_socket.set_option(udp::socket::reuse_address(true));
-    std::cout << "Socket receive is open" << std::endl;
+    FLIGHTSTACK_INFO("Socket receive is open");
   } catch (const std::exception& e) {
       // Handle the exception
-      std::cerr << "An error occurred while opening or setting options for m_udp_socket: " << e.what() << std::endl;
+      FLIGHTSTACK_ERROR("An error occurred while opening or setting options for m_udp_socket: ", e.what());
       // Optionally, perform cleanup or take appropriate action
   }
 }
@@ -228,10 +228,10 @@ void UdpSocket::bind()
 {
   try {
     m_udp_socket.bind(m_host_endpoint);
-    std::cout << "Socket receive is bound" << std::endl;
+    FLIGHTSTACK_INFO("Socket receive is bound");
   } catch (const std::exception& e) {
       // Handle the exception
-      std::cerr << "An error occurred while binding m_udp_socket: " << e.what() << std::endl;
+      FLIGHTSTACK_ERROR("An error occurred while binding m_udp_socket ", e.what());
       // Optionally, perform cleanup or take appropriate action
   }
 }

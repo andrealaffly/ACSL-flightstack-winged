@@ -50,7 +50,7 @@
  * 
  * Description: Class definition for UDP driver.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #include "udp_driver.hpp"
@@ -83,11 +83,11 @@ void UdpDriver::init_receiver(const std::string & ip, uint16_t port)
       m_receiver.reset(new UdpSocket(m_ctx, ip, port));
   } catch (const std::invalid_argument& e) {
       // Handle the invalid argument exception
-      std::cerr << "Invalid argument when initializing m_receiver: " << e.what() << std::endl;
+      FLIGHTSTACK_ERROR("Invalid argument when initializing m_receiver:", e.what());
       // Optionally, perform cleanup or take appropriate action
   } catch (const std::exception& e) {
       // Catch any other exceptions
-      std::cerr << "Failed to initialize m_receiver: " << e.what() << std::endl;
+      FLIGHTSTACK_ERROR("Failed to initialize m_receiver:");
       // Optionally, perform cleanup or take appropriate action
   }
 }

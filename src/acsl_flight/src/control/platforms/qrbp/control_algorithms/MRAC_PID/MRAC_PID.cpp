@@ -33,7 +33,7 @@
  *              for the basic functionality that is to be used for all 
  *              control algorithms.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*
@@ -54,7 +54,8 @@ namespace _qrbp_{
 namespace _mrac_pid_{
 
 // Constructor - Take care to initialize the logger
-mrac_pid::mrac_pid(flight_params* p) : logger(&cim, &csm, &control_input), controller_base(p), ud(p) {
+mrac_pid::mrac_pid(flight_params* p, const std::string & controller_log_dir_) :
+          controller_base(p), ud(p), logger(&cim, &csm, &control_input, controller_log_dir_) {
     
     // Reading in the parameters
     read_params("./src/acsl_flight/params/control_algorithms/qrbp/MRAC_PID/gains_MRAC_PID.json");
@@ -70,8 +71,8 @@ mrac_pid::~mrac_pid() {
 
 // Implementing virtual functions from controller_base
 void mrac_pid::read_params(const std::string& jsonFile) {
-    // Implementation here
     
+    // Create the file stream
     std::ifstream file(jsonFile);
 	nlohmann::json j;
 	file >> j;
@@ -116,20 +117,20 @@ void mrac_pid::read_params(const std::string& jsonFile) {
 }
 
 // Implementing virtual functions from controller_base
-void mrac_pid::init(){
-    // Implementation here
+void mrac_pid::init() {
+    // Initial conditions for rk4 integrator
     y.fill(0.0);
     dy.fill(0.0);
 
     // Fill up the zeros Vector for resetting events in the Integrator
     zeros.fill(0.0);
 
-    /// Translational Initialize matrices
+    /// Translational - Initialize matrices
     // Initilaize to zero the 6x6 matrix and set the top-right 3x3 block as follows
     initMat(cip.A_tran);
     cip.A_tran.block<3, 3>(0, 3) = Matrix3d::Identity();
 
-    // Initialize to zero the 6x3 matrix and set the bottom 3x3 blocak as follows
+    // Initialize to zero the 6x3 matrix and set the bottom 3x3 block as follows
     initMat(cip.B_tran);
     cip.B_tran.block<3, 3>(3, 0) = Matrix3d::Identity();
 
@@ -149,9 +150,12 @@ void mrac_pid::init(){
     // Solve the continuous Lyapunov equation to compute P_translational
     cip.P_tran = RealContinuousLyapunovEquation(cip.A_ref_tran, cip.Q_tran);
 
-    /// Quadcopter Initialize matrices
+    /// Quadcopter - Initialize matrices
     // Initialize to zero the 3x3 matrix
     initMat(cip.A_rot_q);
+
+    // Initlize to identity the 3x3 matrix 
+	cip.B_rot_q = Matrix3d::Identity();
 
     // Set the 3x3 matrix as follows
     cip.A_ref_rot_q = -cip.Kp_omega_ref_rot_q;
@@ -162,9 +166,12 @@ void mrac_pid::init(){
     // Solve the continuous Lyapunov equation to compute P_rotational quadcopter
     cip.P_rot_q = RealContinuousLyapunovEquation(cip.A_ref_rot_q, cip.Q_rot_q);
 
-    /// Biplane Initialize matrices
+    /// Biplane - Initialize matrices
     // Initialize to zero the 3x3 matrix
     initMat(cip.A_rot_b);
+
+    // Initlize to identity the 3x3 matrix 
+	cip.B_rot_b = Matrix3d::Identity();
 
     // Set the 3x3 matrix as follows
     cip.A_ref_rot_b = -cip.Kp_omega_ref_rot_b;
@@ -183,76 +190,6 @@ void mrac_pid::init(){
 
     // Set the inertia matrix to the quadcopter mode as the initial condition
     cip.inertia_matrix = inertia_matrix_q;
-}
-
-
-void mrac_pid::compute_aero_coefficients()
-{
-    cim.aero.Cl_up = compute_cl(cim.aero.angles.alpha_up);
-    cim.aero.Cl_lw = compute_cl(cim.aero.angles.alpha_lw);
-    cim.aero.Cl_lt = compute_cl(cim.aero.angles.beta_lt);
-    cim.aero.Cl_rt = compute_cl(cim.aero.angles.beta_rt);
-
-    cim.aero.Cd_up = compute_cd(cim.aero.angles.alpha_up);
-    cim.aero.Cd_lw = compute_cd(cim.aero.angles.alpha_lw);
-    cim.aero.Cd_lt = compute_cd(cim.aero.angles.beta_lt);
-    cim.aero.Cd_rt = compute_cd(cim.aero.angles.beta_rt);
-
-    cim.aero.Cm_up = compute_cm(cim.aero.angles.alpha_up);
-    cim.aero.Cm_lw = compute_cm(cim.aero.angles.alpha_lw);
-    cim.aero.Cm_lt = compute_cm(cim.aero.angles.beta_lt);
-    cim.aero.Cm_rt = compute_cm(cim.aero.angles.beta_rt);
-}
-
-// Function to compute the aerodynamic forces in the wind frame
-void mrac_pid::compute_aerodynamic_forces()
-{
-    double dynamic_pressure_wings = DYN_PRESS_COEFF_W*cim.aero.v_norm_sq;
-    double dynamic_pressure_stabs = DYN_PRESS_COEFF_S*cim.aero.v_norm_sq;
-
-    cim.aero.F_aero(0) =  -1*(dynamic_pressure_wings*(cim.aero.Cl_up + cim.aero.Cl_lw));
-    cim.aero.F_aero(1) = -1*(dynamic_pressure_wings*(cim.aero.Cd_up + cim.aero.Cd_lw)
-                        + dynamic_pressure_stabs*(cim.aero.Cd_lt  +cim.aero.Cd_rt));
-    cim.aero.F_aero(2) = -1*(dynamic_pressure_stabs*(cim.aero.Cl_lt + cim.aero.Cl_rt));
-
-    // We can directly always use the quadcopter frame as the outerloop does not switch.
-    cim.aero.outer_loop_dynamic_inv(0) = cim.aero.F_aero(0);
-    cim.aero.outer_loop_dynamic_inv(1) = cim.aero.F_aero(1);
-    cim.aero.outer_loop_dynamic_inv(2) = cim.aero.F_aero(2);
-}
-
-// Function to compute the aerodynamic moments in the quadcopter body frame
-void mrac_pid::compute_aerodynamic_moments()
-{
-    double dynamic_pressure_mom_wings = DYN_PRESS_COEFF_W*CHORD_W*cim.aero.v_norm_sq;
-    double dynamic_pressure_mom_stabs = DYN_PRESS_COEFF_S*CHORD_S*cim.aero.v_norm_sq;
-
-    double calpha = cos(cim.aero.angles.alpha);
-    double salpha = sin(cim.aero.angles.alpha);
-
-    double cbeta = cos(cim.aero.angles.beta);
-    double sbeta = sin(cim.aero.angles.beta);
-
-    cim.aero.M_aero(0) = dynamic_pressure_mom_stabs*(cim.aero.Cm_lt + cim.aero.Cm_rt) 
-                    - 2*LZ_S*(cim.aero.F_aero(1)*cbeta + cim.aero.F_aero(0)*sbeta);
-    cim.aero.M_aero(1) = dynamic_pressure_mom_wings*(cim.aero.Cm_lw + cim.aero.Cm_up)
-                    - 2*LZ_S*(cim.aero.F_aero(2)*calpha + cim.aero.F_aero(0)*cbeta*salpha 
-                    - cim.aero.F_aero(1)*salpha*sbeta);
-    cim.aero.M_aero(2) = 0.0;
-
-    // We need a switching function here as the biplane and the quadcopter frame switch in the inner loop
-    if (is_biplane)
-    {
-        // Rotate to Biplane body frame if you are in biplane mode as the aerodynamic moments are calculated in the 
-        // quadcopter frame
-        cim.aero.inner_loop_dynamic_inv << R_Jq_Jb*cim.aero.M_aero;
-    }
-    else 
-    {
-        // If in quadcopter frame just pass it straight through to the baseline for dynamic inversion
-        cim.aero.inner_loop_dynamic_inv = cim.aero.M_aero;
-    }
-
 }
 
 void mrac_pid::update(double time, 
@@ -294,7 +231,9 @@ void mrac_pid::update(double time,
     cim.q.z() = q3;
 
     // Update the states to biplane mode. This function uses quaternions and tested code for gimbal locks
-    update_states_to_biplane_quaternions(cim.q, cim.eta_rot_q, cim.omega_rot_q, cim.eta_rot_b, cim.omega_rot_b);
+    // Look at qrbp.hpp for more methods
+    // update_states_to_biplane_quaternions(cim.q, cim.eta_rot_q, cim.eta_rot_b, cim.omega_rot_b);
+    update_states_to_biplane_quaternion_gmk(cim.q, cim.omega_rot_q, cim.eta_rot_b, cim.omega_rot_b);
 
     // 2. Check if you are in biplane or Quadcopter mode ---------------------------
     QRBPswitchFun(pitch, is_biplane, momentary_button);
@@ -343,22 +282,17 @@ void mrac_pid::update(double time,
     cim.x_tran_vel_Jq = cim.R_I_Jq * cim.x_tran.tail<3>();
 
     // 8. Compute the square of the norm of velocity in the body frame - it is the same for both quadcopter and biplane
-    cim.aero.v_norm_sq =  cim.x_tran_vel_Jq(0) * cim.x_tran_vel_Jq(0) 
-                          + cim.x_tran_vel_Jq(1) * cim.x_tran_vel_Jq(1) 
-                          + cim.x_tran_vel_Jq(2) * cim.x_tran_vel_Jq(2);
-
-    // 9. Compute the aerodynamic angles
-    cim.aero.angles = computeAeroAnglesNACA0012Quad(cim.x_tran_vel_Jq(0), cim.x_tran_vel_Jq(1), cim.x_tran_vel_Jq(2),
-                                                     cim.omega_rot_q(0),  cim.omega_rot_q(1),  cim.omega_rot_q(2));
+    //    amd compute the aerodynamic angles
+    cim.aero.states = computeAeroStatesNACA0012Quad(cim.x_tran_vel_Jq(0), cim.x_tran_vel_Jq(1), cim.x_tran_vel_Jq(2),
+                                                    cim.omega_rot_q(0),  cim.omega_rot_q(1),  cim.omega_rot_q(2));
     
+    // 9. Compute the Direction Cosine Matrix in the quadcopter frame at the center of gravity
+    cim.R_W_Jq = aeroDCMQuadNED(cim.aero.states.alpha, cim.aero.states.beta);
 
-    // 10. Compute the Direction Cosine Matrix in the quadcopter frame at the center of gravity
-    cim.R_W_Jq = aeroDCMQuadNED(cim.aero.angles.alpha, cim.aero.angles.beta);
+    // 10. Compute the aerodynamic coefficeints    
+    cim.aero.coeff = compute_aero_coefficients(cim.aero.states);
 
-    // 11. Compute the aerodynamic coefficeints    
-    compute_aero_coefficients();
-
-    // 12. Assign the values from the integrator -------------------------------------
+    // 11. Assign the values from the integrator -------------------------------------
     // If the momentary button to indicate a switch is hit reset the integrator to
     // emulate a start of a new mission in the inner loop or go ahead assigning the states as usual.
     if (momentary_button){ reset_integrator_states(); } else{ assign_from_rk4(); }
@@ -451,18 +385,18 @@ void mrac_pid::model([[maybe_unused]] const rk4_array<double, NSI> &y, rk4_array
 // Function to compute the outerloop regressor vector
 void mrac_pid::compute_outer_loop_regressor()
 {
-    // cache the variables
+    // Cache the variables
     double sph = sin(cim.eta_rot_q(0));
     double cph = cos(cim.eta_rot_q(0));
     double sth = sin(cim.eta_rot_q(1));
     double cth = cos(cim.eta_rot_q(1));
     double sps = sin(cim.eta_rot_q(2));
     double cps = cos(cim.eta_rot_q(2));
-    double sa = sin(cim.aero.angles.alpha);
-    double ca = cos(cim.aero.angles.alpha);
-    double sb = sin(cim.aero.angles.beta);
-    double cb = cos(cim.aero.angles.beta);
-    double v_norm_sq = cim.aero.v_norm_sq;
+    double sa = sin(cim.aero.states.alpha);
+    double ca = cos(cim.aero.states.alpha);
+    double sb = sin(cim.aero.states.beta);
+    double cb = cos(cim.aero.states.beta);
+    double v_norm_sq = cim.aero.states.v_norm_sq;
 
     cim.outer_loop_regressor << -v_norm_sq*(sb*(cph*sps - cps*sph*sth) - ca*cb*(sph*sps + cph*cps*sth) + cb*cps*sa*cth),
                                 -v_norm_sq*(ca*cb*(cps*sph - cph*sps*sth) - sb*(cph*cps + sph*sps*sth) + cb*sa*cth*sps),
@@ -496,11 +430,11 @@ void mrac_pid::compute_outer_loop_regressor()
 // Function to compute the inner loop regressor vector
 void mrac_pid::compute_innner_loop_regressor()
 {
-    // cache the variables
-    double sa = sin(cim.aero.angles.alpha);
-    double ca = cos(cim.aero.angles.alpha);
-    double sb = sin(cim.aero.angles.beta);
-    double cb = cos(cim.aero.angles.beta);
+    // Cache the variables
+    double sa = sin(cim.aero.states.alpha);
+    double ca = cos(cim.aero.states.alpha);
+    double sb = sin(cim.aero.states.beta);
+    double cb = cos(cim.aero.states.beta);
     double wx = 0.0;
     double wy = 0.0;
     double wz = 0.0;
@@ -521,15 +455,15 @@ void mrac_pid::compute_innner_loop_regressor()
     cim.inner_loop_regressor << wx*wy,
                                 wz*wx,
                                 wy*wx,
-                                cim.aero.v_norm_sq,
-                                cim.aero.v_norm_sq*ca,
-                                cim.aero.v_norm_sq*sb,
-                                cim.aero.v_norm_sq*cb,
-                                cim.aero.v_norm_sq*sa*sb,
-                                cim.aero.v_norm_sq*sa*cb;
+                                cim.aero.states.v_norm_sq,
+                                cim.aero.states.v_norm_sq*ca,
+                                cim.aero.states.v_norm_sq*sb,
+                                cim.aero.states.v_norm_sq*cb,
+                                cim.aero.states.v_norm_sq*sa*sb,
+                                cim.aero.states.v_norm_sq*sa*cb;
 }
 
-
+// Function to compute the outerloop control in I 
 void mrac_pid::compute_translational_control_in_I()
 { 
     // Compute the error in the states
@@ -537,7 +471,7 @@ void mrac_pid::compute_translational_control_in_I()
     cim.e_tran_pos << cim.e_tran.head<3>();
     cim.e_tran_vel << cim.e_tran.tail<3>();
 
-    // Compute the ranslational position error between the reference model and the user defined trajectory
+    // Compute the translational position error between the reference model and the user defined trajectory
     cim.e_tran_pos_ref << csm.x_tran_ref.head<3>() - cim.r_user;
     
     // Compute the reference command input [reference model - user_defined_trajectory]
@@ -551,18 +485,18 @@ void mrac_pid::compute_translational_control_in_I()
                         + cip.B_ref_tran * cim.r_cmd_tran;
 
     // Compute the baseline control input
-    cim.mu_tran_baseline << MASS*(- cip.Kp_tran * cim.e_tran_pos                           // Proportional term
-                                  - cip.Kd_tran * cim.e_tran_vel                           // Derivative term
-                                  - cip.Ki_tran * csm.e_tran_pos_I                         // Integral term
-                                  + cim.x_tran_ref_dot.tail<3>()                           // Feedforward term
-                                  - G * e3_basis)                                          // Weight inversion term
-                                  - cim.R_Jq_I*cim.R_W_Jq*cim.aero.outer_loop_dynamic_inv; // Aerodynamic inversion term 
+    cim.mu_tran_baseline << MASS * (- cip.Kp_tran * cim.e_tran_pos                         // Proportional term
+                                    - cip.Kd_tran * cim.e_tran_vel                         // Derivative term
+                                    - cip.Ki_tran * csm.e_tran_pos_I                       // Integral term
+                                    + cim.x_tran_ref_dot.tail<3>()                         // Feedforward term
+                                    - G * e3_basis)                                        // Weight inversion term
+                                    - cim.aero.dyn.outer_loop_dynamic_inv;                 // Aerodynamic inversion term 
 
     // Compute the augmented regressor vector
     cim.augmented_outer_loop_regressor << cim.mu_tran_baseline, 
                                           cim.outer_loop_regressor;
 
-    // cache the transpose of the tracking error * P * B
+    // Cache the transpose of the tracking error * P * B
     Matrix<double, 1, 3> e_transpose_p_b = cim.e_tran.transpose() * cip.P_tran * cip.B_tran;
 
     // Adaptive laws
@@ -583,10 +517,11 @@ void mrac_pid::compute_translational_control_in_I()
                             + csm.K_hat_r_tran.transpose() * cim.r_cmd_tran
                             - csm.Theta_hat_tran.transpose() * cim.augmented_outer_loop_regressor;
 
-    // Compute with the dynamic inversion
+    // Compute the total baseline + adaptive control
     cim.mu_tran_I << cim.mu_tran_baseline + cim.mu_tran_adaptive;
 }
 
+// Compute the orientation commands and the desired total thrust
 void mrac_pid::compute_u1_eta_d()
 {
     // Compute the virtual forces in the biplane frame
@@ -692,6 +627,7 @@ void mrac_pid::compute_u1_eta_d()
     
 }
 
+// Compute the rotational control
 void mrac_pid::compute_rotational_control()
 {   
     // If you are in biplane mode
@@ -738,12 +674,12 @@ void mrac_pid::compute_rotational_control()
                                                        -cip.Ki_rot_b * csm.e_eta_I             // Integral term
                                                        + cim.omega_ref_dot_rot)                // Feedforward term
                                 + cim.omega_rot.cross(cip.inertia_matrix * cim.omega_rot)      // Dynamic inversion term
-                                - cim.aero.inner_loop_dynamic_inv;                             // Aero inversion term
+                                - R_Jq_Jb*cim.aero.dyn.inner_loop_dynamic_inv;                 // Aero inversion term
 
         // Compute the augmented regressor vector
         cim.augmented_inner_loop_regressor << cim.tau_rot_baseline, cim.inner_loop_regressor;
 
-        // cache the transpose of the tracking error * P * B
+        // Cache the transpose of the tracking error * P * B
         Eigen::Matrix<double, 1, 3> e_transpose_p_b = cim.e_omega.transpose() * cip.P_rot_b * cip.B_rot_b; 
 
         // Adaptive laws
@@ -813,12 +749,12 @@ void mrac_pid::compute_rotational_control()
                                                        -cip.Ki_rot_q * csm.e_eta_I             // Integral term
                                                        + cim.omega_ref_dot_rot)                // Feedforward term
                                 + cim.omega_rot.cross(cip.inertia_matrix * cim.omega_rot)      // Dynamic inversion term
-                                - cim.aero.inner_loop_dynamic_inv;                             // Aero inversion term
+                                - cim.aero.dyn.inner_loop_dynamic_inv;                         // Aero inversion term
 
         // Compute the augmented regressor vector
         cim.augmented_inner_loop_regressor << cim.tau_rot_baseline, cim.inner_loop_regressor;
 
-        // cache the transpose of the tracking error * P * B
+        // Cache the transpose of the tracking error * P * B
         Eigen::Matrix<double, 1, 3> e_transpose_p_b = cim.e_omega.transpose() * cip.P_rot_q * cip.B_rot_q; 
 
         // Adaptive laws
@@ -851,6 +787,7 @@ void mrac_pid::compute_rotational_control()
 
 }
 
+// Function to compute the normalized thrusts
 void mrac_pid::compute_normalized_thrusts()
 {
     // Compute the individual thrusts in Newtons
@@ -866,17 +803,18 @@ void mrac_pid::compute_normalized_thrusts()
     control_input(3) = evaluatePolynomial(thrust_polynomial_coeff_qrbp, cim.Sat_Thrust(3));
 }
 
+// Function to print to terminal during runtime
 void mrac_pid::debug2terminal()
 {
-    // std::cout << "Execution Time: " << cim.alg_duration << std::endl;     
-    // printMatrix(cim.eta_rot_b, "Biplane Orientations:");
+    // FLIGHTSTACK_INFO_STREAM_NO_TAG("Execution Time:", cim.alg_duration);  
 }
 
+// Function that is called in control.cpp
 void mrac_pid::run(const double time_step_rk4_) {
     
     // Process the dynamics --------------------------------------------------------
-    // 1. Compute the aerodynamic forces in the wind frame
-    compute_aerodynamic_forces();
+    // 1. Compute the aerodynamics 
+    compute_aero_forces_moments(cim.aero.states, cim.aero.coeff, cim.R_Jq_I, cim.R_W_Jq);
 
     // 2. Compute the regressor vector for the outer loop
     compute_outer_loop_regressor();
@@ -886,20 +824,17 @@ void mrac_pid::run(const double time_step_rk4_) {
 
     // 4. Compute the thrust needed and the desired angles
     compute_u1_eta_d();
-
-    // 5. Compute the aerodynamic moments in the quadcopter body frame
-    compute_aerodynamic_moments();
    
-    // 6. Compute the regressor vector for the inner loop
+    // 5. Compute the regressor vector for the inner loop
     compute_innner_loop_regressor();
     
-    // 7. Compute the rotational control input
+    // 6. Compute the rotational control input
     compute_rotational_control();
 
-    // 8. Compute the normalized thrust - Final Step
+    // 7. Compute the normalized thrust - Final Step
     compute_normalized_thrusts();
 
-    // 9. Do the integration
+    // 8. Do the integration
     rk4.do_step(boost::bind(&mrac_pid::model, this, bph::_1, bph::_2, bph::_3),
                 y, cim.t, time_step_rk4_);
     
@@ -910,7 +845,7 @@ void mrac_pid::run(const double time_step_rk4_) {
     cim.alg_duration = std::chrono::duration_cast<std::chrono::microseconds>(
                             cim.alg_end_time - cim.alg_start_time).count();
 
-    // 10. Log the Data after all the calculataions
+    // 9. Log the Data after all the calculataions
     logger.logLogData();
 
     // optional debug

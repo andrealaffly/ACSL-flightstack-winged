@@ -31,7 +31,7 @@
  * 
  * Description: MRAC_PID controller class members.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*
@@ -53,6 +53,7 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
 #include "Eigen/Dense"
 #include <chrono>
 #include "qrbp.hpp"                         // Header file for vehicle specific information and some other functions
+#include "aero_qrbp.hpp"                    // Header file for aerodynamic specific information and some other functions
 
 using namespace Eigen;
 namespace _qrbp_{
@@ -83,7 +84,7 @@ struct controller_internal_parameters
   Matrix<double, 3, 3> Gamma_r_tran;
   Matrix<double, 30, 30> Gamma_Theta_tran;
 
-  // Transnaltional parameters Lyapunov equation
+  // Translational parameters Lyapunov equation
   Matrix<double, 6, 6> Q_tran;
   Matrix<double, 6, 6> P_tran;
 
@@ -164,59 +165,9 @@ struct controller_internal_parameters
 // Structure for all the aerodynamic members of the controller
 struct controller_internal_members_aero
 {
-  // Square of the norm of velocity
-  double v_norm_sq;
-
-  // Aero angles 
-  AeroAngles angles;
-
-  // Aerodynamic lift coefficient for upper wing
-  double Cl_up;
-
-  // Aerodynamic lift coefficient for lower wing
-  double Cl_lw;
-
-  // Aerodynamic lift coefficient for left stabilizer
-  double Cl_lt;
-
-  // Aerodynamic lift coefficient for right stabilizer
-  double Cl_rt;
-
-  // Aerodynamic drag coefficient for upper wing
-  double Cd_up;
-
-  // Aerodynamic drag coefficient for lower wing
-  double Cd_lw;
-
-  // Aerodynamic drag coefficient for left stabilizer
-  double Cd_lt;
-
-  // Aerodynamic drag coefficient for right stabilizer
-  double Cd_rt;
-
-  // Aerodynamic moment coefficient for upper wing
-  double Cm_up;
-
-  // Aerodynamic moment coefficient for lower wing
-  double Cm_lw;
-
-  // Aerodynamic moment coefficient for left stabilizer
-  double Cm_lt;
-
-  // Aerodynamic moment coefficient for right stabilizer
-  double Cm_rt;
-
-  // Aerodynamic Forces
-  Matrix<double, 3,1> F_aero;
-
-  // Aero Baseline dynamic inversion - outer loop
-  Matrix<double, 3,1> outer_loop_dynamic_inv;
-
-  // Aerodynamic Moments
-  Matrix<double, 3,1> M_aero;
-
-  // Aero Baseline dynamic inversion - inner loop
-  Matrix<double, 3,1> inner_loop_dynamic_inv;
+  AeroStates states;
+  AeroCoeff coeff;
+  AeroDynamicMembers dyn;
 };
 
 // Structure for the members that are mapped to the rk4 vector after integration
@@ -225,7 +176,7 @@ struct controller_integrated_state_members
   // Translational Integral error
   Matrix<double, 3, 1> e_tran_pos_I;
 
-  // Translational Integral error between refrence model and user defined trajectory
+  // Translational Integral error between reference model and user defined trajectory
   Matrix<double, 3, 1> e_tran_pos_ref_I;
 
   // States for filter
@@ -288,16 +239,16 @@ struct controller_internal_members
   controller_internal_members_aero aero;
 
   // Rotation matrices
-  Matrix<double, 3,3> R_Jq_I;
-  Matrix<double, 3,3> R_I_Jq;
-  Matrix<double, 3,3> R_Jb_I;
-  Matrix<double, 3,3> R_I_Jb;
-  Matrix<double, 3,3> R_W_Jq;
+  Matrix<double, 3, 3> R_Jq_I;
+  Matrix<double, 3, 3> R_I_Jq;
+  Matrix<double, 3, 3> R_Jb_I;
+  Matrix<double, 3, 3> R_I_Jb;
+  Matrix<double, 3, 3> R_W_Jq;
 
   // Jacobian matrices
-  Matrix<double, 3,3> Jacobian;
-  Matrix<double, 3,3> Jacobian_inv;
-  Matrix<double, 3,3> Jacobian_dot;
+  Matrix<double, 3, 3> Jacobian;
+  Matrix<double, 3, 3> Jacobian_inv;
+  Matrix<double, 3, 3> Jacobian_dot;
   
   // Translational User Commands
   Matrix<double, 3, 1> r_user;

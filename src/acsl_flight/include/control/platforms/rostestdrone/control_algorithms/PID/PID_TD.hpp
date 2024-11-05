@@ -33,7 +33,7 @@
  *              for the basic functionality that is to be used for all 
  *              control algorithms.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*               _           _      _                      
@@ -65,7 +65,7 @@ class pid : public controller_base
 {
   public:
     // Constructor
-    pid(flight_params* p);
+    pid(flight_params* p, const std::string & controller_log_dir_);
 
     // Destructor
     ~pid();
@@ -105,6 +105,9 @@ class pid : public controller_base
     void read_params(const std::string& jsonFile); 
     void init();
 
+    // Piecewise polynomial trajectory object
+    piecewise_polynomial_trajectory ud;
+
     // Initialize the logger
     pid_logger logger;
 
@@ -130,9 +133,6 @@ class pid : public controller_base
 
     // Define the internal integrated state members of the controller
     controller_integrated_state_members csm; 
-
-    // Piecewise polynomial trajectory object
-    piecewise_polynomial_trajectory ud;
 
   private:
     // Function to compute the translational control in the inertial frame

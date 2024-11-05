@@ -33,7 +33,7 @@
  *              class for logging and takes in the internal members for 
  *              MRAC_PID.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*
@@ -51,8 +51,11 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
 #ifndef CONTROLLERS_MRAC_PID_LOGGER_HPP_
 #define CONTROLLERS_MRAC_PID_LOGGER_HPP_
 
-#include "MRAC_PID_members.hpp"            // Include for all the members of the PID class
+#include "MRAC_PID_members.hpp"       // Include for all the members of the PID class
 #include "flight_log.hpp"             // Include for the virtual class for logging
+#include "global_helpers.hpp"         // Include for the logging functionality
+
+using namespace _flightstack_;
 
 using namespace _flight_log_;
 
@@ -63,7 +66,10 @@ class mrac_pid_logger : public blackbox
 {
 public:
     // Constructor
-    mrac_pid_logger(controller_internal_members* cim, controller_integrated_state_members* csm, Eigen::Vector<float, 8>* control_input);
+    mrac_pid_logger(controller_internal_members* cim, 
+                    controller_integrated_state_members* csm,
+                    Eigen::Vector<float, 8>* control_input,
+                    const std::string & controller_log_dir_);
 
     // Implementing functions from blackbox
     void logInitHeaders();
@@ -79,6 +85,9 @@ private:
 
     // Control input vector
     Eigen::Vector<float, 8>* cntrl_input;
+
+    // Global Log directory
+    std::string flight_run_log_directory;
 };
 
 } // namespace _mrac_pid_

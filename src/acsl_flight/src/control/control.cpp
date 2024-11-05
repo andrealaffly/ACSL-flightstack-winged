@@ -31,7 +31,7 @@
  * 
  * Description: Contorl node definition. Runs all the control algorithms. Adds as a hub for all the control actions.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #include "control.hpp"
@@ -41,8 +41,8 @@ namespace _control_
     /***********************************************************************************************/
     /*                                  NODE CONSTRUCTOR                                           */
     /***********************************************************************************************/
-    controlNode::controlNode(vehicle_states* d, flight_params* p)
-    : rclcpp::Node("control_node"), vehicle_ptr(d), flight_params_ptr(p), controller_(p)
+    controlNode::controlNode(vehicle_states* d, flight_params* p, const std::string & global_log_dir)
+    : rclcpp::Node("control_node"), vehicle_ptr(d), flight_params_ptr(p), controller_(p, global_log_dir)
     {
         /// Set offboard flag to 0.
         offboard_flag_ = 0; 
@@ -76,7 +76,7 @@ namespace _control_
         timestamp_initial_ = this->get_clock()->now().seconds();     
 
         /// Print that control node started at initial timestamp
-        RCLCPP_INFO(this->get_logger(), "Control Node Started at ROS2 Node time: %lu", timestamp_initial_.load());
+        RCLCPP_INFO(this->get_logger(), "CONTROL NODE STARTED AT ROS2 NODE TIME: %lu", timestamp_initial_.load());
     }
 
     /***********************************************************************************************/
@@ -91,7 +91,9 @@ namespace _control_
         vehicle_ptr->set_controltime(time_current_);
 
         // Output the time to the screen
-        std::cout << time_current_ << std::endl;
+        FLIGHTSTACK_INFO_STREAM_NO_TAG("t:", time_current_, 1000);
+        // std::cout << COLOR_GREEN << "\r" << "TIME: " << time_current_ << "\t" << COLOR_RESET << std::flush;
+
     }
 
     void controlNode::publish_vehicle_command(uint16_t command, float param1, float param2)
@@ -128,7 +130,7 @@ namespace _control_
     {
         publish_vehicle_command(px4_msgs::msg::VehicleCommand::VEHICLE_CMD_COMPONENT_ARM_DISARM, DISARM_ACSL_VEH);
 
-        RCLCPP_INFO(this->get_logger(), "Disarm command send");
+        if(!disarm_info_bool_) { RCLCPP_INFO(this->get_logger(), "Disarm command send"); disarm_info_bool_ = true;}
     }
 
     /// Function to publish offboard control mode
@@ -180,11 +182,11 @@ namespace _control_
         // -> publish the message   
         publisher_actuator_motors_->publish(msg);
 
-        // Print the control input
-        std::cout << "t1: " << t1 << ", " 
-                  << "t2: " << t2 << ", " 
-                  << "t3: " << t3 << ", " 
-                  << "t4: " << t4 << std::endl;
+        // Print the control input - TESTING
+        // std::cout << "t1: " << t1 << ", " 
+        //           << "t2: " << t2 << ", " 
+        //           << "t3: " << t3 << ", " 
+        //           << "t4: " << t4 << std::endl;
     }
 
     /// Function to print the vehicle states values to the screen
@@ -337,7 +339,7 @@ namespace _control_
             // -------------------------------------------------------------
             default:
                 // Error message for invalid controller choice
-                std::cerr << "Error: Contol State Machine entered an invalid state. RUN!!!!!" << std::endl;
+                FLIGHTSTACK_ERROR("Error: Contol State Machine entered an invalid state. RUN!!!!!");
                 // Terminate the program
                 std::exit(EXIT_FAILURE);
                 break;

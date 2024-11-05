@@ -31,7 +31,7 @@
  * 
  * Description: Getter and setter functions for the vehicle class object.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #include "vehicle_class.hpp"

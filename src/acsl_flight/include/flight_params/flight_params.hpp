@@ -32,7 +32,7 @@
  * Description: Header file for the main flight parameters that will be
  *              used for the entire controller.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef FLIGHT_PARAMS_HPP_
@@ -41,8 +41,23 @@
 #include <string>
 #include <fstream>
 #include "nlohmann/json.hpp"  // For parsing json for the flight parameters
+#include <iostream>
+#include <cstdlib>            // For std::exit
+#include <unistd.h>           // FOr usleep function
+#include "px4_defines.hpp"    // Include for the PX4_define terms in a central location
+#include "global_helpers.hpp" // Include for the flightstack global functions
 
+// Table Column width character for alignment
+#define COL_WIDTH 10                  // Set column width in characters for table alignment
+
+// Define for countdown if no vio or mocap is present 
+#define COUNTDOWN_TO_FLIGHT_NO_VISION 4
+
+// for the json functionality
 using json = nlohmann::json;
+
+// Use the namespace _flightstack_ for the global functions
+using namespace _flightstack_;
 
 // Struct containing the trajectory info coming from the .json file 
 struct PiecewisePolynomialTrajectoryInfo {
@@ -59,6 +74,10 @@ struct PiecewisePolynomialTrajectoryInfo {
 // If you are adding more parameters to your flight in /src/acsl_flight/params/flight_params.json,
 // please include it here and modify as needed in the flight_main.cpp/hpp.
 struct flight_params {
+
+    // Piecewise Polynomial Trajectory Info
+    PiecewisePolynomialTrajectoryInfo traj_params;
+
     // 1. Flight Arm time
     double arm_time;
 
@@ -74,14 +93,18 @@ struct flight_params {
     // 5. hover after trajectory is done in seconds
     double hover_time;
 
-    // 6. Type of State Estimation
+    // 6. EFK2 Fusion of VICON Mocap
     bool mocap;
 
-    // 7. Controller rate - Specified as per loop run value in ms.
-    int controller_rate;
+    // 7. EKF2 Fusion of VIO T265
+    bool vio;
 
-    // 8. Piecewise Polynomial Trajectory Info
-    PiecewisePolynomialTrajectoryInfo traj_params;
+    // 8. EKF2 Fusion of RTK-GPS
+    //    Not used in the code as of writing but just to inform the user that gps is on
+    bool gps;
+
+    // 8. Controller rate - Specified as per loop run value in ms.
+    int controller_rate;
 
     // 9. Landing Start time
     double landing_start_time;
@@ -90,7 +113,7 @@ struct flight_params {
     double landing_end_time;
 
     // 11. Flight End time
-    double end_time;       
+    double end_time;      
 };
 
 namespace _flight_params_
@@ -106,6 +129,10 @@ public:
 
     // Method to read the trajecotry info from a JSON file
     PiecewisePolynomialTrajectoryInfo readTrajectoryConfig(const std::string& fileName);
+
+    // Method to print the flight parameters at the start of the code
+    void printParameterTable(const flight_params& run_params);
+    
 };
 
 }   // namespace _flight_params_
