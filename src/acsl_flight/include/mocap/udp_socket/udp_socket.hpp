@@ -50,7 +50,7 @@
  * 
  * Description: Class declaration for UDP socket creation using IoContext.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef UDP_SOCKET_HPP_
@@ -64,10 +64,14 @@
 #include <system_error>
 
 #include "io_context.hpp"
+#include "global_helpers.hpp" // Include for the flightstack global functions
 
 using asio::ip::udp;
 using asio::ip::address;
 using _drivers_::_common_::IoContext;
+
+// Use the namespace _flightstack_ for the global functions
+using namespace _flightstack_;
 
 namespace _drivers_
 {

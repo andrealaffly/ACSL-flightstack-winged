@@ -31,44 +31,35 @@
  * 
  * Description: Main function to initiate ROS2.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #include "flight_main.hpp"
+#include "global_helpers.hpp"
 
 using namespace _flight_bridge_;
+using namespace _flightstack_;
 
 
 int main(int argc, char * argv[])
 {
 
-    std::cout << "===================== STARTING ACSL FLIGHTSTACK ===================== \n" << std::endl;
-
-    // Parse the flight parameter settings for the flight options.
-    // OPTIONS: 
-    // 1. Arm Time
-    // 2. Minimum Thrust After Arm
-    // 3. Flight Start time
-    // 4. Flight End time
-    // 5. Type of State Estimation
-    // 6. Type of Controller used in flight
-    // 7. Controller Period
+    std::cout << COLOR_GREEN 
+              << "\n"
+              << "===================== STARTING-ACSL-FLIGHTSTACK-WINGED =====================" 
+              << COLOR_RESET << std::endl;
     
     // Intialzie the reader object for reading the flight parameters
     FlightConfigReader reader;  
+
     // Read in the flight parameters
     flight_params run_params = reader.readFlightConfig("./src/acsl_flight/params/flight_params/flight_main_params.json");
 
-    std::cout << "Flying Under Parameters: " << std::endl;
-    std::cout << "Arm Time: " << run_params.arm_time << std::endl;
-    std::cout << "Start Time: " << run_params.start_time << std::endl;
-    std::cout << "End Time: " << run_params.end_time << std::endl;
-    std::cout << "Mocap: " << run_params.mocap << std::endl;
-    std::cout << "controller_period: " << run_params.controller_rate << "ms" << std::endl;
-    std::cout << "\n" << std::endl;
+    // Print the flight parameter table
+    reader.printParameterTable(run_params);
 
     // Initialize ROS2
-    std::cout << "Initializing ROS2" << std::endl;
+    FLIGHTSTACK_INFO("Initializing ROS2");
     rclcpp::init(argc, argv);    
 
     // Initialize flight_bridge
@@ -77,5 +68,6 @@ int main(int argc, char * argv[])
     // Intialize the nodes
     flight.init();
    
+    // ROS2 housekeeping
     rclcpp::shutdown();
 }

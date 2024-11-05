@@ -33,7 +33,7 @@
  *              controller_base class for the basic functionality 
  *              that is to be used for all control algorithms.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*
@@ -70,7 +70,7 @@ class pid_omega : public controller_base
 {
     public:
         // Constructor
-        pid_omega(flight_params* p);
+        pid_omega(flight_params* p, const std::string & controller_log_dir_);
 
         // Destructor 
         ~pid_omega();
@@ -110,6 +110,9 @@ class pid_omega : public controller_base
         void read_params(const std::string& jsonFile); 
         void init();
 
+        // Piecewise polynomial trajectory object
+        piecewise_polynomial_trajectory ud;
+
         // Initialize the logger
         pid_omega_logger logger;
 
@@ -133,19 +136,7 @@ class pid_omega : public controller_base
         // Define the internal integrated state members of the controller
         controller_integrated_state_members csm; 
 
-        // Piecewise polynomial trajectory object
-        piecewise_polynomial_trajectory ud;
-
     private:
-        // Function to compute the aerodynamic coefficients 
-        void compute_aero_coefficients();
-
-        // Function to compute the aerodynamic forces in the wind frame
-        void compute_aerodynamic_forces();
-
-        // Function to compute the aerodynamic moments in the body frame
-        void compute_aerodynamic_moments();
-
         // Function to compute the translational control in the inertial frame
         void compute_translational_control_in_I();
 

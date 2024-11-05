@@ -24,7 +24,7 @@
 
 /***********************************************************************************************************************
  * File:        piecewise_polynomial_trajectory.hpp
- * Author:      Mattia Gramuglia
+ * Author:      Mattia Gramuglia, Giri Mugundan Kumar
  * Date:        June 27, 2024
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
@@ -34,7 +34,7 @@
  *              minimum jerk trajectory. Core functionality was written
  *              by Matti and modified by Giri to fit acsl_flight.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #include "piecewise_polynomial_trajectory.hpp"
@@ -112,14 +112,11 @@ void piecewise_polynomial_trajectory::setPolynomialCoefficientMatrices()
     jerk_coef_y_ = polyDerMatrix(acceleration_coef_y_);
     jerk_coef_z_ = polyDerMatrix(acceleration_coef_z_);
 
-    // // Debug Message
-    // std::cout << "Flying with position coeffs: " << std::endl;
-    // std::cout << "coefficients x: " << std::endl;
-    // std::cout << position_coef_x_ << std::endl;
-    // std::cout << "coefficients y: " << std::endl;
-    // std::cout << position_coef_y_ << std::endl;
-    // std::cout << "coefficients z: " << std::endl;
-    // std::cout << position_coef_z_ << std::endl;
+    // Debug Message
+    // FLIGHTSTACK_INFO("Flying with position coeffs: ");
+    // FLIGHTSTACK_INFO_MATRIX("coefficients x: ", position_coef_x_);
+    // FLIGHTSTACK_INFO_MATRIX("coefficients Y: ", position_coef_y_);
+    // FLIGHTSTACK_INFO_MATRIX("coefficients Z: ", position_coef_z_);
 }
 
 // Adjusts the time to be fed to the various polynomials and identifies the segment of the trajectory

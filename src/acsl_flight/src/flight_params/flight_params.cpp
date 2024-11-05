@@ -32,7 +32,7 @@
  * Description: Define file for the main flight parameters that will be
  *              used for the entire controller.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #include "flight_params.hpp"
@@ -53,6 +53,7 @@ namespace _flight_params_
         read.user_defined_trajectory_file = j["FlightMainParams"]["user_defined_trajectory_file"].get<std::string>();
         read.hover_time = j["FlightMainParams"]["hover_after_trajectory_time_seconds"];
         read.mocap = j["FlightMainParams"]["mocap"];
+        read.vio = j["FlightMainParams"]["vio"];
         read.controller_rate = j["FlightMainParams"]["controller_rate"];
 
         // Read in the trajectory info from the trajectory file.
@@ -70,7 +71,83 @@ namespace _flight_params_
         // Disarm after the flight ends. this will be a second after landing.
         read.end_time = read.landing_end_time + 1.0;
 
+        // Error Statement - If Mocap is true and vio is also true stop the code
+        if (read.vio && read.mocap)
+        {
+            FLIGHTSTACK_ERROR("Both VIO and Mocap are active. Pick one fusion method. Terminating program.");            
+        }
+        else if (!read.vio && !read.mocap)
+        {
+            FLIGHTSTACK_WARNING("NO VIO and NO Mocap threads active. Make sure your GPS is functional.");
+
+            // sleep for 4s so that the user can see the warning message
+            // Countdown loop till flight start
+            for (int i = COUNTDOWN_TO_FLIGHT_NO_VISION; i > 0; --i) { 
+                std::cout << COLOR_ORANGE << "\r" << "FLIGHT STARTS IN: " << i << COLOR_RESET << std::flush;   // Overwrite the line
+                usleep(1000000); // Sleep for 1,000,000 microseconds (1 second)
+            }
+        }
+
         return read;
+    }
+
+    // Define the paramter print table function
+    void FlightConfigReader::printParameterTable(const flight_params& run_params)
+    {
+        // Set table formatting
+        std::cout << "\n" << std::endl;                 // Go to newline 
+        std::cout << std::left << std::setw(COL_WIDTH); // Set column width for alignment
+
+        // Print the table with color coding
+        // PARAMETERS: 
+        // 1. Arm Time
+        // 2. Minimum Thrust After Arm
+        // 3. Flight Start time
+        // 4. Trajectory to be used
+        // 5. Hover time after trajectory is completed
+        // 6. Mocap for Fusion
+        // 7. VIO for Fusion
+        // 8. Controller Period
+        // 9. Landing Start Time
+        // 10. Landing End Time
+        // 11. Total Flight time
+        std::cout << COLOR_ORANGE << "FLIGHT PARAMETERS IN USE:" << COLOR_RESET << std::endl;
+
+        std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "VEHICLE ARM TIME:" << COLOR_RESET
+                  << COLOR_GREEN << run_params.arm_time << "s" COLOR_RESET << std::endl;
+
+        std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "THRUST AFTER ARM:" << COLOR_RESET
+                  << COLOR_GREEN << run_params.min_thrust_after_arm << COLOR_RESET << std::endl;                  
+
+        std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "FLIGHT START TIME:" << COLOR_RESET
+                  << COLOR_GREEN << run_params.start_time << "s" COLOR_RESET << std::endl;
+
+        std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "TRAJECTORY FILE:" << COLOR_RESET
+                  << COLOR_GREEN << run_params.user_defined_trajectory_file << COLOR_RESET << std::endl;
+
+        std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "HOVER TIME AFTER TRAJECTORY:" << COLOR_RESET
+                  << COLOR_GREEN << run_params.hover_time << "s" COLOR_RESET << std::endl;
+
+        std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "MOCAP:" << COLOR_RESET
+                  << (run_params.mocap ? COLOR_GREEN : COLOR_RED)
+                  << (run_params.mocap ? "YES" : "NO") << COLOR_RESET << std::endl;
+
+        std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "VIO:" << COLOR_RESET
+                  << (run_params.vio ? COLOR_GREEN : COLOR_RED)
+                  << (run_params.vio ? "YES" : "NO") << COLOR_RESET << std::endl;
+
+        std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "CONTROLLER PERIOD:" << COLOR_RESET
+                  << COLOR_GREEN << run_params.controller_rate << "ms" << COLOR_RESET << std::endl;
+
+        std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "LANDING START TIME:" << COLOR_RESET
+                  << COLOR_GREEN << run_params.landing_start_time << "s" COLOR_RESET << std::endl;
+
+        std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "LANDING END TIME:" << COLOR_RESET
+                  << COLOR_GREEN << run_params.landing_end_time << "s" COLOR_RESET << std::endl;
+
+        std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "TOTAL FLIGHT TIME:" << COLOR_RESET
+                  << COLOR_GREEN << run_params.end_time << "s" COLOR_RESET << std::endl;
+
     }
 
     // Define the user defined Piecewise Polynomial trajectory reader function
@@ -104,4 +181,5 @@ namespace _flight_params_
 
         return piecewise_polynomial_trajectory_info_;
     }
+
 }

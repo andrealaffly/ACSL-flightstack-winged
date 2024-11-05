@@ -24,7 +24,7 @@
 
 /***********************************************************************************************************************
  * File:        piecewise_polynomial_trajectory.hpp
- * Author:      Mattia Gramuglia
+ * Author:      Mattia Gramuglia, Giri Mugundan Kumar
  * Date:        June 27, 2024
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
@@ -34,7 +34,7 @@
  *              minimum jerk trajectory. Core functionality was written
  *              by Matti and modified by Giri to fit acsl_flight.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef PIECEWISE_POLYNOMIAL_TRAJECTORY_HPP_
@@ -42,8 +42,12 @@
 
 #include "user_defined_trajectory_base.hpp" // Include for the base trajectory class
 #include "flight_params.hpp"                // Include for the flight params
+#include "global_helpers.hpp"               // Include for the flightstack global functions
 
 using namespace _user_defined_trajectory_base_;
+
+// Use the namespace _flightstack_ for the global functions
+using namespace _flightstack_;
 
 namespace _piecewise_polynomial_trajectory_{
 

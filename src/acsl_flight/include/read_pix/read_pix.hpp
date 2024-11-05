@@ -31,7 +31,7 @@
  * 
  * Description: Class declaration for reading pixhawk data.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef READ_PIX_HPP_
@@ -46,9 +46,9 @@
 #include <functional>
 #include <atomic>
 
-#include <Eigen/Dense>         // For quaternion operation
+#include <Eigen/Dense>                        // For quaternion operation
 
-#include "rclcpp/rclcpp.hpp"   // ROS2 Client Library C++ header
+#include "rclcpp/rclcpp.hpp"                  // ROS2 Client Library C++ header
 #include "std_msgs/msg/int32.hpp"
 #include "px4_msgs/msg/vehicle_odometry.hpp"
 #include "vehicle_class.hpp"

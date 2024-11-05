@@ -31,7 +31,7 @@
  * 
  * Description: Header for the vehicle class object. This stores all the data of the states for any vehicle.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef VEHICLE_CLASS_HPP_

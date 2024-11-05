@@ -31,7 +31,7 @@
  * 
  * Description: PID with angular velocities controller class members.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*
@@ -52,6 +52,7 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
 #include "Eigen/Dense"
 #include <chrono>
 #include "qrbp.hpp"                   // Header file for vehicle specific information and some other functions
+#include "aero_qrbp.hpp"              // Header file for aerodynamic specific information and some other functions
 
 using namespace Eigen;
 namespace _qrbp_{
@@ -60,7 +61,7 @@ namespace _pid_omega_{
 // Structure for all parameter members of the controller
 struct controller_internal_parameters
 {
-        // Proportional Gains for translational
+    // Proportional Gains for translational
     Matrix<double, 3, 3> Kp_tran;
 
     // Integral Gains for translational
@@ -83,59 +84,9 @@ struct controller_internal_parameters
 // Structure for all the aerodynamic members of the controller
 struct controller_internal_members_aero
 {
-  // Square of the norm of velocity
-  double v_norm_sq;
-
-  // Aero angles 
-  AeroAngles angles;
-
-  // Aerodynamic lift coefficient for upper wing
-  double Cl_up;
-
-  // Aerodynamic lift coefficient for lower wing
-  double Cl_lw;
-
-  // Aerodynamic lift coefficient for left stabilizer
-  double Cl_lt;
-
-  // Aerodynamic lift coefficient for right stabilizer
-  double Cl_rt;
-
-  // Aerodynamic drag coefficient for upper wing
-  double Cd_up;
-
-  // Aerodynamic drag coefficient for lower wing
-  double Cd_lw;
-
-  // Aerodynamic drag coefficient for left stabilizer
-  double Cd_lt;
-
-  // Aerodynamic drag coefficient for right stabilizer
-  double Cd_rt;
-
-  // Aerodynamic moment coefficient for upper wing
-  double Cm_up;
-
-  // Aerodynamic moment coefficient for lower wing
-  double Cm_lw;
-
-  // Aerodynamic moment coefficient for left stabilizer
-  double Cm_lt;
-
-  // Aerodynamic moment coefficient for right stabilizer
-  double Cm_rt;
-
-  // Aerodynamic Forces
-  Matrix<double, 3,1> F_aero;
-
-  // Aero Baseline dynamic inversion - outer loop
-  Matrix<double, 3,1> outer_loop_dynamic_inv;
-
-  // Aerodynamic Moments
-  Matrix<double, 3,1> M_aero;
-
-  // Aero Baseline dynamic inversion - inner loop
-  Matrix<double, 3,1> inner_loop_dynamic_inv;
+  AeroStates states;
+  AeroCoeff coeff;
+  AeroDynamicMembers dyn;
 };
 
 // Structure for the members that are mapped tot he rk4 vector after integration
@@ -176,7 +127,7 @@ struct controller_internal_members
     Matrix<double, 3,3> R_W_J;
 
     // Jacobian matrices
-    Matrix<double, 3,3> Jacobian_d;
+    Matrix<double, 3,3> Jacobian;
 
     // Tranlational User Commands
     Matrix<double, 3, 1> r_user;
@@ -227,6 +178,9 @@ struct controller_internal_members
 
     // Euler Angles 
     Matrix<double, 3, 1> eta_rot;
+
+    // Quaternion
+    Quaterniond q;
 
     // Angular velocities 
     Matrix<double, 3, 1> omega_rot;

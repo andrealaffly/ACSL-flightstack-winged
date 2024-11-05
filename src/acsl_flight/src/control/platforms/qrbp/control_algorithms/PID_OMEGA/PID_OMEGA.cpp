@@ -30,10 +30,10 @@
  *              a.lafflitto@vt.edu
  * 
  * Description: PID  with angular velocities for the QRBP. Inherts the
- *              class controller_base for thebasic functionality that 
+ *              class controller_base for the basic functionality that 
  *              is to be used for all control algorithms.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*
@@ -54,7 +54,8 @@ namespace _qrbp_{
 namespace _pid_omega_{
 
 // Constructor - Take care to initialize the logger
-pid_omega::pid_omega(flight_params* p) : logger(&cim, &csm, &control_input), controller_base(p), ud(p) {
+pid_omega::pid_omega(flight_params* p, const std::string & controller_log_dir_) :
+           controller_base(p), ud(p), logger(&cim, &csm, &control_input, controller_log_dir_) {
 
     // Reading in the parameters
     read_params("./src/acsl_flight/params/control_algorithms/qrbp/PID_OMEGA/gains_PID_OMEGA.json");
@@ -95,64 +96,6 @@ void pid_omega::init(){
     dy.fill(0.0);
 }
 
-void pid_omega::compute_aero_coefficients()
-{
-    cim.aero.Cl_up = compute_cl(cim.aero.angles.alpha_up);
-    cim.aero.Cl_lw = compute_cl(cim.aero.angles.alpha_lw);
-    cim.aero.Cl_lt = compute_cl(cim.aero.angles.beta_lt);
-    cim.aero.Cl_rt = compute_cl(cim.aero.angles.beta_rt);
-
-    cim.aero.Cd_up = compute_cd(cim.aero.angles.alpha_up);
-    cim.aero.Cd_lw = compute_cd(cim.aero.angles.alpha_lw);
-    cim.aero.Cd_lt = compute_cd(cim.aero.angles.beta_lt);
-    cim.aero.Cd_rt = compute_cd(cim.aero.angles.beta_rt);
-
-    cim.aero.Cm_up = compute_cm(cim.aero.angles.alpha_up);
-    cim.aero.Cm_lw = compute_cm(cim.aero.angles.alpha_lw);
-    cim.aero.Cm_lt = compute_cm(cim.aero.angles.beta_lt);
-    cim.aero.Cm_rt = compute_cm(cim.aero.angles.beta_rt);
-}
-
-// Function to compute the aerodynamic forces in the wind frame
-void pid_omega::compute_aerodynamic_forces()
-{
-    double dynamic_pressure_wings = DYN_PRESS_COEFF_W*cim.aero.v_norm_sq;
-    double dynamic_pressure_stabs = DYN_PRESS_COEFF_S*cim.aero.v_norm_sq;
-
-    cim.aero.F_aero(0) =  -1*(dynamic_pressure_wings*(cim.aero.Cl_up + cim.aero.Cl_lw));
-    cim.aero.F_aero(1) = -1*(dynamic_pressure_wings*(cim.aero.Cd_up + cim.aero.Cd_lw)
-                        + dynamic_pressure_stabs*(cim.aero.Cd_lt  +cim.aero.Cd_rt));
-    cim.aero.F_aero(2) = -1*(dynamic_pressure_stabs*(cim.aero.Cl_lt + cim.aero.Cl_rt));
-
-    // We can directly always use the quadcopter frame as the outerloop does not switch.
-    cim.aero.outer_loop_dynamic_inv(0) = cim.aero.F_aero(0);
-    cim.aero.outer_loop_dynamic_inv(1) = cim.aero.F_aero(1);
-    cim.aero.outer_loop_dynamic_inv(2) = cim.aero.F_aero(2);
-}
-
-// Function to compute the aerodynamic moments in the quadcopter body frame
-void pid_omega::compute_aerodynamic_moments()
-{
-    double dynamic_pressure_mom_wings = DYN_PRESS_COEFF_W*CHORD_W*cim.aero.v_norm_sq;
-    double dynamic_pressure_mom_stabs = DYN_PRESS_COEFF_S*CHORD_S*cim.aero.v_norm_sq;
-
-    double calpha = cos(cim.aero.angles.alpha);
-    double salpha = sin(cim.aero.angles.alpha);
-
-    double cbeta = cos(cim.aero.angles.beta);
-    double sbeta = sin(cim.aero.angles.beta);
-
-    cim.aero.M_aero(0) = dynamic_pressure_mom_stabs*(cim.aero.Cm_lt + cim.aero.Cm_rt) 
-                    - 2*LZ_S*(cim.aero.F_aero(1)*cbeta + cim.aero.F_aero(0)*sbeta);
-    cim.aero.M_aero(1) = dynamic_pressure_mom_wings*(cim.aero.Cm_lw + cim.aero.Cm_up)
-                    - 2*LZ_S*(cim.aero.F_aero(2)*calpha + cim.aero.F_aero(0)*cbeta*salpha 
-                    - cim.aero.F_aero(1)*salpha*sbeta);
-    cim.aero.M_aero(2) = 0.0;
-
-    cim.aero.inner_loop_dynamic_inv = cim.aero.M_aero;
-}
-
-
 void pid_omega::update(double time, 
                        double x,
                        double y,
@@ -182,6 +125,12 @@ void pid_omega::update(double time,
     cim.eta_rot << roll, pitch, yaw;
     cim.omega_rot << w_x, w_y, w_z;
 
+    // Assign the quaternions
+    cim.q.w() = q0;
+    cim.q.z() = q1;
+    cim.q.y() = q2;
+    cim.q.z() = q3;
+
     // 2. Get the reference trajectory ---------------------------------------------
     ud.updateUserDefinedTrajectory(time);
     cim.r_user = ud.getUserDefinedPosition();
@@ -204,25 +153,21 @@ void pid_omega::update(double time,
     cim.x_tran_vel_J = cim.R_I_J * cim.x_tran_vel;
 
     // 6. Compute the square of the norm of velocity in the body frame - it is the same for both quadcopter and biplane
-    cim.aero.v_norm_sq =  cim.x_tran_vel_J(0) * cim.x_tran_vel_J(0) 
-                          + cim.x_tran_vel_J(1) * cim.x_tran_vel_J(1) 
-                          + cim.x_tran_vel_J(2) * cim.x_tran_vel_J(2);
+    //    amd compute the aerodynamic angles
+    cim.aero.states = computeAeroStatesNACA0012Quad(cim.x_tran_vel_J(0), cim.x_tran_vel_J(1), cim.x_tran_vel_J(2),
+                                                    cim.omega_rot(0),  cim.omega_rot(1),  cim.omega_rot(2));
 
-    // 7. Compute the aerodynamic angles
-    cim.aero.angles = computeAeroAnglesNACA0012Quad(cim.x_tran_vel_J(0), cim.x_tran_vel_J(1), cim.x_tran_vel_J(2),
-                                                     cim.omega_rot(0),  cim.omega_rot(1),  cim.omega_rot(2));
+    // 7. Compute the Direction Cosine Matrix in the quadcopter frame at the center of gravity
+    cim.R_W_J = aeroDCMQuadNED(cim.aero.states.alpha, cim.aero.states.beta);
     
-
-    // 8. Compute the Direction Cosine Matrix in the quadcopter frame at the center of gravity
-    cim.R_W_J = aeroDCMQuadNED(cim.aero.angles.alpha, cim.aero.angles.beta);
-
-    // 9. Compute the aerodynamic coefficeints    
-    compute_aero_coefficients();
+    // 8.  Compute the aerodynamic coefficeints    
+    cim.aero.coeff = compute_aero_coefficients(cim.aero.states);
 
     // 10. Assign the values from the integrator ------------------------------------
     assign_from_rk4();
 }
 
+// Function to assign elements from the rk4 integrator
 void pid_omega::assign_from_rk4()
 {
     //------------ assign after integration  ------------//
@@ -236,6 +181,7 @@ void pid_omega::assign_from_rk4()
     assignElementsToMembers(csm.e_rot_eta_I, y, index);
 }
 
+// Model function for integration
 void pid_omega::model([[maybe_unused]] const rk4_array<double, NSI> &y, rk4_array<double, NSI> &dy, [[maybe_unused]] const double t)
 {
     //------------ Fill up the dy for integration  ------------//
@@ -249,6 +195,7 @@ void pid_omega::model([[maybe_unused]] const rk4_array<double, NSI> &y, rk4_arra
     assignElementsToDxdt(cim.e_rot_eta, dy, index);
 }
 
+// Function to compute the outerloop control in I
 void pid_omega::compute_translational_control_in_I()
 {
     // Compute the error in the states
@@ -261,10 +208,11 @@ void pid_omega::compute_translational_control_in_I()
                                    - cip.Ki_tran * csm.e_tran_pos_I
                                    + cim.r_ddot_user );
 
-    // Compute with the dynamic inversion
-    cim.mu_tran_I << cim.mu_tran_baseline - MASS * G * e3_basis  - cim.R_J_I*cim.R_W_J*cim.aero.outer_loop_dynamic_inv;
+    // Compute with the dynamic inversion without aerodynamics
+    cim.mu_tran_I << cim.mu_tran_baseline - MASS * G * e3_basis;
 }
 
+// Compute the orientation commands and the desired total thrust
 void pid_omega::compute_u1_eta_d()
 {
     // Compute the virtual forces in J
@@ -294,11 +242,11 @@ void pid_omega::compute_u1_eta_d()
     cim.eta_rot_rate_d(0) = C_filter_roll_ref * csm.state_roll_d_filter;    
     cim.eta_rot_rate_d(1) = C_filter_pitch_ref * csm.state_pitch_d_filter;
 
-    // Compute the Jacobian with the desired angles
-    cim.Jacobian_d = jacobianMatrix(cim.eta_rot(0), cim.eta_rot(1));
+    // Compute the Jacobian with the current orientation
+    cim.Jacobian = jacobianMatrix(cim.eta_rot(0), cim.eta_rot(1));
 
     // Compute the desired angular velocities
-    cim.omega_rot_d << cim.Jacobian_d * cim.eta_rot_rate_d;
+    cim.omega_rot_d << cim.Jacobian * cim.eta_rot_rate_d;
 
     // Compute the internal state for angular accelration
     cim.internal_state_omega_x_d_filter << A_filter_roll_dot_ref * csm.state_omega_x_d_filter
@@ -316,6 +264,8 @@ void pid_omega::compute_u1_eta_d()
     cim.alpha_rot_d(2) = C_filter_yaw_dot_ref * csm.state_omega_z_d_filter;
 }
 
+
+// Compute the rotational control
 void pid_omega::compute_rotational_control()
 {
     // Compute the error in the rotational states
@@ -331,10 +281,9 @@ void pid_omega::compute_rotational_control()
                                                  - cip.Ki_rot * csm.e_rot_eta_I
                                                  + cim.alpha_rot_d);
 
-    // Compute with dynamic inversion
+    // Compute with dynamic inversion without aerodynamics
     cim.tau_rot << cim.tau_rot_baseline 
-                   + cim.omega_rot.cross(inertia_matrix_q * cim.omega_rot) 
-                   - cim.aero.inner_loop_dynamic_inv;
+                   + cim.omega_rot.cross(inertia_matrix_q * cim.omega_rot);
 
     // Assign the control inputs
     cim.u(1) = cim.tau_rot(0);
@@ -342,6 +291,7 @@ void pid_omega::compute_rotational_control()
     cim.u(3) = cim.tau_rot(2);                                             
 }
 
+// Function to compute the normalized thrusts
 void pid_omega::compute_normalized_thrusts()
 {
     // Compute the individual thrusts in Newtons
@@ -357,17 +307,18 @@ void pid_omega::compute_normalized_thrusts()
     control_input(3) = (float) evaluatePolynomial(thrust_polynomial_coeff_qrbp, cim.Sat_Thrust(3));
 }
 
-
+// Function to print to terminal during runtime
 void pid_omega::debug2terminal()
 {
 
 }
 
+// Function that is called in control.cpp
 void pid_omega::run(const double time_step_rk4_) {
 
     // Process the dynamics --------------------------------------------------------
-    // 1. Compute the aerodynamic forces in the wind frame
-    compute_aerodynamic_forces();
+    // 1. Compute the aerodynamics 
+    compute_aero_forces_moments(cim.aero.states, cim.aero.coeff, cim.R_J_I, cim.R_W_J);
     
     // 2. Compute the translational control input
     compute_translational_control_in_I();
@@ -375,16 +326,13 @@ void pid_omega::run(const double time_step_rk4_) {
     // 3. Compute the thrust needed and the desired angles
     compute_u1_eta_d();
 
-    // 4. Compute the aerodynamic moments in the quadcopter body frame
-    compute_aerodynamic_moments();
-
-    // 5. Compute the rotational control input
+    // 4. Compute the rotational control input
     compute_rotational_control();
 
-    // 6. Compute the normalized thrust - Final Step
+    // 5. Compute the normalized thrust - Final Step
     compute_normalized_thrusts();
 
-    // 7. Do the integration
+    // 6. Do the integration
     rk4.do_step(boost::bind(&pid_omega::model, this, bph::_1, bph::_2, bph::_3),
                 y, cim.t, time_step_rk4_);
     
@@ -395,7 +343,7 @@ void pid_omega::run(const double time_step_rk4_) {
     cim.alg_duration = std::chrono::duration_cast<std::chrono::microseconds>(
                             cim.alg_end_time - cim.alg_start_time).count();
 
-    // 8. Log the Data after all the calculataions
+    // 7. Log the Data after all the calculataions
     logger.logLogData();
 
     // optional debug

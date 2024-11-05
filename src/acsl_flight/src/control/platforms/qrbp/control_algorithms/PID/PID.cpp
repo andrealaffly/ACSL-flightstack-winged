@@ -33,7 +33,7 @@
  *              basic functionality that is to be used for all control 
  *              algorithms.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*
@@ -54,7 +54,8 @@ namespace _qrbp_{
 namespace _pid_{
 
 // Constructor - Take care to initialize the logger
-pid::pid(flight_params* p) : logger(&cim, &csm, &control_input), controller_base(p), ud(p) {
+pid::pid(flight_params* p, const std::string & controller_log_dir_) : 
+     controller_base(p), ud(p), logger(&cim, &csm, &control_input, controller_log_dir_) {
     
     // Reading in the parameters
     read_params("./src/acsl_flight/params/control_algorithms/qrbp/PID/gains_PID.json");
@@ -161,13 +162,11 @@ void pid::update(double time,
     
     // 6. Compute the body velocities from the inertial velocities -----------------
 
-    // 7. Compute the square of the norm of velocity -------------------------------
+    // 7. Compute the square of the norm of velocity and angles --------------------
 
-    // 8. Compute the aerodynamic angles -------------------------------------------
+    // 8. Compute the aerodynamic coefficeints -------------------------------------
 
-    // 9. Compute the aerodynamic coefficeints -------------------------------------
-
-    // 10. Assign the values from the integrator -----------------------------------
+    // 9. Assign the values from the integrator -----------------------------------
     assign_from_rk4();
 }
 
@@ -296,43 +295,27 @@ void pid::compute_normalized_thrusts()
 
 void pid::debug2terminal()
 {
-    // std::cout << "Execution Time: " << cim.alg_duration << std::endl;
-    // std::cout << "eta_rot: " << cim.eta_rot << std::endl;
-    // std::cout << "mu_tran_I: " << cim.mu_tran_I << std::endl;
-    // std::cout << "mu_tran_J: " << cim.mu_tran_J << std::endl;
-    // std::cout << "cim.u(0): " << cim.u(0) << std::endl;
-    // std::cout << "phi_d: " << cim.eta_rot_d(0)*RAD2DEG << std::endl;
-    // std::cout << "theta_d: " << cim.eta_rot_d(1)*RAD2DEG << std::endl;
-    // std::cout << "phi_dot_d: " << cim.eta_rot_rate_d(0)*RAD2DEG << std::endl;
-    // std::cout << "theta_dot_d: " << cim.eta_rot_rate_d(1)*RAD2DEG << std::endl;
-    // std::cout << "phi_dot_dot_d: " << cim.eta_rot_acceleration_d(0)*RAD2DEG << std::endl;  
-    // std::cout << "theta_dot_dot_d: " << cim.eta_rot_acceleration_d(1)*RAD2DEG << std::endl;  
-    // std::cout << "Mixer: \n" << mixer_matrix_qrbp << std::endl;
-    // std::cout << "A_filter_roll_ref: \n" << A_filter_roll_ref << std::endl;
-    // std::cout << "B_filter_roll_ref: \n" << B_filter_roll_ref << std::endl;
-    // std::cout << "C_filter_roll_ref: \n" << C_filter_roll_ref << std::endl;
+    // FLIGHTSTACK_INFO_STREAM_NO_TAG("Execution Time:", cim.alg_duration);
 }
 
 void pid::run(const double time_step_rk4_) {
     
     // Process the dynamics --------------------------------------------------------
-    // 1. Compute the aerodynamic forces in the wind frame
+    // 1. Compute the aerodynamics
 
     // 2. Compute the translational control input
     compute_translational_control_in_I();
 
     // 3. Compute the thrust needed and the desired angles
     compute_u1_eta_d();
-
-    // 4. Compute the aerodynamic moments in the body frame
    
-    // 5. Compute the rotational control input
+    // 4. Compute the rotational control input
     compute_rotational_control();
 
-    // 6. Compute the normalized thrust - Final Step
+    // 5. Compute the normalized thrust - Final Step
     compute_normalized_thrusts();
 
-    // 7. Do the integration
+    // 6. Do the integration
     rk4.do_step(boost::bind(&pid::model, this, bph::_1, bph::_2, bph::_3),
                 y, cim.t, time_step_rk4_);
     
@@ -343,7 +326,7 @@ void pid::run(const double time_step_rk4_) {
     cim.alg_duration = std::chrono::duration_cast<std::chrono::microseconds>(
                             cim.alg_end_time - cim.alg_start_time).count();
 
-    // 8. Log the Data after all the calculataions
+    // 7. Log the Data after all the calculataions
     logger.logLogData();
 
     // optional debug

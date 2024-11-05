@@ -24,7 +24,7 @@
 
 /***********************************************************************************************************************
  * File:        PID_OMEGA_logger.cpp
- * Author:      Mattia Gramuglia, Giri Mugundan Kumar
+ * Author:      Giri Mugundan Kumar
  * Date:        July 25, 2024
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
@@ -33,7 +33,7 @@
  *              Inherits the Blackbox class for logging and takes in the
  *              internal members for the PID.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*
@@ -54,10 +54,12 @@ namespace _qrbp_{
 namespace _pid_omega_{
 
 pid_omega_logger::pid_omega_logger(controller_internal_members* cim, controller_integrated_state_members* csm, 
-                       Eigen::Vector<float, 8>* control_input) : CIM(cim), CSM(csm), cntrl_input(control_input)
+                       Eigen::Vector<float, 8>* control_input, const std::string & controller_log_dir_) : 
+                       CIM(cim), CSM(csm), cntrl_input(control_input),
+                       flight_run_log_directory(controller_log_dir_)
 {
     // Inlialize the logging from blackbox class.
-    if(logInitLogging()) {std::cout << "pid omega Logger Created" << std::endl;}
+    if(logInitLogging()) {FLIGHTSTACK_INFO("pid omega Logger Created");}
 }
 
 // Implementing virtual frunctions from Blackbox
@@ -141,36 +143,6 @@ void pid_omega_logger::logInitHeaders(){
 // Implementing virtual functions from Blackbox
 bool pid_omega_logger::logInitLogging() {
     try {
-        // Get the current time and date
-        auto now = std::chrono::system_clock::now();
-        std::time_t now_c = std::chrono::system_clock::to_time_t(now);
-
-        // Get the current date in the desired format
-        std::stringstream date_ss;
-        date_ss << std::put_time(std::localtime(&now_c), "%Y_%m_%d");   // Current date
-        std::string current_date = date_ss.str();
-
-        // Create the directory path for the logs
-        std::string log_directory = "./src/acsl_flight/flight_log/qrbp/" + current_date;
-
-        // Check if the directory exists, and create it if it doesn't
-        if (!std::filesystem::exists(log_directory)) {
-          std::filesystem::create_directories(log_directory);
-        }
-
-        // Get the current time in the desired format
-        std::stringstream time_ss;
-        time_ss << std::put_time(std::localtime(&now_c), "%H_%M_%S"); // Current time in hours and minutes
-        std::string current_time = time_ss.str();
-
-        // Create the directory path for the flight run logs
-        std::string flight_run_log_directory = log_directory + "/" + "flight_run_" + current_time;
-
-        // Check if the directory exits, and create it if it doesn't
-        if (!std::filesystem::exists(flight_run_log_directory)) {
-          std::filesystem::create_directories(flight_run_log_directory);
-        }
-
         // Create the directory path for the controller specific flight run logs
         std::string flight_run_controller_specific_directory = flight_run_log_directory + "/" + "PID_OMEGA";
 
@@ -233,11 +205,10 @@ bool pid_omega_logger::logInitLogging() {
         std::string params_target_file = params_target_ss.str();
 
         if (!std::filesystem::exists(params_source_file)) {
-            std::cout << "MAIN PARAMS FILE NOT PRESENT" << std::endl;
+            FLIGHTSTACK_ERROR("MAIN PARAMS FILE NOT PRESENT");
         }
 
         if (std::filesystem::exists(params_source_file)) {
-            // std::cout << "MAIN PARAMS FILE PRESENT" << std::endl;
             std::filesystem::copy(params_source_file, params_target_file);
         }
 
@@ -248,11 +219,10 @@ bool pid_omega_logger::logInitLogging() {
         std::string gains_target_file = gains_target_ss.str();
 
         if (!std::filesystem::exists(gains_source_file)) {
-            std::cout << "GAINS FILE NOT PRESENT" << std::endl;
+            FLIGHTSTACK_ERROR("GAINS FILE NOT PRESENT");
         }
 
         if (std::filesystem::exists(gains_source_file)) {
-            // std::cout << "GAINS FILE PRESENT" << std::endl;
             std::filesystem::copy(gains_source_file, gains_target_file);
         }
 
@@ -260,9 +230,9 @@ bool pid_omega_logger::logInitLogging() {
         return true;       
 
     } catch (const std::filesystem::filesystem_error& e) {
-        std::cerr << "Filesystem error: " << e.what() << '\n';
+        FLIGHTSTACK_ERROR("FIlesystem error:", e.what());
     } catch (const std::exception& e) {
-        std::cerr << "Exception: " << e.what() << '\n';
+        FLIGHTSTACK_ERROR("Exeption:", e.what());
     } 
 
     return false; // IF there are errors

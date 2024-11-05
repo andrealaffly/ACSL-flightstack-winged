@@ -50,7 +50,7 @@
  * 
  * Description: Class declaration for UDP socket as a lifecycle node.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef MOCAP_HPP_
@@ -58,6 +58,8 @@
 
 #include "udp_driver.hpp"
 #include "control_config.hpp"                     // Include this for creating the logging file.
+#include "px4_defines.hpp"                        // Include for the PX4_define terms in a central location.            
+#include "global_helpers.hpp"                     // Include for the flightstack global functions
 
 #include <chrono>
 #include <memory>
@@ -65,6 +67,7 @@
 #include <vector>
 #include <sstream>
 #include <bit>
+#include <ctime>
 
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp_lifecycle/lifecycle_node.hpp>
@@ -91,20 +94,12 @@ inline constexpr uint16_t ODROID_M1S_PORT = 52000;
   inline constexpr const char* IP_IN_USE = ODROID_M1S_IP;
 #endif
 
-/// ------------- USER DEFINED ------------- ///
-// -> Pixhawk vehicle odometry pose frame message package definitions
-inline constexpr uint8_t POSE_FRAME_UNKNOWN = 0; // Pose frame unkown
-inline constexpr uint8_t POSE_FRAME_NED     = 1; // NED earth-fixed frame
-inline constexpr uint8_t POSE_FRAME_FRD     = 2; // FRD world-fixed frame, arbitrary heading reference
-// -> Pixhawk vehicle odometry velocity framemessage pacakge definitions
-inline constexpr uint8_t VELOCITY_FRAME_UNKNOWN = 0;  // Velocity frame unkown
-inline constexpr uint8_t VELOCITY_FRAME_NED      = 1; // NED earth-fixed frame
-inline constexpr uint8_t VELOCITY_FRAME_FRD      = 2; // FRD world-fixed frame, arbitrary heading reference
-inline constexpr uint8_t VELOCITY_FRAME_BODY_FRD = 3; // FRD body-fixed frame
-
 namespace lc = rclcpp_lifecycle;
 namespace fl = _flight_log_;
 using LNI = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface;
+
+// Use the namespace _flightstack_ for the global functions
+using namespace _flightstack_;
 
 namespace _drivers_
 {
@@ -138,7 +133,8 @@ public:
     /// \brief Constructor which accepts IoContext
     /// \param[in] ctx A shared IoContext
     /// \param[in] pointer to vehicle states in flight_bridge
-    UdpReceiverNode(const IoContext & ctx, vehicle_states* d);
+    /// \param[in] string to the global flight run directory
+    UdpReceiverNode(const IoContext & ctx, vehicle_states* d, const std::string & global_log_dir);
 
     /// \brief Destructor - required to manage owned IoContext
     ~UdpReceiverNode();
@@ -189,7 +185,7 @@ private:
     /// flight_bridge.cpp
     vehicle_states* vehicle_ptr;
 
-    /// Declare variables to store parsed data and declare it as interal members "_im"
+    /// Declare variables to store parsed data and declare it as internal members "_im"
     mocap_states mc_im;
 
     /// \brief Debugger function to output the mocap data.
@@ -199,6 +195,9 @@ private:
     void logInitHeaders();
     bool logInitLogging();
     void logLogData();
+
+    /// \brief Directory for logging mocap data
+    std::string flight_run_log_directory;
 
 
 };  

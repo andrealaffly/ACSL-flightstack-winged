@@ -50,7 +50,7 @@
  * 
  * Description: Utilities for multithreading.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef FLIGHT_BRIDGE_HPP_
@@ -84,7 +84,9 @@
 #include "vehicle_class.hpp"
 #include "control.hpp"
 #include "mocap.hpp"
+#include "vio.hpp"
 #include "flight_params.hpp"
+#include "control_config.hpp"
 
 
 using namespace std::chrono_literals; // For creating executors
@@ -183,6 +185,44 @@ inline std::chrono::nanoseconds get_current_thread_time()
     return get_native_thread_time(pthread_self());
 }
 
+/// Retruns the global log file directory as a string to be used in logging mocap, vio, control data.
+/// This allows us to unify the data collection directory as vio and mocap are often times slower to 
+/// start than the control thread.
+inline std::string create_global_log_directory(const std::string& platform_)
+{
+    // Get the current time and date
+    auto now = std::chrono::system_clock::now();
+    std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+
+    // Get the current date in the desired format
+    std::stringstream date_ss;
+    date_ss << std::put_time(std::localtime(&now_c), "%Y_%m_%d");   // Current date
+    std::string current_date = date_ss.str();
+
+    // Create the directory path for the logs
+    std::string log_directory = "./src/acsl_flight/flight_log/" + platform_ + "/" + current_date;
+
+    // Check if the directory exists, and create it if it doesn't
+    if (!std::filesystem::exists(log_directory)) {
+        std::filesystem::create_directories(log_directory);
+    }
+
+    // Get the current time in the desired format
+    std::stringstream time_ss;
+    time_ss << std::put_time(std::localtime(&now_c), "%H_%M_%S"); // Current time in hours and minutes
+    std::string current_time = time_ss.str();
+
+    // Create the directory path for the flight run logs
+    std::string flight_run_log_directory = log_directory + "/" + "flight_run_" + current_time;
+
+    // Check if the directory exists, and create it if it doesn't
+    if (!std::filesystem::exists(flight_run_log_directory)) {
+        std::filesystem::create_directories(flight_run_log_directory);
+    }
+
+    return flight_run_log_directory;  // Return the log directory path
+}
+
 /***********************************************************************************************/
 /*                                  FLIGHT BRIDGE CLASS                                        */
 /***********************************************************************************************/
@@ -216,6 +256,9 @@ class flight_bridge
         /// Instance of the flight_params_ptr to point to the flight_parameter object in
         /// flight_main.cpp
         flight_params* flight_params_ptr;
+
+        /// Instance of the global flight_run_directory
+        std::string global_log_dir;
 };
 
 } // namespace _flight_bridge_

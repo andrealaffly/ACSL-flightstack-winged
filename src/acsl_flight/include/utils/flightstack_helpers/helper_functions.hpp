@@ -32,7 +32,7 @@
  * Description: Definitions of some standard templates used in all 
  *              controllers.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef HELPER_FUNCTIONS_HPP_
@@ -71,12 +71,6 @@ using namespace _lyapunov_solver_;
 
 namespace _utilities_
 {
-    // Function to print the matrix out to the terminal for debugging
-    template<typename T, int Rows, int Cols>
-    inline void printMatrix(const Eigen::Matrix<T, Rows, Cols>& mat, const std::string& name) {
-        std::cout << name << ":\n" << mat << "\n\n";
-    }
-
     // Function to evaluate a polynomial given its coefficients and a value at which to evaluate the polynomial
     // Example usage: double value = 3.0;
     //                Eigen::VectorXd coeffs(3);

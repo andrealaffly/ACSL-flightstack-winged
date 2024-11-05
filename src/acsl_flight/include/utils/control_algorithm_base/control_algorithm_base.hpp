@@ -33,7 +33,7 @@
  *              fixed members that needs to be utilized with all the functions
  *              in each control algorithm.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef CONTROL_ALGORITHM_BASE_HPP_
@@ -61,7 +61,7 @@ class controller_base
         ~controller_base() {}
 
         // Read parameters
-        void read_params(const std::string& jsonFile) {
+        void read_params([[maybe_unused]] const std::string& jsonFile) {
             // Default implementation or leave empty if to be overridden
         }
 
@@ -71,28 +71,28 @@ class controller_base
         }
 
         // Controller Update state and trajectory
-        void update(double time,
-                    double x,
-                    double y,
-                    double z,
-                    double vx,
-                    double vy,
-                    double vz,
-                    double q0,
-                    double q1,
-                    double q2,
-                    double q3,
-                    double roll,
-                    double pitch,
-                    double yaw,
-                    double w_x,
-                    double w_y,
-                    double w_z) {
+        void update([[maybe_unused]] double time,
+                    [[maybe_unused]] double x,
+                    [[maybe_unused]] double y,
+                    [[maybe_unused]] double z,
+                    [[maybe_unused]] double vx,
+                    [[maybe_unused]] double vy,
+                    [[maybe_unused]] double vz,
+                    [[maybe_unused]] double q0,
+                    [[maybe_unused]] double q1,
+                    [[maybe_unused]] double q2,
+                    [[maybe_unused]] double q3,
+                    [[maybe_unused]] double roll,
+                    [[maybe_unused]] double pitch,
+                    [[maybe_unused]] double yaw,
+                    [[maybe_unused]] double w_x,
+                    [[maybe_unused]] double w_y,
+                    [[maybe_unused]] double w_z) {
             // Default implementation or leave empty if to be overridden
         }
 
         // Controller run
-        void run(const double time_step_rk4_) {
+        void run([[maybe_unused]] const double time_step_rk4_) {
             // Default implementation or leave empty if to be overridden
         }
 
@@ -105,7 +105,6 @@ class controller_base
         float get_t6() const { return control_input(5);}
         float get_t7() const { return control_input(6);}
         float get_t8() const { return control_input(7);}
-
         
     protected:
         // Thrust values - Control Input from the controller.
@@ -114,7 +113,6 @@ class controller_base
         // Instance of the flight_params_ptr to point to the flight_parameter object in
         // flight_main.cpp
         flight_params* flight_params_ptr;      
-
 };
 
 } // namespace _control_algorithm_base_

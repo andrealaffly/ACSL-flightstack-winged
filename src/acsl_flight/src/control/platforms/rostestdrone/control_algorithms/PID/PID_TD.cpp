@@ -33,7 +33,7 @@
  *              for the basic functionality that is to be used for all 
  *              control algorithms.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*               _           _      _                      
@@ -50,7 +50,8 @@ namespace _rostestdrone_{
 namespace _pid_{
 
 // Constructor - Take care to initialize the logger
-pid::pid(flight_params* p) : logger(&cim, &csm, &control_input), controller_base(p), ud(p) {
+pid::pid(flight_params* p, const std::string & controller_log_dir_) : 
+     controller_base(p), ud(p), logger(&cim, &csm, &control_input, controller_log_dir_) {
     
     // Reading in the parameters
     read_params("./src/acsl_flight/params/control_algorithms/rostestdrone/PID/gains_PID.json");
@@ -280,21 +281,7 @@ void pid::compute_normalized_thrusts()
 
 void pid::debug2terminal()
 {
-    // std::cout << "Execution Time: " << cim.alg_duration << std::endl;
-    // std::cout << "eta_rot: " << cim.eta_rot << std::endl;
-    // std::cout << "mu_tran_I: " << cim.mu_tran_I << std::endl;
-    // std::cout << "mu_tran_J: " << cim.mu_tran_J << std::endl;
-    // std::cout << "cim.u(0): " << cim.u(0) << std::endl;
-    // std::cout << "phi_d: " << cim.eta_rot_d(0)*RAD2DEG << std::endl;
-    // std::cout << "theta_d: " << cim.eta_rot_d(1)*RAD2DEG << std::endl;
-    // std::cout << "phi_dot_d: " << cim.eta_rot_rate_d(0)*RAD2DEG << std::endl;
-    // std::cout << "theta_dot_d: " << cim.eta_rot_rate_d(1)*RAD2DEG << std::endl;
-    // std::cout << "phi_dot_dot_d: " << cim.eta_rot_acceleration_d(0)*RAD2DEG << std::endl;  
-    // std::cout << "theta_dot_dot_d: " << cim.eta_rot_acceleration_d(1)*RAD2DEG << std::endl;  
-    // std::cout << "Mixer: \n" << mixer_matrix_qrbp << std::endl;
-    // std::cout << "A_filter_roll_ref: \n" << A_filter_roll_ref << std::endl;
-    // std::cout << "B_filter_roll_ref: \n" << B_filter_roll_ref << std::endl;
-    // std::cout << "C_filter_roll_ref: \n" << C_filter_roll_ref << std::endl;
+    // FLIGHTSTACK_INFO_STREAM_NO_TAG("Execution Time:", cim.alg_duration);
 }
 
 void pid::run(const double time_step_rk4_) {

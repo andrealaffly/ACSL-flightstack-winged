@@ -32,7 +32,7 @@
  * Description: Just a header file for configuring which platform and 
  *              controller to pick during compilation.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef CONTROL_CONFIG_HPP_
@@ -54,6 +54,7 @@
 #define __PID__ 1
 #define __MRAC_PID__ 2
 #define __PID_OMEGA__ 3
+#define __MRAC_OMEGA__ 4
 
 // SELECT here the PLATFORM you are using ---------------------------------------------------------------------------
 #define SELECTED_PLATFORM __QRBP__
@@ -88,6 +89,12 @@
         #include "PID_OMEGA.hpp"
         // Remember the class name you used in control_algorithms
         using _picked_controller_ = _qrbp_::_pid_omega_::pid_omega;    
+
+    #elif SELECTED_CONTROLLER == __MRAC_OMEGA__
+
+        #include "MRAC_OMEGA.hpp"
+        // Remember the class name you used in control_algorithms
+        using _picked_controller_ = _qrbp_::_mrac_omega_::mrac_omega;
 
     #else 
 

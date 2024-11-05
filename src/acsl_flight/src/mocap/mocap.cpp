@@ -52,7 +52,7 @@
  *              Writes messages to pixhawk mocap_odometry topic for 
  *              EFK2 fusion.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #include "mocap.hpp"
@@ -90,38 +90,7 @@ void UdpReceiverNode::logInitHeaders() {
 // Implementing virtual functions from Blackbox
 bool UdpReceiverNode::logInitLogging() {
     try {
-        // Get the current time and date
-        auto now = std::chrono::system_clock::now();
-        std::time_t now_c = std::chrono::system_clock::to_time_t(now);
-
-        // Get the current date in the desired format
-        std::stringstream date_ss;
-        date_ss << std::put_time(std::localtime(&now_c), "%Y_%m_%d");   // Current date
-        std::string current_date = date_ss.str();
-
-        // Create the directory path for the logs
-        std::string log_directory = "./src/acsl_flight/flight_log/" + std::string(platform_of_choice) 
-                                    + "/" + current_date;
-
-        // Check if the directory exists, and create it if it doesn't
-        if (!std::filesystem::exists(log_directory)) {
-          std::filesystem::create_directories(log_directory);
-        }
-
-        // Get the current time in the desired format
-        std::stringstream time_ss;
-        time_ss << std::put_time(std::localtime(&now_c), "%H_%M_%S"); // Current time in hours and minutes
-        std::string current_time = time_ss.str();
-
-        // Create the directory path for the flight run logs
-        std::string flight_run_log_directory = log_directory + "/" + "flight_run_" + current_time;
-
-        // Check if the directory exits, and create it if it doesn't
-        if (!std::filesystem::exists(flight_run_log_directory)) {
-          std::filesystem::create_directories(flight_run_log_directory);
-        }
-
-        // Generate the log file name with a timestamp
+        // Generate the log file name
         std::stringstream log_ss;
         log_ss << flight_run_log_directory << "/mocap_log" << ".log";
         std::string mocap_log_filename = log_ss.str();
@@ -162,9 +131,9 @@ bool UdpReceiverNode::logInitLogging() {
         return true;       
 
     } catch (const std::filesystem::filesystem_error& e) {
-        std::cerr << "Filesystem error: " << e.what() << '\n';
+        FLIGHTSTACK_ERROR("Filesystem error:", e.what());
     } catch (const std::exception& e) {
-        std::cerr << "Exception: " << e.what() << '\n';
+        FLIGHTSTACK_ERROR("Exception: ", e.what());
     } 
 
     return false; // IF there are errors
@@ -197,14 +166,16 @@ void UdpReceiverNode::logLogData() {
 /// \brief Constructor which accepts IoContext
 /// \param[in] ctx A shared IoContext
 /// \param[in] pointer to vehicle states in flight_bridge    
+/// \param[in] string to the global flight run directory
 UdpReceiverNode::UdpReceiverNode(
-  const IoContext & ctx, vehicle_states* d)
+  const IoContext & ctx, vehicle_states* d, const std::string & global_log_dir)
 : lc::LifecycleNode("udp_receiver_node"),
   m_udp_driver{new UdpDriver(ctx)},
-  vehicle_ptr(d)
+  vehicle_ptr(d),
+  flight_run_log_directory(global_log_dir)
 {
-  // Initilize the logging
-  if(logInitLogging()) {std::cout << "Mocap Logger Created" << std::endl;};
+  // Initialize the logging
+  if(logInitLogging()) {FLIGHTSTACK_INFO("Mocap Logger Created");};
 
   // Get the parameters
   get_params();  
@@ -226,6 +197,7 @@ UdpReceiverNode::~UdpReceiverNode()
 {
   if (m_owned_ctx) {
     m_owned_ctx->waitForExit();
+    FLIGHTSTACK_INFO("Closed Mocap Thread");
   }
 }
 
@@ -240,8 +212,14 @@ LNI::CallbackReturn UdpReceiverNode::on_configure(const lc::State & state)
     RCLCPP_INFO(get_logger(), "UDP driver is initialized.");
   }
 
+  // Create a Sensor Data QoS profile - 285-330Hz is data frequency of MOCAP. Message every 3.51-3.03ms. 
+  // Therefore, we want to discard old messages in the queue.
+  rclcpp::QoS qos_settings = rclcpp::SensorDataQoS();  // Use default Sensor Data QoS profile
+	qos_settings.keep_last(1);  												 // Keep only the last message
+
+  // Create publisher for mocap to the pixhawk visual odometry topic
   mocap_publisher_ = this->create_publisher<px4_msgs::msg::VehicleOdometry>(
-    "/fmu/in/vehicle_visual_odometry", rclcpp::QoS(100));
+    "/fmu/in/vehicle_visual_odometry", qos_settings);
 
   try {
     
@@ -308,11 +286,27 @@ LNI::CallbackReturn UdpReceiverNode::on_shutdown(const lc::State & state)
 void UdpReceiverNode::debugMocapData2screen()
 {
   // Output the parsed data
-  std::cout << "PixTime: " << mc_im.control_time << std::endl;
-  std::cout << "Position (x, y, z): " << mc_im.x << ", " << mc_im.y << ", " << mc_im.z << std::endl;
-  std::cout << "Quaternion (q0, q1, q2, q3): " << mc_im.q0 << ", " << mc_im.q1 << ", " << mc_im.q2 << ", " << mc_im.q3 << std::endl;
-  std::cout << "Velocity (vx, vy, vz): " << mc_im.vx << ", " << mc_im.vy << ", " << mc_im.vz << std::endl;
-  std::cout << "Angular velocities (rollspeed, pitchspeed, yawspeed): " << mc_im.rollspeed << ", " << mc_im.pitchspeed << ", " << mc_im.yawspeed << std::endl;  
+  FLIGHTSTACK_INFO("PixTime: ", mc_im.control_time);
+  std::cout << "Position (x, y, z): " 
+            << mc_im.x << ", " 
+            << mc_im.y << ", " 
+            << mc_im.z << std::endl;
+
+  std::cout << "Quaternion (q0, q1, q2, q3): " 
+            << mc_im.q0 << ", " 
+            << mc_im.q1 << ", " 
+            << mc_im.q2 << ", " 
+            << mc_im.q3 << std::endl;
+
+  std::cout << "Velocity (vx, vy, vz): " 
+            << mc_im.vx << ", " 
+            << mc_im.vy << ", " 
+            << mc_im.vz << std::endl;
+
+  std::cout << "Angular velocities (rollspeed, pitchspeed, yawspeed): " 
+            << mc_im.rollspeed << ", " 
+            << mc_im.pitchspeed << ", " 
+            << mc_im.yawspeed << std::endl;  
 }
 
 /// \brief Callback for receiving a UDP datagram
@@ -323,7 +317,7 @@ void UdpReceiverNode::receiver_callback(const std::vector<uint8_t> & buffer)
 
   // Check if the message format is valid
   if (buffer_str.size() < 2 || buffer_str[0] != 'R' || buffer_str[1] != ',') {
-      std::cerr << "Invalid message format!" << std::endl;
+      FLIGHTSTACK_ERROR("Invalid message format!");
       return; // Exit the function or handle the error accordingly
   }
 

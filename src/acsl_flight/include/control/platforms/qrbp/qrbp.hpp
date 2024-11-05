@@ -33,7 +33,7 @@
  *              and the Velox V2808 kv1300 motors used in all the control
  *              algorithms
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 /*
@@ -68,7 +68,7 @@ namespace _qrbp_{
     inline constexpr double SQRT2_OVER_2 = 0.7071067;
 
     // Vehicle and Environment Defines
-    inline constexpr double MASS = 1.95056951;                                    // mass of vehicle                [Kg]                                      
+    inline constexpr double MASS = 2.04192755;                                    // mass of vehicle                [Kg]                                      
     inline constexpr double LX = 0.097509;                                        // dist to motor along x^J         [m]
     inline constexpr double LY = 0.110688;                                        // dist to motor along y^J         [m]
     inline constexpr double LZ_S = 0.038779;                                      // dist to aero center of stabs    [m]
@@ -251,9 +251,9 @@ namespace _qrbp_{
     // [kg*m^2] inertia matrix of the vehicle system (drone frame + box + propellers) expressed in
     // Pixhawk coordinate system (FRD - x-Front, y-Right, z-Down), computed at the vehicle center of mass
     const Eigen::Matrix3d inertia_matrix_q = (Eigen::Matrix3d() << 
-                                                 0.03093953,  -0.00000662,  0.00005560,
-                                                -0.00000662,   0.01964797, -0.00000339,
-                                                 0.00005560,  -0.00000339,  0.03676930
+                                                 0.03170556, -0.00000810, 0.00102548,
+                                                -0.00000810,  0.02125186,-0.00000107,
+                                                 0.00102548, -0.00000107, 0.03765785
                                              ).finished(); 
 
     // Matrix of inertia of the biplane frame
@@ -277,157 +277,14 @@ namespace _qrbp_{
                                         0.0, 1.0,  0.0,
                                         1.0, 0.0,  0.0).finished();
 
-    // Angles for the wings and stabilizers
-    struct AeroAngles {
-        double alpha;     // Angle of attack at the center of mass
-        double alpha_up;  // Angle of attack of the upper wing
-        double alpha_lw;  // Angle of attack of the lower wing
-        double beta;      // Side slip angle at the center of mass
-        double beta_lt;   // Side slip angle for the left stabilizer
-        double beta_rt;   // Side slip angle for the right stabilizer
-    };
-
-
-
-    // Inline function to compute the Aerodynamic angles for the NACA-0012 airfoil
-    inline AeroAngles computeAeroAnglesNACA0012Quad(const double u, const double v, const double w, 
-                                                    const double w_x, const double w_y, const double w_z)
-    {
-        AeroAngles angles;
-        
-        // Precompute common expressions
-        double u_sq = u * u;
-        double w_sq = w * w;
-        double LY_wz = LY * w_z;
-        double LY_wx = LY * w_x;
-
-        // Compute intermediate values
-        double c2 = -(w - LX * w_y);
-        double c3 = -(w + LX * w_y);
-        double c4 = sqrt(u_sq + w_sq);
-        double c5 = sqrt((u + LY_wz) * (u + LY_wz) + (w - LY_wx) * (w - LY_wx));
-        double c6 = sqrt((u - LY_wz) * (u - LY_wz) + (w + LY_wx) * (w + LY_wx));
-
-        double n1 = c4;
-        double n2 = sqrt(u_sq + c2 * c2);
-        double n3 = sqrt(u_sq + c3 * c3);
-        double n4 = sqrt(v * v + c4 * c4);
-        double n5 = sqrt(v * v + c5 * c5);
-        double n6 = sqrt(v * v + c6 * c6);
-
-        // Compute the angle of attack at the center of mass
-        angles.alpha = (n1 <= 0.01f) ? 0.0f : atan2(u, -w);
-
-        // Compute the angle of attack of the upper wing
-        angles.alpha_up = (n2 <= 0.01f) ? 0.0f : atan2(u, c2);
-
-        // Compute the angle of attack of the lower wing
-        angles.alpha_lw = (n3 <= 0.01f) ? 0.0f : atan2(u, c3);
-
-        // Compute the side slip angle at the center of mass
-        angles.beta = (n4 <= 0.01f) ? 0.0f : atan2(v, c4);
-
-        // Compute the side slip angle for the left stabilizer
-        angles.beta_lt = (n5 <= 0.01f) ? 0.0f : atan2(v, c5);
-
-        // Compute the side slip angle for the right stabilizer
-        angles.beta_rt = (n6 <= 0.01f) ? 0.0f : atan2(v, c6);
-
-        return angles;
-    }
-
-    // Inline function to compute the coefficient of lift for the NACA-0012 airfoil using polynomial approximations
-    inline double compute_cl(double angle)
-    {
-        using Eigen::Matrix;
-
-        static const struct {
-            double min_angle;
-            double max_angle;
-            Matrix<double, 3, 1> coeffs;
-        } angle_coeff_map[] = {
-            {-18 * DEG2RAD, -15 * DEG2RAD, Matrix<double, 3, 1>(-2.016727473, -0.040687912, 0.0)},
-            {-15 * DEG2RAD,  -7 * DEG2RAD, Matrix<double, 3, 1>(-0.339043494,  0.073185027, 0.0)},
-            { -7 * DEG2RAD,   7 * DEG2RAD, Matrix<double, 3, 1>( 0.0,          0.113305266, 0.0)},
-            {  7 * DEG2RAD,  15 * DEG2RAD, Matrix<double, 3, 1>( 0.344930022,  0.073338904, 0.0)},
-            { 15 * DEG2RAD,  17 * DEG2RAD, Matrix<double, 3, 1>( 2.007250549, -0.39995604,  0.0)},
-            { 17 * DEG2RAD,  27 * DEG2RAD, Matrix<double, 3, 1>( 4.98,        -0.378,       0.0087)},
-            { 27 * DEG2RAD,  95 * DEG2RAD, Matrix<double, 3, 1>( 0.43,         0.0303,     -0.000382)},
-            { 95 * DEG2RAD, 155 * DEG2RAD, Matrix<double, 3, 1>( 8.91,        -0.143,       0.000519)},
-            {155 * DEG2RAD, 180 * DEG2RAD, Matrix<double, 3, 1>(139,          -1.67,        0.00499)},
-            {-27 * DEG2RAD, -18 * DEG2RAD, Matrix<double, 3, 1>(-4.98,        -0.378,      -0.0087)},
-            {-95 * DEG2RAD, -27 * DEG2RAD, Matrix<double, 3, 1>(-0.43,         0.0303,      0.000382)},
-            {-155* DEG2RAD, -95 * DEG2RAD, Matrix<double, 3, 1>(-8.91,        -0.143,      -0.000519)},
-            {-180* DEG2RAD,-155* DEG2RAD, Matrix<double, 3, 1>(-139,         -1.67,       -0.00499)},
-        };
-
-        for (const auto& entry : angle_coeff_map) {
-            if (angle >= entry.min_angle && angle < entry.max_angle) {
-                return entry.coeffs(0) + entry.coeffs(1) * angle + entry.coeffs(2) * angle * angle;
-            }
-        }
-
-        return 0.0; // Default return if no range matches
-    }
-
-    // Inline function to compute the coefficient of drag for the NACA-0012 airfoil using polynomial approximations
-    inline double compute_cd(double angle)
-    {
-        using Eigen::Matrix;
-
-        static const struct {
-            double min_angle;
-            double max_angle;
-            Matrix<double, 3, 1> coeffs;
-        } angle_coeff_map[] = {
-            {-18 * DEG2RAD,  18 * DEG2RAD, Matrix<double, 3, 1>( 0.004705434,  0.0,        0.000199101)},
-            { 18 * DEG2RAD, 180 * DEG2RAD, Matrix<double, 3, 1>(-0.82,         0.0574,    -0.000319)},
-            {-180* DEG2RAD, -18 * DEG2RAD, Matrix<double, 3, 1>(-0.82,        -0.0574,    -0.000319)},
-        };
-
-        for (const auto& entry : angle_coeff_map) {
-            if (angle >= entry.min_angle && angle < entry.max_angle) {
-                return entry.coeffs(0) + entry.coeffs(1) * angle + entry.coeffs(2) * angle * angle;
-            }
-        }
-
-        return 0.0; // Default return if no range matches
-    }
-
-    // Inline function to compute the coefficient of aerodynamic moment for the NACA-0012 airfoil using polynomial 
-    // approximations
-    inline double compute_cm(double angle)
-    {
-        using Eigen::Matrix;
-
-        static const struct {
-            double min_angle;
-            double max_angle;
-            Matrix<double, 2, 1> coeffs;
-        } angle_coeff_map[] = {
-            {-18 * DEG2RAD, -15 * DEG2RAD, Matrix<double, 2, 1>(-0.154623077, -0.007923077)},
-            {-15 * DEG2RAD,  -6.75*DEG2RAD, Matrix<double, 2, 1>( 0.043910573,  0.004934576)},
-            { -6.75*DEG2RAD,  -4 * DEG2RAD, Matrix<double, 2, 1>(-0.029656624, -0.005647643)},
-            { -4 * DEG2RAD,   4 * DEG2RAD, Matrix<double, 2, 1>( 0.0,          0.001556935)},
-            {  4 * DEG2RAD,   7 * DEG2RAD, Matrix<double, 2, 1>( 0.027566825, -0.005293839)},
-            {  7 * DEG2RAD,  15 * DEG2RAD, Matrix<double, 2, 1>(-0.044215508,  0.004953476)},
-            { 15 * DEG2RAD,  18 * DEG2RAD, Matrix<double, 2, 1>( 0.168665618, -0.008760839)},
-            {-180* DEG2RAD, -18 * DEG2RAD, Matrix<double, 2, 1>(-0.3,          0.0)}, // Default case
-            { 18 * DEG2RAD,  180* DEG2RAD, Matrix<double, 2, 1>(-0.3,          0.0)}, // Default case
-        };
-
-        for (const auto& entry : angle_coeff_map) {
-            if (angle >= entry.min_angle && angle < entry.max_angle) {
-                return entry.coeffs(0) + entry.coeffs(1) * angle;
-            }
-        }
-
-        return 0.0; // Default return if no range matches
-    }
+    // Quaternion that denotes a pitch of 90 degress about an axis and it's inverse
+    const Eigen::Quaterniond PITCH_90 = Eigen::Quaterniond(cos(90*DEG2RAD/2.0), 0.0, sin(90*DEG2RAD/2.0), 0.0);
+    const Eigen::Quaterniond PITCH_90_INV = PITCH_90.inverse();
 
     // Inline function to compute the switch from Quadcopter mode to Biplane Mode and vice versa
     inline void QRBPswitchFun(double pitch, bool& is_biplane, bool& mnt_btn)
     {
+        // Uncomment based on your requirement
 
         // Code to switch in both directions of flight.
         // double abs_pitch = abs(pitch);
@@ -447,7 +304,7 @@ namespace _qrbp_{
         //     mnt_btn = false;
         // }
 
-        // For debugging. we only switch in the forward direction
+        // Code to switch in forward direction of flight.
         if (pitch <= -AoS && !is_biplane)
         {
             is_biplane = true;
@@ -544,7 +401,66 @@ namespace _qrbp_{
         omega_b = R_Jq_Jb * omega;
     }
 
-    inline void update_states_to_biplane_quaternions(const Eigen::Quaterniond q_q, const Vector3d eta_q, const Vector3d omega, 
+    // Code written by Giri Mugundan Kumar to switch states - yet to be debugged
+    inline void update_states_to_biplane_quaternion_gmk(const Eigen::Quaterniond q_q, const Vector3d omega,
+                                                        Vector3d& eta_b, Vector3d& omega_b)
+    {
+        // Pitch 90 degrees about the y axis to get the new quaternion in biplane frame
+        Eigen::Quaterniond q_b = q_q*PITCH_90_INV;
+
+        // Compute elements of Direction Cosine Matrix (DCM) from quaternion
+        double a = q_b.w();
+        double b = q_b.x();
+        double c = q_b.y();
+        double d = q_b.z();
+        double aa = a * a;
+        double ab = a * b;
+        double ac = a * c;
+        double ad = a * d;
+        double bb = b * b;
+        double bc = b * c;
+        double bd = b * d;
+        double cc = c * c;
+        double cd = c * d;
+        double dd = d * d;
+
+        // Compute DCM elements
+        double dcm00 = aa + bb - cc - dd;
+        // double dcm01 = 2 * (bc - ad); // not needed by the algorithm
+        double dcm02 = 2 * (ac + bd);
+        double dcm10 = 2 * (bc + ad);
+        // double dcm11 = aa - bb + cc - dd; // not needed by the algorithm
+        double dcm12 = 2 * (cd - ab);
+        double dcm20 = 2 * (bd - ac);
+        double dcm21 = 2 * (ab + cd);
+        double dcm22 = aa - bb - cc + dd;
+
+        // Clamp the value of dcm20 to the range [-1, 1] to avoid domain errors with asinf
+        if (dcm20 < -1.0) dcm20 = -1.0;
+        if (dcm20 > 1.0) dcm20 = 1.0;
+
+        // Compute the Euler angles from DCM
+        eta_b(1) = asin(-dcm20); // Pitch
+
+        // Handle gimbal lock cases
+        if (fabs(eta_b(1) - M_PI / 2) < 1.0e-3) {
+            eta_b(0) = 0.0; // Roll
+            eta_b(2) = atan2(dcm12, dcm02); // Yaw
+        } else if (fabs(eta_b(1) + M_PI / 2) < 1.0e-3) {
+            eta_b(0) = 0.0; // Roll
+            eta_b(2) = atan2(-dcm12, -dcm02); // Yaw
+        } else {
+            eta_b(0) = atan2(dcm21, dcm22); // Roll
+            eta_b(2) = atan2(dcm10, dcm00); // Yaw
+        }
+
+        // Compute the angular velocities in the biplane frame
+        omega_b = R_Jq_Jb * omega;
+
+    }
+
+    // Code from the PX4 Repository to switch states - might need debugging
+    inline void update_states_to_biplane_quaternions(const Eigen::Quaterniond q_q, const Vector3d omega, 
                                                      Vector3d& eta_b, Vector3d& omega_b)
     {
         // Modified from pixhawk code that constructs a dcm matrix from quaternion     

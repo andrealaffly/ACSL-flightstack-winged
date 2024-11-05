@@ -31,7 +31,7 @@
  * 
  * Description: Class declaration for computing and publishing the control. Adds as a hub for all the control actions.
  * 
- * GitHub:    https://github.com/andrealaffly/ACSL_flightstack_X8.git
+ * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
 
 #ifndef CONTROL_HPP_
@@ -39,51 +39,30 @@
 
 #include "rclcpp/rclcpp.hpp"   // ROS2 Client Library C++ header
 #include "vehicle_class.hpp"
+#include "px4_defines.hpp"     // Include for the PX4_define terms in a central location
+#include <iomanip>             // For std::flush
 #include <px4_msgs/msg/actuator_motors.hpp>
 #include "px4_msgs/msg/offboard_control_mode.hpp"
 #include "px4_msgs/msg/vehicle_command.hpp"
 #include <px4_msgs/msg/vehicle_control_mode.hpp>
 #include <bit>
+#include "global_helpers.hpp"
 
 #include "flight_bridge.hpp"
 #include "flight_params.hpp"
 #include "control_config.hpp"
 
+
+
 /// ------------- USER DEFINED ------------- ///
-// -> Pixhawk vehicle mode command message pacakge definitions
-inline constexpr uint8_t TARGET_SYSTEM = 1;
-inline constexpr uint8_t TARGET_COMPONENT = 1;
-inline constexpr uint8_t SOURCE_SYSTEM = 1;
-inline constexpr uint16_t SOURCE_COMPONENT = 1;
-inline constexpr bool FROM_EXTERNAL_BOOL = true;
-// -> Set Custom mode
-inline constexpr float ENABLE_CUSTOM_MODE = 1;
-// -> Custom Control mode definitions for pixhawk vehicle mode command
-inline constexpr float CUSTOM_MAIN_MODE_MANUAL = 1;
-inline constexpr float CUSTOM_MAIN_MODE_ALTCTL = 2;
-inline constexpr float CUSTOM_MAIN_MODE_POSCTL = 3;
-inline constexpr float CUSTOM_MAIN_MODE_AUTO = 4;
-inline constexpr float CUSTOM_MAIN_MODE_ACRO = 5;
-inline constexpr float CUSTOM_MAIN_MODE_OFFBOARD = 6;
-inline constexpr float CUSTOM_MAIN_MODE_STABILIZED = 7;
-inline constexpr float CUSTOM_MAIN_MODE_RATTITUDE = 8;
-// -> ARM/DISARM defines
-inline constexpr float ARM_ACSL_VEH = 1.0;
-inline constexpr float DISARM_ACSL_VEH = 0.0;
-// -> OFFBOARD_CONTROL_MODE define
-inline constexpr bool OFFBOARD_POS_CTRL_BOOL = false;
-inline constexpr bool OFFBOARD_VEL_CTRL_BOOL = false;
-inline constexpr bool OFFBOARD_ACCEL_CTRL_BOOL = false;
-inline constexpr bool OFFBOARD_ATT_CTRL_BOOL = false;
-inline constexpr bool OFFBOARD_BODY_RATE_CTRL_BOOL = false;
-inline constexpr bool OFFBOARD_THRST_TRQ_CTRL_BOOL = false;
-inline constexpr bool OFFBOARD_DIRECT_ACT_CTRL_BOOL = true;
 // -> Zero Thrust define for motors
 inline constexpr float MOTOR_ZERO_THRUST = 0.0;
 
 // -> Define for publishing data to motors
 #define PUBLISH_ACTUATOR true
 
+// Use the namespace _flightstack_ for the global functions
+using namespace _flightstack_;
 
 namespace _control_
 {
@@ -93,7 +72,7 @@ class controlNode : public rclcpp::Node
 public:
   /// rclcpp::Node needs a default constructor. 
   /// Therefore we implement passing of the vehicle states like so
-  controlNode(vehicle_states* d, flight_params* p);
+  controlNode(vehicle_states* d, flight_params* p, const std::string & global_log_dir);
 
   virtual ~controlNode() = default;
 
@@ -127,6 +106,8 @@ private:
   rclcpp::Publisher<px4_msgs::msg::OffboardControlMode>::SharedPtr publisher_offboard_control_mode_;
 
   uint offboard_flag_; // Flag for the arm/disarm logic
+
+  bool disarm_info_bool_ = false; // Boolean to Print out RCL_INFO if disarmed
 
   /// Function that runs the control loop
   void run();
