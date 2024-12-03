@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,12 +22,12 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        control_config.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        June 20, 2024
- * For info:    Andrea L'Afflitto 
+ * File:        control_config.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        June 20, 2024 \n 
+ * For info:    Andrea L'Afflitto  
  *              a.lafflitto@vt.edu
  * 
  * Description: Just a header file for configuring which platform and 
@@ -34,6 +35,11 @@
  * 
  * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
+
+/**
+ * @file control_config.hpp
+ * @brief Just a header file for configuring which platform and controller to pick during compilation
+ */
 
 #ifndef CONTROL_CONFIG_HPP_
 #define CONTROL_CONFIG_HPP_

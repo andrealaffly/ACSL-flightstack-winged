@@ -1,3 +1,4 @@
+///@cond
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,7 +22,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
  /**********************************************************************************************************************  
  * Part of the code in this file leverages the following material.
  *
@@ -42,9 +43,9 @@
  **********************************************************************************************************************/
 
 /***********************************************************************************************************************
- * File:        io_context.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 21, 2024
+ * File:        io_context.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        April 21, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -55,6 +56,11 @@
 
 #ifndef UDP_DRIVER_HPP_
 #define UDP_DRIVER_HPP_
+
+/**
+ * @file udp_driver.hpp
+ * @brief Class decleration for UDP driver.
+ */
 
 #include <iostream>
 #include <memory>
@@ -67,12 +73,29 @@ namespace _drivers_
 namespace _udp_driver_
 {
 
+/**
+ * @class UdpDriver
+ * @brief UdpDriver class
+ */
 class UdpDriver
 {
 public:
     explicit UdpDriver(const IoContext & ctx);
 
+    /**
+     * @brief Initialize sender
+     * @param ip 
+     * @param port 
+     */
     void init_sender(const std::string & ip, uint16_t port);
+
+    /**
+     * @brief Initialize sender using string
+     * @param remote_ip 
+     * @param remote_port 
+     * @param host_ip 
+     * @param host_port 
+     */
     void init_sender(
         const std::string & remote_ip, uint16_t remote_port,
         const std::string & host_ip, uint16_t host_port);

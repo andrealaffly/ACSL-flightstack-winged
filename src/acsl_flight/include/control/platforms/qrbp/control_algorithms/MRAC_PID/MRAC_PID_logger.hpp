@@ -1,3 +1,4 @@
+///@cond
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        MRAC_PID_logger.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        June 26, 2024
+ * File:        MRAC_PID_logger.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        June 26, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -48,6 +49,12 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
         _________\//////___\///________\///__\/////////////____\///______________
 */
 
+/**
+ * @file MRAC_PID_logger.hpp
+ * @brief logging for the MRAC_PID controller.
+ * 
+ * Inherits the Blackbox class for logging and takes in the internal members for MRAC_PID.
+ */
 #ifndef CONTROLLERS_MRAC_PID_LOGGER_HPP_
 #define CONTROLLERS_MRAC_PID_LOGGER_HPP_
 
@@ -62,6 +69,9 @@ using namespace _flight_log_;
 namespace _qrbp_{
 namespace _mrac_pid_{
 
+/**
+ * @class mrac_pid_logger
+ */
 class mrac_pid_logger : public blackbox
 {
 public:
@@ -72,6 +82,9 @@ public:
                     const std::string & controller_log_dir_);
 
     // Implementing functions from blackbox
+    /**
+     * @brief Implementing functions from blackbox
+     */
     void logInitHeaders();
     bool logInitLogging();
     void logLogData();

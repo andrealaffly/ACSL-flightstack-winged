@@ -1,3 +1,4 @@
+///@cond
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond
 /***********************************************************************************************************************
- * File:        MRAC_PID_members.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        June 26, 2024
+ * File:        MRAC_PID_members.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        June 26, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -46,7 +47,10 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
         _________\//////___\///________\///__\/////////////____\///______________
 */
 
-
+/**
+ * @file MRAC_PID_members.hpp
+ * @brief MRAC_PID controller class members
+ */
 #ifndef CONTROLLERS_MRAC_PID_MEMBERS_HPP_
 #define CONTROLLERS_MRAC_PID_MEMBERS_HPP_
 
@@ -60,6 +64,10 @@ namespace _qrbp_{
 namespace _mrac_pid_{
 
 // Structure for all parameter members of the controller
+/**
+ * @struct controller_internal_parameters
+ * @brief Structure for all parameter members of the controller
+ */
 struct controller_internal_parameters
 {
 
@@ -163,6 +171,10 @@ struct controller_internal_parameters
 };
 
 // Structure for all the aerodynamic members of the controller
+/**
+ * @struct controller_internal_members_aero
+ * @brief Structure for all the aerodynamic members of the controller
+ */
 struct controller_internal_members_aero
 {
   AeroStates states;
@@ -171,6 +183,10 @@ struct controller_internal_members_aero
 };
 
 // Structure for the members that are mapped to the rk4 vector after integration
+/**
+ * @struct controller_integrated_state_members
+ * @brief Structure for the members that are mapped to the rk4 vector after integration
+ */
 struct controller_integrated_state_members
 {
   // Translational Integral error
@@ -226,6 +242,10 @@ struct controller_integrated_state_members
 };
 
 // Structure for the internal members of the controller
+/**
+ * @struct controller_internal_members
+ * @brief Structure for the internal members of the controller
+ */
 struct controller_internal_members
 {
   // Time

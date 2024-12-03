@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,12 +22,12 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        flight_log.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 25, 2024
- * For info:    Andrea L'Afflitto 
+ * File:        flight_log.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        April 25, 2024 \n 
+ * For info:    Andrea L'Afflitto
  *              a.lafflitto@vt.edu
  * 
  * Description: Utilities for logging flight data. Virtual class with fixed
@@ -38,6 +39,13 @@
 
 #ifndef FLIGHT_LOG_HPP_
 #define FLIGHT_LOG_HPP_
+
+/**
+ * @file flight_log.hpp
+ * @brief Utilities for logging flight data
+ * 
+ * Virtual class with fixed members that needs to be utilized with all the functions in each control algorithm.
+ */
 
 #include <atomic>
 #include <chrono>
@@ -80,6 +88,9 @@ namespace keywords = boost::log::keywords;
 
 namespace _flight_log_
 {
+    /**
+     * @class blackbox
+     */
     class blackbox
     {
         public:

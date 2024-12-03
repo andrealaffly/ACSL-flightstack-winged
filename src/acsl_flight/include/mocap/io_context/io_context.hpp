@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,7 +22,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
  /**********************************************************************************************************************  
  * Part of the code in this file leverages the following material.
  *
@@ -42,9 +43,9 @@
  **********************************************************************************************************************/
 
 /***********************************************************************************************************************
- * File:        io_context.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 21, 2024
+ * File:        io_context.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        April 21, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -55,6 +56,11 @@
 
 #ifndef IO_CONTEXT_HPP_
 #define IO_CONTEXT_HPP_
+
+/**
+ * @file io_context.hpp
+ * @brief Class decleration for IoContext to manage thread for udp.
+ */
 
 #include <memory>
 #include <vector>
@@ -71,6 +77,12 @@ namespace _common_
 
 ///! A workaround of boost::thread_group
 // Copied from https://gist.github.com/coin-au-carre/ceb8a790cec3b3535b015be3ec2a1ce2
+/**
+ * @struct thread_group
+ * @brief A workaround of boost::thread_group
+ * 
+ * Copied from https://gist.github.com/coin-au-carre/ceb8a790cec3b3535b015be3ec2a1ce2
+ */
 struct thread_group
 {
   std::vector<std::thread> tg;
@@ -81,12 +93,26 @@ struct thread_group
   thread_group(thread_group &&)                   = delete;
 
   template<class ... Args>
+  /**
+   * @brief Create a thread object
+   * 
+   * @param args 
+   */
   void create_thread(Args && ... args) {tg.emplace_back(std::forward<Args>(args)...);}
 
+  /**
+   * @brief add said thread object
+   * 
+   * @param t 
+   */
   void add_thread(std::thread && t) {tg.emplace_back(std::move(t));}
 
   std::size_t size() const {return tg.size();}
 
+  /**
+   * @brief joining all the threads
+   * @param None
+   */
   void join_all()
   {
     for (auto & thread : tg) {
@@ -96,6 +122,11 @@ struct thread_group
     }
   }
 
+  /**
+   * @brief set all of the pins to cpu
+   * 
+   * @param cpu 
+   */
   void pin_all_to_cpu(int cpu)
     {
         cpu_set_t cpuset;
@@ -109,6 +140,10 @@ struct thread_group
 
 };
 
+/**
+ * @class IoContext
+ * @brief IoContext class
+ */
 class IoContext
 {
 public:

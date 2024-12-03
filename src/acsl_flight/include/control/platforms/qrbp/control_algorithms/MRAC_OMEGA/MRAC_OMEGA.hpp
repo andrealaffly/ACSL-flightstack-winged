@@ -1,3 +1,4 @@
+///@cond
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        MRAC_OMEGA.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        August 08, 2024
+ * File:        MRAC_OMEGA.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        August 08, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -48,6 +49,12 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
         _________\//////___\///________\///__\/////////////____\///______________
 */
 
+/**
+ * @file MRAC_OMEGA.hpp
+ * @brief MRAC with angular velocities for the QRBP
+ * 
+ * Inherits controller_base class for the basic functionality that is to be used for all control algorithms.
+ */
 #ifndef CONTROLLERS_MRAC_OMEGA_HPP_
 #define CONTROLLERS_MRAC_OMEGA_HPP_
 
@@ -62,11 +69,19 @@ using namespace _control_algorithm_base_;
 using namespace _piecewise_polynomial_trajectory_;
 
 // Define the number of states in the boost array for integration
+/**
+ * @brief Define the number of states in the boost array for integration
+ * 
+ * Placeholder for now change according to the number of states later
+ */
 #define NSI 100                 // Placeholder for now change according to the number of states later - giri
 
 namespace _qrbp_{
 namespace _mrac_omega_{
 
+/**
+ * @class mrac_omega
+ */
 class mrac_omega : public controller_base
 {
 	public:
@@ -77,7 +92,31 @@ class mrac_omega : public controller_base
 		~mrac_omega();
 
 		// Implementing functions from controller_base
+		/**
+		 * @brief Implementing functions from controller_base
+		 * @param time_step_rk4_ 
+		 */
 		void run(const double time_step_rk4_);
+
+		/**
+		 * @param time 
+		 * @param x 
+		 * @param y 
+		 * @param z 
+		 * @param vx 
+		 * @param vy 
+		 * @param vz 
+		 * @param q0 
+		 * @param q1 
+		 * @param q2 
+		 * @param q3 
+		 * @param roll 
+		 * @param pitch 
+		 * @param yaw 
+		 * @param w_x 
+		 * @param w_y 
+		 * @param w_z 
+		 */
 		void update(double time, 
 					double x,
 					double y,
@@ -108,7 +147,17 @@ class mrac_omega : public controller_base
 
 	private:
 		// Implementing functions from controller_base
+		/**
+		 * @brief Implementing functions from controller_base
+		 * 
+		 * @param jsonFile 
+		 */
 		void read_params(const std::string& jsonFile);
+
+		/**
+		 * @brief init function
+		 * @param None
+		 */
 		void init();
 
 		// Piecewise polynomial trajectory object
@@ -123,6 +172,13 @@ class mrac_omega : public controller_base
 		rk4_array<double, NSI> dy;
 
 		// Define the model
+		/**
+		 * @brief Define the model
+		 * 
+		 * @param y 
+		 * @param dy 
+		 * @param t 
+		 */
 		void model(const rk4_array<double, NSI> &y, rk4_array<double, NSI> &dy, double t);
 
 		// Create a RungeKutta object.
@@ -139,31 +195,63 @@ class mrac_omega : public controller_base
 
 	private:
         // Function to compute the outer loop regressor vector
+		/**
+		 * @brief Function to compute the outer loop regressor vector
+		 * @param None
+		 */
 		void compute_outer_loop_regressor();
 
 		// Function to compute the translational control in the inertial frame
+		/**
+		 * @brief Function to compute the translational control in the inertial frame
+		 * @param None
+		 */
 		void compute_translational_control_in_I();
 
 		// Function to compute the thrust (u1) and the desired angles
+		/**
+		 * @brief Function to compute the thrust (u1) and the desired angles
+		 * @param None
+		 */
 		void compute_u1_eta_d();
 
 		// Function to compute the inner loop regressor vector
+		/**
+		 * @brief Function to compute the inner loop regressor vector
+		 * @param None
+		 */
 		void compute_innner_loop_regressor();
 
 		// Function to compute the rotational control input
+		/**
+		 * @brief Function to compute the rotational control input
+		 * @param None
+		 */
 		void compute_rotational_control();
 
 		// Function to compute the normalized thrust
+		/**
+		 * @brief Function to compute the normalized thrust
+		 * @param None
+		 */
 		void compute_normalized_thrusts();
 
 		// Assign the values from rk4 to controller internal members
+		/**
+		 * @brief Assign the values from rk4 to controller internal members
+		 * @param None
+		 */
 		void assign_from_rk4();
 
 		// Function to print to terminal
+		/**
+		 * @brief Function to print to terminal
+		 * @param None
+		 */
 		void debug2terminal();
 };
 
-} // namespace _qrbp_
+} // namespace _qrbp_A
 } // namespace _mrac_omega_
 
 

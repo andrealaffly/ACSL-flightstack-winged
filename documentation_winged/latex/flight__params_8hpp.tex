@@ -1,0 +1,101 @@
+\hypertarget{flight__params_8hpp}{}\doxysection{ACSL-\/flightstack-\/winged/src/acsl\+\_\+flight/include/flight\+\_\+params/flight\+\_\+params.hpp File Reference}
+\label{flight__params_8hpp}\index{ACSL-\/flightstack-\/winged/src/acsl\_flight/include/flight\_params/flight\_params.hpp@{ACSL-\/flightstack-\/winged/src/acsl\_flight/include/flight\_params/flight\_params.hpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}nlohmann/json.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}px4\+\_\+defines.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}global\+\_\+helpers.\+hpp\char`\"{}}\newline
+Include dependency graph for flight\+\_\+params.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{flight__params_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{flight__params_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPiecewisePolynomialTrajectoryInfo}{Piecewise\+Polynomial\+Trajectory\+Info}}
+\item 
+struct \mbox{\hyperlink{structflight__params}{flight\+\_\+params}}
+\item 
+class \mbox{\hyperlink{class__flight__params___1_1FlightConfigReader}{\+\_\+flight\+\_\+params\+\_\+\+::\+Flight\+Config\+Reader}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace__flight__params__}{\+\_\+flight\+\_\+params\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{flight__params_8hpp_ad6780b305e9bea9dc8e2bfd25bd062bd}{COL\+\_\+\+WIDTH}}~10
+\item 
+\#define \mbox{\hyperlink{flight__params_8hpp_a191a33a98c18c96f373b2a95b922ce73}{COUNTDOWN\+\_\+\+TO\+\_\+\+FLIGHT\+\_\+\+NO\+\_\+\+VISION}}~4
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{flight__params_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} = nlohmann\+::json
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{flight__params_8hpp_ad6780b305e9bea9dc8e2bfd25bd062bd}\label{flight__params_8hpp_ad6780b305e9bea9dc8e2bfd25bd062bd}} 
+\index{flight\_params.hpp@{flight\_params.hpp}!COL\_WIDTH@{COL\_WIDTH}}
+\index{COL\_WIDTH@{COL\_WIDTH}!flight\_params.hpp@{flight\_params.hpp}}
+\doxysubsubsection{\texorpdfstring{COL\_WIDTH}{COL\_WIDTH}}
+{\footnotesize\ttfamily \#define COL\+\_\+\+WIDTH~10}
+
+Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L\textquotesingle{}Afflitto. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+
+
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “\+AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. File\+: flight\+\_\+params.\+hpp Author\+: Giri Mugundan Kumar Date\+: April 30, 2024 For info\+: Andrea L\textquotesingle{}Afflitto \href{mailto:a.lafflitto@vt.edu}{\texttt{ a.\+lafflitto@vt.\+edu}}
+
+Description\+: Header file for the main flight parameters that will be used for the entire controller.
+
+Git\+Hub\+: \href{https://github.com/andrealaffly/ACSL-flightstack-winged}{\texttt{ https\+://github.\+com/andrealaffly/\+ACSL-\/flightstack-\/winged}} 
+
+Definition at line 51 of file flight\+\_\+params.\+hpp.
+
+\mbox{\Hypertarget{flight__params_8hpp_a191a33a98c18c96f373b2a95b922ce73}\label{flight__params_8hpp_a191a33a98c18c96f373b2a95b922ce73}} 
+\index{flight\_params.hpp@{flight\_params.hpp}!COUNTDOWN\_TO\_FLIGHT\_NO\_VISION@{COUNTDOWN\_TO\_FLIGHT\_NO\_VISION}}
+\index{COUNTDOWN\_TO\_FLIGHT\_NO\_VISION@{COUNTDOWN\_TO\_FLIGHT\_NO\_VISION}!flight\_params.hpp@{flight\_params.hpp}}
+\doxysubsubsection{\texorpdfstring{COUNTDOWN\_TO\_FLIGHT\_NO\_VISION}{COUNTDOWN\_TO\_FLIGHT\_NO\_VISION}}
+{\footnotesize\ttfamily \#define COUNTDOWN\+\_\+\+TO\+\_\+\+FLIGHT\+\_\+\+NO\+\_\+\+VISION~4}
+
+
+
+Definition at line 54 of file flight\+\_\+params.\+hpp.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{flight__params_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}\label{flight__params_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}} 
+\index{flight\_params.hpp@{flight\_params.hpp}!json@{json}}
+\index{json@{json}!flight\_params.hpp@{flight\_params.hpp}}
+\doxysubsubsection{\texorpdfstring{json}{json}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{flight__params_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} =  nlohmann\+::json}
+
+
+
+Definition at line 57 of file flight\+\_\+params.\+hpp.
+

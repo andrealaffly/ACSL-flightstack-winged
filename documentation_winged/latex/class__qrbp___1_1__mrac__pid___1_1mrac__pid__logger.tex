@@ -1,0 +1,153 @@
+\hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger}{}\doxysection{\+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+\_\+logger Class Reference}
+\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger}\index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}}
+
+
+{\ttfamily \#include $<$MRAC\+\_\+\+PID\+\_\+logger.\+hpp$>$}
+
+
+
+Inheritance diagram for \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+\_\+logger\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+\_\+logger\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a4c02814408d7a30eeb19ce2dfd8d4620}{mrac\+\_\+pid\+\_\+logger}} (\mbox{\hyperlink{struct__qrbp___1_1__mrac__pid___1_1controller__internal__members}{controller\+\_\+internal\+\_\+members}} $\ast$cim, \mbox{\hyperlink{struct__qrbp___1_1__mrac__pid___1_1controller__integrated__state__members}{controller\+\_\+integrated\+\_\+state\+\_\+members}} $\ast$csm, Eigen\+::\+Vector$<$ float, 8 $>$ $\ast$control\+\_\+input, const std\+::string \&controller\+\_\+log\+\_\+dir\+\_\+)
+\item 
+void \mbox{\hyperlink{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_ae4580ee75f3590bca1a79e349ea9c7d4}{log\+Init\+Headers}} ()
+\begin{DoxyCompactList}\small\item\em Implementing functions from blackbox. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a04e2fdcd96a767f255485ef74f64f7ad}{log\+Init\+Logging}} ()
+\item 
+void \mbox{\hyperlink{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a6ec69dc45c4b54a57830e04ba4a3c06a}{log\+Log\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct__qrbp___1_1__mrac__pid___1_1controller__internal__members}{controller\+\_\+internal\+\_\+members}} $\ast$ \mbox{\hyperlink{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a0c0b8b01311078c2a3f4acbb427d5f83}{CIM}}
+\item 
+\mbox{\hyperlink{struct__qrbp___1_1__mrac__pid___1_1controller__integrated__state__members}{controller\+\_\+integrated\+\_\+state\+\_\+members}} $\ast$ \mbox{\hyperlink{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a53dfb70760d3067a206c1a9515f8e5be}{CSM}}
+\item 
+Eigen\+::\+Vector$<$ float, 8 $>$ $\ast$ \mbox{\hyperlink{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a360d9b2564a6bbaf8e35b0900abdb490}{cntrl\+\_\+input}}
+\item 
+std\+::string \mbox{\hyperlink{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_ac0e5c7190257aca917bdd69d2a3185f6}{flight\+\_\+run\+\_\+log\+\_\+directory}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 75 of file MRAC\+\_\+\+PID\+\_\+logger.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a4c02814408d7a30eeb19ce2dfd8d4620}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a4c02814408d7a30eeb19ce2dfd8d4620}} 
+\index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}!mrac\_pid\_logger@{mrac\_pid\_logger}}
+\index{mrac\_pid\_logger@{mrac\_pid\_logger}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}}
+\doxysubsubsection{\texorpdfstring{mrac\_pid\_logger()}{mrac\_pid\_logger()}}
+{\footnotesize\ttfamily \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+\_\+logger\+::mrac\+\_\+pid\+\_\+logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__qrbp___1_1__mrac__pid___1_1controller__internal__members}{controller\+\_\+internal\+\_\+members}} $\ast$}]{cim,  }\item[{\mbox{\hyperlink{struct__qrbp___1_1__mrac__pid___1_1controller__integrated__state__members}{controller\+\_\+integrated\+\_\+state\+\_\+members}} $\ast$}]{csm,  }\item[{Eigen\+::\+Vector$<$ float, 8 $>$ $\ast$}]{control\+\_\+input,  }\item[{const std\+::string \&}]{controller\+\_\+log\+\_\+dir\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file MRAC\+\_\+\+PID\+\_\+logger.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_ae4580ee75f3590bca1a79e349ea9c7d4}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_ae4580ee75f3590bca1a79e349ea9c7d4}} 
+\index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}!logInitHeaders@{logInitHeaders}}
+\index{logInitHeaders@{logInitHeaders}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}}
+\doxysubsubsection{\texorpdfstring{logInitHeaders()}{logInitHeaders()}}
+{\footnotesize\ttfamily void \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+\_\+logger\+::log\+Init\+Headers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implementing functions from blackbox. 
+
+
+
+Definition at line 66 of file MRAC\+\_\+\+PID\+\_\+logger.\+cpp.
+
+\mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a04e2fdcd96a767f255485ef74f64f7ad}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a04e2fdcd96a767f255485ef74f64f7ad}} 
+\index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}!logInitLogging@{logInitLogging}}
+\index{logInitLogging@{logInitLogging}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}}
+\doxysubsubsection{\texorpdfstring{logInitLogging()}{logInitLogging()}}
+{\footnotesize\ttfamily bool \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+\_\+logger\+::log\+Init\+Logging (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 217 of file MRAC\+\_\+\+PID\+\_\+logger.\+cpp.
+
+\mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a6ec69dc45c4b54a57830e04ba4a3c06a}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a6ec69dc45c4b54a57830e04ba4a3c06a}} 
+\index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}!logLogData@{logLogData}}
+\index{logLogData@{logLogData}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}}
+\doxysubsubsection{\texorpdfstring{logLogData()}{logLogData()}}
+{\footnotesize\ttfamily void \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+\_\+logger\+::log\+Log\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 315 of file MRAC\+\_\+\+PID\+\_\+logger.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a0c0b8b01311078c2a3f4acbb427d5f83}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a0c0b8b01311078c2a3f4acbb427d5f83}} 
+\index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}!CIM@{CIM}}
+\index{CIM@{CIM}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}}
+\doxysubsubsection{\texorpdfstring{CIM}{CIM}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct__qrbp___1_1__mrac__pid___1_1controller__internal__members}{controller\+\_\+internal\+\_\+members}}$\ast$ \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+\_\+logger\+::\+CIM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 94 of file MRAC\+\_\+\+PID\+\_\+logger.\+hpp.
+
+\mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a360d9b2564a6bbaf8e35b0900abdb490}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a360d9b2564a6bbaf8e35b0900abdb490}} 
+\index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}!cntrl\_input@{cntrl\_input}}
+\index{cntrl\_input@{cntrl\_input}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}}
+\doxysubsubsection{\texorpdfstring{cntrl\_input}{cntrl\_input}}
+{\footnotesize\ttfamily Eigen\+::\+Vector$<$float, 8$>$$\ast$ \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+\_\+logger\+::cntrl\+\_\+input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 100 of file MRAC\+\_\+\+PID\+\_\+logger.\+hpp.
+
+\mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a53dfb70760d3067a206c1a9515f8e5be}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_a53dfb70760d3067a206c1a9515f8e5be}} 
+\index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}!CSM@{CSM}}
+\index{CSM@{CSM}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}}
+\doxysubsubsection{\texorpdfstring{CSM}{CSM}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct__qrbp___1_1__mrac__pid___1_1controller__integrated__state__members}{controller\+\_\+integrated\+\_\+state\+\_\+members}}$\ast$ \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+\_\+logger\+::\+CSM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 97 of file MRAC\+\_\+\+PID\+\_\+logger.\+hpp.
+
+\mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_ac0e5c7190257aca917bdd69d2a3185f6}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid__logger_ac0e5c7190257aca917bdd69d2a3185f6}} 
+\index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}!flight\_run\_log\_directory@{flight\_run\_log\_directory}}
+\index{flight\_run\_log\_directory@{flight\_run\_log\_directory}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid\_logger}}
+\doxysubsubsection{\texorpdfstring{flight\_run\_log\_directory}{flight\_run\_log\_directory}}
+{\footnotesize\ttfamily std\+::string \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+\_\+logger\+::flight\+\_\+run\+\_\+log\+\_\+directory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 103 of file MRAC\+\_\+\+PID\+\_\+logger.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ACSL-\/flightstack-\/winged/src/acsl\+\_\+flight/include/control/platforms/qrbp/control\+\_\+algorithms/\+MRAC\+\_\+\+PID/\mbox{\hyperlink{MRAC__PID__logger_8hpp}{MRAC\+\_\+\+PID\+\_\+logger.\+hpp}}\item 
+ACSL-\/flightstack-\/winged/src/acsl\+\_\+flight/src/control/platforms/qrbp/control\+\_\+algorithms/\+MRAC\+\_\+\+PID/\mbox{\hyperlink{MRAC__PID__logger_8cpp}{MRAC\+\_\+\+PID\+\_\+logger.\+cpp}}\end{DoxyCompactItemize}

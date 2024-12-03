@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond
 /***********************************************************************************************************************
- * File:        MRAC_OMEGA_logger.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        August 09, 2024
+ * File:        MRAC_OMEGA_logger.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        August 09, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -48,6 +49,12 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
         _________\//////___\///________\///__\/////////////____\///______________
 */
 
+/**
+ * @file MRAC_OMEGA_logger.hpp
+ * @brief logging for the MRAc with angular velocities controller
+ * 
+ * Inherits the Blackbox class for logging and takes in the internal members for the MRAC_OMEGA.
+ */
 #ifndef CONTROLLERS_MRAC_OMEGA_LOGGER_HPP_
 #define CONTROLLERS_MRAC_OMEGA_LOGGER_HPP_
 
@@ -62,6 +69,10 @@ using namespace _flight_log_;
 namespace _qrbp_{
 namespace _mrac_omega_{
 
+/**
+ * @class mrac_omega_logger
+ * 
+ */
 class mrac_omega_logger : public blackbox
 {
 public:
