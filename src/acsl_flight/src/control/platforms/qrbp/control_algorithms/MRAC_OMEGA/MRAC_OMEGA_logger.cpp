@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,12 +22,12 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        MRAC_OMEGA_logger.cpp
- * Author:      Giri Mugundan Kumar
- * Date:        August 09, 2024
- * For info:    Andrea L'Afflitto 
+ * File:        MRAC_OMEGA_logger.cpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        August 09, 2024 \n 
+ * For info:    Andrea L'Afflitto \n 
  *              a.lafflitto@vt.edu
  * 
  * Description: logging for the MRAC with angular velocities controller. 
@@ -47,12 +48,24 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
        _______\///\\\\\\__\/\\\______\//\\\_\/\\\\\\\\\\\\\/__\/\\\_____________ 
         _________\//////___\///________\///__\/////////////____\///______________
 */
+/**
+ * @file MRAC_OMEGA_logger.cpp
+ * @brief logging for the MRAC with angular velocities controller.
+ * 
+ *              Inherits the Blackbox class for logging and takes in the
+ *              internal members for the MRAC_OMEGA.
+ * 
+ * Classes used are referenced in @ref MRAC_OMEGA_LOGGER.hpp
+ */
 
 #include <MRAC_OMEGA_logger.hpp>
 
 namespace _qrbp_{
 namespace _mrac_omega_{
 
+/**
+ * @class mrac_omega_logger
+ */
 mrac_omega_logger::mrac_omega_logger(controller_internal_members* cim, controller_integrated_state_members* csm, 
                                      Eigen::Vector<float, 8>* control_input, const std::string & controller_log_dir_) : 
                                      CIM(cim), CSM(csm), cntrl_input(control_input), 

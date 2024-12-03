@@ -21,7 +21,7 @@
 <!-- Node0 -->
 <g id="node2" class="node">
 <title>Node0</title>
-<g id="a_node2"><a xlink:href="class__control___1_1controlNode.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="class__control___1_1controlNode.html" target="_top" xlink:title="Funtion that updates the current time when called.">
 <polygon fill="white" stroke="black" points="137.5,-38.5 137.5,-57.5 263.5,-57.5 263.5,-38.5 137.5,-38.5"/>
 <text text-anchor="middle" x="200.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">_control_::controlNode</text>
 </a>

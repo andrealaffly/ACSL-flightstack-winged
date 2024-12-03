@@ -117,7 +117,11 @@ Constructor which accepts Io\+Context.
 \end{DoxyParams}
 
 
-Definition at line 170 of file mocap.\+cpp.
+Definition at line 181 of file mocap.\+cpp.
+
+
+
+References \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+INFO(), get\+\_\+params(), and log\+Init\+Logging().
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a9391a942303c16fd5509e822b2d675ae}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a9391a942303c16fd5509e822b2d675ae}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!````~UdpReceiverNode@{$\sim$UdpReceiverNode}}
@@ -131,7 +135,11 @@ Destructor -\/ required to manage owned Io\+Context.
 
 
 
-Definition at line 196 of file mocap.\+cpp.
+Definition at line 207 of file mocap.\+cpp.
+
+
+
+References \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+INFO(), and m\+\_\+owned\+\_\+ctx.
 
 
 
@@ -148,7 +156,11 @@ Debugger function to output the mocap data.
 
 
 
-Definition at line 286 of file mocap.\+cpp.
+Definition at line 297 of file mocap.\+cpp.
+
+
+
+References \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::control\+\_\+time, \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+INFO(), mc\+\_\+im, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::pitchspeed, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::q0, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::q1, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::q2, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::q3, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::rollspeed, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::vx, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::vy, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::vz, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::x, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::y, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::yawspeed, and \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::z.
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_aee8977fd55a2a9621e85a64829cf2fdf}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_aee8977fd55a2a9621e85a64829cf2fdf}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!get\_params@{get\_params}}
@@ -162,7 +174,15 @@ Get the parameters for the ip and port to ping.
 
 
 
-Definition at line 185 of file mocap.\+cpp.
+Definition at line 196 of file mocap.\+cpp.
+
+
+
+References IP\+\_\+\+IN\+\_\+\+USE, m\+\_\+ip, m\+\_\+port, and ODROID\+\_\+\+M1\+S\+\_\+\+PORT.
+
+
+
+Referenced by Udp\+Receiver\+Node().
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_ae27d69f2f5212289ca39b0026a686ae7}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_ae27d69f2f5212289ca39b0026a686ae7}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!logInitHeaders@{logInitHeaders}}
@@ -176,7 +196,15 @@ Implementing virtual functions from blackbox.
 
 
 
-Definition at line 68 of file mocap.\+cpp.
+Definition at line 79 of file mocap.\+cpp.
+
+
+
+References \+\_\+flight\+\_\+log\+\_\+\+::blackbox\+::logger\+\_\+mocapdata.
+
+
+
+Referenced by log\+Init\+Logging().
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_abba3cef9402ea8b0774b11ec63191296}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_abba3cef9402ea8b0774b11ec63191296}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!logInitLogging@{logInitLogging}}
@@ -186,7 +214,15 @@ Definition at line 68 of file mocap.\+cpp.
 
 
 
-Definition at line 91 of file mocap.\+cpp.
+Definition at line 102 of file mocap.\+cpp.
+
+
+
+References flight\+\_\+run\+\_\+log\+\_\+directory, \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+ERROR(), \+\_\+flight\+\_\+log\+\_\+\+::blackbox\+::logger\+\_\+mocapdata, and log\+Init\+Headers().
+
+
+
+Referenced by Udp\+Receiver\+Node().
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a62e8bfff9f197cdeadbdee881a9d2146}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a62e8bfff9f197cdeadbdee881a9d2146}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!logLogData@{logLogData}}
@@ -196,7 +232,15 @@ Definition at line 91 of file mocap.\+cpp.
 
 
 
-Definition at line 143 of file mocap.\+cpp.
+Definition at line 154 of file mocap.\+cpp.
+
+
+
+References \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::control\+\_\+time, \+\_\+flight\+\_\+log\+\_\+\+::blackbox\+::logger\+\_\+mocapdata, mc\+\_\+im, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::pitchspeed, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::q0, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::q1, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::q2, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::q3, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::rollspeed, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::vx, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::vy, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::vz, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::x, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::y, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::yawspeed, and \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::z.
+
+
+
+Referenced by receiver\+\_\+callback().
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a1bd4b02d5615ca2f76c3673303ebdf0c}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a1bd4b02d5615ca2f76c3673303ebdf0c}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!on\_activate@{on\_activate}}
@@ -215,7 +259,11 @@ Callback from transition to \char`\"{}activating\char`\"{} state.
 \end{DoxyParams}
 
 
-Definition at line 245 of file mocap.\+cpp.
+Definition at line 256 of file mocap.\+cpp.
+
+
+
+References mocap\+\_\+publisher\+\_\+.
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_adbd93f4f23f225fab48a80c140a94edc}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_adbd93f4f23f225fab48a80c140a94edc}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!on\_cleanup@{on\_cleanup}}
@@ -234,7 +282,11 @@ Callback from transition to \char`\"{}unconfigured\char`\"{} state.
 \end{DoxyParams}
 
 
-Definition at line 267 of file mocap.\+cpp.
+Definition at line 278 of file mocap.\+cpp.
+
+
+
+References m\+\_\+udp\+\_\+driver, and mocap\+\_\+publisher\+\_\+.
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a5c17b31f9d32f218a27bbf83cfeab421}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a5c17b31f9d32f218a27bbf83cfeab421}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!on\_configure@{on\_configure}}
@@ -253,7 +305,11 @@ Callback from transition to \char`\"{}configuring\char`\"{} state.
 \end{DoxyParams}
 
 
-Definition at line 206 of file mocap.\+cpp.
+Definition at line 217 of file mocap.\+cpp.
+
+
+
+References m\+\_\+ip, m\+\_\+port, m\+\_\+udp\+\_\+driver, mocap\+\_\+publisher\+\_\+, and receiver\+\_\+callback().
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a1a181608bb278c78e07ee1cb9d9cdfba}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a1a181608bb278c78e07ee1cb9d9cdfba}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!on\_deactivate@{on\_deactivate}}
@@ -272,7 +328,11 @@ Callback from transition to \char`\"{}deactivating\char`\"{} state.
 \end{DoxyParams}
 
 
-Definition at line 256 of file mocap.\+cpp.
+Definition at line 267 of file mocap.\+cpp.
+
+
+
+References mocap\+\_\+publisher\+\_\+.
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a2a4a6a636556b1850c5eb14c55b2529c}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a2a4a6a636556b1850c5eb14c55b2529c}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!on\_shutdown@{on\_shutdown}}
@@ -291,7 +351,7 @@ Callback from transition to \char`\"{}shutdown\char`\"{} state.
 \end{DoxyParams}
 
 
-Definition at line 278 of file mocap.\+cpp.
+Definition at line 289 of file mocap.\+cpp.
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_aeb95da05fbb2d8de9ad3c5a6a79f9313}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_aeb95da05fbb2d8de9ad3c5a6a79f9313}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!receiver\_callback@{receiver\_callback}}
@@ -305,7 +365,15 @@ Callback for receiving a UDP datagram.
 
 
 
-Definition at line 313 of file mocap.\+cpp.
+Definition at line 324 of file mocap.\+cpp.
+
+
+
+References \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::control\+\_\+time, \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+ERROR(), vehicle\+\_\+states\+::get\+\_\+controltime(), log\+Log\+Data(), mc\+\_\+im, mocap\+\_\+publisher\+\_\+, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::pitchspeed, POSE\+\_\+\+FRAME\+\_\+\+NED, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::q0, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::q1, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::q2, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::q3, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::rollspeed, vehicle\+\_\+ptr, VELOCITY\+\_\+\+FRAME\+\_\+\+NED, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::vx, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::vy, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::vz, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::x, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::y, \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::yawspeed, and \+\_\+drivers\+\_\+\+::\+\_\+udp\+\_\+driver\+\_\+\+::mocap\+\_\+states\+::z.
+
+
+
+Referenced by on\+\_\+configure().
 
 
 
@@ -324,6 +392,10 @@ Directory for logging mocap data.
 
 Definition at line 210 of file mocap.\+hpp.
 
+
+
+Referenced by log\+Init\+Logging().
+
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a54f2927858237916046a07736e710245}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a54f2927858237916046a07736e710245}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!m\_ip@{m\_ip}}
 \index{m\_ip@{m\_ip}!\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}}
@@ -337,6 +409,10 @@ String for the ip of the odrioid.
 
 
 Definition at line 183 of file mocap.\+hpp.
+
+
+
+Referenced by get\+\_\+params(), and on\+\_\+configure().
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_ac37e7f4167a6c90ba7a12a16338435a8}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_ac37e7f4167a6c90ba7a12a16338435a8}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!m\_owned\_ctx@{m\_owned\_ctx}}
@@ -352,6 +428,10 @@ Pointer to the asio context owned by this node for async communication.
 
 Definition at line 180 of file mocap.\+hpp.
 
+
+
+Referenced by $\sim$\+Udp\+Receiver\+Node().
+
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_af647db5797b76ab0d2cc225909f4f529}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_af647db5797b76ab0d2cc225909f4f529}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!m\_port@{m\_port}}
 \index{m\_port@{m\_port}!\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}}
@@ -365,6 +445,10 @@ String for the port of the odroid.
 
 
 Definition at line 186 of file mocap.\+hpp.
+
+
+
+Referenced by get\+\_\+params(), and on\+\_\+configure().
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a9a697b231b2c310004f99887bc8e5bf7}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a9a697b231b2c310004f99887bc8e5bf7}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!m\_udp\_driver@{m\_udp\_driver}}
@@ -380,6 +464,10 @@ Pointer for the udp driver which wraps the udp socket.
 
 Definition at line 189 of file mocap.\+hpp.
 
+
+
+Referenced by on\+\_\+cleanup(), and on\+\_\+configure().
+
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a058f63754cebd537fc9a0e636869b41b}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a058f63754cebd537fc9a0e636869b41b}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!mc\_im@{mc\_im}}
 \index{mc\_im@{mc\_im}!\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}}
@@ -393,6 +481,10 @@ Declare variables to store parsed data and declare it as internal members \char`
 
 
 Definition at line 199 of file mocap.\+hpp.
+
+
+
+Referenced by debug\+Mocap\+Data2screen(), log\+Log\+Data(), and receiver\+\_\+callback().
 
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_ab6ae4cb30c74ca52b88f8436d06759e5}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_ab6ae4cb30c74ca52b88f8436d06759e5}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!mocap\_publisher\_@{mocap\_publisher\_}}
@@ -408,6 +500,10 @@ Publisher for publishing the mocap message.
 
 Definition at line 192 of file mocap.\+hpp.
 
+
+
+Referenced by on\+\_\+activate(), on\+\_\+cleanup(), on\+\_\+configure(), on\+\_\+deactivate(), and receiver\+\_\+callback().
+
 \mbox{\Hypertarget{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a4d323c08e0b0f4cd65707e865429704e}\label{class__drivers___1_1__udp__driver___1_1UdpReceiverNode_a4d323c08e0b0f4cd65707e865429704e}} 
 \index{\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}!vehicle\_ptr@{vehicle\_ptr}}
 \index{vehicle\_ptr@{vehicle\_ptr}!\_drivers\_::\_udp\_driver\_::UdpReceiverNode@{\_drivers\_::\_udp\_driver\_::UdpReceiverNode}}
@@ -417,6 +513,10 @@ Definition at line 192 of file mocap.\+hpp.
 Instance of the vehicle\+\_\+ptr to point to the vehicle state object in flight\+\_\+bridge.\+cpp 
 
 Definition at line 196 of file mocap.\+hpp.
+
+
+
+Referenced by receiver\+\_\+callback().
 
 
 

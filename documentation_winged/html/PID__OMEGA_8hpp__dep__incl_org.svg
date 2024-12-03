@@ -42,7 +42,7 @@
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="PID__OMEGA_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node13"><a xlink:href="PID__OMEGA_8cpp.html" target="_top" xlink:title="PID with angular velocities for the QRBP.">
 <polygon fill="white" stroke="black" points="417,-312.5 417,-364.5 603,-364.5 603,-312.5 417,-312.5"/>
 <text text-anchor="start" x="425" y="-352.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="425" y="-341.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -111,7 +111,7 @@
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="vio_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="vio_8hpp.html" target="_top" xlink:title="Class decleration for Intel Realsense T265 tracking camera as a lifecycle node.">
 <polygon fill="white" stroke="black" points="459.5,-234.5 459.5,-275.5 594.5,-275.5 594.5,-234.5 459.5,-234.5"/>
 <text text-anchor="start" x="467.5" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="467.5" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/include</text>
@@ -134,7 +134,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="control_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="control_8cpp.html" target="_top" xlink:title="Control node definition. Runs all the control algorithms. Adds as a hub for all the control actions.">
 <polygon fill="white" stroke="black" points="0,-156.5 0,-197.5 140,-197.5 140,-156.5 0,-156.5"/>
 <text text-anchor="start" x="8" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="8" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -174,7 +174,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="flight__bridge_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="flight__bridge_8cpp.html" target="_top" xlink:title="Utlities for multithreading.">
 <polygon fill="white" stroke="black" points="254.5,-78.5 254.5,-119.5 391.5,-119.5 391.5,-78.5 254.5,-78.5"/>
 <text text-anchor="start" x="262.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="262.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/flight</text>
@@ -191,7 +191,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="flight__main_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="flight__main_8cpp.html" target="_top" xlink:title="Main function to initiate ROS2.">
 <polygon fill="white" stroke="black" points="92.5,-0.5 92.5,-41.5 227.5,-41.5 227.5,-0.5 92.5,-0.5"/>
 <text text-anchor="start" x="100.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="100.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/flight</text>
@@ -214,7 +214,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="mocap_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="mocap_8cpp.html" target="_top" xlink:title="Node definition for UDP socket as a lifecycle node.">
 <polygon fill="white" stroke="black" points="342,-156.5 342,-197.5 482,-197.5 482,-156.5 342,-156.5"/>
 <text text-anchor="start" x="350" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="350" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/mocap</text>
@@ -237,7 +237,7 @@
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="vio_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node12"><a xlink:href="vio_8cpp.html" target="_top" xlink:title="Node definition for Intel Realsense T265 tracking camera as a lifecycle node.">
 <polygon fill="white" stroke="black" points="500.5,-156.5 500.5,-197.5 635.5,-197.5 635.5,-156.5 500.5,-156.5"/>
 <text text-anchor="start" x="508.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="508.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/vio</text>

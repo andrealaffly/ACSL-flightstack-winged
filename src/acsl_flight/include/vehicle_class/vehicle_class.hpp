@@ -38,9 +38,20 @@
 #ifndef VEHICLE_CLASS_HPP_
 #define VEHICLE_CLASS_HPP_
 
+/**
+ * @file vehicle_class.hpp
+ * @brief Header for the vehicle class object
+ * 
+ * This stores all the data of the states for any vehicle.
+ */
+
 #include <atomic>
 #include <cmath>
 
+/**
+ * @class vehicle_states
+ * @brief vehicle state class
+ */
 class vehicle_states {
 public:
     // Constructor with default values.

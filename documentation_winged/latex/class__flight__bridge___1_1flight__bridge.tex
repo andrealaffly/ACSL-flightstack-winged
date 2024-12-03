@@ -61,7 +61,11 @@ Constructor.
 
 
 
-Definition at line 60 of file flight\+\_\+bridge.\+cpp.
+Definition at line 66 of file flight\+\_\+bridge.\+cpp.
+
+
+
+References \+\_\+flight\+\_\+bridge\+\_\+\+::create\+\_\+global\+\_\+log\+\_\+directory(), \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+INFO(), global\+\_\+log\+\_\+dir, and platform\+\_\+of\+\_\+choice.
 
 
 
@@ -82,7 +86,15 @@ Destructor.
 
 -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- GPS RTK EKF FUSION MODE -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- ///
 
-Definition at line 68 of file flight\+\_\+bridge.\+cpp.
+Definition at line 74 of file flight\+\_\+bridge.\+cpp.
+
+
+
+References \+\_\+flight\+\_\+bridge\+\_\+\+::configure\+\_\+thread(), CPU\+\_\+\+ONE, CPU\+\_\+\+THREE, CPU\+\_\+\+TWO, CPU\+\_\+\+ZERO, flight\+\_\+params\+\_\+ptr, \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+ERROR(), \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+INFO(), \+\_\+flight\+\_\+bridge\+\_\+\+::get\+\_\+thread\+\_\+time(), global\+\_\+log\+\_\+dir, \+\_\+flight\+\_\+bridge\+\_\+\+::\+HIGH, flight\+\_\+params\+::mocap, ret, vehicle, and flight\+\_\+params\+::vio.
+
+
+
+Referenced by main().
 
 
 
@@ -97,6 +109,10 @@ Definition at line 68 of file flight\+\_\+bridge.\+cpp.
 
 Definition at line 249 of file flight\+\_\+bridge.\+hpp.
 
+
+
+Referenced by init().
+
 \mbox{\Hypertarget{class__flight__bridge___1_1flight__bridge_ae1e9783339b0ba1eb7233de90c83da67}\label{class__flight__bridge___1_1flight__bridge_ae1e9783339b0ba1eb7233de90c83da67}} 
 \index{\_flight\_bridge\_::flight\_bridge@{\_flight\_bridge\_::flight\_bridge}!CPU\_THREE@{CPU\_THREE}}
 \index{CPU\_THREE@{CPU\_THREE}!\_flight\_bridge\_::flight\_bridge@{\_flight\_bridge\_::flight\_bridge}}
@@ -107,6 +123,10 @@ Definition at line 249 of file flight\+\_\+bridge.\+hpp.
 
 Definition at line 251 of file flight\+\_\+bridge.\+hpp.
 
+
+
+Referenced by init().
+
 \mbox{\Hypertarget{class__flight__bridge___1_1flight__bridge_a9b7e3ad58f1143ef6bbf8f05b1a02d09}\label{class__flight__bridge___1_1flight__bridge_a9b7e3ad58f1143ef6bbf8f05b1a02d09}} 
 \index{\_flight\_bridge\_::flight\_bridge@{\_flight\_bridge\_::flight\_bridge}!CPU\_TWO@{CPU\_TWO}}
 \index{CPU\_TWO@{CPU\_TWO}!\_flight\_bridge\_::flight\_bridge@{\_flight\_bridge\_::flight\_bridge}}
@@ -116,6 +136,10 @@ Definition at line 251 of file flight\+\_\+bridge.\+hpp.
 
 
 Definition at line 250 of file flight\+\_\+bridge.\+hpp.
+
+
+
+Referenced by init().
 
 \mbox{\Hypertarget{class__flight__bridge___1_1flight__bridge_a21edcc9035cc1a97ee8a68e9b1728b9b}\label{class__flight__bridge___1_1flight__bridge_a21edcc9035cc1a97ee8a68e9b1728b9b}} 
 \index{\_flight\_bridge\_::flight\_bridge@{\_flight\_bridge\_::flight\_bridge}!CPU\_ZERO@{CPU\_ZERO}}
@@ -131,6 +155,10 @@ CPU numbers.
 
 Definition at line 248 of file flight\+\_\+bridge.\+hpp.
 
+
+
+Referenced by init().
+
 \mbox{\Hypertarget{class__flight__bridge___1_1flight__bridge_a40a4fc5afec7f3c5ddc454498380ad8c}\label{class__flight__bridge___1_1flight__bridge_a40a4fc5afec7f3c5ddc454498380ad8c}} 
 \index{\_flight\_bridge\_::flight\_bridge@{\_flight\_bridge\_::flight\_bridge}!flight\_params\_ptr@{flight\_params\_ptr}}
 \index{flight\_params\_ptr@{flight\_params\_ptr}!\_flight\_bridge\_::flight\_bridge@{\_flight\_bridge\_::flight\_bridge}}
@@ -140,6 +168,10 @@ Definition at line 248 of file flight\+\_\+bridge.\+hpp.
 Instance of the flight\+\_\+params\+\_\+ptr to point to the flight\+\_\+parameter object in flight\+\_\+main.\+cpp 
 
 Definition at line 258 of file flight\+\_\+bridge.\+hpp.
+
+
+
+Referenced by init().
 
 \mbox{\Hypertarget{class__flight__bridge___1_1flight__bridge_ad7a3c6721899ea73d8e89591ea17e23c}\label{class__flight__bridge___1_1flight__bridge_ad7a3c6721899ea73d8e89591ea17e23c}} 
 \index{\_flight\_bridge\_::flight\_bridge@{\_flight\_bridge\_::flight\_bridge}!global\_log\_dir@{global\_log\_dir}}
@@ -155,6 +187,10 @@ Instance of the global flight\+\_\+run\+\_\+directory.
 
 Definition at line 261 of file flight\+\_\+bridge.\+hpp.
 
+
+
+Referenced by flight\+\_\+bridge(), and init().
+
 \mbox{\Hypertarget{class__flight__bridge___1_1flight__bridge_a941f59e05a1214fcf2f16f03ef1c0eeb}\label{class__flight__bridge___1_1flight__bridge_a941f59e05a1214fcf2f16f03ef1c0eeb}} 
 \index{\_flight\_bridge\_::flight\_bridge@{\_flight\_bridge\_::flight\_bridge}!ret@{ret}}
 \index{ret@{ret}!\_flight\_bridge\_::flight\_bridge@{\_flight\_bridge\_::flight\_bridge}}
@@ -169,6 +205,10 @@ Thread creation boolean.
 
 Definition at line 243 of file flight\+\_\+bridge.\+hpp.
 
+
+
+Referenced by init().
+
 \mbox{\Hypertarget{class__flight__bridge___1_1flight__bridge_a7f194d014f1ca542d1c8be2624f031b8}\label{class__flight__bridge___1_1flight__bridge_a7f194d014f1ca542d1c8be2624f031b8}} 
 \index{\_flight\_bridge\_::flight\_bridge@{\_flight\_bridge\_::flight\_bridge}!vehicle@{vehicle}}
 \index{vehicle@{vehicle}!\_flight\_bridge\_::flight\_bridge@{\_flight\_bridge\_::flight\_bridge}}
@@ -178,6 +218,10 @@ Definition at line 243 of file flight\+\_\+bridge.\+hpp.
 
 
 Definition at line 254 of file flight\+\_\+bridge.\+hpp.
+
+
+
+Referenced by init().
 
 
 

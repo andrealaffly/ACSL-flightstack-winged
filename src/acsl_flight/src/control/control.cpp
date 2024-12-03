@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        control.cpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 12, 2024
+ * File:        control.cpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        April 12, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -35,7 +36,12 @@
  **********************************************************************************************************************/
 
 #include "control.hpp"
-
+/**
+ * @file control.cpp
+ * @brief Control node definition. Runs all the control algorithms. Adds as a hub for all the control actions.
+ * 
+ * Classes used are referenced in @ref control.hpp
+ */
 namespace _control_
 {
     /***********************************************************************************************/
@@ -83,6 +89,9 @@ namespace _control_
     /*                                  HELPER FUNCTIONS                                           */
     /***********************************************************************************************/
     /// Funtion that updates the current time when called.
+    /**
+     * @class controlNode
+     */
     void controlNode::updateCurrentTime(){
         // Udpate local time
         time_current_ = this->get_clock()->now().seconds() - timestamp_initial_;

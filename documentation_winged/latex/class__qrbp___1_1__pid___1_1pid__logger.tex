@@ -68,7 +68,11 @@ Definition at line 75 of file PID\+\_\+logger.\+hpp.
 
 
 
-Definition at line 55 of file PID\+\_\+logger.\+cpp.
+Definition at line 65 of file PID\+\_\+logger.\+cpp.
+
+
+
+References \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+INFO(), and log\+Init\+Logging().
 
 
 
@@ -90,7 +94,15 @@ Initializing headers.
 \end{DoxyParams}
 
 
-Definition at line 65 of file PID\+\_\+logger.\+cpp.
+Definition at line 75 of file PID\+\_\+logger.\+cpp.
+
+
+
+References \+\_\+flight\+\_\+log\+\_\+\+::blackbox\+::logger\+\_\+logdata.
+
+
+
+Referenced by log\+Init\+Logging().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid__logger_a686b28a862b591b35783a8ed3136a8ea}\label{class__qrbp___1_1__pid___1_1pid__logger_a686b28a862b591b35783a8ed3136a8ea}} 
 \index{\_qrbp\_::\_pid\_::pid\_logger@{\_qrbp\_::\_pid\_::pid\_logger}!logInitLogging@{logInitLogging}}
@@ -109,7 +121,15 @@ Initialize logging.
 \end{DoxyParams}
 
 
-Definition at line 141 of file PID\+\_\+logger.\+cpp.
+Definition at line 151 of file PID\+\_\+logger.\+cpp.
+
+
+
+References flight\+\_\+run\+\_\+log\+\_\+directory, \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+ERROR(), \+\_\+flight\+\_\+log\+\_\+\+::blackbox\+::logger\+\_\+logdata, and log\+Init\+Headers().
+
+
+
+Referenced by pid\+\_\+logger().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid__logger_a3104a3447e44d55e0a99c9a639b4832c}\label{class__qrbp___1_1__pid___1_1pid__logger_a3104a3447e44d55e0a99c9a639b4832c}} 
 \index{\_qrbp\_::\_pid\_::pid\_logger@{\_qrbp\_::\_pid\_::pid\_logger}!logLogData@{logLogData}}
@@ -128,7 +148,15 @@ logging data
 \end{DoxyParams}
 
 
-Definition at line 239 of file PID\+\_\+logger.\+cpp.
+Definition at line 249 of file PID\+\_\+logger.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+duration, CIM, cntrl\+\_\+input, CSM, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+eta, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+eta\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+eta\+\_\+rate, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+pos, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+vel, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+acceleration\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d, \+\_\+flight\+\_\+log\+\_\+\+::blackbox\+::logger\+\_\+logdata, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+J, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+dot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::t, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Thrust, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+pos, and \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+vel.
+
+
+
+Referenced by \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::run().
 
 
 
@@ -143,6 +171,10 @@ Definition at line 239 of file PID\+\_\+logger.\+cpp.
 
 Definition at line 105 of file PID\+\_\+logger.\+hpp.
 
+
+
+Referenced by log\+Log\+Data().
+
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid__logger_a8fb9254a17272c37b99d2407b12e450c}\label{class__qrbp___1_1__pid___1_1pid__logger_a8fb9254a17272c37b99d2407b12e450c}} 
 \index{\_qrbp\_::\_pid\_::pid\_logger@{\_qrbp\_::\_pid\_::pid\_logger}!cntrl\_input@{cntrl\_input}}
 \index{cntrl\_input@{cntrl\_input}!\_qrbp\_::\_pid\_::pid\_logger@{\_qrbp\_::\_pid\_::pid\_logger}}
@@ -152,6 +184,10 @@ Definition at line 105 of file PID\+\_\+logger.\+hpp.
 
 
 Definition at line 111 of file PID\+\_\+logger.\+hpp.
+
+
+
+Referenced by log\+Log\+Data().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid__logger_a4ee802369f92e0e65a752a013e9166ab}\label{class__qrbp___1_1__pid___1_1pid__logger_a4ee802369f92e0e65a752a013e9166ab}} 
 \index{\_qrbp\_::\_pid\_::pid\_logger@{\_qrbp\_::\_pid\_::pid\_logger}!CSM@{CSM}}
@@ -163,6 +199,10 @@ Definition at line 111 of file PID\+\_\+logger.\+hpp.
 
 Definition at line 108 of file PID\+\_\+logger.\+hpp.
 
+
+
+Referenced by log\+Log\+Data().
+
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid__logger_a94a6d7aca3c9ac45b28a1e4d8236345d}\label{class__qrbp___1_1__pid___1_1pid__logger_a94a6d7aca3c9ac45b28a1e4d8236345d}} 
 \index{\_qrbp\_::\_pid\_::pid\_logger@{\_qrbp\_::\_pid\_::pid\_logger}!flight\_run\_log\_directory@{flight\_run\_log\_directory}}
 \index{flight\_run\_log\_directory@{flight\_run\_log\_directory}!\_qrbp\_::\_pid\_::pid\_logger@{\_qrbp\_::\_pid\_::pid\_logger}}
@@ -172,6 +212,10 @@ Definition at line 108 of file PID\+\_\+logger.\+hpp.
 
 
 Definition at line 114 of file PID\+\_\+logger.\+hpp.
+
+
+
+Referenced by log\+Init\+Logging().
 
 
 

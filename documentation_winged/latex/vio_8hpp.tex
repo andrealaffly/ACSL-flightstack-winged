@@ -1,5 +1,10 @@
 \hypertarget{vio_8hpp}{}\doxysection{ACSL-\/flightstack-\/winged/src/acsl\+\_\+flight/include/vio/vio.hpp File Reference}
 \label{vio_8hpp}\index{ACSL-\/flightstack-\/winged/src/acsl\_flight/include/vio/vio.hpp@{ACSL-\/flightstack-\/winged/src/acsl\_flight/include/vio/vio.hpp}}
+
+
+Class decleration for Intel Realsense T265 tracking camera as a lifecycle node.  
+
+
 {\ttfamily \#include \char`\"{}control\+\_\+config.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}librealsense2/rs.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}px4\+\_\+defines.\+hpp\char`\"{}}\newline
@@ -17,8 +22,7 @@
 {\ttfamily \#include $<$px4\+\_\+msgs/msg/vehicle\+\_\+odometry.\+hpp$>$}\newline
 {\ttfamily \#include \char`\"{}vehicle\+\_\+class.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}flight\+\_\+log.\+hpp\char`\"{}}\newline
-Include dependency graph for vio.\+hpp\+:
-\nopagebreak
+Include dependency graph for vio.\+hpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -36,7 +40,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct__t265___1_1vio__states}{\+\_\+t265\+\_\+\+::vio\+\_\+states}}
-\item 
+\begin{DoxyCompactList}\small\item\em Struct for vio states that come over the USB 3.\+0 Link. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class__t265___1_1__vio___1_1VioT265Node}{\+\_\+t265\+\_\+\+::\+\_\+vio\+\_\+\+::\+Vio\+T265\+Node}}
 \begin{DoxyCompactList}\small\item\em Vio\+T265\+Node class which can recieve position tracking from the Realsense T265. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
@@ -76,6 +80,26 @@ const Eigen\+::\+Matrix3f \mbox{\hyperlink{vio_8hpp_a6e03bc678172c656aaf08653083
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Class decleration for Intel Realsense T265 tracking camera as a lifecycle node. 
+
+Part of the code in this file leverages the following material.
+
+Referenced\+: \href{https://github.com/IntelRealSense/librealsense/blob/v2.53.1}{\texttt{ https\+://github.\+com/\+Intel\+Real\+Sense/librealsense/blob/v2.\+53.\+1}} Copyright 2017 Intel Corporation.
+
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \begin{DoxyVerb}http://www.apache.org/licenses/LICENSE-2.0
+\end{DoxyVerb}
+ Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. File\+: vio.\+hpp ~\newline
+ Author\+: Giri Mugundan Kumar ~\newline
+ ~\newline
+ Date\+: September 05, 2024 ~\newline
+ For info\+: Andrea L\textquotesingle{}Afflitto ~\newline
+ \href{mailto:a.lafflitto@vt.edu}{\texttt{ a.\+lafflitto@vt.\+edu}}
+
+Description\+: Class declaration for Intel Realsense T265 tracking camera as a lifecycle node.
+
+Git\+Hub\+: \href{https://github.com/andrealaffly/ACSL-flightstack-winged}{\texttt{ https\+://github.\+com/andrealaffly/\+ACSL-\/flightstack-\/winged}} 
+
 \doxysubsection{Typedef Documentation}
 \mbox{\Hypertarget{vio_8hpp_a0b9177049bd66ba72942a529a537e984}\label{vio_8hpp_a0b9177049bd66ba72942a529a537e984}} 
 \index{vio.hpp@{vio.hpp}!LNI@{LNI}}
@@ -83,30 +107,9 @@ const Eigen\+::\+Matrix3f \mbox{\hyperlink{vio_8hpp_a6e03bc678172c656aaf08653083
 \doxysubsubsection{\texorpdfstring{LNI}{LNI}}
 {\footnotesize\ttfamily using \mbox{\hyperlink{mocap_8hpp_a0b9177049bd66ba72942a529a537e984}{LNI}} =  rclcpp\+\_\+lifecycle\+::node\+\_\+interfaces\+::\+Lifecycle\+Node\+Interface}
 
-Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L\textquotesingle{}Afflitto. All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
 
 
-\begin{DoxyEnumerate}
-\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-\item Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-\end{DoxyEnumerate}
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “\+AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. Part of the code in this file leverages the following material.
-
-Referenced\+: \href{https://github.com/IntelRealSense/librealsense/blob/v2.53.1}{\texttt{ https\+://github.\+com/\+Intel\+Real\+Sense/librealsense/blob/v2.\+53.\+1}} Copyright 2017 Intel Corporation.
-
-Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \begin{DoxyVerb}http://www.apache.org/licenses/LICENSE-2.0
-\end{DoxyVerb}
- Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+AS IS\char`\"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. File\+: vio.\+hpp Author\+: Giri Mugundan Kumar Date\+: September 05, 2024 For info\+: Andrea L\textquotesingle{}Afflitto \href{mailto:a.lafflitto@vt.edu}{\texttt{ a.\+lafflitto@vt.\+edu}}
-
-Description\+: Class declaration for Intel Realsense T265 tracking camera as a lifecycle node.
-
-Git\+Hub\+: \href{https://github.com/andrealaffly/ACSL-flightstack-winged}{\texttt{ https\+://github.\+com/andrealaffly/\+ACSL-\/flightstack-\/winged}} 
-
-Definition at line 82 of file vio.\+hpp.
+Definition at line 88 of file vio.\+hpp.
 
 
 
@@ -119,7 +122,11 @@ Definition at line 82 of file vio.\+hpp.
 
 
 
-Definition at line 94 of file vio.\+hpp.
+Definition at line 100 of file vio.\+hpp.
+
+
+
+Referenced by \+\_\+t265\+\_\+\+::\+\_\+vio\+\_\+\+::\+Vio\+T265\+Node\+::on\+\_\+configure().
 
 \mbox{\Hypertarget{vio_8hpp_a4f38bfd496ed72c1b9500cdabaa1bf73}\label{vio_8hpp_a4f38bfd496ed72c1b9500cdabaa1bf73}} 
 \index{vio.hpp@{vio.hpp}!CAMERA\_TWO@{CAMERA\_TWO}}
@@ -129,7 +136,11 @@ Definition at line 94 of file vio.\+hpp.
 
 
 
-Definition at line 95 of file vio.\+hpp.
+Definition at line 101 of file vio.\+hpp.
+
+
+
+Referenced by \+\_\+t265\+\_\+\+::\+\_\+vio\+\_\+\+::\+Vio\+T265\+Node\+::on\+\_\+configure().
 
 \mbox{\Hypertarget{vio_8hpp_a030c8a0ae95bed031859a0dfaecf3962}\label{vio_8hpp_a030c8a0ae95bed031859a0dfaecf3962}} 
 \index{vio.hpp@{vio.hpp}!DEG2RAD@{DEG2RAD}}
@@ -139,7 +150,7 @@ Definition at line 95 of file vio.\+hpp.
 
 
 
-Definition at line 88 of file vio.\+hpp.
+Definition at line 94 of file vio.\+hpp.
 
 \mbox{\Hypertarget{vio_8hpp_a67fd1684e8b2a79fafbb2055b3f9bb4f}\label{vio_8hpp_a67fd1684e8b2a79fafbb2055b3f9bb4f}} 
 \index{vio.hpp@{vio.hpp}!PITCH@{PITCH}}
@@ -149,7 +160,7 @@ Definition at line 88 of file vio.\+hpp.
 
 
 
-Definition at line 100 of file vio.\+hpp.
+Definition at line 106 of file vio.\+hpp.
 
 \mbox{\Hypertarget{vio_8hpp_acae2d02bab80d21d58eb87b2eaad4e7e}\label{vio_8hpp_acae2d02bab80d21d58eb87b2eaad4e7e}} 
 \index{vio.hpp@{vio.hpp}!q\_J\_c@{q\_J\_c}}
@@ -166,7 +177,7 @@ Definition at line 100 of file vio.\+hpp.
 \end{DoxyCode}
 
 
-Definition at line 104 of file vio.\+hpp.
+Definition at line 110 of file vio.\+hpp.
 
 \mbox{\Hypertarget{vio_8hpp_a8f20eaafc13ecc5a3f653e1a548875ee}\label{vio_8hpp_a8f20eaafc13ecc5a3f653e1a548875ee}} 
 \index{vio.hpp@{vio.hpp}!q\_J\_c\_inv@{q\_J\_c\_inv}}
@@ -176,7 +187,11 @@ Definition at line 104 of file vio.\+hpp.
 
 
 
-Definition at line 109 of file vio.\+hpp.
+Definition at line 115 of file vio.\+hpp.
+
+
+
+Referenced by \+\_\+t265\+\_\+\+::\+\_\+vio\+\_\+\+::\+Vio\+T265\+Node\+::process\+\_\+and\+\_\+publish().
 
 \mbox{\Hypertarget{vio_8hpp_a6e03bc678172c656aaf08653083e6608}\label{vio_8hpp_a6e03bc678172c656aaf08653083e6608}} 
 \index{vio.hpp@{vio.hpp}!R\_c\_C@{R\_c\_C}}
@@ -186,7 +201,11 @@ Definition at line 109 of file vio.\+hpp.
 
 
 
-Definition at line 112 of file vio.\+hpp.
+Definition at line 118 of file vio.\+hpp.
+
+
+
+Referenced by \+\_\+t265\+\_\+\+::\+\_\+vio\+\_\+\+::\+Vio\+T265\+Node\+::process\+\_\+and\+\_\+publish().
 
 \mbox{\Hypertarget{vio_8hpp_a6a797a41d7d9ae42d1080563a97ea7e0}\label{vio_8hpp_a6a797a41d7d9ae42d1080563a97ea7e0}} 
 \index{vio.hpp@{vio.hpp}!ROLL@{ROLL}}
@@ -196,7 +215,7 @@ Definition at line 112 of file vio.\+hpp.
 
 
 
-Definition at line 99 of file vio.\+hpp.
+Definition at line 105 of file vio.\+hpp.
 
 \mbox{\Hypertarget{vio_8hpp_ab4197d8a13e5b044c7bc9e2af9c9d0b0}\label{vio_8hpp_ab4197d8a13e5b044c7bc9e2af9c9d0b0}} 
 \index{vio.hpp@{vio.hpp}!SERIAL\_NUMBER@{SERIAL\_NUMBER}}
@@ -206,7 +225,11 @@ Definition at line 99 of file vio.\+hpp.
 
 
 
-Definition at line 91 of file vio.\+hpp.
+Definition at line 97 of file vio.\+hpp.
+
+
+
+Referenced by \+\_\+t265\+\_\+\+::\+\_\+vio\+\_\+\+::\+Vio\+T265\+Node\+::return\+\_\+serial().
 
 \mbox{\Hypertarget{vio_8hpp_a340420c4fe8001d7960f8b32b2fd8b2b}\label{vio_8hpp_a340420c4fe8001d7960f8b32b2fd8b2b}} 
 \index{vio.hpp@{vio.hpp}!YAW@{YAW}}
@@ -216,5 +239,5 @@ Definition at line 91 of file vio.\+hpp.
 
 
 
-Definition at line 101 of file vio.\+hpp.
+Definition at line 107 of file vio.\+hpp.
 

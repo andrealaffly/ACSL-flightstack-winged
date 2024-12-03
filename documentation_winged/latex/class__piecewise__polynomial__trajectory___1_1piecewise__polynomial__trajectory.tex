@@ -11,8 +11,7 @@ Piecwise polynomial trajectory.
 
 
 
-Inheritance diagram for \+\_\+piecewise\+\_\+polynomial\+\_\+trajectory\+\_\+\+::piecewise\+\_\+polynomial\+\_\+trajectory\+:
-\nopagebreak
+Inheritance diagram for \+\_\+piecewise\+\_\+polynomial\+\_\+trajectory\+\_\+\+::piecewise\+\_\+polynomial\+\_\+trajectory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for \+\_\+piecewise\+\_\+polynomial\+\_\+trajectory\+\_\+\+:
 \end{figure}
 
 
-Collaboration diagram for \+\_\+piecewise\+\_\+polynomial\+\_\+trajectory\+\_\+\+::piecewise\+\_\+polynomial\+\_\+trajectory\+:
-\nopagebreak
+Collaboration diagram for \+\_\+piecewise\+\_\+polynomial\+\_\+trajectory\+\_\+\+::piecewise\+\_\+polynomial\+\_\+trajectory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -119,7 +117,11 @@ Definition at line 64 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 
 
-Definition at line 45 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+Definition at line 54 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+
+
+
+References set\+Polynomial\+Coefficient\+Matrices().
 
 
 
@@ -132,7 +134,11 @@ Definition at line 45 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
 
 
 
-Definition at line 59 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+Definition at line 68 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a26b26a51ee27cc59e5f5600619c691a5}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a26b26a51ee27cc59e5f5600619c691a5}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!polynomialTimeAdjusted@{polynomialTimeAdjusted}}
@@ -142,7 +148,15 @@ Definition at line 59 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
 
 
 
-Definition at line 123 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+Definition at line 132 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+
+
+
+References flight\+\_\+params\+\_\+ptr, Piecewise\+Polynomial\+Trajectory\+Info\+::num\+\_\+waypts, flight\+\_\+params\+::traj\+\_\+params, and Piecewise\+Polynomial\+Trajectory\+Info\+::waypoint\+\_\+times\+\_\+.
+
+
+
+Referenced by update\+User\+Defined\+Trajectory().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_aab0f4ee70e8ebe6cf69ff09f4982c68a}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_aab0f4ee70e8ebe6cf69ff09f4982c68a}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!setPolynomialCoefficientMatrices@{setPolynomialCoefficientMatrices}}
@@ -161,7 +175,15 @@ Set the Polynomial Coefficient Matrices object.
 \end{DoxyParams}
 
 
-Definition at line 88 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+Definition at line 97 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+
+
+
+References acceleration\+\_\+coef\+\_\+x\+\_\+, acceleration\+\_\+coef\+\_\+y\+\_\+, acceleration\+\_\+coef\+\_\+z\+\_\+, flight\+\_\+params\+\_\+ptr, jerk\+\_\+coef\+\_\+x\+\_\+, jerk\+\_\+coef\+\_\+y\+\_\+, jerk\+\_\+coef\+\_\+z\+\_\+, Piecewise\+Polynomial\+Trajectory\+Info\+::piecewise\+\_\+polynomial\+\_\+coefficients\+\_\+, poly\+Coef\+Assigning(), \+\_\+utilities\+\_\+\+::poly\+Der\+Matrix(), position\+\_\+coef\+\_\+x\+\_\+, position\+\_\+coef\+\_\+y\+\_\+, position\+\_\+coef\+\_\+z\+\_\+, flight\+\_\+params\+::traj\+\_\+params, velocity\+\_\+coef\+\_\+x\+\_\+, velocity\+\_\+coef\+\_\+y\+\_\+, and velocity\+\_\+coef\+\_\+z\+\_\+.
+
+
+
+Referenced by piecewise\+\_\+polynomial\+\_\+trajectory().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_ad3ed40fd589a1565164cb3f32f44095f}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_ad3ed40fd589a1565164cb3f32f44095f}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!updateUserDefinedTrajectory@{updateUserDefinedTrajectory}}
@@ -180,7 +202,15 @@ Function to update the user defined trajectory according to the controller time.
 \end{DoxyParams}
 
 
-Definition at line 144 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+Definition at line 153 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+
+
+
+References acceleration\+\_\+coef\+\_\+x\+\_\+, acceleration\+\_\+coef\+\_\+y\+\_\+, acceleration\+\_\+coef\+\_\+z\+\_\+, \+\_\+utilities\+\_\+\+::evaluate\+Polynomial(), flight\+\_\+params\+\_\+ptr, \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Position(), internal\+\_\+time, internal\+\_\+time\+\_\+adjusted, flight\+\_\+params\+::landing\+\_\+end\+\_\+time, landing\+\_\+position\+\_\+coef\+\_\+z\+\_\+, flight\+\_\+params\+::landing\+\_\+start\+\_\+time, landing\+\_\+velocity\+\_\+coef\+\_\+z\+\_\+, polynomial\+Time\+Adjusted(), position\+\_\+coef\+\_\+x\+\_\+, position\+\_\+coef\+\_\+y\+\_\+, position\+\_\+coef\+\_\+z\+\_\+, segment\+\_\+, \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::set\+User\+Defined\+Acceleration(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::set\+User\+Defined\+Position(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::set\+User\+Defined\+Velocity(), flight\+\_\+params\+::start\+\_\+time, flight\+\_\+params\+::traj\+\_\+params, update\+User\+Defined\+Yaw(), user\+\_\+defined\+\_\+position\+\_\+previous\+\_\+, velocity\+\_\+coef\+\_\+x\+\_\+, velocity\+\_\+coef\+\_\+y\+\_\+, velocity\+\_\+coef\+\_\+z\+\_\+, and Piecewise\+Polynomial\+Trajectory\+Info\+::waypoint\+\_\+times\+\_\+.
+
+
+
+Referenced by \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+omega\+\_\+\+::mrac\+\_\+omega\+::update(), \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+::update(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::update(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+::update(), and \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::update().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a56b7953c3236039caba133ed632898fe}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a56b7953c3236039caba133ed632898fe}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!updateUserDefinedYaw@{updateUserDefinedYaw}}
@@ -199,7 +229,15 @@ Function that updates the user-\/defined yaw, yaw\+\_\+dot, and yaw\+\_\+dot\+\_
 \end{DoxyParams}
 
 
-Definition at line 223 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+Definition at line 232 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+
+
+
+References acceleration\+\_\+coef\+\_\+x\+\_\+, acceleration\+\_\+coef\+\_\+y\+\_\+, flight\+\_\+params\+\_\+ptr, \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Yaw(), internal\+\_\+time, internal\+\_\+time\+\_\+adjusted, jerk\+\_\+coef\+\_\+x\+\_\+, jerk\+\_\+coef\+\_\+y\+\_\+, norm\+\_\+velocity\+\_\+\+XY\+\_\+, segment\+\_\+, \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::set\+User\+Defined\+Yaw(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::set\+User\+Defined\+Yaw\+Rate(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::set\+User\+Defined\+Yaw\+Rate\+Dot(), flight\+\_\+params\+::traj\+\_\+params, user\+\_\+defined\+\_\+yaw\+\_\+previous\+\_\+, velocity\+\_\+coef\+\_\+x\+\_\+, velocity\+\_\+coef\+\_\+y\+\_\+, Piecewise\+Polynomial\+Trajectory\+Info\+::waypoint\+\_\+times\+\_\+, yaw\+Computation(), yaw\+Dot\+Computation(), and yaw\+Dot\+Dot\+Computation().
+
+
+
+Referenced by update\+User\+Defined\+Trajectory().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a9697b48176dde7a4910832ab6dfa3492}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a9697b48176dde7a4910832ab6dfa3492}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!yawComputation@{yawComputation}}
@@ -225,7 +263,15 @@ double
 \end{DoxyReturn}
 
 
-Definition at line 268 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+Definition at line 277 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+
+
+
+References \+\_\+utilities\+\_\+\+::evaluate\+Polynomial().
+
+
+
+Referenced by update\+User\+Defined\+Yaw(), yaw\+Dot\+Computation(), and yaw\+Dot\+Dot\+Computation().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a6c37c0649cff3113cd2106b5b275cbd3}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a6c37c0649cff3113cd2106b5b275cbd3}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!yawDotComputation@{yawDotComputation}}
@@ -255,7 +301,15 @@ double
 \end{DoxyReturn}
 
 
-Definition at line 281 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+Definition at line 290 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+
+
+
+References \+\_\+utilities\+\_\+\+::evaluate\+Polynomial(), and yaw\+Computation().
+
+
+
+Referenced by update\+User\+Defined\+Yaw(), and yaw\+Dot\+Dot\+Computation().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_af7959e44b3607fa17182beb17e67a891}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_af7959e44b3607fa17182beb17e67a891}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!yawDotDotComputation@{yawDotDotComputation}}
@@ -289,7 +343,15 @@ double
 \end{DoxyReturn}
 
 
-Definition at line 306 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+Definition at line 315 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
+
+
+
+References \+\_\+utilities\+\_\+\+::evaluate\+Polynomial(), yaw\+Computation(), and yaw\+Dot\+Computation().
+
+
+
+Referenced by update\+User\+Defined\+Yaw().
 
 
 
@@ -304,6 +366,10 @@ Definition at line 306 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+cpp.
 
 Definition at line 171 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices(), update\+User\+Defined\+Trajectory(), and update\+User\+Defined\+Yaw().
+
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_acd891127577388e81724105d712d53c5}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_acd891127577388e81724105d712d53c5}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!acceleration\_coef\_y\_@{acceleration\_coef\_y\_}}
 \index{acceleration\_coef\_y\_@{acceleration\_coef\_y\_}!\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}}
@@ -313,6 +379,10 @@ Definition at line 171 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 
 Definition at line 172 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
+
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices(), update\+User\+Defined\+Trajectory(), and update\+User\+Defined\+Yaw().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_acfa64e131179bd01149a87bb28c1517b}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_acfa64e131179bd01149a87bb28c1517b}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!acceleration\_coef\_z\_@{acceleration\_coef\_z\_}}
@@ -324,6 +394,10 @@ Definition at line 172 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 Definition at line 173 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices(), and update\+User\+Defined\+Trajectory().
+
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_ace4bf81e763929ed882d5d8d586c34d4}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_ace4bf81e763929ed882d5d8d586c34d4}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!flight\_params\_ptr@{flight\_params\_ptr}}
 \index{flight\_params\_ptr@{flight\_params\_ptr}!\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}}
@@ -333,6 +407,10 @@ Definition at line 173 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 Instance of the flight\+\_\+params\+\_\+ptr to point to the flight\+\_\+parameter object in flight\+\_\+main.\+cpp 
 
 Definition at line 81 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
+
+
+
+Referenced by polynomial\+Time\+Adjusted(), set\+Polynomial\+Coefficient\+Matrices(), update\+User\+Defined\+Trajectory(), and update\+User\+Defined\+Yaw().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_ade8cc1eea89b98ec9d2200d17ebd14df}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_ade8cc1eea89b98ec9d2200d17ebd14df}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!internal\_time@{internal\_time}}
@@ -344,6 +422,10 @@ Definition at line 81 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 Definition at line 147 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
+
+
+Referenced by update\+User\+Defined\+Trajectory(), and update\+User\+Defined\+Yaw().
+
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_ac9b8241bea939595419b8e783ebb8568}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_ac9b8241bea939595419b8e783ebb8568}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!internal\_time\_adjusted@{internal\_time\_adjusted}}
 \index{internal\_time\_adjusted@{internal\_time\_adjusted}!\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}}
@@ -353,6 +435,10 @@ Definition at line 147 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 
 Definition at line 150 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
+
+
+
+Referenced by update\+User\+Defined\+Trajectory(), and update\+User\+Defined\+Yaw().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_aad5a2bfd624d2eff569118bb82dad07a}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_aad5a2bfd624d2eff569118bb82dad07a}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!jerk\_coef\_x\_@{jerk\_coef\_x\_}}
@@ -364,6 +450,10 @@ Definition at line 150 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 Definition at line 174 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices(), and update\+User\+Defined\+Yaw().
+
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a6dca0fa58323c40be2d7a07e5c654228}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a6dca0fa58323c40be2d7a07e5c654228}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!jerk\_coef\_y\_@{jerk\_coef\_y\_}}
 \index{jerk\_coef\_y\_@{jerk\_coef\_y\_}!\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}}
@@ -374,6 +464,10 @@ Definition at line 174 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 Definition at line 175 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices(), and update\+User\+Defined\+Yaw().
+
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a5b92752e6f4d0d11c15fc6a310fb3929}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a5b92752e6f4d0d11c15fc6a310fb3929}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!jerk\_coef\_z\_@{jerk\_coef\_z\_}}
 \index{jerk\_coef\_z\_@{jerk\_coef\_z\_}!\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}}
@@ -383,6 +477,10 @@ Definition at line 175 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 
 Definition at line 176 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
+
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a360ea43e6b984f526f363db456665186}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a360ea43e6b984f526f363db456665186}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!landing\_acceleration\_coef\_z\_@{landing\_acceleration\_coef\_z\_}}
@@ -434,6 +532,10 @@ Position polynomial coefficients for LANDING from (X, Y, -\/1) to (X, Y, 0) in 4
 
 Definition at line 182 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
+
+
+Referenced by update\+User\+Defined\+Trajectory().
+
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_aa5463a46f89d8417067eb371d7792b44}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_aa5463a46f89d8417067eb371d7792b44}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!landing\_velocity\_coef\_z\_@{landing\_velocity\_coef\_z\_}}
 \index{landing\_velocity\_coef\_z\_@{landing\_velocity\_coef\_z\_}!\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}}
@@ -457,6 +559,10 @@ Definition at line 182 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 Definition at line 194 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
+
+
+Referenced by update\+User\+Defined\+Trajectory().
+
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a0b56b1124c4f97be3b4b074ab98988bc}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a0b56b1124c4f97be3b4b074ab98988bc}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!norm\_velocity\_XY\_@{norm\_velocity\_XY\_}}
 \index{norm\_velocity\_XY\_@{norm\_velocity\_XY\_}!\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}}
@@ -466,6 +572,10 @@ Definition at line 194 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 
 Definition at line 162 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
+
+
+
+Referenced by update\+User\+Defined\+Yaw().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_adbc9abd0c979d1815951f3af46b59c29}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_adbc9abd0c979d1815951f3af46b59c29}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!position\_coef\_x\_@{position\_coef\_x\_}}
@@ -477,6 +587,10 @@ Definition at line 162 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 Definition at line 165 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices(), and update\+User\+Defined\+Trajectory().
+
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_ac792e9ebec4995a854e05894392aa4e5}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_ac792e9ebec4995a854e05894392aa4e5}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!position\_coef\_y\_@{position\_coef\_y\_}}
 \index{position\_coef\_y\_@{position\_coef\_y\_}!\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}}
@@ -486,6 +600,10 @@ Definition at line 165 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 
 Definition at line 166 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
+
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices(), and update\+User\+Defined\+Trajectory().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a667142f0cdd4facc3a4186a21fc7590f}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a667142f0cdd4facc3a4186a21fc7590f}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!position\_coef\_z\_@{position\_coef\_z\_}}
@@ -497,6 +615,10 @@ Definition at line 166 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 Definition at line 167 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices(), and update\+User\+Defined\+Trajectory().
+
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a075ca673aabe6a188c50b385b914e937}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a075ca673aabe6a188c50b385b914e937}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!segment\_@{segment\_}}
 \index{segment\_@{segment\_}!\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}}
@@ -506,6 +628,10 @@ Definition at line 167 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 
 Definition at line 153 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
+
+
+
+Referenced by update\+User\+Defined\+Trajectory(), and update\+User\+Defined\+Yaw().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a8ff32d0de9ab506986a2abe62765caf7}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a8ff32d0de9ab506986a2abe62765caf7}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!user\_defined\_position\_previous\_@{user\_defined\_position\_previous\_}}
@@ -517,6 +643,10 @@ Definition at line 153 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 Definition at line 156 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
+
+
+Referenced by update\+User\+Defined\+Trajectory().
+
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a06d40880ef8fc6320e2caab49a8b1772}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a06d40880ef8fc6320e2caab49a8b1772}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!user\_defined\_yaw\_previous\_@{user\_defined\_yaw\_previous\_}}
 \index{user\_defined\_yaw\_previous\_@{user\_defined\_yaw\_previous\_}!\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}}
@@ -526,6 +656,10 @@ Definition at line 156 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 
 Definition at line 159 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
+
+
+
+Referenced by update\+User\+Defined\+Yaw().
 
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a5887145cfb70260845e76614578cf970}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a5887145cfb70260845e76614578cf970}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!velocity\_coef\_x\_@{velocity\_coef\_x\_}}
@@ -537,6 +671,10 @@ Definition at line 159 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 Definition at line 168 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices(), update\+User\+Defined\+Trajectory(), and update\+User\+Defined\+Yaw().
+
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a38d6aaff1c4b23a8ad5a3ad978e3cbbf}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_a38d6aaff1c4b23a8ad5a3ad978e3cbbf}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!velocity\_coef\_y\_@{velocity\_coef\_y\_}}
 \index{velocity\_coef\_y\_@{velocity\_coef\_y\_}!\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}}
@@ -547,6 +685,10 @@ Definition at line 168 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 Definition at line 169 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices(), update\+User\+Defined\+Trajectory(), and update\+User\+Defined\+Yaw().
+
 \mbox{\Hypertarget{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_ab36ece0b9c5745e7cc3fc94cef8bd6b9}\label{class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory_ab36ece0b9c5745e7cc3fc94cef8bd6b9}} 
 \index{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}!velocity\_coef\_z\_@{velocity\_coef\_z\_}}
 \index{velocity\_coef\_z\_@{velocity\_coef\_z\_}!\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory@{\_piecewise\_polynomial\_trajectory\_::piecewise\_polynomial\_trajectory}}
@@ -556,6 +698,10 @@ Definition at line 169 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
 
 
 Definition at line 170 of file piecewise\+\_\+polynomial\+\_\+trajectory.\+hpp.
+
+
+
+Referenced by set\+Polynomial\+Coefficient\+Matrices(), and update\+User\+Defined\+Trajectory().
 
 
 

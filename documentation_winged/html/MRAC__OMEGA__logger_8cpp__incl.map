@@ -1,5 +1,5 @@
 <map id="ACSL&#45;flightstack&#45;winged/src/acsl_flight/src/control/platforms/qrbp/control_algorithms/MRAC_OMEGA/MRAC_OMEGA_logger.cpp" name="ACSL&#45;flightstack&#45;winged/src/acsl_flight/src/control/platforms/qrbp/control_algorithms/MRAC_OMEGA/MRAC_OMEGA_logger.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="1743,5,2037,76"/>
+<area shape="rect" id="node1" title="logging for the MRAC with angular velocities controller." alt="" coords="1743,5,2037,76"/>
 <area shape="rect" id="node2" href="$MRAC__OMEGA__logger_8hpp.html" title="logging for the MRAc with angular velocities controller" alt="" coords="1794,124,1986,151"/>
 <area shape="rect" id="node3" href="$MRAC__OMEGA__members_8hpp.html" title="MRAC with angular velocities controller class members." alt="" coords="1637,199,1852,225"/>
 <area shape="rect" id="node24" href="$flight__log_8hpp.html" title="Utilities for logging flight data." alt="" coords="4151,423,4261,449"/>

@@ -1,5 +1,5 @@
 <map id="ACSL&#45;flightstack&#45;winged/src/acsl_flight/src/control/platforms/qrbp/control_algorithms/PID/PID_logger.cpp" name="ACSL&#45;flightstack&#45;winged/src/acsl_flight/src/control/platforms/qrbp/control_algorithms/PID/PID_logger.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="1765,5,2013,76"/>
+<area shape="rect" id="node1" title="logging for the PID controller." alt="" coords="1765,5,2013,76"/>
 <area shape="rect" id="node2" href="$PID__logger_8hpp.html" title="logging for the PID controller" alt="" coords="1829,124,1948,151"/>
 <area shape="rect" id="node3" href="$PID__members_8hpp.html" title="PID controller class members." alt="" coords="1691,199,1833,225"/>
 <area shape="rect" id="node24" href="$flight__log_8hpp.html" title="Utilities for logging flight data." alt="" coords="4151,423,4261,449"/>

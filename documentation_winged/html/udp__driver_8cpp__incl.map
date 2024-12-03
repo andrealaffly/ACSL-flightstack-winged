@@ -1,5 +1,5 @@
 <map id="ACSL&#45;flightstack&#45;winged/src/acsl_flight/src/mocap/udp_driver/udp_driver.cpp" name="ACSL&#45;flightstack&#45;winged/src/acsl_flight/src/mocap/udp_driver/udp_driver.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="514,5,709,61"/>
+<area shape="rect" id="node1" title="Class definition for UDP driver." alt="" coords="514,5,709,61"/>
 <area shape="rect" id="node2" href="$udp__driver_8hpp.html" title="Class decleration for UDP driver." alt="" coords="552,109,671,136"/>
 <area shape="rect" id="node3" title=" " alt="" coords="546,333,626,360"/>
 <area shape="rect" id="node4" title=" " alt="" coords="93,333,170,360"/>

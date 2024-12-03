@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="logging for the MRAC_PID controller. Inherits the Blackbox class for logging and takes in the interna...">
 <polygon fill="#bfbfbf" stroke="black" points="1319.5,-347.5 1319.5,-399.5 1505.5,-399.5 1505.5,-347.5 1319.5,-347.5"/>
 <text text-anchor="start" x="1327.5" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1327.5" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>

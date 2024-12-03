@@ -59,7 +59,7 @@ Definition at line 147 of file io\+\_\+context.\+hpp.
 
 
 
-Definition at line 65 of file io\+\_\+context.\+cpp.
+Definition at line 71 of file io\+\_\+context.\+cpp.
 
 \mbox{\Hypertarget{class__drivers___1_1__common___1_1IoContext_a3c6ba13f71e64eba2ed396e9bb61c807}\label{class__drivers___1_1__common___1_1IoContext_a3c6ba13f71e64eba2ed396e9bb61c807}} 
 \index{\_drivers\_::\_common\_::IoContext@{\_drivers\_::\_common\_::IoContext}!IoContext@{IoContext}}
@@ -69,7 +69,11 @@ Definition at line 65 of file io\+\_\+context.\+cpp.
 
 
 
-Definition at line 68 of file io\+\_\+context.\+cpp.
+Definition at line 74 of file io\+\_\+context.\+cpp.
+
+
+
+References ios(), m\+\_\+ios\+\_\+thread\+\_\+workers, and service\+Thread\+Count().
 
 \mbox{\Hypertarget{class__drivers___1_1__common___1_1IoContext_a983e3834d40c9ffa45a49a4d284fde47}\label{class__drivers___1_1__common___1_1IoContext_a983e3834d40c9ffa45a49a4d284fde47}} 
 \index{\_drivers\_::\_common\_::IoContext@{\_drivers\_::\_common\_::IoContext}!````~IoContext@{$\sim$IoContext}}
@@ -79,7 +83,11 @@ Definition at line 68 of file io\+\_\+context.\+cpp.
 
 
 
-Definition at line 96 of file io\+\_\+context.\+cpp.
+Definition at line 102 of file io\+\_\+context.\+cpp.
+
+
+
+References wait\+For\+Exit().
 
 \mbox{\Hypertarget{class__drivers___1_1__common___1_1IoContext_a46907170460dcf6cd3893284c3e1c17c}\label{class__drivers___1_1__common___1_1IoContext_a46907170460dcf6cd3893284c3e1c17c}} 
 \index{\_drivers\_::\_common\_::IoContext@{\_drivers\_::\_common\_::IoContext}!IoContext@{IoContext}}
@@ -98,7 +106,15 @@ Definition at line 96 of file io\+\_\+context.\+cpp.
 
 
 
-Definition at line 101 of file io\+\_\+context.\+cpp.
+Definition at line 107 of file io\+\_\+context.\+cpp.
+
+
+
+References m\+\_\+ios.
+
+
+
+Referenced by Io\+Context(), is\+Service\+Stopped(), post(), and wait\+For\+Exit().
 
 \mbox{\Hypertarget{class__drivers___1_1__common___1_1IoContext_ad1b52b5063bbb78b57560fbb2b7daf3d}\label{class__drivers___1_1__common___1_1IoContext_ad1b52b5063bbb78b57560fbb2b7daf3d}} 
 \index{\_drivers\_::\_common\_::IoContext@{\_drivers\_::\_common\_::IoContext}!isServiceStopped@{isServiceStopped}}
@@ -108,7 +124,11 @@ Definition at line 101 of file io\+\_\+context.\+cpp.
 
 
 
-Definition at line 106 of file io\+\_\+context.\+cpp.
+Definition at line 112 of file io\+\_\+context.\+cpp.
+
+
+
+References ios().
 
 \mbox{\Hypertarget{class__drivers___1_1__common___1_1IoContext_a5f0326c793f59cef1fb04025edc79125}\label{class__drivers___1_1__common___1_1IoContext_a5f0326c793f59cef1fb04025edc79125}} 
 \index{\_drivers\_::\_common\_::IoContext@{\_drivers\_::\_common\_::IoContext}!operator=@{operator=}}
@@ -127,6 +147,10 @@ void \+\_\+drivers\+\_\+\+::\+\_\+common\+\_\+\+::\+Io\+Context\+::post (\begin{
 
 Definition at line 165 of file io\+\_\+context.\+hpp.
 
+
+
+References ios().
+
 \mbox{\Hypertarget{class__drivers___1_1__common___1_1IoContext_af0525d0f5451b9e1e9c4c0e7aded9b7f}\label{class__drivers___1_1__common___1_1IoContext_af0525d0f5451b9e1e9c4c0e7aded9b7f}} 
 \index{\_drivers\_::\_common\_::IoContext@{\_drivers\_::\_common\_::IoContext}!serviceThreadCount@{serviceThreadCount}}
 \index{serviceThreadCount@{serviceThreadCount}!\_drivers\_::\_common\_::IoContext@{\_drivers\_::\_common\_::IoContext}}
@@ -135,7 +159,15 @@ Definition at line 165 of file io\+\_\+context.\+hpp.
 
 
 
-Definition at line 111 of file io\+\_\+context.\+cpp.
+Definition at line 117 of file io\+\_\+context.\+cpp.
+
+
+
+References m\+\_\+ios\+\_\+thread\+\_\+workers.
+
+
+
+Referenced by Io\+Context().
 
 \mbox{\Hypertarget{class__drivers___1_1__common___1_1IoContext_a55d212f03896c3219230c6095dd00231}\label{class__drivers___1_1__common___1_1IoContext_a55d212f03896c3219230c6095dd00231}} 
 \index{\_drivers\_::\_common\_::IoContext@{\_drivers\_::\_common\_::IoContext}!waitForExit@{waitForExit}}
@@ -145,7 +177,15 @@ Definition at line 111 of file io\+\_\+context.\+cpp.
 
 
 
-Definition at line 116 of file io\+\_\+context.\+cpp.
+Definition at line 122 of file io\+\_\+context.\+cpp.
+
+
+
+References ios(), m\+\_\+ios\+\_\+thread\+\_\+workers, and m\+\_\+work.
+
+
+
+Referenced by $\sim$\+Io\+Context().
 
 
 
@@ -160,6 +200,10 @@ Definition at line 116 of file io\+\_\+context.\+cpp.
 
 Definition at line 171 of file io\+\_\+context.\+hpp.
 
+
+
+Referenced by ios().
+
 \mbox{\Hypertarget{class__drivers___1_1__common___1_1IoContext_a94a5c6abc6aa0aec1cc1bed593693a7d}\label{class__drivers___1_1__common___1_1IoContext_a94a5c6abc6aa0aec1cc1bed593693a7d}} 
 \index{\_drivers\_::\_common\_::IoContext@{\_drivers\_::\_common\_::IoContext}!m\_ios\_thread\_workers@{m\_ios\_thread\_workers}}
 \index{m\_ios\_thread\_workers@{m\_ios\_thread\_workers}!\_drivers\_::\_common\_::IoContext@{\_drivers\_::\_common\_::IoContext}}
@@ -170,6 +214,10 @@ Definition at line 171 of file io\+\_\+context.\+hpp.
 
 Definition at line 173 of file io\+\_\+context.\+hpp.
 
+
+
+Referenced by Io\+Context(), service\+Thread\+Count(), and wait\+For\+Exit().
+
 \mbox{\Hypertarget{class__drivers___1_1__common___1_1IoContext_ad7678c102277e8af8a928fb685703f06}\label{class__drivers___1_1__common___1_1IoContext_ad7678c102277e8af8a928fb685703f06}} 
 \index{\_drivers\_::\_common\_::IoContext@{\_drivers\_::\_common\_::IoContext}!m\_work@{m\_work}}
 \index{m\_work@{m\_work}!\_drivers\_::\_common\_::IoContext@{\_drivers\_::\_common\_::IoContext}}
@@ -179,6 +227,10 @@ Definition at line 173 of file io\+\_\+context.\+hpp.
 
 
 Definition at line 172 of file io\+\_\+context.\+hpp.
+
+
+
+Referenced by wait\+For\+Exit().
 
 
 

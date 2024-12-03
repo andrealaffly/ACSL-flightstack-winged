@@ -15,7 +15,7 @@
 <area shape="rect" id="node20" title=" " alt="" coords="5990,109,6173,151"/>
 <area shape="rect" id="node21" title=" " alt="" coords="6197,109,6347,151"/>
 <area shape="rect" id="node22" title=" " alt="" coords="6372,109,6543,151"/>
-<area shape="rect" id="node23" href="$vehicle__class_8hpp.html" title=" " alt="" coords="563,117,701,143"/>
+<area shape="rect" id="node23" href="$vehicle__class_8hpp.html" title="Header for the vehicle class object." alt="" coords="563,117,701,143"/>
 <area shape="rect" id="node26" href="$flight__log_8hpp.html" title="Utilities for logging flight data." alt="" coords="2738,117,2849,143"/>
 <area shape="rect" id="node3" title=" " alt="" coords="332,363,412,389"/>
 <area shape="rect" id="node6" href="$udp__socket_8hpp.html" title="Class declaration for UDP socket creation using IoContext." alt="" coords="212,206,335,233"/>

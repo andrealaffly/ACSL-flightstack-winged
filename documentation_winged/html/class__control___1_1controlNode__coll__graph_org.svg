@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Funtion that updates the current time when called.">
 <polygon fill="#bfbfbf" stroke="black" points="1281,-558.5 1281,-577.5 1407,-577.5 1407,-558.5 1281,-558.5"/>
 <text text-anchor="middle" x="1344" y="-565.5" font-family="Helvetica,sans-Serif" font-size="10.00">_control_::controlNode</text>
 </a>
@@ -401,7 +401,7 @@
 <!-- Node21 -->
 <g id="node21" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="classvehicle__states.html" target="_top" xlink:title=" ">
+<g id="a_node21"><a xlink:href="classvehicle__states.html" target="_top" xlink:title="vehicle state class">
 <polygon fill="white" stroke="black" points="1086.5,-440.5 1086.5,-459.5 1173.5,-459.5 1173.5,-440.5 1086.5,-440.5"/>
 <text text-anchor="middle" x="1130" y="-447.5" font-family="Helvetica,sans-Serif" font-size="10.00">vehicle_states</text>
 </a>

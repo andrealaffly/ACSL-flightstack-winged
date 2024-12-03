@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Control node definition. Runs all the control algorithms. Adds as a hub for all the control actions.">
 <polygon fill="#bfbfbf" stroke="black" points="1493.96,-369.5 1493.96,-410.5 1633.96,-410.5 1633.96,-369.5 1493.96,-369.5"/>
 <text text-anchor="start" x="1501.96" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1501.96" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -53,7 +53,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="vehicle__class_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="vehicle__class_8hpp.html" target="_top" xlink:title="Header for the vehicle class object.">
 <polygon fill="white" stroke="black" points="1185.46,-118 1185.46,-137 1288.46,-137 1288.46,-118 1185.46,-118"/>
 <text text-anchor="middle" x="1236.96" y="-125" font-family="Helvetica,sans-Serif" font-size="10.00">vehicle_class.hpp</text>
 </a>
@@ -662,7 +662,7 @@
 <!-- Node106 -->
 <g id="node50" class="node">
 <title>Node106</title>
-<g id="a_node50"><a xlink:href="vio_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node50"><a xlink:href="vio_8hpp.html" target="_top" xlink:title="Class decleration for Intel Realsense T265 tracking camera as a lifecycle node.">
 <polygon fill="white" stroke="red" points="1328.46,-185 1328.46,-204 1381.46,-204 1381.46,-185 1328.46,-185"/>
 <text text-anchor="middle" x="1354.96" y="-192" font-family="Helvetica,sans-Serif" font-size="10.00">vio.hpp</text>
 </a>

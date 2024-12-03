@@ -1,5 +1,5 @@
 <map id="ACSL&#45;flightstack&#45;winged/src/acsl_flight/src/piecewise_polynomial_trajectory/piecewise_polynomial_trajectory.cpp" name="ACSL&#45;flightstack&#45;winged/src/acsl_flight/src/piecewise_polynomial_trajectory/piecewise_polynomial_trajectory.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="3333,5,3574,76"/>
+<area shape="rect" id="node1" title="Implementation of the piecewise polynomial trajectory." alt="" coords="3333,5,3574,76"/>
 <area shape="rect" id="node2" href="$piecewise__polynomial__trajectory_8hpp.html" title="Header file for piecewise polynomial trajectory." alt="" coords="3370,124,3537,165"/>
 <area shape="rect" id="node3" href="$user__defined__trajectory__base_8hpp.html" title="User Defined Trajectory Base Definition." alt="" coords="3113,213,3287,255"/>
 <area shape="rect" id="node35" href="$flight__params_8hpp.html" title=" " alt="" coords="3384,221,3523,247"/>

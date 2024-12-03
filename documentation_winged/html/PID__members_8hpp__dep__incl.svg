@@ -86,7 +86,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="PID__logger_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="PID__logger_8cpp.html" target="_top" xlink:title="logging for the PID controller.">
 <polygon fill="white" stroke="black" points="197,-89.5 197,-141.5 383,-141.5 383,-89.5 197,-89.5"/>
 <text text-anchor="start" x="205" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="205" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>

@@ -15,8 +15,7 @@ Inheritance diagram for \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\
 \end{figure}
 
 
-Collaboration diagram for \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+:
-\nopagebreak
+Collaboration diagram for \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -117,7 +116,11 @@ Definition at line 83 of file MRAC\+\_\+\+PID.\+hpp.
 
 
 
-Definition at line 57 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 68 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References init(), and read\+\_\+params().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a1a6b975e21a46b357c1803cbdb0d9b48}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a1a6b975e21a46b357c1803cbdb0d9b48}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!````~mrac\_pid@{$\sim$mrac\_pid}}
@@ -127,7 +130,7 @@ Definition at line 57 of file MRAC\+\_\+\+PID.\+cpp.
 
 
 
-Definition at line 68 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 79 of file MRAC\+\_\+\+PID.\+cpp.
 
 
 
@@ -144,7 +147,15 @@ Assign the values from rk4 to controller internal members.
 
 
 
-Definition at line 330 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 341 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+utilities\+\_\+\+::assign\+Elements\+To\+Members(), csm, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+eta\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+omega\+\_\+ref\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+ref\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+K\+\_\+hat\+\_\+r\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+K\+\_\+hat\+\_\+r\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+K\+\_\+hat\+\_\+x\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+K\+\_\+hat\+\_\+x\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::omega\+\_\+ref\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+dot\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+yaw\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+yaw\+\_\+dot\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+Theta\+\_\+hat\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+Theta\+\_\+hat\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::x\+\_\+tran\+\_\+ref, and y.
+
+
+
+Referenced by update().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_ab781b71b28c002694da0eca62cfbc427}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_ab781b71b28c002694da0eca62cfbc427}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!compute\_innner\_loop\_regressor@{compute\_innner\_loop\_regressor}}
@@ -158,7 +169,15 @@ Function to compute the inner loop regressor vector.
 
 
 
-Definition at line 431 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 442 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::aero, \+\_\+qrbp\+\_\+\+::\+Aero\+States\+::alpha, \+\_\+qrbp\+\_\+\+::\+Aero\+States\+::beta, cim, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::inner\+\_\+loop\+\_\+regressor, \+\_\+qrbp\+\_\+\+::is\+\_\+biplane, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+\_\+aero\+::states, and \+\_\+qrbp\+\_\+\+::\+Aero\+States\+::v\+\_\+norm\+\_\+sq.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_ad83b311cbe11b0d466911e1541224abb}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_ad83b311cbe11b0d466911e1541224abb}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!compute\_normalized\_thrusts@{compute\_normalized\_thrusts}}
@@ -172,7 +191,15 @@ Function to compute the normalized thrust.
 
 
 
-Definition at line 791 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 802 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References cim, \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input, \+\_\+utilities\+\_\+\+::evaluate\+Polynomial(), \+\_\+qrbp\+\_\+\+::\+MAX\+\_\+\+THRUST, \+\_\+qrbp\+\_\+\+::\+MIN\+\_\+\+THRUST, \+\_\+qrbp\+\_\+\+::mixer\+\_\+matrix\+\_\+qrbp, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Sat\+\_\+\+Thrust, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Thrust, \+\_\+qrbp\+\_\+\+::thrust\+\_\+polynomial\+\_\+coeff\+\_\+qrbp, and \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a61393c34f4e24ef916fa17ba2b44a4a0}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a61393c34f4e24ef916fa17ba2b44a4a0}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!compute\_outer\_loop\_regressor@{compute\_outer\_loop\_regressor}}
@@ -186,7 +213,15 @@ Function to compute the outer loop regressor vector.
 
 
 
-Definition at line 386 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 397 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::aero, \+\_\+qrbp\+\_\+\+::\+Aero\+States\+::alpha, \+\_\+qrbp\+\_\+\+::\+Aero\+States\+::beta, cim, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::outer\+\_\+loop\+\_\+regressor, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+\_\+aero\+::states, and \+\_\+qrbp\+\_\+\+::\+Aero\+States\+::v\+\_\+norm\+\_\+sq.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_ab42a2fcb5a1cb02b1249a387c6217e0d}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_ab42a2fcb5a1cb02b1249a387c6217e0d}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!compute\_rotational\_control@{compute\_rotational\_control}}
@@ -200,7 +235,15 @@ Function to compute the rotational control input.
 
 
 
-Definition at line 631 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 642 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::aero, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::augmented\+\_\+inner\+\_\+loop\+\_\+regressor, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+B\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+B\+\_\+rot\+\_\+q, cim, cip, csm, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+\_\+aero\+::dyn, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+eta, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+eta\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+eta\+\_\+rate, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+omega, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+omega\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+omega\+\_\+ref\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+acceleration\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+r\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+r\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+\+Theta\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+\+Theta\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+x\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+x\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::inertia\+\_\+matrix, \+\_\+qrbp\+\_\+\+::\+Aero\+Dynamic\+Members\+::inner\+\_\+loop\+\_\+dynamic\+\_\+inv, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::inner\+\_\+loop\+\_\+regressor, \+\_\+qrbp\+\_\+\+::is\+\_\+biplane, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Jacobian, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Jacobian\+\_\+dot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+K\+\_\+hat\+\_\+r\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+K\+\_\+hat\+\_\+r\+\_\+rot\+\_\+dot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+K\+\_\+hat\+\_\+x\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+K\+\_\+hat\+\_\+x\+\_\+rot\+\_\+dot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+omega\+\_\+cmd\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+omega\+\_\+cmd\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+omega\+\_\+ref\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+omega\+\_\+ref\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+omega\+\_\+cmd\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+omega\+\_\+cmd\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+omega\+\_\+ref\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+omega\+\_\+ref\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+cmd\+\_\+dot\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+cmd\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+ref\+\_\+dot\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::omega\+\_\+ref\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+P\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+P\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+cmd\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+R\+\_\+\+Jb\+\_\+\+Jq, \+\_\+qrbp\+\_\+\+::\+R\+\_\+\+Jq\+\_\+\+Jb, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::tau\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::tau\+\_\+rot\+\_\+adaptive, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::tau\+\_\+rot\+\_\+baseline, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+Theta\+\_\+hat\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Theta\+\_\+hat\+\_\+rot\+\_\+dot, and \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a47961379352dc1cf2757c232de8cfbab}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a47961379352dc1cf2757c232de8cfbab}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!compute\_translational\_control\_in\_I@{compute\_translational\_control\_in\_I}}
@@ -214,7 +257,15 @@ Function to compute the translational control in the inertial frame.
 
 
 
-Definition at line 467 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 478 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+A\+\_\+ref\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::aero, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::augmented\+\_\+outer\+\_\+loop\+\_\+regressor, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+B\+\_\+ref\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+B\+\_\+tran, cim, cip, csm, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+\_\+aero\+::dyn, \+\_\+qrbp\+\_\+\+::e3\+\_\+basis, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+pos, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+ref\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+vel, \+\_\+qrbp\+\_\+\+::G, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+r\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+\+Theta\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+x\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+K\+\_\+hat\+\_\+r\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+K\+\_\+hat\+\_\+r\+\_\+tran\+\_\+dot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+K\+\_\+hat\+\_\+x\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+K\+\_\+hat\+\_\+x\+\_\+tran\+\_\+dot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+refmod\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+refmod\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+refmod\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+MASS, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+adaptive, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+baseline, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+I, \+\_\+qrbp\+\_\+\+::\+Aero\+Dynamic\+Members\+::outer\+\_\+loop\+\_\+dynamic\+\_\+inv, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::outer\+\_\+loop\+\_\+regressor, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+P\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+cmd\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+ddot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+dot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+Theta\+\_\+hat\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Theta\+\_\+hat\+\_\+tran\+\_\+dot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::x\+\_\+tran\+\_\+ref, and \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+ref\+\_\+dot.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a1abfcd3a87fa0c77da163bba82067a92}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a1abfcd3a87fa0c77da163bba82067a92}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!compute\_u1\_eta\_d@{compute\_u1\_eta\_d}}
@@ -228,7 +279,15 @@ Function to compute the thrhust (u1) and the desired angles.
 
 
 
-Definition at line 525 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 536 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+pitch\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+pitch\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+roll\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+roll\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+yaw\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+yaw\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+pitch\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+pitch\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+roll\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+roll\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+yaw\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+yaw\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+pitch\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+pitch\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+roll\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+roll\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+yaw\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+yaw\+\_\+ref, cim, csm, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+acceleration\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+acceleration\+\_\+d\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+acceleration\+\_\+d\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d\+\_\+q, \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Yaw(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Yaw\+Rate(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Yaw\+Rate\+Dot(), \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+roll\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+roll\+\_\+dot\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+yaw\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+yaw\+\_\+dot\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::is\+\_\+biplane, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+J, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+\+Jb, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+\+Jq, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+I\+\_\+\+Jb, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+I\+\_\+\+Jq, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+dot\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+yaw\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+yaw\+\_\+dot\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u, and ud.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a8c2cda455453d74387470c236149f6e2}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a8c2cda455453d74387470c236149f6e2}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!debug2terminal@{debug2terminal}}
@@ -242,7 +301,11 @@ Function to print to terminal.
 
 
 
-Definition at line 807 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 818 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a7de6a01ac5da63e426b059918752d41c}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a7de6a01ac5da63e426b059918752d41c}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!get\_t1@{get\_t1}}
@@ -252,7 +315,11 @@ Definition at line 807 of file MRAC\+\_\+\+PID.\+cpp.
 
 
 
-Definition at line 856 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 867 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a572befee178745cb9059e4dc8a0ed509}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a572befee178745cb9059e4dc8a0ed509}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!get\_t2@{get\_t2}}
@@ -262,7 +329,11 @@ Definition at line 856 of file MRAC\+\_\+\+PID.\+cpp.
 
 
 
-Definition at line 860 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 871 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a1552c955b04737762a3df340dea6234d}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a1552c955b04737762a3df340dea6234d}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!get\_t3@{get\_t3}}
@@ -272,7 +343,11 @@ Definition at line 860 of file MRAC\+\_\+\+PID.\+cpp.
 
 
 
-Definition at line 864 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 875 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a50795762184ed233ea029731ada5fbbc}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a50795762184ed233ea029731ada5fbbc}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!get\_t4@{get\_t4}}
@@ -282,7 +357,11 @@ Definition at line 864 of file MRAC\+\_\+\+PID.\+cpp.
 
 
 
-Definition at line 868 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 879 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a8c9aba12264507d4514b863350053328}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a8c9aba12264507d4514b863350053328}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!get\_t5@{get\_t5}}
@@ -292,7 +371,11 @@ Definition at line 868 of file MRAC\+\_\+\+PID.\+cpp.
 
 
 
-Definition at line 872 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 883 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a8a149c3f20f05168bf74102042b712a6}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a8a149c3f20f05168bf74102042b712a6}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!get\_t6@{get\_t6}}
@@ -302,7 +385,11 @@ Definition at line 872 of file MRAC\+\_\+\+PID.\+cpp.
 
 
 
-Definition at line 876 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 887 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a6a1095a30d3352b1e6f47b7f714dd5c3}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a6a1095a30d3352b1e6f47b7f714dd5c3}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!get\_t7@{get\_t7}}
@@ -312,7 +399,11 @@ Definition at line 876 of file MRAC\+\_\+\+PID.\+cpp.
 
 
 
-Definition at line 880 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 891 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a797caa0e0644ad16d384eb6de6e98e5c}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a797caa0e0644ad16d384eb6de6e98e5c}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!get\_t8@{get\_t8}}
@@ -322,7 +413,11 @@ Definition at line 880 of file MRAC\+\_\+\+PID.\+cpp.
 
 
 
-Definition at line 884 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 895 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a9944015bf9ec6b0104bf245be8335d35}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a9944015bf9ec6b0104bf245be8335d35}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!init@{init}}
@@ -340,7 +435,15 @@ Quadcopter -\/ Initialize matrices
 
 Biplane -\/ Initialize matrices
 
-Definition at line 120 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 131 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+A\+\_\+ref\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+A\+\_\+ref\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+A\+\_\+ref\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+A\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+A\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+A\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+B\+\_\+ref\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+B\+\_\+ref\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+B\+\_\+ref\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+B\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+B\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+B\+\_\+tran, cip, dy, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::inertia\+\_\+matrix, \+\_\+qrbp\+\_\+\+::inertia\+\_\+matrix\+\_\+q, \+\_\+utilities\+\_\+\+::init\+Mat(), \+\_\+qrbp\+\_\+\+::is\+\_\+biplane, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+refmod\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+omega\+\_\+ref\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+omega\+\_\+ref\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+refmod\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+MASS, \+\_\+qrbp\+\_\+\+::momentary\+\_\+button, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+P\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+P\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+P\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Q\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Q\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Q\+\_\+tran, \+\_\+lyapunov\+\_\+solver\+\_\+\+::\+Real\+Continuous\+Lyapunov\+Equation(), y, and zeros.
+
+
+
+Referenced by mrac\+\_\+pid().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a6e345b42603c4956addd5a74e4906d95}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a6e345b42603c4956addd5a74e4906d95}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!model@{model}}
@@ -363,7 +466,15 @@ Define the model.
 \end{DoxyParams}
 
 
-Definition at line 358 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 369 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+utilities\+\_\+\+::assign\+Elements\+To\+Dxdt(), cim, dy, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+eta, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+omega\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+pos, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+roll\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+roll\+\_\+dot\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+yaw\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+yaw\+\_\+dot\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+K\+\_\+hat\+\_\+r\+\_\+rot\+\_\+dot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+K\+\_\+hat\+\_\+r\+\_\+tran\+\_\+dot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+K\+\_\+hat\+\_\+x\+\_\+rot\+\_\+dot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+K\+\_\+hat\+\_\+x\+\_\+tran\+\_\+dot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+ref\+\_\+dot\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Theta\+\_\+hat\+\_\+rot\+\_\+dot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Theta\+\_\+hat\+\_\+tran\+\_\+dot, and \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+ref\+\_\+dot.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a6871728436ebbaebf583ffa972ed2f73}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a6871728436ebbaebf583ffa972ed2f73}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!read\_params@{read\_params}}
@@ -382,7 +493,15 @@ Implementing functions from controller\+\_\+base.
 \end{DoxyParams}
 
 
-Definition at line 73 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 84 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References cip, file(), \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+r\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+r\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+r\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+\+Theta\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+\+Theta\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+\+Theta\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+x\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+x\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Gamma\+\_\+x\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+refmod\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+omega\+\_\+cmd\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+omega\+\_\+cmd\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+omega\+\_\+ref\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+omega\+\_\+ref\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+refmod\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+omega\+\_\+cmd\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+omega\+\_\+cmd\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+omega\+\_\+ref\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+omega\+\_\+ref\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+refmod\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Q\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Q\+\_\+rot\+\_\+q, and \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Q\+\_\+tran.
+
+
+
+Referenced by mrac\+\_\+pid().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a28dc97f9c77c2c15310d6062eed6ae74}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a28dc97f9c77c2c15310d6062eed6ae74}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!reset\_integrator\_states@{reset\_integrator\_states}}
@@ -401,7 +520,15 @@ Function to reset the integrator states.
 \end{DoxyParams}
 
 
-Definition at line 303 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 314 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+utilities\+\_\+\+::assign\+Elements\+To\+Members(), csm, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+eta\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+omega\+\_\+ref\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+ref\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+K\+\_\+hat\+\_\+r\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+K\+\_\+hat\+\_\+r\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+K\+\_\+hat\+\_\+x\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+K\+\_\+hat\+\_\+x\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::omega\+\_\+ref\+\_\+rot, \+\_\+utilities\+\_\+\+::reset\+Elements\+To\+Members(), \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+dot\+\_\+d\+\_\+filter\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+yaw\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+yaw\+\_\+dot\+\_\+d\+\_\+filter\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+Theta\+\_\+hat\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::\+Theta\+\_\+hat\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::x\+\_\+tran\+\_\+ref, y, and zeros.
+
+
+
+Referenced by update().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a0879f968f9e1afba0f91ef719a15ea7e}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a0879f968f9e1afba0f91ef719a15ea7e}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!run@{run}}
@@ -420,7 +547,11 @@ Implementing functions from controller\+\_\+base.
 \end{DoxyParams}
 
 
-Definition at line 813 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 824 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::aero, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+duration, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+end\+\_\+time, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+start\+\_\+time, cim, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+\_\+aero\+::coeff, \+\_\+qrbp\+\_\+\+::compute\+\_\+aero\+\_\+forces\+\_\+moments(), compute\+\_\+innner\+\_\+loop\+\_\+regressor(), compute\+\_\+normalized\+\_\+thrusts(), compute\+\_\+outer\+\_\+loop\+\_\+regressor(), compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), compute\+\_\+u1\+\_\+eta\+\_\+d(), debug2terminal(), logger, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::mrac\+\_\+pid\+\_\+logger\+::log\+Log\+Data(), model(), \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+Jq\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+W\+\_\+\+Jq, rk4, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+\_\+aero\+::states, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::t, and y.
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_ade4e330bc1cc1d794e6997339bd46a0d}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_ade4e330bc1cc1d794e6997339bd46a0d}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!update@{update}}
@@ -471,7 +602,11 @@ Implementing functions from controller\+\_\+base.
 \end{DoxyParams}
 
 
-Definition at line 195 of file MRAC\+\_\+\+PID.\+cpp.
+Definition at line 206 of file MRAC\+\_\+\+PID.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::aero, \+\_\+utilities\+\_\+\+::aero\+DCMQuad\+NED(), \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+start\+\_\+time, \+\_\+qrbp\+\_\+\+::\+Aero\+States\+::alpha, assign\+\_\+from\+\_\+rk4(), \+\_\+qrbp\+\_\+\+::\+Aero\+States\+::beta, cim, cip, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+\_\+aero\+::coeff, \+\_\+qrbp\+\_\+\+::compute\+\_\+aero\+\_\+coefficients(), \+\_\+qrbp\+\_\+\+::compute\+Aero\+States\+NACA0012\+Quad(), \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate, \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Acceleration(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Position(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Velocity(), \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::inertia\+\_\+matrix, \+\_\+qrbp\+\_\+\+::inertia\+\_\+matrix\+\_\+b, \+\_\+qrbp\+\_\+\+::inertia\+\_\+matrix\+\_\+q, \+\_\+qrbp\+\_\+\+::is\+\_\+biplane, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Jacobian, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Jacobian\+\_\+dot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Jacobian\+\_\+inv, \+\_\+utilities\+\_\+\+::jacobian\+Matrix(), \+\_\+utilities\+\_\+\+::jacobian\+Matrix\+Derivative(), \+\_\+utilities\+\_\+\+::jacobian\+Matrix\+Inverse(), \+\_\+qrbp\+\_\+\+::momentary\+\_\+button, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot\+\_\+b, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::q, \+\_\+qrbp\+\_\+\+::\+QRBPswitch\+Fun(), \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+ddot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+dot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+I\+\_\+\+Jb, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+I\+\_\+\+Jq, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+Jb\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+Jq\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+W\+\_\+\+Jq, reset\+\_\+integrator\+\_\+states(), \+\_\+utilities\+\_\+\+::rotation\+Matrix321\+Global\+To\+Local(), \+\_\+utilities\+\_\+\+::rotation\+Matrix321\+Local\+To\+Global(), \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+\_\+aero\+::states, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::t, ud, \+\_\+qrbp\+\_\+\+::update\+\_\+states\+\_\+to\+\_\+biplane\+\_\+quaternion\+\_\+gmk(), \+\_\+piecewise\+\_\+polynomial\+\_\+trajectory\+\_\+\+::piecewise\+\_\+polynomial\+\_\+trajectory\+::update\+User\+Defined\+Trajectory(), \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+mrac\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+vel\+\_\+\+Jq, and y.
 
 
 
@@ -486,6 +621,10 @@ Definition at line 195 of file MRAC\+\_\+\+PID.\+cpp.
 
 Definition at line 198 of file MRAC\+\_\+\+PID.\+hpp.
 
+
+
+Referenced by compute\+\_\+innner\+\_\+loop\+\_\+regressor(), compute\+\_\+normalized\+\_\+thrusts(), compute\+\_\+outer\+\_\+loop\+\_\+regressor(), compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), compute\+\_\+u1\+\_\+eta\+\_\+d(), model(), run(), and update().
+
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a4a79ce526d2fc56f37de256fb46f0a08}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a4a79ce526d2fc56f37de256fb46f0a08}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!cip@{cip}}
 \index{cip@{cip}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}}
@@ -495,6 +634,10 @@ Definition at line 198 of file MRAC\+\_\+\+PID.\+hpp.
 
 
 Definition at line 195 of file MRAC\+\_\+\+PID.\+hpp.
+
+
+
+Referenced by compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), init(), read\+\_\+params(), and update().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_ae10d1abd42ef4b6389cc656a0e8a98cf}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_ae10d1abd42ef4b6389cc656a0e8a98cf}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!csm@{csm}}
@@ -506,6 +649,10 @@ Definition at line 195 of file MRAC\+\_\+\+PID.\+hpp.
 
 Definition at line 201 of file MRAC\+\_\+\+PID.\+hpp.
 
+
+
+Referenced by assign\+\_\+from\+\_\+rk4(), compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), compute\+\_\+u1\+\_\+eta\+\_\+d(), and reset\+\_\+integrator\+\_\+states().
+
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a719fabcab9ca98da3e566b09ef0a9f8d}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a719fabcab9ca98da3e566b09ef0a9f8d}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!dy@{dy}}
 \index{dy@{dy}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}}
@@ -515,6 +662,10 @@ Definition at line 201 of file MRAC\+\_\+\+PID.\+hpp.
 
 
 Definition at line 176 of file MRAC\+\_\+\+PID.\+hpp.
+
+
+
+Referenced by init(), and model().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a8a65e24587e3e376fcc21a0d044ca2a0}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a8a65e24587e3e376fcc21a0d044ca2a0}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!logger@{logger}}
@@ -526,6 +677,10 @@ Definition at line 176 of file MRAC\+\_\+\+PID.\+hpp.
 
 Definition at line 171 of file MRAC\+\_\+\+PID.\+hpp.
 
+
+
+Referenced by run().
+
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a6933a4aa44c832314de9998f70d21f6f}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a6933a4aa44c832314de9998f70d21f6f}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!rk4@{rk4}}
 \index{rk4@{rk4}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}}
@@ -535,6 +690,10 @@ Definition at line 171 of file MRAC\+\_\+\+PID.\+hpp.
 
 
 Definition at line 192 of file MRAC\+\_\+\+PID.\+hpp.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a3f6fc7bc208adfd5c334d6f678666361}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a3f6fc7bc208adfd5c334d6f678666361}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!ud@{ud}}
@@ -546,6 +705,10 @@ Definition at line 192 of file MRAC\+\_\+\+PID.\+hpp.
 
 Definition at line 168 of file MRAC\+\_\+\+PID.\+hpp.
 
+
+
+Referenced by compute\+\_\+u1\+\_\+eta\+\_\+d(), and update().
+
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a0e9d0a9415b8f336cdd8ab40dd3b111e}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a0e9d0a9415b8f336cdd8ab40dd3b111e}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!y@{y}}
 \index{y@{y}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}}
@@ -556,6 +719,10 @@ Definition at line 168 of file MRAC\+\_\+\+PID.\+hpp.
 
 Definition at line 175 of file MRAC\+\_\+\+PID.\+hpp.
 
+
+
+Referenced by assign\+\_\+from\+\_\+rk4(), init(), reset\+\_\+integrator\+\_\+states(), run(), and update().
+
 \mbox{\Hypertarget{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a58589c3bad0534dd4fb5a708cd261091}\label{class__qrbp___1_1__mrac__pid___1_1mrac__pid_a58589c3bad0534dd4fb5a708cd261091}} 
 \index{\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}!zeros@{zeros}}
 \index{zeros@{zeros}!\_qrbp\_::\_mrac\_pid\_::mrac\_pid@{\_qrbp\_::\_mrac\_pid\_::mrac\_pid}}
@@ -565,6 +732,10 @@ Definition at line 175 of file MRAC\+\_\+\+PID.\+hpp.
 
 
 Definition at line 179 of file MRAC\+\_\+\+PID.\+hpp.
+
+
+
+Referenced by init(), and reset\+\_\+integrator\+\_\+states().
 
 
 

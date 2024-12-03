@@ -1,5 +1,5 @@
 <map id="ACSL&#45;flightstack&#45;winged/src/acsl_flight/src/control/platforms/rostestdrone/control_algorithms/PID/PID_TD_logger.cpp" name="ACSL&#45;flightstack&#45;winged/src/acsl_flight/src/control/platforms/rostestdrone/control_algorithms/PID/PID_TD_logger.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="2809,5,3059,76"/>
+<area shape="rect" id="node1" title="logging for the PID controller." alt="" coords="2809,5,3059,76"/>
 <area shape="rect" id="node2" href="$PID__TD__logger_8hpp.html" title="Logging for the PID controller." alt="" coords="2862,124,3006,151"/>
 <area shape="rect" id="node3" href="$PID__TD__members_8hpp.html" title="PID controller class members." alt="" coords="183,199,349,225"/>
 <area shape="rect" id="node9" href="$flight__log_8hpp.html" title="Utilities for logging flight data." alt="" coords="2879,199,2989,225"/>

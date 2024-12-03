@@ -20,8 +20,7 @@ Inheritance diagram for \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\
 \end{figure}
 
 
-Collaboration diagram for \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+:
-\nopagebreak
+Collaboration diagram for \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -114,7 +113,11 @@ Definition at line 81 of file PID\+\_\+\+OMEGA.\+hpp.
 
 
 
-Definition at line 57 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 70 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References init(), and read\+\_\+params().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a5a0f7555b6f41c8226cd36c6ad223d34}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a5a0f7555b6f41c8226cd36c6ad223d34}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!````~pid\_omega@{$\sim$pid\_omega}}
@@ -124,7 +127,7 @@ Definition at line 57 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 68 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 81 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
@@ -137,7 +140,15 @@ Definition at line 68 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 171 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 184 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+utilities\+\_\+\+::assign\+Elements\+To\+Members(), csm, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+rot\+\_\+eta\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+omega\+\_\+x\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+omega\+\_\+y\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+omega\+\_\+z\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+d\+\_\+filter, and y.
+
+
+
+Referenced by update().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a0209361ddbb0186f718202749e9a0d00}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a0209361ddbb0186f718202749e9a0d00}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!compute\_normalized\_thrusts@{compute\_normalized\_thrusts}}
@@ -147,7 +158,15 @@ Definition at line 171 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 295 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 308 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References cim, \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input, \+\_\+utilities\+\_\+\+::evaluate\+Polynomial(), \+\_\+qrbp\+\_\+\+::\+MAX\+\_\+\+THRUST, \+\_\+qrbp\+\_\+\+::\+MIN\+\_\+\+THRUST, \+\_\+qrbp\+\_\+\+::mixer\+\_\+matrix\+\_\+qrbp, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Sat\+\_\+\+Thrust, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Thrust, \+\_\+qrbp\+\_\+\+::thrust\+\_\+polynomial\+\_\+coeff\+\_\+qrbp, and \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a26f873742518cb39248927db4900d18e}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a26f873742518cb39248927db4900d18e}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!compute\_rotational\_control@{compute\_rotational\_control}}
@@ -157,7 +176,15 @@ Definition at line 295 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 269 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 282 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alpha\+\_\+rot\+\_\+d, cim, cip, csm, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+rot\+\_\+eta, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+rot\+\_\+eta\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+rot\+\_\+omega, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+qrbp\+\_\+\+::inertia\+\_\+matrix\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::tau\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::tau\+\_\+rot\+\_\+baseline, and \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a117f2c147b6dbfa015c57876b8dedeaa}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a117f2c147b6dbfa015c57876b8dedeaa}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!compute\_translational\_control\_in\_I@{compute\_translational\_control\_in\_I}}
@@ -167,7 +194,15 @@ Definition at line 269 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 199 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 212 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References cim, cip, csm, \+\_\+qrbp\+\_\+\+::e3\+\_\+basis, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+pos, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+vel, \+\_\+qrbp\+\_\+\+::G, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+MASS, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+baseline, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+ddot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+dot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+pos, and \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+vel.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_ad17ea9d24905095c419b92e4fb04cead}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_ad17ea9d24905095c419b92e4fb04cead}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!compute\_u1\_eta\_d@{compute\_u1\_eta\_d}}
@@ -177,7 +212,15 @@ Definition at line 199 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 216 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 229 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+pitch\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+pitch\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+roll\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+roll\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+yaw\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alpha\+\_\+rot\+\_\+d, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+pitch\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+pitch\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+roll\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+roll\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+yaw\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+pitch\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+pitch\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+roll\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+roll\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+yaw\+\_\+dot\+\_\+ref, cim, csm, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+omega\+\_\+x\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+omega\+\_\+y\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+omega\+\_\+z\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+roll\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Jacobian, \+\_\+utilities\+\_\+\+::jacobian\+Matrix(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+J, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+I\+\_\+J, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+omega\+\_\+x\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+omega\+\_\+y\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+omega\+\_\+z\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+d\+\_\+filter, and \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a5d11515b86a1e0dee24a5822c4839803}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a5d11515b86a1e0dee24a5822c4839803}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!debug2terminal@{debug2terminal}}
@@ -187,7 +230,11 @@ Definition at line 216 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 311 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 324 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_ac51c8a80ca165e3f46bfc9154f051ae7}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_ac51c8a80ca165e3f46bfc9154f051ae7}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!get\_t1@{get\_t1}}
@@ -197,7 +244,15 @@ Definition at line 311 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 354 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 367 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
+
+
+
+Referenced by \+\_\+control\+\_\+\+::control\+Node\+::compute\+\_\+and\+\_\+publish\+\_\+control().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_addc9f6571db004d1eeec665fbbde8071}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_addc9f6571db004d1eeec665fbbde8071}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!get\_t2@{get\_t2}}
@@ -207,7 +262,15 @@ Definition at line 354 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 358 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 371 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
+
+
+
+Referenced by \+\_\+control\+\_\+\+::control\+Node\+::compute\+\_\+and\+\_\+publish\+\_\+control().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a5b042f4f94568a9bdbe6fa35c8f2d882}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a5b042f4f94568a9bdbe6fa35c8f2d882}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!get\_t3@{get\_t3}}
@@ -217,7 +280,15 @@ Definition at line 358 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 362 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 375 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
+
+
+
+Referenced by \+\_\+control\+\_\+\+::control\+Node\+::compute\+\_\+and\+\_\+publish\+\_\+control().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a36c079c8c229c0c6d23466f781b82029}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a36c079c8c229c0c6d23466f781b82029}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!get\_t4@{get\_t4}}
@@ -227,7 +298,15 @@ Definition at line 362 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 366 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 379 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
+
+
+
+Referenced by \+\_\+control\+\_\+\+::control\+Node\+::compute\+\_\+and\+\_\+publish\+\_\+control().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a0ce7e1edbe89bfc5608bcc40b8a433d9}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a0ce7e1edbe89bfc5608bcc40b8a433d9}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!get\_t5@{get\_t5}}
@@ -237,7 +316,15 @@ Definition at line 366 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 370 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 383 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
+
+
+
+Referenced by \+\_\+control\+\_\+\+::control\+Node\+::compute\+\_\+and\+\_\+publish\+\_\+control().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_ab35037cbfa7ce75bb1d5a4e9e9a8ec74}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_ab35037cbfa7ce75bb1d5a4e9e9a8ec74}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!get\_t6@{get\_t6}}
@@ -247,7 +334,15 @@ Definition at line 370 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 374 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 387 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
+
+
+
+Referenced by \+\_\+control\+\_\+\+::control\+Node\+::compute\+\_\+and\+\_\+publish\+\_\+control().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a3eb9b6be302d54ee352e6072508ec3c9}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a3eb9b6be302d54ee352e6072508ec3c9}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!get\_t7@{get\_t7}}
@@ -257,7 +352,15 @@ Definition at line 374 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 378 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 391 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
+
+
+
+Referenced by \+\_\+control\+\_\+\+::control\+Node\+::compute\+\_\+and\+\_\+publish\+\_\+control().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a8ae4e8e0b6a72accbaceb604e5c27af5}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a8ae4e8e0b6a72accbaceb604e5c27af5}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!get\_t8@{get\_t8}}
@@ -267,7 +370,15 @@ Definition at line 378 of file PID\+\_\+\+OMEGA.\+cpp.
 
 
 
-Definition at line 382 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 395 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
+
+
+
+Referenced by \+\_\+control\+\_\+\+::control\+Node\+::compute\+\_\+and\+\_\+publish\+\_\+control().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_aaa0d745b2d6541b1fbf39b609332f510}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_aaa0d745b2d6541b1fbf39b609332f510}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!init@{init}}
@@ -286,7 +397,15 @@ Init function.
 \end{DoxyParams}
 
 
-Definition at line 93 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 106 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References dy, and y.
+
+
+
+Referenced by pid\+\_\+omega().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a2f0611d67ea860c627ba59eac532b811}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a2f0611d67ea860c627ba59eac532b811}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!model@{model}}
@@ -309,7 +428,15 @@ Defining the model.
 \end{DoxyParams}
 
 
-Definition at line 185 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 198 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+utilities\+\_\+\+::assign\+Elements\+To\+Dxdt(), cim, dy, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+rot\+\_\+eta, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+pos, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+omega\+\_\+x\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+omega\+\_\+y\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+omega\+\_\+z\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+d\+\_\+filter, and \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+roll\+\_\+d\+\_\+filter.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a88f7ecf75027435ae85994e7fe6d3244}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a88f7ecf75027435ae85994e7fe6d3244}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!read\_params@{read\_params}}
@@ -328,7 +455,15 @@ Reading params from json file.
 \end{DoxyParams}
 
 
-Definition at line 73 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 86 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References cip, file(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+rot, and \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+tran.
+
+
+
+Referenced by pid\+\_\+omega().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a9d6d028030ac33f2a8147b23b7783d1e}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a9d6d028030ac33f2a8147b23b7783d1e}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!run@{run}}
@@ -347,7 +482,15 @@ Run function.
 \end{DoxyParams}
 
 
-Definition at line 317 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 330 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::aero, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+duration, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+end\+\_\+time, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+start\+\_\+time, cim, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+\_\+aero\+::coeff, \+\_\+qrbp\+\_\+\+::compute\+\_\+aero\+\_\+forces\+\_\+moments(), compute\+\_\+normalized\+\_\+thrusts(), compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), compute\+\_\+u1\+\_\+eta\+\_\+d(), debug2terminal(), logger, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+\_\+logger\+::log\+Log\+Data(), model(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+J\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+W\+\_\+J, rk4, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+\_\+aero\+::states, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::t, and y.
+
+
+
+Referenced by \+\_\+control\+\_\+\+::control\+Node\+::compute\+\_\+and\+\_\+publish\+\_\+control().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a69a3a9831f3ebbc09b6323728af7831a}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a69a3a9831f3ebbc09b6323728af7831a}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!update@{update}}
@@ -398,7 +541,15 @@ Update function.
 \end{DoxyParams}
 
 
-Definition at line 99 of file PID\+\_\+\+OMEGA.\+cpp.
+Definition at line 112 of file PID\+\_\+\+OMEGA.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::aero, \+\_\+utilities\+\_\+\+::aero\+DCMQuad\+NED(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+start\+\_\+time, \+\_\+qrbp\+\_\+\+::\+Aero\+States\+::alpha, assign\+\_\+from\+\_\+rk4(), \+\_\+qrbp\+\_\+\+::\+Aero\+States\+::beta, cim, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+\_\+aero\+::coeff, \+\_\+qrbp\+\_\+\+::compute\+\_\+aero\+\_\+coefficients(), \+\_\+qrbp\+\_\+\+::compute\+Aero\+States\+NACA0012\+Quad(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d, \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Acceleration(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Position(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Velocity(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Yaw(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Yaw\+Rate(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::q, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+ddot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+dot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+I\+\_\+J, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+J\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+W\+\_\+J, \+\_\+utilities\+\_\+\+::rotation\+Matrix321\+Global\+To\+Local(), \+\_\+utilities\+\_\+\+::rotation\+Matrix321\+Local\+To\+Global(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+\_\+aero\+::states, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::t, ud, \+\_\+piecewise\+\_\+polynomial\+\_\+trajectory\+\_\+\+::piecewise\+\_\+polynomial\+\_\+trajectory\+::update\+User\+Defined\+Trajectory(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+pos, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+vel, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+vel\+\_\+J, and y.
+
+
+
+Referenced by \+\_\+control\+\_\+\+::control\+Node\+::compute\+\_\+and\+\_\+publish\+\_\+control().
 
 
 
@@ -413,6 +564,10 @@ Definition at line 99 of file PID\+\_\+\+OMEGA.\+cpp.
 
 Definition at line 192 of file PID\+\_\+\+OMEGA.\+hpp.
 
+
+
+Referenced by compute\+\_\+normalized\+\_\+thrusts(), compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), compute\+\_\+u1\+\_\+eta\+\_\+d(), model(), run(), and update().
+
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a7c61f8e0c6177968631f323ffff8b489}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a7c61f8e0c6177968631f323ffff8b489}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!cip@{cip}}
 \index{cip@{cip}!\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}}
@@ -422,6 +577,10 @@ Definition at line 192 of file PID\+\_\+\+OMEGA.\+hpp.
 
 
 Definition at line 189 of file PID\+\_\+\+OMEGA.\+hpp.
+
+
+
+Referenced by compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), and read\+\_\+params().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a4c638ffd80e245209190fc29c594af9a}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a4c638ffd80e245209190fc29c594af9a}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!csm@{csm}}
@@ -433,6 +592,10 @@ Definition at line 189 of file PID\+\_\+\+OMEGA.\+hpp.
 
 Definition at line 195 of file PID\+\_\+\+OMEGA.\+hpp.
 
+
+
+Referenced by assign\+\_\+from\+\_\+rk4(), compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), and compute\+\_\+u1\+\_\+eta\+\_\+d().
+
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_aa360518423d9c00ea9939ef01c3fbb15}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_aa360518423d9c00ea9939ef01c3fbb15}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!dy@{dy}}
 \index{dy@{dy}!\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}}
@@ -442,6 +605,10 @@ Definition at line 195 of file PID\+\_\+\+OMEGA.\+hpp.
 
 
 Definition at line 173 of file PID\+\_\+\+OMEGA.\+hpp.
+
+
+
+Referenced by init(), and model().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a3f0bf58da92b74eade6d5d2d0d1a3e6d}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a3f0bf58da92b74eade6d5d2d0d1a3e6d}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!logger@{logger}}
@@ -457,6 +624,10 @@ Initialize the logger.
 
 Definition at line 168 of file PID\+\_\+\+OMEGA.\+hpp.
 
+
+
+Referenced by run().
+
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_ae033488a3b673acb1e62a98581a030be}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_ae033488a3b673acb1e62a98581a030be}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!rk4@{rk4}}
 \index{rk4@{rk4}!\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}}
@@ -466,6 +637,10 @@ Definition at line 168 of file PID\+\_\+\+OMEGA.\+hpp.
 
 
 Definition at line 186 of file PID\+\_\+\+OMEGA.\+hpp.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_a3d9d5e5913f2e869af7851b6eb44c58b}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_a3d9d5e5913f2e869af7851b6eb44c58b}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!ud@{ud}}
@@ -477,6 +652,10 @@ Definition at line 186 of file PID\+\_\+\+OMEGA.\+hpp.
 
 Definition at line 162 of file PID\+\_\+\+OMEGA.\+hpp.
 
+
+
+Referenced by update().
+
 \mbox{\Hypertarget{class__qrbp___1_1__pid__omega___1_1pid__omega_aeb088298e58d4867c39d13f7d92ef378}\label{class__qrbp___1_1__pid__omega___1_1pid__omega_aeb088298e58d4867c39d13f7d92ef378}} 
 \index{\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}!y@{y}}
 \index{y@{y}!\_qrbp\_::\_pid\_omega\_::pid\_omega@{\_qrbp\_::\_pid\_omega\_::pid\_omega}}
@@ -486,6 +665,10 @@ Definition at line 162 of file PID\+\_\+\+OMEGA.\+hpp.
 
 
 Definition at line 172 of file PID\+\_\+\+OMEGA.\+hpp.
+
+
+
+Referenced by assign\+\_\+from\+\_\+rk4(), init(), run(), and update().
 
 
 

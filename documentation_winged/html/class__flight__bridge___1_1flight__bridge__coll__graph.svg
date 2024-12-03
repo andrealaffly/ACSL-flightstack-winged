@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classvehicle__states.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classvehicle__states.html" target="_top" xlink:title="vehicle state class">
 <polygon fill="white" stroke="black" points="0,-78.5 0,-97.5 87,-97.5 87,-78.5 0,-78.5"/>
 <text text-anchor="middle" x="43.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">vehicle_states</text>
 </a>

@@ -2,6 +2,6 @@
 <area shape="rect" id="node1" title="MRAC with angular velocities controller class members." alt="" coords="73,5,348,91"/>
 <area shape="rect" id="node2" href="$MRAC__OMEGA_8hpp.html" title="MRAC with angular velocities for the QRBP." alt="" coords="27,272,232,357"/>
 <area shape="rect" id="node4" href="$MRAC__OMEGA__logger_8hpp.html" title="logging for the MRAc with angular velocities controller" alt="" coords="167,139,419,224"/>
-<area shape="rect" id="node3" href="$MRAC__OMEGA_8cpp.html" title=" " alt="" coords="5,405,253,476"/>
-<area shape="rect" id="node5" href="$MRAC__OMEGA__logger_8cpp.html" title=" " alt="" coords="257,279,551,350"/>
+<area shape="rect" id="node3" href="$MRAC__OMEGA_8cpp.html" title="MRAC with angular velocities for the QRBP. Inherts the class controller_base for the basic functional..." alt="" coords="5,405,253,476"/>
+<area shape="rect" id="node5" href="$MRAC__OMEGA__logger_8cpp.html" title="logging for the MRAC with angular velocities controller." alt="" coords="257,279,551,350"/>
 </map>

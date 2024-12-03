@@ -76,6 +76,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Funtion that updates the current time when called.  
+ <a href="class__control___1_1controlNode.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="control_8hpp_source.html">control.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for _control_::controlNode:</div>
@@ -85,8 +88,7 @@ Inheritance diagram for _control_::controlNode:</div>
 <div class="dynheader">
 Collaboration diagram for _control_::controlNode:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class__control___1_1controlNode__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class__control___1_1controlNode__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -166,7 +168,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ae14465b021b82771c818ef5ad4bda0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
+<div class="textblock"><p>Funtion that updates the current time when called. </p>
+
 <p class="definition">Definition at line <a class="el" href="control_8hpp_source.html#l00078">78</a> of file <a class="el" href="control_8hpp_source.html">control.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a35a9eb5216f58fb863d29f445c1f71c2"></a>
@@ -210,7 +213,9 @@ Private Attributes</h2></td></tr>
 <p>Get the initial time stamp after the setup is done for more accuracy</p>
 <p>Print that control node started at initial timestamp</p>
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00044">44</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00050">50</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="control_8hpp_source.html#l00114">control_timer_</a>, <a class="el" href="flight__params_8hpp_source.html#l00107">flight_params::controller_rate</a>, <a class="el" href="control_8hpp_source.html#l00195">flight_params_ptr</a>, <a class="el" href="control_8hpp_source.html#l00124">offboard_flag_</a>, <a class="el" href="control_8hpp_source.html#l00118">publisher_actuator_motors_</a>, <a class="el" href="control_8hpp_source.html#l00122">publisher_offboard_control_mode_</a>, <a class="el" href="control_8hpp_source.html#l00120">publisher_vehicle_command_</a>, <a class="el" href="control_8cpp_source.html#l00246">run()</a>, and <a class="el" href="control_8hpp_source.html#l00101">timestamp_initial_</a>.</p>
 
 </div>
 </div>
@@ -271,7 +276,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00121">121</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00130">130</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="px4__defines_8hpp_source.html#l00067">ARM_ACSL_VEH</a>, and <a class="el" href="control_8cpp_source.html#l00108">publish_vehicle_command()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00246">run()</a>.</p>
 
 </div>
 </div>
@@ -306,7 +315,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00353">353</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00362">362</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="control_8hpp_source.html#l00205">controller_</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00052">vehicle_states::get_controltime()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00112">vehicle_states::get_pitch()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00100">vehicle_states::get_pitchspeed()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00068">vehicle_states::get_q0()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00072">vehicle_states::get_q1()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00076">vehicle_states::get_q2()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00080">vehicle_states::get_q3()</a>, <a class="el" href="control_8cpp_source.html#l00226">get_rk4_timestep()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00108">vehicle_states::get_roll()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00096">vehicle_states::get_rollspeed()</a>, <a class="el" href="PID__OMEGA_8cpp_source.html#l00367">_qrbp_::_pid_omega_::pid_omega::get_t1()</a>, <a class="el" href="PID__OMEGA_8cpp_source.html#l00371">_qrbp_::_pid_omega_::pid_omega::get_t2()</a>, <a class="el" href="PID__OMEGA_8cpp_source.html#l00375">_qrbp_::_pid_omega_::pid_omega::get_t3()</a>, <a class="el" href="PID__OMEGA_8cpp_source.html#l00379">_qrbp_::_pid_omega_::pid_omega::get_t4()</a>, <a class="el" href="PID__OMEGA_8cpp_source.html#l00383">_qrbp_::_pid_omega_::pid_omega::get_t5()</a>, <a class="el" href="PID__OMEGA_8cpp_source.html#l00387">_qrbp_::_pid_omega_::pid_omega::get_t6()</a>, <a class="el" href="PID__OMEGA_8cpp_source.html#l00391">_qrbp_::_pid_omega_::pid_omega::get_t7()</a>, <a class="el" href="PID__OMEGA_8cpp_source.html#l00395">_qrbp_::_pid_omega_::pid_omega::get_t8()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00084">vehicle_states::get_vx()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00088">vehicle_states::get_vy()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00092">vehicle_states::get_vz()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00056">vehicle_states::get_x()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00060">vehicle_states::get_y()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00116">vehicle_states::get_yaw()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00104">vehicle_states::get_yawspeed()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00064">vehicle_states::get_z()</a>, <a class="el" href="control_8cpp_source.html#l00236">get_zero_thrust()</a>, <a class="el" href="control_8hpp_source.html#l00070">PUBLISH_ACTUATOR</a>, <a class="el" href="control_8cpp_source.html#l00167">publish_actuator_motors()</a>, <a class="el" href="control_8cpp_source.html#l00146">publish_offboard_control_mode()</a>, <a class="el" href="PID__OMEGA_8cpp_source.html#l00330">_qrbp_::_pid_omega_::pid_omega::run()</a>, <a class="el" href="PID__OMEGA_8cpp_source.html#l00112">_qrbp_::_pid_omega_::pid_omega::update()</a>, and <a class="el" href="control_8hpp_source.html#l00191">vehicle_ptr</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00246">run()</a>.</p>
 
 </div>
 </div>
@@ -375,7 +388,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00193">193</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00202">202</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="vehicle__class_8cpp_source.html#l00052">vehicle_states::get_controltime()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00112">vehicle_states::get_pitch()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00100">vehicle_states::get_pitchspeed()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00068">vehicle_states::get_q0()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00072">vehicle_states::get_q1()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00076">vehicle_states::get_q2()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00080">vehicle_states::get_q3()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00108">vehicle_states::get_roll()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00096">vehicle_states::get_rollspeed()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00084">vehicle_states::get_vx()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00088">vehicle_states::get_vy()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00056">vehicle_states::get_x()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00060">vehicle_states::get_y()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00116">vehicle_states::get_yaw()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00104">vehicle_states::get_yawspeed()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00064">vehicle_states::get_z()</a>, and <a class="el" href="control_8hpp_source.html#l00191">vehicle_ptr</a>.</p>
 
 </div>
 </div>
@@ -410,7 +425,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00129">129</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00138">138</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="px4__defines_8hpp_source.html#l00068">DISARM_ACSL_VEH</a>, <a class="el" href="control_8hpp_source.html#l00126">disarm_info_bool_</a>, and <a class="el" href="control_8cpp_source.html#l00108">publish_vehicle_command()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00246">run()</a>.</p>
 
 </div>
 </div>
@@ -437,7 +456,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00222">222</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00231">231</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="control_8hpp_source.html#l00195">flight_params_ptr</a>, and <a class="el" href="flight__params_8hpp_source.html#l00085">flight_params::min_thrust_after_arm</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00246">run()</a>.</p>
 
 </div>
 </div>
@@ -464,7 +487,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00217">217</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00226">226</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="flight__params_8hpp_source.html#l00107">flight_params::controller_rate</a>, and <a class="el" href="control_8hpp_source.html#l00195">flight_params_ptr</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00362">compute_and_publish_control()</a>.</p>
 
 </div>
 </div>
@@ -491,7 +518,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00227">227</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00236">236</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="control_8hpp_source.html#l00067">MOTOR_ZERO_THRUST</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00362">compute_and_publish_control()</a>, and <a class="el" href="control_8cpp_source.html#l00246">run()</a>.</p>
 
 </div>
 </div>
@@ -569,7 +600,11 @@ Private Attributes</h2></td></tr>
 <p>Function to publish motor thrust commands </p>
 <p>Construct the message</p>
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00158">158</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00167">167</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="control_8hpp_source.html#l00118">publisher_actuator_motors_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00362">compute_and_publish_control()</a>, and <a class="el" href="control_8cpp_source.html#l00246">run()</a>.</p>
 
 </div>
 </div>
@@ -605,7 +640,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <p>Construct the message</p>
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00137">137</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00146">146</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="px4__defines_8hpp_source.html#l00072">OFFBOARD_ACCEL_CTRL_BOOL</a>, <a class="el" href="px4__defines_8hpp_source.html#l00073">OFFBOARD_ATT_CTRL_BOOL</a>, <a class="el" href="px4__defines_8hpp_source.html#l00074">OFFBOARD_BODY_RATE_CTRL_BOOL</a>, <a class="el" href="px4__defines_8hpp_source.html#l00076">OFFBOARD_DIRECT_ACT_CTRL_BOOL</a>, <a class="el" href="px4__defines_8hpp_source.html#l00070">OFFBOARD_POS_CTRL_BOOL</a>, <a class="el" href="px4__defines_8hpp_source.html#l00075">OFFBOARD_THRST_TRQ_CTRL_BOOL</a>, <a class="el" href="px4__defines_8hpp_source.html#l00071">OFFBOARD_VEL_CTRL_BOOL</a>, and <a class="el" href="control_8hpp_source.html#l00122">publisher_offboard_control_mode_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00362">compute_and_publish_control()</a>, and <a class="el" href="control_8cpp_source.html#l00246">run()</a>.</p>
 
 </div>
 </div>
@@ -662,7 +701,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <p>Construct the message</p>
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00099">99</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00108">108</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="px4__defines_8hpp_source.html#l00054">FROM_EXTERNAL_BOOL</a>, <a class="el" href="control_8hpp_source.html#l00120">publisher_vehicle_command_</a>, <a class="el" href="px4__defines_8hpp_source.html#l00053">SOURCE_COMPONENT</a>, <a class="el" href="px4__defines_8hpp_source.html#l00052">SOURCE_SYSTEM</a>, <a class="el" href="px4__defines_8hpp_source.html#l00051">TARGET_COMPONENT</a>, and <a class="el" href="px4__defines_8hpp_source.html#l00050">TARGET_SYSTEM</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00130">arm()</a>, <a class="el" href="control_8cpp_source.html#l00138">disarm()</a>, and <a class="el" href="control_8cpp_source.html#l00246">run()</a>.</p>
 
 </div>
 </div>
@@ -699,7 +742,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <p>Update the current time at the beginning of every loop</p>
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00237">237</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00246">246</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="control_8cpp_source.html#l00130">arm()</a>, <a class="el" href="flight__params_8hpp_source.html#l00082">flight_params::arm_time</a>, <a class="el" href="control_8cpp_source.html#l00362">compute_and_publish_control()</a>, <a class="el" href="px4__defines_8hpp_source.html#l00063">CUSTOM_MAIN_MODE_OFFBOARD</a>, <a class="el" href="control_8cpp_source.html#l00138">disarm()</a>, <a class="el" href="px4__defines_8hpp_source.html#l00056">ENABLE_CUSTOM_MODE</a>, <a class="el" href="flight__params_8hpp_source.html#l00116">flight_params::end_time</a>, <a class="el" href="control_8hpp_source.html#l00195">flight_params_ptr</a>, <a class="el" href="global__helpers_8hpp_source.html#l00273">_flightstack_::FLIGHTSTACK_ERROR()</a>, <a class="el" href="control_8cpp_source.html#l00231">get_min_thrust()</a>, <a class="el" href="control_8cpp_source.html#l00236">get_zero_thrust()</a>, <a class="el" href="control_8hpp_source.html#l00124">offboard_flag_</a>, <a class="el" href="control_8hpp_source.html#l00070">PUBLISH_ACTUATOR</a>, <a class="el" href="control_8cpp_source.html#l00167">publish_actuator_motors()</a>, <a class="el" href="control_8cpp_source.html#l00146">publish_offboard_control_mode()</a>, <a class="el" href="control_8cpp_source.html#l00108">publish_vehicle_command()</a>, <a class="el" href="flight__params_8hpp_source.html#l00088">flight_params::start_time</a>, <a class="el" href="control_8hpp_source.html#l00104">time_current_</a>, and <a class="el" href="control_8cpp_source.html#l00095">updateCurrentTime()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00050">controlNode()</a>.</p>
 
 </div>
 </div>
@@ -727,7 +774,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Update function for the current time. </p>
-<p>Funtion that updates the current time when called.</p>
 <p>Update function for the current time </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">None</td><td></td></tr>
@@ -735,7 +781,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00086">86</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="control_8cpp_source.html#l00095">95</a> of file <a class="el" href="control_8cpp_source.html">control.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="global__helpers_8hpp_source.html#l00155">_flightstack_::FLIGHTSTACK_INFO_STREAM_NO_TAG()</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00053">vehicle_states::set_controltime()</a>, <a class="el" href="control_8hpp_source.html#l00104">time_current_</a>, <a class="el" href="control_8hpp_source.html#l00101">timestamp_initial_</a>, and <a class="el" href="control_8hpp_source.html#l00191">vehicle_ptr</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00246">run()</a>.</p>
 
 </div>
 </div>
@@ -764,6 +814,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="control_8hpp_source.html#l00114">114</a> of file <a class="el" href="control_8hpp_source.html">control.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00050">controlNode()</a>.</p>
+
 </div>
 </div>
 <a id="ae14465b021b82771c818ef5ad4bda0d3"></a>
@@ -790,6 +842,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="control_8hpp_source.html#l00205">205</a> of file <a class="el" href="control_8hpp_source.html">control.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00362">compute_and_publish_control()</a>.</p>
+
 </div>
 </div>
 <a id="aad9e7b3e3018bddc6045c61c7324bd37"></a>
@@ -813,6 +867,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="control_8hpp_source.html#l00126">126</a> of file <a class="el" href="control_8hpp_source.html">control.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00138">disarm()</a>.</p>
 
 </div>
 </div>
@@ -839,6 +895,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="control_8hpp_source.html#l00195">195</a> of file <a class="el" href="control_8hpp_source.html">control.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00050">controlNode()</a>, <a class="el" href="control_8cpp_source.html#l00231">get_min_thrust()</a>, <a class="el" href="control_8cpp_source.html#l00226">get_rk4_timestep()</a>, and <a class="el" href="control_8cpp_source.html#l00246">run()</a>.</p>
+
 </div>
 </div>
 <a id="aae151d2f12114195b1bc784f74eea01c"></a>
@@ -862,6 +920,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="control_8hpp_source.html#l00124">124</a> of file <a class="el" href="control_8hpp_source.html">control.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00050">controlNode()</a>, and <a class="el" href="control_8cpp_source.html#l00246">run()</a>.</p>
 
 </div>
 </div>
@@ -889,6 +949,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="control_8hpp_source.html#l00118">118</a> of file <a class="el" href="control_8hpp_source.html">control.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00050">controlNode()</a>, and <a class="el" href="control_8cpp_source.html#l00167">publish_actuator_motors()</a>.</p>
+
 </div>
 </div>
 <a id="ae89684c2e1f96347a5ea37f38f3375a2"></a>
@@ -913,6 +975,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="control_8hpp_source.html#l00122">122</a> of file <a class="el" href="control_8hpp_source.html">control.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00050">controlNode()</a>, and <a class="el" href="control_8cpp_source.html#l00146">publish_offboard_control_mode()</a>.</p>
+
 </div>
 </div>
 <a id="a956724d0db45cc5bd00e16358bf0bd21"></a>
@@ -936,6 +1000,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="control_8hpp_source.html#l00120">120</a> of file <a class="el" href="control_8hpp_source.html">control.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00050">controlNode()</a>, and <a class="el" href="control_8cpp_source.html#l00108">publish_vehicle_command()</a>.</p>
 
 </div>
 </div>
@@ -963,6 +1029,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="control_8hpp_source.html#l00104">104</a> of file <a class="el" href="control_8hpp_source.html">control.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00246">run()</a>, and <a class="el" href="control_8cpp_source.html#l00095">updateCurrentTime()</a>.</p>
+
 </div>
 </div>
 <a id="adc16b81c8e6f2b2b8e9bf4d205cde7a4"></a>
@@ -989,6 +1057,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="control_8hpp_source.html#l00101">101</a> of file <a class="el" href="control_8hpp_source.html">control.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00050">controlNode()</a>, and <a class="el" href="control_8cpp_source.html#l00095">updateCurrentTime()</a>.</p>
+
 </div>
 </div>
 <a id="a1ed6625009e5683411b509a3e5ce70ce"></a>
@@ -1013,6 +1083,8 @@ Private Attributes</h2></td></tr>
 <p>Instance of the vehicle_ptr to point to the vehicle state object in flight_bridge.cpp </p>
 
 <p class="definition">Definition at line <a class="el" href="control_8hpp_source.html#l00191">191</a> of file <a class="el" href="control_8hpp_source.html">control.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="control_8cpp_source.html#l00362">compute_and_publish_control()</a>, <a class="el" href="control_8cpp_source.html#l00202">debug2screen()</a>, and <a class="el" href="control_8cpp_source.html#l00095">updateCurrentTime()</a>.</p>
 
 </div>
 </div>

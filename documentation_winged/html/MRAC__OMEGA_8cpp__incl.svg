@@ -58,7 +58,7 @@ var sectionId = 'dynsection-0';
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="MRAC with angular velocities for the QRBP. Inherts the class controller_base for the basic functional...">
 <polygon fill="#bfbfbf" stroke="black" points="2480.34,-481.5 2480.34,-533.5 2666.34,-533.5 2666.34,-481.5 2480.34,-481.5"/>
 <text text-anchor="start" x="2488.34" y="-521.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="2488.34" y="-510.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -146,7 +146,7 @@ var sectionId = 'dynsection-0';
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="vehicle__class_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="vehicle__class_8hpp.html" target="_top" xlink:title="Header for the vehicle class object.">
 <polygon fill="white" stroke="black" points="1078.84,-123.5 1078.84,-142.5 1181.84,-142.5 1181.84,-123.5 1078.84,-123.5"/>
 <text text-anchor="middle" x="1130.34" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">vehicle_class.hpp</text>
 </a>

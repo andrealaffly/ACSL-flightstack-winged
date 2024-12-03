@@ -81,7 +81,11 @@ Definition at line 76 of file read\+\_\+pix.\+hpp.
 
 rclcpp\+::\+Node needs a default constructor. Therefore we implement passing of the vehicle states like so Create the odometry subscription
 
-Definition at line 44 of file read\+\_\+pix.\+cpp.
+Definition at line 50 of file read\+\_\+pix.\+cpp.
+
+
+
+References odometry\+\_\+callback\+\_\+(), and odometry\+\_\+subscription\+\_\+.
 
 \mbox{\Hypertarget{class__read__pix___1_1read__odometryNode_a16c875710779caa0ad532d3d4305ddfc}\label{class__read__pix___1_1read__odometryNode_a16c875710779caa0ad532d3d4305ddfc}} 
 \index{\_read\_pix\_::read\_odometryNode@{\_read\_pix\_::read\_odometryNode}!````~read\_odometryNode@{$\sim$read\_odometryNode}}
@@ -109,7 +113,15 @@ Odometry callback function to process and save data to vehicle obejct in flight\
 \end{DoxyParams}
 
 
-Definition at line 129 of file read\+\_\+pix.\+cpp.
+Definition at line 135 of file read\+\_\+pix.\+cpp.
+
+
+
+References \+\_\+read\+\_\+pix\+\_\+\+::read\+\_\+odometry\+Node\+::init\+\_\+state\+::\+Euler\+RPY, Euler\+RPY, flight\+\_\+params\+\_\+ptr, vehicle\+\_\+states\+::get\+\_\+controltime(), \+\_\+read\+\_\+pix\+\_\+\+::read\+\_\+odometry\+Node\+::init\+\_\+state\+::init, initvals, \+\_\+read\+\_\+pix\+\_\+\+::read\+\_\+odometry\+Node\+::init\+\_\+state\+::pitch, quaternion\+\_\+pix, quaternion\+To\+Euler\+Angles\+RPY(), \+\_\+read\+\_\+pix\+\_\+\+::read\+\_\+odometry\+Node\+::init\+\_\+state\+::roll, vehicle\+\_\+states\+::set\+\_\+pitch(), vehicle\+\_\+states\+::set\+\_\+pitchspeed(), vehicle\+\_\+states\+::set\+\_\+pixhawktime(), vehicle\+\_\+states\+::set\+\_\+q0(), vehicle\+\_\+states\+::set\+\_\+q1(), vehicle\+\_\+states\+::set\+\_\+q2(), vehicle\+\_\+states\+::set\+\_\+q3(), vehicle\+\_\+states\+::set\+\_\+roll(), vehicle\+\_\+states\+::set\+\_\+rollspeed(), vehicle\+\_\+states\+::set\+\_\+vx(), vehicle\+\_\+states\+::set\+\_\+vy(), vehicle\+\_\+states\+::set\+\_\+vz(), vehicle\+\_\+states\+::set\+\_\+x(), vehicle\+\_\+states\+::set\+\_\+y(), vehicle\+\_\+states\+::set\+\_\+yaw(), vehicle\+\_\+states\+::set\+\_\+yawspeed(), vehicle\+\_\+states\+::set\+\_\+z(), flight\+\_\+params\+::start\+\_\+time, vehicle\+\_\+ptr, \+\_\+read\+\_\+pix\+\_\+\+::read\+\_\+odometry\+Node\+::init\+\_\+state\+::x, \+\_\+read\+\_\+pix\+\_\+\+::read\+\_\+odometry\+Node\+::init\+\_\+state\+::y, \+\_\+read\+\_\+pix\+\_\+\+::read\+\_\+odometry\+Node\+::init\+\_\+state\+::yaw, \+\_\+read\+\_\+pix\+\_\+\+::read\+\_\+odometry\+Node\+::init\+\_\+state\+::yaw\+\_\+quaternion, \+\_\+read\+\_\+pix\+\_\+\+::read\+\_\+odometry\+Node\+::init\+\_\+state\+::z, and zeroed\+\_\+quaternion.
+
+
+
+Referenced by read\+\_\+odometry\+Node().
 
 \mbox{\Hypertarget{class__read__pix___1_1read__odometryNode_a6e6991a47f49eac7e77cf3f5c6b68c22}\label{class__read__pix___1_1read__odometryNode_a6e6991a47f49eac7e77cf3f5c6b68c22}} 
 \index{\_read\_pix\_::read\_odometryNode@{\_read\_pix\_::read\_odometryNode}!quaternionToEulerAnglesRPY@{quaternionToEulerAnglesRPY}}
@@ -119,7 +131,11 @@ Definition at line 129 of file read\+\_\+pix.\+cpp.
 
 
 
-Definition at line 71 of file read\+\_\+pix.\+cpp.
+Definition at line 77 of file read\+\_\+pix.\+cpp.
+
+
+
+Referenced by odometry\+\_\+callback\+\_\+().
 
 
 
@@ -134,6 +150,10 @@ Definition at line 71 of file read\+\_\+pix.\+cpp.
 
 Definition at line 134 of file read\+\_\+pix.\+hpp.
 
+
+
+Referenced by odometry\+\_\+callback\+\_\+().
+
 \mbox{\Hypertarget{class__read__pix___1_1read__odometryNode_ac8639eb2647173437ac2a87e652624f0}\label{class__read__pix___1_1read__odometryNode_ac8639eb2647173437ac2a87e652624f0}} 
 \index{\_read\_pix\_::read\_odometryNode@{\_read\_pix\_::read\_odometryNode}!flight\_params\_ptr@{flight\_params\_ptr}}
 \index{flight\_params\_ptr@{flight\_params\_ptr}!\_read\_pix\_::read\_odometryNode@{\_read\_pix\_::read\_odometryNode}}
@@ -144,11 +164,19 @@ Instance of the flight\+\_\+params\+\_\+ptr to point to the flight\+\_\+paramete
 
 Definition at line 102 of file read\+\_\+pix.\+hpp.
 
+
+
+Referenced by odometry\+\_\+callback\+\_\+().
+
 \mbox{\Hypertarget{class__read__pix___1_1read__odometryNode_aa67f06b38e29cb0ee853c6bc354a1c88}\label{class__read__pix___1_1read__odometryNode_aa67f06b38e29cb0ee853c6bc354a1c88}} 
 \index{\_read\_pix\_::read\_odometryNode@{\_read\_pix\_::read\_odometryNode}!initvals@{initvals}}
 \index{initvals@{initvals}!\_read\_pix\_::read\_odometryNode@{\_read\_pix\_::read\_odometryNode}}
 \doxysubsubsection{\texorpdfstring{initvals}{initvals}}
 {\footnotesize\ttfamily struct \mbox{\hyperlink{struct__read__pix___1_1read__odometryNode_1_1init__state}{\+\_\+read\+\_\+pix\+\_\+\+::read\+\_\+odometry\+Node\+::init\+\_\+state}} \+\_\+read\+\_\+pix\+\_\+\+::read\+\_\+odometry\+Node\+::initvals\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by odometry\+\_\+callback\+\_\+().
 
 \mbox{\Hypertarget{class__read__pix___1_1read__odometryNode_a9cb9d8310e77ffd6326e9e628acdfd21}\label{class__read__pix___1_1read__odometryNode_a9cb9d8310e77ffd6326e9e628acdfd21}} 
 \index{\_read\_pix\_::read\_odometryNode@{\_read\_pix\_::read\_odometryNode}!odometry\_subscription\_@{odometry\_subscription\_}}
@@ -164,6 +192,10 @@ Odometry Subcriber pointer.
 
 Definition at line 87 of file read\+\_\+pix.\+hpp.
 
+
+
+Referenced by read\+\_\+odometry\+Node().
+
 \mbox{\Hypertarget{class__read__pix___1_1read__odometryNode_afc1682f7effc546bab7598e81ebd3158}\label{class__read__pix___1_1read__odometryNode_afc1682f7effc546bab7598e81ebd3158}} 
 \index{\_read\_pix\_::read\_odometryNode@{\_read\_pix\_::read\_odometryNode}!quaternion\_pix@{quaternion\_pix}}
 \index{quaternion\_pix@{quaternion\_pix}!\_read\_pix\_::read\_odometryNode@{\_read\_pix\_::read\_odometryNode}}
@@ -173,6 +205,10 @@ Definition at line 87 of file read\+\_\+pix.\+hpp.
 
 
 Definition at line 128 of file read\+\_\+pix.\+hpp.
+
+
+
+Referenced by odometry\+\_\+callback\+\_\+().
 
 \mbox{\Hypertarget{class__read__pix___1_1read__odometryNode_a0f5a6e0171cfca869f8ecc54d4af8efd}\label{class__read__pix___1_1read__odometryNode_a0f5a6e0171cfca869f8ecc54d4af8efd}} 
 \index{\_read\_pix\_::read\_odometryNode@{\_read\_pix\_::read\_odometryNode}!vehicle\_ptr@{vehicle\_ptr}}
@@ -184,6 +220,10 @@ Instance of the vehicle\+\_\+ptr to point to the vehicle state object in flight\
 
 Definition at line 98 of file read\+\_\+pix.\+hpp.
 
+
+
+Referenced by odometry\+\_\+callback\+\_\+().
+
 \mbox{\Hypertarget{class__read__pix___1_1read__odometryNode_ab5cce4cce725f0c1ecb0d3a2705dcaed}\label{class__read__pix___1_1read__odometryNode_ab5cce4cce725f0c1ecb0d3a2705dcaed}} 
 \index{\_read\_pix\_::read\_odometryNode@{\_read\_pix\_::read\_odometryNode}!zeroed\_quaternion@{zeroed\_quaternion}}
 \index{zeroed\_quaternion@{zeroed\_quaternion}!\_read\_pix\_::read\_odometryNode@{\_read\_pix\_::read\_odometryNode}}
@@ -193,6 +233,10 @@ Definition at line 98 of file read\+\_\+pix.\+hpp.
 
 
 Definition at line 131 of file read\+\_\+pix.\+hpp.
+
+
+
+Referenced by odometry\+\_\+callback\+\_\+().
 
 
 

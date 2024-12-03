@@ -2,6 +2,11 @@
 \label{class__control___1_1controlNode}\index{\_control\_::controlNode@{\_control\_::controlNode}}
 
 
+Funtion that updates the current time when called.  
+
+
+
+
 {\ttfamily \#include $<$control.\+hpp$>$}
 
 
@@ -15,8 +20,7 @@ Inheritance diagram for \+\_\+control\+\_\+\+::control\+Node\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for \+\_\+control\+\_\+\+::control\+Node\+:
-\nopagebreak
+Collaboration diagram for \+\_\+control\+\_\+\+::control\+Node\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -87,7 +91,7 @@ bool \mbox{\hyperlink{class__control___1_1controlNode_aad9e7b3e3018bddc6045c61c7
 
 
 \doxysubsection{Detailed Description}
-
+Funtion that updates the current time when called. 
 
 Definition at line 78 of file control.\+hpp.
 
@@ -116,7 +120,11 @@ Get the initial time stamp after the setup is done for more accuracy
 
 Print that control node started at initial timestamp
 
-Definition at line 44 of file control.\+cpp.
+Definition at line 50 of file control.\+cpp.
+
+
+
+References control\+\_\+timer\+\_\+, flight\+\_\+params\+::controller\+\_\+rate, flight\+\_\+params\+\_\+ptr, offboard\+\_\+flag\+\_\+, publisher\+\_\+actuator\+\_\+motors\+\_\+, publisher\+\_\+offboard\+\_\+control\+\_\+mode\+\_\+, publisher\+\_\+vehicle\+\_\+command\+\_\+, run(), and timestamp\+\_\+initial\+\_\+.
 
 \mbox{\Hypertarget{class__control___1_1controlNode_a57242d643b6748c96c05c0432a446962}\label{class__control___1_1controlNode_a57242d643b6748c96c05c0432a446962}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!````~controlNode@{$\sim$controlNode}}
@@ -144,7 +152,15 @@ Function to arm the vehicle
 \end{DoxyParams}
 
 
-Definition at line 121 of file control.\+cpp.
+Definition at line 130 of file control.\+cpp.
+
+
+
+References ARM\+\_\+\+ACSL\+\_\+\+VEH, and publish\+\_\+vehicle\+\_\+command().
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_af98b25f246a7c078956664781eb40037}\label{class__control___1_1controlNode_af98b25f246a7c078956664781eb40037}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!compute\_and\_publish\_control@{compute\_and\_publish\_control}}
@@ -163,7 +179,15 @@ Function that computes the control from the control algorithms and publishes the
 \end{DoxyParams}
 
 
-Definition at line 353 of file control.\+cpp.
+Definition at line 362 of file control.\+cpp.
+
+
+
+References controller\+\_\+, vehicle\+\_\+states\+::get\+\_\+controltime(), vehicle\+\_\+states\+::get\+\_\+pitch(), vehicle\+\_\+states\+::get\+\_\+pitchspeed(), vehicle\+\_\+states\+::get\+\_\+q0(), vehicle\+\_\+states\+::get\+\_\+q1(), vehicle\+\_\+states\+::get\+\_\+q2(), vehicle\+\_\+states\+::get\+\_\+q3(), get\+\_\+rk4\+\_\+timestep(), vehicle\+\_\+states\+::get\+\_\+roll(), vehicle\+\_\+states\+::get\+\_\+rollspeed(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+::get\+\_\+t1(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+::get\+\_\+t2(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+::get\+\_\+t3(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+::get\+\_\+t4(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+::get\+\_\+t5(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+::get\+\_\+t6(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+::get\+\_\+t7(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+::get\+\_\+t8(), vehicle\+\_\+states\+::get\+\_\+vx(), vehicle\+\_\+states\+::get\+\_\+vy(), vehicle\+\_\+states\+::get\+\_\+vz(), vehicle\+\_\+states\+::get\+\_\+x(), vehicle\+\_\+states\+::get\+\_\+y(), vehicle\+\_\+states\+::get\+\_\+yaw(), vehicle\+\_\+states\+::get\+\_\+yawspeed(), vehicle\+\_\+states\+::get\+\_\+z(), get\+\_\+zero\+\_\+thrust(), PUBLISH\+\_\+\+ACTUATOR, publish\+\_\+actuator\+\_\+motors(), publish\+\_\+offboard\+\_\+control\+\_\+mode(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+::run(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+omega\+\_\+\+::pid\+\_\+omega\+::update(), and vehicle\+\_\+ptr.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_a4a476e52910dd2c4f3ef104d533a2579}\label{class__control___1_1controlNode_a4a476e52910dd2c4f3ef104d533a2579}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!control\_timer\_callback\_@{control\_timer\_callback\_}}
@@ -199,7 +223,11 @@ Function to debug vehicle states to the screen.
 \end{DoxyParams}
 
 
-Definition at line 193 of file control.\+cpp.
+Definition at line 202 of file control.\+cpp.
+
+
+
+References vehicle\+\_\+states\+::get\+\_\+controltime(), vehicle\+\_\+states\+::get\+\_\+pitch(), vehicle\+\_\+states\+::get\+\_\+pitchspeed(), vehicle\+\_\+states\+::get\+\_\+q0(), vehicle\+\_\+states\+::get\+\_\+q1(), vehicle\+\_\+states\+::get\+\_\+q2(), vehicle\+\_\+states\+::get\+\_\+q3(), vehicle\+\_\+states\+::get\+\_\+roll(), vehicle\+\_\+states\+::get\+\_\+rollspeed(), vehicle\+\_\+states\+::get\+\_\+vx(), vehicle\+\_\+states\+::get\+\_\+vy(), vehicle\+\_\+states\+::get\+\_\+x(), vehicle\+\_\+states\+::get\+\_\+y(), vehicle\+\_\+states\+::get\+\_\+yaw(), vehicle\+\_\+states\+::get\+\_\+yawspeed(), vehicle\+\_\+states\+::get\+\_\+z(), and vehicle\+\_\+ptr.
 
 \mbox{\Hypertarget{class__control___1_1controlNode_a43791af37844bb1ebe6a18c5004dfa4c}\label{class__control___1_1controlNode_a43791af37844bb1ebe6a18c5004dfa4c}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!disarm@{disarm}}
@@ -218,7 +246,15 @@ Function to disarm the vehicle
 \end{DoxyParams}
 
 
-Definition at line 129 of file control.\+cpp.
+Definition at line 138 of file control.\+cpp.
+
+
+
+References DISARM\+\_\+\+ACSL\+\_\+\+VEH, disarm\+\_\+info\+\_\+bool\+\_\+, and publish\+\_\+vehicle\+\_\+command().
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_a083daff8e8c33c6b5d0eda360afb099f}\label{class__control___1_1controlNode_a083daff8e8c33c6b5d0eda360afb099f}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!get\_min\_thrust@{get\_min\_thrust}}
@@ -228,7 +264,15 @@ Definition at line 129 of file control.\+cpp.
 
 
 
-Definition at line 222 of file control.\+cpp.
+Definition at line 231 of file control.\+cpp.
+
+
+
+References flight\+\_\+params\+\_\+ptr, and flight\+\_\+params\+::min\+\_\+thrust\+\_\+after\+\_\+arm.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_a702c0c6b68a0ee73436c9ed3d29960ac}\label{class__control___1_1controlNode_a702c0c6b68a0ee73436c9ed3d29960ac}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!get\_rk4\_timestep@{get\_rk4\_timestep}}
@@ -238,7 +282,15 @@ Definition at line 222 of file control.\+cpp.
 
 
 
-Definition at line 217 of file control.\+cpp.
+Definition at line 226 of file control.\+cpp.
+
+
+
+References flight\+\_\+params\+::controller\+\_\+rate, and flight\+\_\+params\+\_\+ptr.
+
+
+
+Referenced by compute\+\_\+and\+\_\+publish\+\_\+control().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_a84af14c9ed522c6a56c195ea025195c5}\label{class__control___1_1controlNode_a84af14c9ed522c6a56c195ea025195c5}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!get\_zero\_thrust@{get\_zero\_thrust}}
@@ -248,7 +300,15 @@ Definition at line 217 of file control.\+cpp.
 
 
 
-Definition at line 227 of file control.\+cpp.
+Definition at line 236 of file control.\+cpp.
+
+
+
+References MOTOR\+\_\+\+ZERO\+\_\+\+THRUST.
+
+
+
+Referenced by compute\+\_\+and\+\_\+publish\+\_\+control(), and run().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_a615b02e2d09e117b457bafa0254f5280}\label{class__control___1_1controlNode_a615b02e2d09e117b457bafa0254f5280}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!publish\_actuator\_motors@{publish\_actuator\_motors}}
@@ -262,7 +322,15 @@ Function to publish motor thrust commands.
 
 Function to publish motor thrust commands Construct the message
 
-Definition at line 158 of file control.\+cpp.
+Definition at line 167 of file control.\+cpp.
+
+
+
+References publisher\+\_\+actuator\+\_\+motors\+\_\+.
+
+
+
+Referenced by compute\+\_\+and\+\_\+publish\+\_\+control(), and run().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_ab214c1628e8718a878de7ed1f362d211}\label{class__control___1_1controlNode_ab214c1628e8718a878de7ed1f362d211}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!publish\_offboard\_control\_mode@{publish\_offboard\_control\_mode}}
@@ -281,7 +349,15 @@ Function to publish offboard control mode
 \end{DoxyParams}
 Construct the message
 
-Definition at line 137 of file control.\+cpp.
+Definition at line 146 of file control.\+cpp.
+
+
+
+References OFFBOARD\+\_\+\+ACCEL\+\_\+\+CTRL\+\_\+\+BOOL, OFFBOARD\+\_\+\+ATT\+\_\+\+CTRL\+\_\+\+BOOL, OFFBOARD\+\_\+\+BODY\+\_\+\+RATE\+\_\+\+CTRL\+\_\+\+BOOL, OFFBOARD\+\_\+\+DIRECT\+\_\+\+ACT\+\_\+\+CTRL\+\_\+\+BOOL, OFFBOARD\+\_\+\+POS\+\_\+\+CTRL\+\_\+\+BOOL, OFFBOARD\+\_\+\+THRST\+\_\+\+TRQ\+\_\+\+CTRL\+\_\+\+BOOL, OFFBOARD\+\_\+\+VEL\+\_\+\+CTRL\+\_\+\+BOOL, and publisher\+\_\+offboard\+\_\+control\+\_\+mode\+\_\+.
+
+
+
+Referenced by compute\+\_\+and\+\_\+publish\+\_\+control(), and run().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_aa8fc21043f07755286e88ee59b7c6dd0}\label{class__control___1_1controlNode_aa8fc21043f07755286e88ee59b7c6dd0}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!publish\_vehicle\_command@{publish\_vehicle\_command}}
@@ -308,7 +384,15 @@ switches to offboard mode and arms the vehicle
 \end{DoxyParams}
 Construct the message
 
-Definition at line 99 of file control.\+cpp.
+Definition at line 108 of file control.\+cpp.
+
+
+
+References FROM\+\_\+\+EXTERNAL\+\_\+\+BOOL, publisher\+\_\+vehicle\+\_\+command\+\_\+, SOURCE\+\_\+\+COMPONENT, SOURCE\+\_\+\+SYSTEM, TARGET\+\_\+\+COMPONENT, and TARGET\+\_\+\+SYSTEM.
+
+
+
+Referenced by arm(), disarm(), and run().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_af076825f6703814f535a603d82068028}\label{class__control___1_1controlNode_af076825f6703814f535a603d82068028}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!run@{run}}
@@ -329,7 +413,15 @@ Function that runs the control loop
 \end{DoxyParams}
 Update the current time at the beginning of every loop
 
-Definition at line 237 of file control.\+cpp.
+Definition at line 246 of file control.\+cpp.
+
+
+
+References arm(), flight\+\_\+params\+::arm\+\_\+time, compute\+\_\+and\+\_\+publish\+\_\+control(), CUSTOM\+\_\+\+MAIN\+\_\+\+MODE\+\_\+\+OFFBOARD, disarm(), ENABLE\+\_\+\+CUSTOM\+\_\+\+MODE, flight\+\_\+params\+::end\+\_\+time, flight\+\_\+params\+\_\+ptr, \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+ERROR(), get\+\_\+min\+\_\+thrust(), get\+\_\+zero\+\_\+thrust(), offboard\+\_\+flag\+\_\+, PUBLISH\+\_\+\+ACTUATOR, publish\+\_\+actuator\+\_\+motors(), publish\+\_\+offboard\+\_\+control\+\_\+mode(), publish\+\_\+vehicle\+\_\+command(), flight\+\_\+params\+::start\+\_\+time, time\+\_\+current\+\_\+, and update\+Current\+Time().
+
+
+
+Referenced by control\+Node().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_a0a1d67b6a1bb49526eec4888cba8a377}\label{class__control___1_1controlNode_a0a1d67b6a1bb49526eec4888cba8a377}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!updateCurrentTime@{updateCurrentTime}}
@@ -341,8 +433,6 @@ Definition at line 237 of file control.\+cpp.
 
 Update function for the current time. 
 
-Funtion that updates the current time when called.
-
 Update function for the current time 
 \begin{DoxyParams}{Parameters}
 {\em None} & \\
@@ -350,7 +440,15 @@ Update function for the current time
 \end{DoxyParams}
 
 
-Definition at line 86 of file control.\+cpp.
+Definition at line 95 of file control.\+cpp.
+
+
+
+References \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+INFO\+\_\+\+STREAM\+\_\+\+NO\+\_\+\+TAG(), vehicle\+\_\+states\+::set\+\_\+controltime(), time\+\_\+current\+\_\+, timestamp\+\_\+initial\+\_\+, and vehicle\+\_\+ptr.
+
+
+
+Referenced by run().
 
 
 
@@ -369,6 +467,10 @@ Timer for running the control node at a fixed rate.
 
 Definition at line 114 of file control.\+hpp.
 
+
+
+Referenced by control\+Node().
+
 \mbox{\Hypertarget{class__control___1_1controlNode_ae14465b021b82771c818ef5ad4bda0d3}\label{class__control___1_1controlNode_ae14465b021b82771c818ef5ad4bda0d3}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!controller\_@{controller\_}}
 \index{controller\_@{controller\_}!\_control\_::controlNode@{\_control\_::controlNode}}
@@ -383,6 +485,10 @@ Definition at line 114 of file control.\+hpp.
 
 Definition at line 205 of file control.\+hpp.
 
+
+
+Referenced by compute\+\_\+and\+\_\+publish\+\_\+control().
+
 \mbox{\Hypertarget{class__control___1_1controlNode_aad9e7b3e3018bddc6045c61c7324bd37}\label{class__control___1_1controlNode_aad9e7b3e3018bddc6045c61c7324bd37}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!disarm\_info\_bool\_@{disarm\_info\_bool\_}}
 \index{disarm\_info\_bool\_@{disarm\_info\_bool\_}!\_control\_::controlNode@{\_control\_::controlNode}}
@@ -392,6 +498,10 @@ Definition at line 205 of file control.\+hpp.
 
 
 Definition at line 126 of file control.\+hpp.
+
+
+
+Referenced by disarm().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_a3d39878b49723c126e2cafdf5aae103a}\label{class__control___1_1controlNode_a3d39878b49723c126e2cafdf5aae103a}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!flight\_params\_ptr@{flight\_params\_ptr}}
@@ -403,6 +513,10 @@ Instance of the flight\+\_\+params\+\_\+ptr to point to the flight\+\_\+paramete
 
 Definition at line 195 of file control.\+hpp.
 
+
+
+Referenced by control\+Node(), get\+\_\+min\+\_\+thrust(), get\+\_\+rk4\+\_\+timestep(), and run().
+
 \mbox{\Hypertarget{class__control___1_1controlNode_aae151d2f12114195b1bc784f74eea01c}\label{class__control___1_1controlNode_aae151d2f12114195b1bc784f74eea01c}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!offboard\_flag\_@{offboard\_flag\_}}
 \index{offboard\_flag\_@{offboard\_flag\_}!\_control\_::controlNode@{\_control\_::controlNode}}
@@ -412,6 +526,10 @@ Definition at line 195 of file control.\+hpp.
 
 
 Definition at line 124 of file control.\+hpp.
+
+
+
+Referenced by control\+Node(), and run().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_a487f66b35f2baf679add313a705a19bf}\label{class__control___1_1controlNode_a487f66b35f2baf679add313a705a19bf}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!publisher\_actuator\_motors\_@{publisher\_actuator\_motors\_}}
@@ -427,6 +545,10 @@ Publisher definitions.
 
 Definition at line 118 of file control.\+hpp.
 
+
+
+Referenced by control\+Node(), and publish\+\_\+actuator\+\_\+motors().
+
 \mbox{\Hypertarget{class__control___1_1controlNode_ae89684c2e1f96347a5ea37f38f3375a2}\label{class__control___1_1controlNode_ae89684c2e1f96347a5ea37f38f3375a2}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!publisher\_offboard\_control\_mode\_@{publisher\_offboard\_control\_mode\_}}
 \index{publisher\_offboard\_control\_mode\_@{publisher\_offboard\_control\_mode\_}!\_control\_::controlNode@{\_control\_::controlNode}}
@@ -437,6 +559,10 @@ Definition at line 118 of file control.\+hpp.
 
 Definition at line 122 of file control.\+hpp.
 
+
+
+Referenced by control\+Node(), and publish\+\_\+offboard\+\_\+control\+\_\+mode().
+
 \mbox{\Hypertarget{class__control___1_1controlNode_a956724d0db45cc5bd00e16358bf0bd21}\label{class__control___1_1controlNode_a956724d0db45cc5bd00e16358bf0bd21}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!publisher\_vehicle\_command\_@{publisher\_vehicle\_command\_}}
 \index{publisher\_vehicle\_command\_@{publisher\_vehicle\_command\_}!\_control\_::controlNode@{\_control\_::controlNode}}
@@ -446,6 +572,10 @@ Definition at line 122 of file control.\+hpp.
 
 
 Definition at line 120 of file control.\+hpp.
+
+
+
+Referenced by control\+Node(), and publish\+\_\+vehicle\+\_\+command().
 
 \mbox{\Hypertarget{class__control___1_1controlNode_a75ceef491d12ebec69abea699a43e5dd}\label{class__control___1_1controlNode_a75ceef491d12ebec69abea699a43e5dd}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!time\_current\_@{time\_current\_}}
@@ -461,6 +591,10 @@ Current time.
 
 Definition at line 104 of file control.\+hpp.
 
+
+
+Referenced by run(), and update\+Current\+Time().
+
 \mbox{\Hypertarget{class__control___1_1controlNode_adc16b81c8e6f2b2b8e9bf4d205cde7a4}\label{class__control___1_1controlNode_adc16b81c8e6f2b2b8e9bf4d205cde7a4}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!timestamp\_initial\_@{timestamp\_initial\_}}
 \index{timestamp\_initial\_@{timestamp\_initial\_}!\_control\_::controlNode@{\_control\_::controlNode}}
@@ -475,6 +609,10 @@ Common synced initial timestamp -\/ synced with control\+Node.
 
 Definition at line 101 of file control.\+hpp.
 
+
+
+Referenced by control\+Node(), and update\+Current\+Time().
+
 \mbox{\Hypertarget{class__control___1_1controlNode_a1ed6625009e5683411b509a3e5ce70ce}\label{class__control___1_1controlNode_a1ed6625009e5683411b509a3e5ce70ce}} 
 \index{\_control\_::controlNode@{\_control\_::controlNode}!vehicle\_ptr@{vehicle\_ptr}}
 \index{vehicle\_ptr@{vehicle\_ptr}!\_control\_::controlNode@{\_control\_::controlNode}}
@@ -484,6 +622,10 @@ Definition at line 101 of file control.\+hpp.
 Instance of the vehicle\+\_\+ptr to point to the vehicle state object in flight\+\_\+bridge.\+cpp 
 
 Definition at line 191 of file control.\+hpp.
+
+
+
+Referenced by compute\+\_\+and\+\_\+publish\+\_\+control(), debug2screen(), and update\+Current\+Time().
 
 
 

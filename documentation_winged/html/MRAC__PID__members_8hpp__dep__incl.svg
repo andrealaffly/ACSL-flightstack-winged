@@ -63,7 +63,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="MRAC__PID_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="MRAC__PID_8cpp.html" target="_top" xlink:title="MRAC_PID for the QRBP.">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-52.5 186,-52.5 186,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -87,7 +87,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="MRAC__PID__logger_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="MRAC__PID__logger_8cpp.html" target="_top" xlink:title="logging for the MRAC_PID controller. Inherits the Blackbox class for logging and takes in the interna...">
 <polygon fill="white" stroke="black" points="183,-95 183,-147 369,-147 369,-95 183,-95"/>
 <text text-anchor="start" x="191" y="-135" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="191" y="-124" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>

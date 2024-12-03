@@ -204,8 +204,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>VioT265Node class which can recieve position tracking from the Realsense T265. </p>
+<p>VioT265Node class which can recieve position tracking from the Realsense T265 </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00150">150</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00164">164</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0d0b36083bbb04582e010cc97031935e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d0b36083bbb04582e010cc97031935e">&#9670;&nbsp;</a></span>VioT265Node()</h2>
@@ -243,7 +244,9 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00187">187</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00195">195</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="vio_8cpp_source.html#l00110">logInitLogging()</a>.</p>
 
 </div>
 </div>
@@ -264,7 +267,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Destructor - management at quit time. </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00209">209</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00217">217</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="vio_8hpp_source.html#l00204">pipeline</a>, and <a class="el" href="vio_8cpp_source.html#l00206">return_serial()</a>.</p>
 
 </div>
 </div>
@@ -295,7 +300,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Debugger function to output the vio data. </p>
 <p>Debugger function to output the mocap data. </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00394">394</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00402">402</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
 
 </div>
 </div>
@@ -324,7 +329,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implementing virtual functions from blackbox. </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00071">71</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00079">79</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="flight__log_8hpp_source.html#l00115">_flight_log_::blackbox::logger_viodata</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00110">logInitLogging()</a>.</p>
 
 </div>
 </div>
@@ -351,7 +360,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00102">102</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00110">110</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="vio_8hpp_source.html#l00248">flight_run_log_directory</a>, <a class="el" href="global__helpers_8hpp_source.html#l00273">_flightstack_::FLIGHTSTACK_ERROR()</a>, <a class="el" href="flight__log_8hpp_source.html#l00115">_flight_log_::blackbox::logger_viodata</a>, and <a class="el" href="vio_8cpp_source.html#l00079">logInitHeaders()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00195">VioT265Node()</a>.</p>
 
 </div>
 </div>
@@ -378,7 +391,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00153">153</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00161">161</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="vio_8hpp_source.html#l00138">_t265_::vio_states::ax</a>, <a class="el" href="vio_8hpp_source.html#l00139">_t265_::vio_states::ay</a>, <a class="el" href="vio_8hpp_source.html#l00140">_t265_::vio_states::az</a>, <a class="el" href="vio_8hpp_source.html#l00131">_t265_::vio_states::control_time</a>, <a class="el" href="flight__log_8hpp_source.html#l00115">_flight_log_::blackbox::logger_viodata</a>, <a class="el" href="vio_8hpp_source.html#l00152">_t265_::vio_states::mapper_conf</a>, <a class="el" href="vio_8hpp_source.html#l00149">_t265_::vio_states::pitchacceleration</a>, <a class="el" href="vio_8hpp_source.html#l00146">_t265_::vio_states::pitchspeed</a>, <a class="el" href="vio_8hpp_source.html#l00141">_t265_::vio_states::q0</a>, <a class="el" href="vio_8hpp_source.html#l00142">_t265_::vio_states::q1</a>, <a class="el" href="vio_8hpp_source.html#l00143">_t265_::vio_states::q2</a>, <a class="el" href="vio_8hpp_source.html#l00144">_t265_::vio_states::q3</a>, <a class="el" href="vio_8hpp_source.html#l00148">_t265_::vio_states::rollacceleration</a>, <a class="el" href="vio_8hpp_source.html#l00145">_t265_::vio_states::rollspeed</a>, <a class="el" href="vio_8hpp_source.html#l00151">_t265_::vio_states::tracker_conf</a>, <a class="el" href="vio_8hpp_source.html#l00217">vio_im</a>, <a class="el" href="vio_8hpp_source.html#l00135">_t265_::vio_states::vx</a>, <a class="el" href="vio_8hpp_source.html#l00136">_t265_::vio_states::vy</a>, <a class="el" href="vio_8hpp_source.html#l00137">_t265_::vio_states::vz</a>, <a class="el" href="vio_8hpp_source.html#l00132">_t265_::vio_states::x</a>, <a class="el" href="vio_8hpp_source.html#l00133">_t265_::vio_states::y</a>, <a class="el" href="vio_8hpp_source.html#l00150">_t265_::vio_states::yawacceleration</a>, <a class="el" href="vio_8hpp_source.html#l00147">_t265_::vio_states::yawspeed</a>, and <a class="el" href="vio_8hpp_source.html#l00134">_t265_::vio_states::z</a>.</p>
 
 </div>
 </div>
@@ -414,7 +429,9 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00354">354</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00362">362</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="vio_8hpp_source.html#l00214">vio_publisher_</a>.</p>
 
 </div>
 </div>
@@ -450,7 +467,9 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00376">376</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00384">384</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="vio_8hpp_source.html#l00214">vio_publisher_</a>.</p>
 
 </div>
 </div>
@@ -486,7 +505,9 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00235">235</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00243">243</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="vio_8hpp_source.html#l00223">callback</a>, <a class="el" href="vio_8hpp_source.html#l00100">CAMERA_ONE</a>, <a class="el" href="vio_8hpp_source.html#l00101">CAMERA_TWO</a>, <a class="el" href="vio_8hpp_source.html#l00204">pipeline</a>, <a class="el" href="vio_8hpp_source.html#l00207">profiles</a>, <a class="el" href="vio_8cpp_source.html#l00206">return_serial()</a>, <a class="el" href="vio_8cpp_source.html#l00408">set_callback()</a>, and <a class="el" href="vio_8hpp_source.html#l00214">vio_publisher_</a>.</p>
 
 </div>
 </div>
@@ -523,7 +544,9 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00365">365</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00373">373</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="vio_8hpp_source.html#l00214">vio_publisher_</a>.</p>
 
 </div>
 </div>
@@ -559,7 +582,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00386">386</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00394">394</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
 
 </div>
 </div>
@@ -589,7 +612,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Funtion to process and publish the pose data for fustion to the Pixhawk. </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00425">425</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00433">433</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="vio_8hpp_source.html#l00239">acceleration_C</a>, <a class="el" href="vio_8hpp_source.html#l00242">angular_acceleration_c</a>, <a class="el" href="vio_8hpp_source.html#l00243">angular_acceleration_C</a>, <a class="el" href="vio_8hpp_source.html#l00240">angular_velocity_c</a>, <a class="el" href="vio_8hpp_source.html#l00241">angular_velocity_C</a>, <a class="el" href="vio_8hpp_source.html#l00138">_t265_::vio_states::ax</a>, <a class="el" href="vio_8hpp_source.html#l00139">_t265_::vio_states::ay</a>, <a class="el" href="vio_8hpp_source.html#l00140">_t265_::vio_states::az</a>, <a class="el" href="vio_8hpp_source.html#l00131">_t265_::vio_states::control_time</a>, <a class="el" href="vehicle__class_8cpp_source.html#l00052">vehicle_states::get_controltime()</a>, <a class="el" href="vio_8hpp_source.html#l00152">_t265_::vio_states::mapper_conf</a>, <a class="el" href="vio_8hpp_source.html#l00149">_t265_::vio_states::pitchacceleration</a>, <a class="el" href="vio_8hpp_source.html#l00146">_t265_::vio_states::pitchspeed</a>, <a class="el" href="px4__defines_8hpp_source.html#l00080">POSE_FRAME_NED</a>, <a class="el" href="vio_8hpp_source.html#l00237">position_C</a>, <a class="el" href="vio_8hpp_source.html#l00141">_t265_::vio_states::q0</a>, <a class="el" href="vio_8hpp_source.html#l00142">_t265_::vio_states::q1</a>, <a class="el" href="vio_8hpp_source.html#l00143">_t265_::vio_states::q2</a>, <a class="el" href="vio_8hpp_source.html#l00144">_t265_::vio_states::q3</a>, <a class="el" href="vio_8hpp_source.html#l00115">q_J_c_inv</a>, <a class="el" href="vio_8hpp_source.html#l00118">R_c_C</a>, <a class="el" href="vio_8hpp_source.html#l00148">_t265_::vio_states::rollacceleration</a>, <a class="el" href="vio_8hpp_source.html#l00145">_t265_::vio_states::rollspeed</a>, <a class="el" href="vio_8hpp_source.html#l00244">t265_quaternion</a>, <a class="el" href="vio_8hpp_source.html#l00151">_t265_::vio_states::tracker_conf</a>, <a class="el" href="vio_8hpp_source.html#l00245">transformed_quaternion</a>, <a class="el" href="vio_8hpp_source.html#l00211">vehicle_ptr</a>, <a class="el" href="vio_8hpp_source.html#l00238">velocity_C</a>, <a class="el" href="px4__defines_8hpp_source.html#l00084">VELOCITY_FRAME_NED</a>, <a class="el" href="vio_8hpp_source.html#l00217">vio_im</a>, <a class="el" href="vio_8hpp_source.html#l00135">_t265_::vio_states::vx</a>, <a class="el" href="vio_8hpp_source.html#l00136">_t265_::vio_states::vy</a>, <a class="el" href="vio_8hpp_source.html#l00137">_t265_::vio_states::vz</a>, <a class="el" href="vio_8hpp_source.html#l00132">_t265_::vio_states::x</a>, <a class="el" href="vio_8hpp_source.html#l00133">_t265_::vio_states::y</a>, <a class="el" href="vio_8hpp_source.html#l00150">_t265_::vio_states::yawacceleration</a>, <a class="el" href="vio_8hpp_source.html#l00147">_t265_::vio_states::yawspeed</a>, and <a class="el" href="vio_8hpp_source.html#l00134">_t265_::vio_states::z</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00408">set_callback()</a>.</p>
 
 </div>
 </div>
@@ -611,7 +638,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns the serial number of the Intel Realsense T265 camera in use. </p>
 <p>Get the parameters for the serial number of the T265 in use. </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00198">198</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00206">206</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="vio_8hpp_source.html#l00097">SERIAL_NUMBER</a>, and <a class="el" href="vio_8hpp_source.html#l00201">t265_serial</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00243">on_configure()</a>, and <a class="el" href="vio_8cpp_source.html#l00217">~VioT265Node()</a>.</p>
 
 </div>
 </div>
@@ -640,7 +671,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Function to setup the callback for the frames from the T265. </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00400">400</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8cpp_source.html#l00408">408</a> of file <a class="el" href="vio_8cpp_source.html">vio.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="vio_8hpp_source.html#l00223">callback</a>, <a class="el" href="global__helpers_8hpp_source.html#l00273">_flightstack_::FLIGHTSTACK_ERROR()</a>, and <a class="el" href="vio_8cpp_source.html#l00433">process_and_publish()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00243">on_configure()</a>.</p>
 
 </div>
 </div>
@@ -665,7 +700,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00225">225</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00239">239</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00433">process_and_publish()</a>.</p>
 
 </div>
 </div>
@@ -689,7 +726,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00228">228</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00242">242</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00433">process_and_publish()</a>.</p>
 
 </div>
 </div>
@@ -713,7 +752,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00229">229</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00243">243</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00433">process_and_publish()</a>.</p>
 
 </div>
 </div>
@@ -737,7 +778,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00226">226</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00240">240</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00433">process_and_publish()</a>.</p>
 
 </div>
 </div>
@@ -761,7 +804,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00227">227</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00241">241</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00433">process_and_publish()</a>.</p>
 
 </div>
 </div>
@@ -787,7 +832,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Callback for receiving a state. </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00209">209</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00223">223</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00243">on_configure()</a>, and <a class="el" href="vio_8cpp_source.html#l00408">set_callback()</a>.</p>
 
 </div>
 </div>
@@ -813,7 +860,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Directory for logging mocap data. </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00234">234</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00248">248</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00110">logInitLogging()</a>.</p>
 
 </div>
 </div>
@@ -839,7 +888,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Pipelines for the Intel Realsense T265 camera. </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00190">190</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00204">204</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00243">on_configure()</a>, and <a class="el" href="vio_8cpp_source.html#l00217">~VioT265Node()</a>.</p>
 
 </div>
 </div>
@@ -863,7 +914,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00223">223</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00237">237</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00433">process_and_publish()</a>.</p>
 
 </div>
 </div>
@@ -889,7 +942,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Obeject for the profiles. </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00193">193</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00207">207</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00243">on_configure()</a>.</p>
 
 </div>
 </div>
@@ -913,7 +968,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00230">230</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00244">244</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00433">process_and_publish()</a>.</p>
 
 </div>
 </div>
@@ -939,7 +996,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Serial number of the Intel Realsens t265 camera. </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00187">187</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00201">201</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00206">return_serial()</a>.</p>
 
 </div>
 </div>
@@ -963,7 +1022,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00231">231</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00245">245</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00433">process_and_publish()</a>.</p>
 
 </div>
 </div>
@@ -988,7 +1049,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Instance of the vehicle_ptr to point to the vehicle state object in flight_bridge.cpp </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00197">197</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00211">211</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00433">process_and_publish()</a>.</p>
 
 </div>
 </div>
@@ -1012,7 +1075,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00224">224</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00238">238</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00433">process_and_publish()</a>.</p>
 
 </div>
 </div>
@@ -1038,7 +1103,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Declare variables to store parsed data and declare it as internal members "_im". </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00203">203</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00217">217</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00161">logLogData()</a>, and <a class="el" href="vio_8cpp_source.html#l00433">process_and_publish()</a>.</p>
 
 </div>
 </div>
@@ -1064,7 +1131,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Publisher for publishing the vio message. </p>
 
-<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00200">200</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vio_8hpp_source.html#l00214">214</a> of file <a class="el" href="vio_8hpp_source.html">vio.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vio_8cpp_source.html#l00362">on_activate()</a>, <a class="el" href="vio_8cpp_source.html#l00384">on_cleanup()</a>, <a class="el" href="vio_8cpp_source.html#l00243">on_configure()</a>, and <a class="el" href="vio_8cpp_source.html#l00373">on_deactivate()</a>.</p>
 
 </div>
 </div>

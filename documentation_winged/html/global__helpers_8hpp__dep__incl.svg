@@ -87,7 +87,7 @@ var sectionId = 'dynsection-1';
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="flight__main_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="flight__main_8cpp.html" target="_top" xlink:title="Main function to initiate ROS2.">
 <polygon fill="white" stroke="black" points="901.5,-0.5 901.5,-41.5 1036.5,-41.5 1036.5,-0.5 901.5,-0.5"/>
 <text text-anchor="start" x="909.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="909.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/flight</text>
@@ -197,7 +197,7 @@ var sectionId = 'dynsection-1';
 <!-- Node25 -->
 <g id="node25" class="node">
 <title>Node25</title>
-<g id="a_node25"><a xlink:href="vio_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node25"><a xlink:href="vio_8hpp.html" target="_top" xlink:title="Class decleration for Intel Realsense T265 tracking camera as a lifecycle node.">
 <polygon fill="white" stroke="black" points="1497.5,-234.5 1497.5,-275.5 1632.5,-275.5 1632.5,-234.5 1497.5,-234.5"/>
 <text text-anchor="start" x="1505.5" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1505.5" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/include</text>
@@ -302,7 +302,7 @@ var sectionId = 'dynsection-1';
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="control_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="control_8cpp.html" target="_top" xlink:title="Control node definition. Runs all the control algorithms. Adds as a hub for all the control actions.">
 <polygon fill="white" stroke="black" points="2102,-156.5 2102,-197.5 2242,-197.5 2242,-156.5 2102,-156.5"/>
 <text text-anchor="start" x="2110" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="2110" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -342,7 +342,7 @@ var sectionId = 'dynsection-1';
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="flight__bridge_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="flight__bridge_8cpp.html" target="_top" xlink:title="Utlities for multithreading.">
 <polygon fill="white" stroke="black" points="1826.5,-78.5 1826.5,-119.5 1963.5,-119.5 1963.5,-78.5 1826.5,-78.5"/>
 <text text-anchor="start" x="1834.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1834.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/flight</text>
@@ -384,7 +384,7 @@ var sectionId = 'dynsection-1';
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="MRAC__OMEGA__logger_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="MRAC__OMEGA__logger_8cpp.html" target="_top" xlink:title="logging for the MRAC with angular velocities controller.">
 <polygon fill="white" stroke="black" points="66.5,-501.5 66.5,-553.5 287.5,-553.5 287.5,-501.5 66.5,-501.5"/>
 <text text-anchor="start" x="74.5" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="74.5" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -402,7 +402,7 @@ var sectionId = 'dynsection-1';
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="MRAC__OMEGA_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="MRAC__OMEGA_8cpp.html" target="_top" xlink:title="MRAC with angular velocities for the QRBP. Inherts the class controller_base for the basic functional...">
 <polygon fill="white" stroke="black" points="664,-312.5 664,-364.5 850,-364.5 850,-312.5 664,-312.5"/>
 <text text-anchor="start" x="672" y="-352.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="672" y="-341.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -439,7 +439,7 @@ var sectionId = 'dynsection-1';
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="MRAC__PID__logger_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node15"><a xlink:href="MRAC__PID__logger_8cpp.html" target="_top" xlink:title="logging for the MRAC_PID controller. Inherits the Blackbox class for logging and takes in the interna...">
 <polygon fill="white" stroke="black" points="586,-501.5 586,-553.5 772,-553.5 772,-501.5 586,-501.5"/>
 <text text-anchor="start" x="594" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="594" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -457,7 +457,7 @@ var sectionId = 'dynsection-1';
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="MRAC__PID_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node14"><a xlink:href="MRAC__PID_8cpp.html" target="_top" xlink:title="MRAC_PID for the QRBP.">
 <polygon fill="white" stroke="black" points="1072,-312.5 1072,-364.5 1258,-364.5 1258,-312.5 1072,-312.5"/>
 <text text-anchor="start" x="1080" y="-352.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1080" y="-341.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -493,7 +493,7 @@ var sectionId = 'dynsection-1';
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="PID__logger_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node19"><a xlink:href="PID__logger_8cpp.html" target="_top" xlink:title="logging for the PID controller.">
 <polygon fill="white" stroke="black" points="382,-501.5 382,-553.5 568,-553.5 568,-501.5 382,-501.5"/>
 <text text-anchor="start" x="390" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="390" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -548,7 +548,7 @@ var sectionId = 'dynsection-1';
 <!-- Node28 -->
 <g id="node28" class="node">
 <title>Node28</title>
-<g id="a_node28"><a xlink:href="PID__OMEGA__logger_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node28"><a xlink:href="PID__OMEGA__logger_8cpp.html" target="_top" xlink:title="logging for the PID with angular velocities controller">
 <polygon fill="white" stroke="black" points="827.5,-501.5 827.5,-553.5 1022.5,-553.5 1022.5,-501.5 827.5,-501.5"/>
 <text text-anchor="start" x="835.5" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="835.5" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -583,7 +583,7 @@ var sectionId = 'dynsection-1';
 <!-- Node27 -->
 <g id="node27" class="node">
 <title>Node27</title>
-<g id="a_node27"><a xlink:href="PID__OMEGA_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node27"><a xlink:href="PID__OMEGA_8cpp.html" target="_top" xlink:title="PID with angular velocities for the QRBP.">
 <polygon fill="white" stroke="black" points="1276,-312.5 1276,-364.5 1462,-364.5 1462,-312.5 1276,-312.5"/>
 <text text-anchor="start" x="1284" y="-352.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1284" y="-341.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -631,7 +631,7 @@ var sectionId = 'dynsection-1';
 <!-- Node24 -->
 <g id="node24" class="node">
 <title>Node24</title>
-<g id="a_node24"><a xlink:href="mocap_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node24"><a xlink:href="mocap_8cpp.html" target="_top" xlink:title="Node definition for UDP socket as a lifecycle node.">
 <polygon fill="white" stroke="black" points="1736,-156.5 1736,-197.5 1876,-197.5 1876,-156.5 1736,-156.5"/>
 <text text-anchor="start" x="1744" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1744" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/mocap</text>
@@ -654,7 +654,7 @@ var sectionId = 'dynsection-1';
 <!-- Node26 -->
 <g id="node26" class="node">
 <title>Node26</title>
-<g id="a_node26"><a xlink:href="vio_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node26"><a xlink:href="vio_8cpp.html" target="_top" xlink:title="Node definition for Intel Realsense T265 tracking camera as a lifecycle node.">
 <polygon fill="white" stroke="black" points="1497.5,-156.5 1497.5,-197.5 1632.5,-197.5 1632.5,-156.5 1497.5,-156.5"/>
 <text text-anchor="start" x="1505.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1505.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/vio</text>
@@ -689,7 +689,7 @@ var sectionId = 'dynsection-1';
 <!-- Node32 -->
 <g id="node32" class="node">
 <title>Node32</title>
-<g id="a_node32"><a xlink:href="PID__TD__logger_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node32"><a xlink:href="PID__TD__logger_8cpp.html" target="_top" xlink:title="logging for the PID controller.">
 <polygon fill="white" stroke="black" points="1041,-501.5 1041,-553.5 1229,-553.5 1229,-501.5 1041,-501.5"/>
 <text text-anchor="start" x="1049" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1049" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -707,7 +707,7 @@ var sectionId = 'dynsection-1';
 <!-- Node31 -->
 <g id="node31" class="node">
 <title>Node31</title>
-<g id="a_node31"><a xlink:href="PID__TD_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node31"><a xlink:href="PID__TD_8cpp.html" target="_top" xlink:title="PID for the rostestdrone.">
 <polygon fill="white" stroke="black" points="1656,-312.5 1656,-364.5 1824,-364.5 1824,-312.5 1656,-312.5"/>
 <text text-anchor="start" x="1664" y="-352.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1664" y="-341.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/control</text>
@@ -784,7 +784,7 @@ var sectionId = 'dynsection-1';
 <!-- Node39 -->
 <g id="node39" class="node">
 <title>Node39</title>
-<g id="a_node39"><a xlink:href="flight__params_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node39"><a xlink:href="flight__params_8cpp.html" target="_top" xlink:title="Define file for the main flight parameters that will be used for the entire controller.">
 <polygon fill="white" stroke="black" points="1780.5,-507 1780.5,-548 1929.5,-548 1929.5,-507 1780.5,-507"/>
 <text text-anchor="start" x="1788.5" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1788.5" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/flight</text>
@@ -831,7 +831,7 @@ var sectionId = 'dynsection-1';
 <!-- Node35 -->
 <g id="node35" class="node">
 <title>Node35</title>
-<g id="a_node35"><a xlink:href="piecewise__polynomial__trajectory_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node35"><a xlink:href="piecewise__polynomial__trajectory_8cpp.html" target="_top" xlink:title="Implementation of the piecewise polynomial trajectory.">
 <polygon fill="white" stroke="black" points="1642.5,-407 1642.5,-459 1823.5,-459 1823.5,-407 1642.5,-407"/>
 <text text-anchor="start" x="1650.5" y="-447" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1650.5" y="-436" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/piecewise</text>
@@ -855,7 +855,7 @@ var sectionId = 'dynsection-1';
 <!-- Node37 -->
 <g id="node37" class="node">
 <title>Node37</title>
-<g id="a_node37"><a xlink:href="read__pix_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node37"><a xlink:href="read__pix_8cpp.html" target="_top" xlink:title="Class definiton for reading pixhawk data.">
 <polygon fill="white" stroke="black" points="1918.5,-412.5 1918.5,-453.5 2053.5,-453.5 2053.5,-412.5 1918.5,-412.5"/>
 <text text-anchor="start" x="1926.5" y="-441.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1926.5" y="-430.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/read</text>
@@ -919,7 +919,7 @@ var sectionId = 'dynsection-1';
 <!-- Node43 -->
 <g id="node43" class="node">
 <title>Node43</title>
-<g id="a_node43"><a xlink:href="udp__socket_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node43"><a xlink:href="udp__socket_8cpp.html" target="_top" xlink:title="Class definition for UDP socket creation using IoContext.">
 <polygon fill="white" stroke="black" points="2462,-507 2462,-548 2614,-548 2614,-507 2462,-507"/>
 <text text-anchor="start" x="2470" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="2470" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/mocap</text>
@@ -942,7 +942,7 @@ var sectionId = 'dynsection-1';
 <!-- Node42 -->
 <g id="node42" class="node">
 <title>Node42</title>
-<g id="a_node42"><a xlink:href="udp__driver_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node42"><a xlink:href="udp__driver_8cpp.html" target="_top" xlink:title="Class definition for UDP driver.">
 <polygon fill="white" stroke="black" points="2242,-412.5 2242,-453.5 2388,-453.5 2388,-412.5 2242,-412.5"/>
 <text text-anchor="start" x="2250" y="-441.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="2250" y="-430.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/mocap</text>

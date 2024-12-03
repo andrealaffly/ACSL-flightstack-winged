@@ -142,28 +142,7 @@ Variables</h2></td></tr>
 <tr class="memitem:ae83e095d89145faf2dd8642939187778"><td class="memItemLeft" align="right" valign="top">const Eigen::Matrix3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace__rostestdrone__.html#ae83e095d89145faf2dd8642939187778">inertia_matrix_q</a></td></tr>
 <tr class="separator:ae83e095d89145faf2dd8642939187778"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.</p>
-<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-<ol type="1">
-<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
-<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
-<li>Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>
-</ol>
-<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. File: PID_TD.cpp Author: Giri Mugundan Kumar Date: July 10, 2024 For info: Andrea L'Afflitto <a href="#" onclick="location.href='mai'+'lto:'+'a.l'+'af'+'fli'+'tt'+'o@v'+'t.'+'edu'; return false;">a.laf<span style="display: none;">.nosp@m.</span>flit<span style="display: none;">.nosp@m.</span>to@vt<span style="display: none;">.nosp@m.</span>.edu</a></p>
-<p>Description: PID for the rostestdrone. Inherts the class controller_base for the basic functionality that is to be used for all control algorithms.</p>
-<p>GitHub: <a href="https://github.com/andrealaffly/ACSL-flightstack-winged">https://github.com/andrealaffly/ACSL-flightstack-winged</a></p>
-<p>Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.</p>
-<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-<ol type="1">
-<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
-<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
-<li>Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>
-</ol>
-<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. File: PID_TD_logger.cpp Author: Giri Mugundan Kumar Date: July 10, 2024 For info: Andrea L'Afflitto <a href="#" onclick="location.href='mai'+'lto:'+'a.l'+'af'+'fli'+'tt'+'o@v'+'t.'+'edu'; return false;">a.laf<span style="display: none;">.nosp@m.</span>flit<span style="display: none;">.nosp@m.</span>to@vt<span style="display: none;">.nosp@m.</span>.edu</a></p>
-<p>Description: logging for the PID controller. Inherits the Blackbox class for logging and takes in the internal members for the PID.</p>
-<p>GitHub: <a href="https://github.com/andrealaffly/ACSL-flightstack-winged">https://github.com/andrealaffly/ACSL-flightstack-winged</a> </p>
-</div><h2 class="groupheader">Variable Documentation</h2>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a1eb114f4b8c66da9ab905d1d45b9dc41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1eb114f4b8c66da9ab905d1d45b9dc41">&#9670;&nbsp;</a></span>A_filter_pitch_dot_ref</h2>
 
@@ -181,6 +160,8 @@ Variables</h2></td></tr>
 <div class="line">                                                ).finished()</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00128">128</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00207">_rostestdrone_::_pid_::pid::compute_u1_eta_d()</a>.</p>
 
 </div>
 </div>
@@ -202,6 +183,8 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00098">98</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00207">_rostestdrone_::_pid_::pid::compute_u1_eta_d()</a>.</p>
+
 </div>
 </div>
 <a id="a9d4df997a2705fd135c08e2cc2245b2c"></a>
@@ -221,6 +204,8 @@ Variables</h2></td></tr>
 <div class="line">                                                ).finished()</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00113">113</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00207">_rostestdrone_::_pid_::pid::compute_u1_eta_d()</a>.</p>
 
 </div>
 </div>
@@ -242,6 +227,8 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00083">83</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00207">_rostestdrone_::_pid_::pid::compute_u1_eta_d()</a>.</p>
+
 </div>
 </div>
 <a id="ab82e649fc4679e12888a7d921e70dd09"></a>
@@ -257,6 +244,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00134">134</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00207">_rostestdrone_::_pid_::pid::compute_u1_eta_d()</a>.</p>
 
 </div>
 </div>
@@ -274,6 +263,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00104">104</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00207">_rostestdrone_::_pid_::pid::compute_u1_eta_d()</a>.</p>
+
 </div>
 </div>
 <a id="af2f61931a8774c7a2ccf3ab8a3abcdde"></a>
@@ -289,6 +280,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00119">119</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00207">_rostestdrone_::_pid_::pid::compute_u1_eta_d()</a>.</p>
 
 </div>
 </div>
@@ -306,6 +299,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00089">89</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00207">_rostestdrone_::_pid_::pid::compute_u1_eta_d()</a>.</p>
+
 </div>
 </div>
 <a id="a9d8dcbefb27f661b1baf26bcedb2b864"></a>
@@ -321,6 +316,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00137">137</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00207">_rostestdrone_::_pid_::pid::compute_u1_eta_d()</a>.</p>
 
 </div>
 </div>
@@ -338,6 +335,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00107">107</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00207">_rostestdrone_::_pid_::pid::compute_u1_eta_d()</a>.</p>
+
 </div>
 </div>
 <a id="a141d3f74ae74bc88361fea2afb87912c"></a>
@@ -354,6 +353,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00122">122</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00207">_rostestdrone_::_pid_::pid::compute_u1_eta_d()</a>.</p>
+
 </div>
 </div>
 <a id="ab4c834d483ee5a4f09171cd0649362ef"></a>
@@ -369,6 +370,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00092">92</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00207">_rostestdrone_::_pid_::pid::compute_u1_eta_d()</a>.</p>
 
 </div>
 </div>
@@ -506,6 +509,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00156">156</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00191">_rostestdrone_::_pid_::pid::compute_translational_control_in_I()</a>.</p>
+
 </div>
 </div>
 <a id="aae967685750b7966ae79c2dd9845ae4e"></a>
@@ -530,6 +535,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00063">63</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00191">_rostestdrone_::_pid_::pid::compute_translational_control_in_I()</a>.</p>
+
 </div>
 </div>
 <a id="ae83e095d89145faf2dd8642939187778"></a>
@@ -550,6 +557,8 @@ Variables</h2></td></tr>
 <div class="line">                                             ).finished()</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00197">197</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00249">_rostestdrone_::_pid_::pid::compute_rotational_control()</a>.</p>
 
 </div>
 </div>
@@ -623,6 +632,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00071">71</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00191">_rostestdrone_::_pid_::pid::compute_translational_control_in_I()</a>.</p>
+
 </div>
 </div>
 <a id="aa2c4992f551132bc89a7f81398b7ee01"></a>
@@ -647,6 +658,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00079">79</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00275">_rostestdrone_::_pid_::pid::compute_normalized_thrusts()</a>.</p>
+
 </div>
 </div>
 <a id="ad3da92907955645e2485cb16d904ae24"></a>
@@ -670,6 +683,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00080">80</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00275">_rostestdrone_::_pid_::pid::compute_normalized_thrusts()</a>.</p>
 
 </div>
 </div>
@@ -715,6 +730,8 @@ Variables</h2></td></tr>
 <div class="ttc" id="anamespace__rostestdrone___html_ac86959d9806a5c60f83e3f74258941d6"><div class="ttname"><a href="namespace__rostestdrone__.html#ac86959d9806a5c60f83e3f74258941d6">_rostestdrone_::LX</a></div><div class="ttdeci">constexpr double LX</div><div class="ttdef"><b>Definition:</b> <a href="rostestdrone_8hpp_source.html#l00072">rostestdrone.hpp:72</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00165">165</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00275">_rostestdrone_::_pid_::pid::compute_normalized_thrusts()</a>.</p>
 
 </div>
 </div>
@@ -837,6 +854,8 @@ Variables</h2></td></tr>
 <div class="line">                                                        ).finished()</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="rostestdrone_8hpp_source.html#l00144">144</a> of file <a class="el" href="rostestdrone_8hpp_source.html">rostestdrone.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PID__TD_8cpp_source.html#l00275">_rostestdrone_::_pid_::pid::compute_normalized_thrusts()</a>.</p>
 
 </div>
 </div>

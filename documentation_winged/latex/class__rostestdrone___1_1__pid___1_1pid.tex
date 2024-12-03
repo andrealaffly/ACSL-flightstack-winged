@@ -20,8 +20,7 @@ Inheritance diagram for \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+:\no
 \end{figure}
 
 
-Collaboration diagram for \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+:
-\nopagebreak
+Collaboration diagram for \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -116,7 +115,11 @@ Definition at line 74 of file PID\+\_\+\+TD.\+hpp.
 
 
 
-Definition at line 53 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 61 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References init(), and read\+\_\+params().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a0a3a0de318131075d92a264e238f89b7}\label{class__rostestdrone___1_1__pid___1_1pid_a0a3a0de318131075d92a264e238f89b7}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!````~pid@{$\sim$pid}}
@@ -126,7 +129,7 @@ Definition at line 53 of file PID\+\_\+\+TD.\+cpp.
 
 
 
-Definition at line 64 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 72 of file PID\+\_\+\+TD.\+cpp.
 
 
 
@@ -148,7 +151,15 @@ Assign the values from rk4 to controller internal members.
 \end{DoxyParams}
 
 
-Definition at line 158 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 166 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References \+\_\+utilities\+\_\+\+::assign\+Elements\+To\+Members(), csm, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+eta\+\_\+I, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+I, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+d\+\_\+filter, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+d\+\_\+filter, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+dot\+\_\+d\+\_\+filter, and y.
+
+
+
+Referenced by update().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a54d09d2de78881a9bfa0dd832ed7854c}\label{class__rostestdrone___1_1__pid___1_1pid_a54d09d2de78881a9bfa0dd832ed7854c}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!compute\_normalized\_thrusts@{compute\_normalized\_thrusts}}
@@ -167,7 +178,15 @@ Compute the normalized thrust.
 \end{DoxyParams}
 
 
-Definition at line 267 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 275 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References cim, \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input, \+\_\+utilities\+\_\+\+::evaluate\+Polynomial(), \+\_\+rostestdrone\+\_\+\+::\+MAX\+\_\+\+THRUST, \+\_\+rostestdrone\+\_\+\+::\+MIN\+\_\+\+THRUST, \+\_\+rostestdrone\+\_\+\+::mixer\+\_\+matrix\+\_\+qrbp, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Sat\+\_\+\+Thrust, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Thrust, \+\_\+rostestdrone\+\_\+\+::thrust\+\_\+polynomial\+\_\+coeff\+\_\+qrbp, and \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a437b1c1d06f8b07d498e8078f35c3b63}\label{class__rostestdrone___1_1__pid___1_1pid_a437b1c1d06f8b07d498e8078f35c3b63}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!compute\_rotational\_control@{compute\_rotational\_control}}
@@ -186,7 +205,15 @@ Compute the rotational control input.
 \end{DoxyParams}
 
 
-Definition at line 241 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 249 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References cim, cip, csm, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+eta, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+eta\+\_\+I, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+eta\+\_\+rate, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+acceleration\+\_\+d, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d, \+\_\+rostestdrone\+\_\+\+::inertia\+\_\+matrix\+\_\+q, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+rot, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+rot, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+rot, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::tau\+\_\+rot, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::tau\+\_\+rot\+\_\+baseline, and \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a3768c2bf34b47d4098ea3c060db506c9}\label{class__rostestdrone___1_1__pid___1_1pid_a3768c2bf34b47d4098ea3c060db506c9}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!compute\_translational\_control\_in\_I@{compute\_translational\_control\_in\_I}}
@@ -205,7 +232,15 @@ Compute the translational control in the inertial frame.
 \end{DoxyParams}
 
 
-Definition at line 183 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 191 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References cim, cip, csm, \+\_\+rostestdrone\+\_\+\+::e3\+\_\+basis, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+pos, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+I, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+vel, \+\_\+rostestdrone\+\_\+\+::G, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+tran, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+tran, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+tran, \+\_\+rostestdrone\+\_\+\+::\+MASS, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+baseline, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+I, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+ddot\+\_\+user, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+dot\+\_\+user, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+user, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+pos, and \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+vel.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_ab76ec9cd01396d571f2fcdf3018eafde}\label{class__rostestdrone___1_1__pid___1_1pid_ab76ec9cd01396d571f2fcdf3018eafde}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!compute\_u1\_eta\_d@{compute\_u1\_eta\_d}}
@@ -224,7 +259,15 @@ compute the thrust (u1) and the desired angles
 \end{DoxyParams}
 
 
-Definition at line 199 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 207 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References \+\_\+rostestdrone\+\_\+\+::\+A\+\_\+filter\+\_\+pitch\+\_\+dot\+\_\+ref, \+\_\+rostestdrone\+\_\+\+::\+A\+\_\+filter\+\_\+pitch\+\_\+ref, \+\_\+rostestdrone\+\_\+\+::\+A\+\_\+filter\+\_\+roll\+\_\+dot\+\_\+ref, \+\_\+rostestdrone\+\_\+\+::\+A\+\_\+filter\+\_\+roll\+\_\+ref, \+\_\+rostestdrone\+\_\+\+::\+B\+\_\+filter\+\_\+pitch\+\_\+dot\+\_\+ref, \+\_\+rostestdrone\+\_\+\+::\+B\+\_\+filter\+\_\+pitch\+\_\+ref, \+\_\+rostestdrone\+\_\+\+::\+B\+\_\+filter\+\_\+roll\+\_\+dot\+\_\+ref, \+\_\+rostestdrone\+\_\+\+::\+B\+\_\+filter\+\_\+roll\+\_\+ref, \+\_\+rostestdrone\+\_\+\+::\+C\+\_\+filter\+\_\+pitch\+\_\+dot\+\_\+ref, \+\_\+rostestdrone\+\_\+\+::\+C\+\_\+filter\+\_\+pitch\+\_\+ref, \+\_\+rostestdrone\+\_\+\+::\+C\+\_\+filter\+\_\+roll\+\_\+dot\+\_\+ref, \+\_\+rostestdrone\+\_\+\+::\+C\+\_\+filter\+\_\+roll\+\_\+ref, cim, csm, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+acceleration\+\_\+d, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+d\+\_\+filter, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+roll\+\_\+d\+\_\+filter, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+roll\+\_\+dot\+\_\+d\+\_\+filter, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+I, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+J, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+I\+\_\+J, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+d\+\_\+filter, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+d\+\_\+filter, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+dot\+\_\+d\+\_\+filter, and \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a221462856ce2e3450d744fce94caf8d1}\label{class__rostestdrone___1_1__pid___1_1pid_a221462856ce2e3450d744fce94caf8d1}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!debug2terminal@{debug2terminal}}
@@ -243,7 +286,11 @@ Function to print to terminal.
 \end{DoxyParams}
 
 
-Definition at line 282 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 290 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a91097491a2c7b260eab7145fa016e01e}\label{class__rostestdrone___1_1__pid___1_1pid_a91097491a2c7b260eab7145fa016e01e}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!get\_t1@{get\_t1}}
@@ -253,7 +300,11 @@ Definition at line 282 of file PID\+\_\+\+TD.\+cpp.
 
 
 
-Definition at line 321 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 329 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_ac6caf5fd0ee5ebc3d5b24ef2c7850bcf}\label{class__rostestdrone___1_1__pid___1_1pid_ac6caf5fd0ee5ebc3d5b24ef2c7850bcf}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!get\_t2@{get\_t2}}
@@ -263,7 +314,11 @@ Definition at line 321 of file PID\+\_\+\+TD.\+cpp.
 
 
 
-Definition at line 325 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 333 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a1e7ae0bcdbdc13a62c653616a36ad93c}\label{class__rostestdrone___1_1__pid___1_1pid_a1e7ae0bcdbdc13a62c653616a36ad93c}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!get\_t3@{get\_t3}}
@@ -273,7 +328,11 @@ Definition at line 325 of file PID\+\_\+\+TD.\+cpp.
 
 
 
-Definition at line 329 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 337 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a04af350694d39dd2e7e10ccd186b9919}\label{class__rostestdrone___1_1__pid___1_1pid_a04af350694d39dd2e7e10ccd186b9919}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!get\_t4@{get\_t4}}
@@ -283,7 +342,11 @@ Definition at line 329 of file PID\+\_\+\+TD.\+cpp.
 
 
 
-Definition at line 333 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 341 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a19e3d80e81e83864b6e54a0d5167d6a3}\label{class__rostestdrone___1_1__pid___1_1pid_a19e3d80e81e83864b6e54a0d5167d6a3}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!get\_t5@{get\_t5}}
@@ -293,7 +356,11 @@ Definition at line 333 of file PID\+\_\+\+TD.\+cpp.
 
 
 
-Definition at line 337 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 345 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_adeb0407b93db519cb92880ab1b297fac}\label{class__rostestdrone___1_1__pid___1_1pid_adeb0407b93db519cb92880ab1b297fac}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!get\_t6@{get\_t6}}
@@ -303,7 +370,11 @@ Definition at line 337 of file PID\+\_\+\+TD.\+cpp.
 
 
 
-Definition at line 341 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 349 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a08f8c15b0ce2a56871938527b020576c}\label{class__rostestdrone___1_1__pid___1_1pid_a08f8c15b0ce2a56871938527b020576c}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!get\_t7@{get\_t7}}
@@ -313,7 +384,11 @@ Definition at line 341 of file PID\+\_\+\+TD.\+cpp.
 
 
 
-Definition at line 345 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 353 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_ad68e5ed373d71874f2f530bc40695dbe}\label{class__rostestdrone___1_1__pid___1_1pid_ad68e5ed373d71874f2f530bc40695dbe}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!get\_t8@{get\_t8}}
@@ -323,7 +398,11 @@ Definition at line 345 of file PID\+\_\+\+TD.\+cpp.
 
 
 
-Definition at line 349 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 357 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_ac1279261eabdf2d0acbae897cb3615f2}\label{class__rostestdrone___1_1__pid___1_1pid_ac1279261eabdf2d0acbae897cb3615f2}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!init@{init}}
@@ -333,7 +412,15 @@ Definition at line 349 of file PID\+\_\+\+TD.\+cpp.
 
 
 
-Definition at line 87 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 95 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References dy, y, and zeros.
+
+
+
+Referenced by pid().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_af29ed7608b332921a9a576e6b13c82d7}\label{class__rostestdrone___1_1__pid___1_1pid_af29ed7608b332921a9a576e6b13c82d7}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!model@{model}}
@@ -354,6 +441,10 @@ Define model.
 {\em t} & \\
 \hline
 \end{DoxyParams}
+
+
+Referenced by run().
+
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a586fb93a129c4e53c070c331fe7356c1}\label{class__rostestdrone___1_1__pid___1_1pid_a586fb93a129c4e53c070c331fe7356c1}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!read\_params@{read\_params}}
 \index{read\_params@{read\_params}!\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}}
@@ -371,7 +462,15 @@ Read the parameters from the json file.
 \end{DoxyParams}
 
 
-Definition at line 69 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 77 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References cip, file(), \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+rot, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+tran, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+rot, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+tran, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+rot, and \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+tran.
+
+
+
+Referenced by pid().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_af1f26776c9642fedeac29bfa22a52c2e}\label{class__rostestdrone___1_1__pid___1_1pid_af1f26776c9642fedeac29bfa22a52c2e}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!run@{run}}
@@ -390,7 +489,11 @@ Run the class pid.
 \end{DoxyParams}
 
 
-Definition at line 287 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 295 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+duration, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+end\+\_\+time, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+start\+\_\+time, cim, compute\+\_\+normalized\+\_\+thrusts(), compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), compute\+\_\+u1\+\_\+eta\+\_\+d(), debug2terminal(), logger, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+\_\+logger\+::log\+Log\+Data(), model(), rk4, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::t, and y.
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a5f69d16af8b11f62aa1ef4ac41323ffc}\label{class__rostestdrone___1_1__pid___1_1pid_a5f69d16af8b11f62aa1ef4ac41323ffc}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!update@{update}}
@@ -441,7 +544,11 @@ Update pid class.
 \end{DoxyParams}
 
 
-Definition at line 97 of file PID\+\_\+\+TD.\+cpp.
+Definition at line 105 of file PID\+\_\+\+TD.\+cpp.
+
+
+
+References \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+start\+\_\+time, assign\+\_\+from\+\_\+rk4(), cim, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+acceleration\+\_\+d, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d, \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Acceleration(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Position(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Velocity(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Yaw(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Yaw\+Rate(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Yaw\+Rate\+Dot(), \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Jacobian\+\_\+inv, \+\_\+utilities\+\_\+\+::jacobian\+Matrix\+Inverse(), \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::q, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+ddot\+\_\+user, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+dot\+\_\+user, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+I\+\_\+J, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+J\+\_\+I, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+user, \+\_\+utilities\+\_\+\+::rotation\+Matrix321\+Global\+To\+Local(), \+\_\+utilities\+\_\+\+::rotation\+Matrix321\+Local\+To\+Global(), \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::t, ud, \+\_\+piecewise\+\_\+polynomial\+\_\+trajectory\+\_\+\+::piecewise\+\_\+polynomial\+\_\+trajectory\+::update\+User\+Defined\+Trajectory(), \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+pos, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+vel, and y.
 
 
 
@@ -456,6 +563,10 @@ Definition at line 97 of file PID\+\_\+\+TD.\+cpp.
 
 Definition at line 181 of file PID\+\_\+\+TD.\+hpp.
 
+
+
+Referenced by compute\+\_\+normalized\+\_\+thrusts(), compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), compute\+\_\+u1\+\_\+eta\+\_\+d(), run(), and update().
+
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a9d8b2d8f1ee7000a7e97732bac06baf0}\label{class__rostestdrone___1_1__pid___1_1pid_a9d8b2d8f1ee7000a7e97732bac06baf0}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!cip@{cip}}
 \index{cip@{cip}!\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}}
@@ -465,6 +576,10 @@ Definition at line 181 of file PID\+\_\+\+TD.\+hpp.
 
 
 Definition at line 178 of file PID\+\_\+\+TD.\+hpp.
+
+
+
+Referenced by compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), and read\+\_\+params().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_aa07ffe25f5b7bfabe3c530305d2b357b}\label{class__rostestdrone___1_1__pid___1_1pid_aa07ffe25f5b7bfabe3c530305d2b357b}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!csm@{csm}}
@@ -476,6 +591,10 @@ Definition at line 178 of file PID\+\_\+\+TD.\+hpp.
 
 Definition at line 184 of file PID\+\_\+\+TD.\+hpp.
 
+
+
+Referenced by assign\+\_\+from\+\_\+rk4(), compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), and compute\+\_\+u1\+\_\+eta\+\_\+d().
+
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_ae37ef6966634643243be076cbe00766a}\label{class__rostestdrone___1_1__pid___1_1pid_ae37ef6966634643243be076cbe00766a}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!dy@{dy}}
 \index{dy@{dy}!\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}}
@@ -485,6 +604,10 @@ Definition at line 184 of file PID\+\_\+\+TD.\+hpp.
 
 
 Definition at line 159 of file PID\+\_\+\+TD.\+hpp.
+
+
+
+Referenced by init().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a28d3b0953b800306b6f55a8e94421913}\label{class__rostestdrone___1_1__pid___1_1pid_a28d3b0953b800306b6f55a8e94421913}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!logger@{logger}}
@@ -496,6 +619,10 @@ Definition at line 159 of file PID\+\_\+\+TD.\+hpp.
 
 Definition at line 154 of file PID\+\_\+\+TD.\+hpp.
 
+
+
+Referenced by run().
+
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a2a555887e5065fd814a5c76229c80e76}\label{class__rostestdrone___1_1__pid___1_1pid_a2a555887e5065fd814a5c76229c80e76}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!rk4@{rk4}}
 \index{rk4@{rk4}!\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}}
@@ -505,6 +632,10 @@ Definition at line 154 of file PID\+\_\+\+TD.\+hpp.
 
 
 Definition at line 175 of file PID\+\_\+\+TD.\+hpp.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a9ae9455e61dccd1735a8f1ad2848644b}\label{class__rostestdrone___1_1__pid___1_1pid_a9ae9455e61dccd1735a8f1ad2848644b}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!ud@{ud}}
@@ -516,6 +647,10 @@ Definition at line 175 of file PID\+\_\+\+TD.\+hpp.
 
 Definition at line 151 of file PID\+\_\+\+TD.\+hpp.
 
+
+
+Referenced by update().
+
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a8415c1729c666e7907e9a43dc877e39c}\label{class__rostestdrone___1_1__pid___1_1pid_a8415c1729c666e7907e9a43dc877e39c}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!y@{y}}
 \index{y@{y}!\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}}
@@ -526,6 +661,10 @@ Definition at line 151 of file PID\+\_\+\+TD.\+hpp.
 
 Definition at line 158 of file PID\+\_\+\+TD.\+hpp.
 
+
+
+Referenced by assign\+\_\+from\+\_\+rk4(), init(), run(), and update().
+
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid_a03bd8aab299911a8cc5fe5fba563bf76}\label{class__rostestdrone___1_1__pid___1_1pid_a03bd8aab299911a8cc5fe5fba563bf76}} 
 \index{\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}!zeros@{zeros}}
 \index{zeros@{zeros}!\_rostestdrone\_::\_pid\_::pid@{\_rostestdrone\_::\_pid\_::pid}}
@@ -535,6 +674,10 @@ Definition at line 158 of file PID\+\_\+\+TD.\+hpp.
 
 
 Definition at line 162 of file PID\+\_\+\+TD.\+hpp.
+
+
+
+Referenced by init().
 
 
 

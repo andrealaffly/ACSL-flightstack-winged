@@ -58,7 +58,7 @@ var sectionId = 'dynsection-0';
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Define file for the main flight parameters that will be used for the entire controller.">
 <polygon fill="#bfbfbf" stroke="black" points="243.5,-168.5 243.5,-209.5 392.5,-209.5 392.5,-168.5 243.5,-168.5"/>
 <text text-anchor="start" x="251.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="251.5" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/src/flight</text>

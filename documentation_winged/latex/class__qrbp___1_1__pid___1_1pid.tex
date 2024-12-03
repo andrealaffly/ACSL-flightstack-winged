@@ -20,8 +20,7 @@ Inheritance diagram for \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+:\nopagebrea
 \end{figure}
 
 
-Collaboration diagram for \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+:
-\nopagebreak
+Collaboration diagram for \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -116,7 +115,11 @@ Definition at line 78 of file PID.\+hpp.
 
 
 
-Definition at line 57 of file PID.\+cpp.
+Definition at line 66 of file PID.\+cpp.
+
+
+
+References init(), and read\+\_\+params().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a573bc57ecdf4a2da910bbdec2ac1be7a}\label{class__qrbp___1_1__pid___1_1pid_a573bc57ecdf4a2da910bbdec2ac1be7a}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!````~pid@{$\sim$pid}}
@@ -126,7 +129,7 @@ Definition at line 57 of file PID.\+cpp.
 
 
 
-Definition at line 68 of file PID.\+cpp.
+Definition at line 77 of file PID.\+cpp.
 
 
 
@@ -148,7 +151,15 @@ Assign the values from rk4 to controller internal members.
 \end{DoxyParams}
 
 
-Definition at line 173 of file PID.\+cpp.
+Definition at line 182 of file PID.\+cpp.
+
+
+
+References \+\_\+utilities\+\_\+\+::assign\+Elements\+To\+Members(), csm, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+eta\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+dot\+\_\+d\+\_\+filter, and y.
+
+
+
+Referenced by update().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a11186c6c7350b06cd6f8330c76dca2ce}\label{class__qrbp___1_1__pid___1_1pid_a11186c6c7350b06cd6f8330c76dca2ce}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!compute\_normalized\_thrusts@{compute\_normalized\_thrusts}}
@@ -167,7 +178,15 @@ Function to compute the normalized thrust.
 \end{DoxyParams}
 
 
-Definition at line 281 of file PID.\+cpp.
+Definition at line 290 of file PID.\+cpp.
+
+
+
+References cim, \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input, \+\_\+utilities\+\_\+\+::evaluate\+Polynomial(), \+\_\+qrbp\+\_\+\+::\+MAX\+\_\+\+THRUST, \+\_\+qrbp\+\_\+\+::\+MIN\+\_\+\+THRUST, \+\_\+qrbp\+\_\+\+::mixer\+\_\+matrix\+\_\+qrbp, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Sat\+\_\+\+Thrust, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Thrust, \+\_\+qrbp\+\_\+\+::thrust\+\_\+polynomial\+\_\+coeff\+\_\+qrbp, and \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_ab4d5cfddd13759934e94fe8eef2bb34a}\label{class__qrbp___1_1__pid___1_1pid_ab4d5cfddd13759934e94fe8eef2bb34a}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!compute\_rotational\_control@{compute\_rotational\_control}}
@@ -186,7 +205,15 @@ Function to compute the rotational control input.
 \end{DoxyParams}
 
 
-Definition at line 255 of file PID.\+cpp.
+Definition at line 264 of file PID.\+cpp.
+
+
+
+References cim, cip, csm, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+eta, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+eta\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+eta\+\_\+rate, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+acceleration\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d, \+\_\+qrbp\+\_\+\+::inertia\+\_\+matrix\+\_\+q, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::tau\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::tau\+\_\+rot\+\_\+baseline, and \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_aab52743dd308030ca7eeecc4d1303abb}\label{class__qrbp___1_1__pid___1_1pid_aab52743dd308030ca7eeecc4d1303abb}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!compute\_translational\_control\_in\_I@{compute\_translational\_control\_in\_I}}
@@ -205,7 +232,15 @@ Function to compute the translational control in the inertial frame.
 \end{DoxyParams}
 
 
-Definition at line 198 of file PID.\+cpp.
+Definition at line 207 of file PID.\+cpp.
+
+
+
+References cim, cip, csm, \+\_\+qrbp\+\_\+\+::e3\+\_\+basis, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+pos, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+vel, \+\_\+qrbp\+\_\+\+::G, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+MASS, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+baseline, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+ddot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+dot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+pos, and \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+vel.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_ab4ecf7a6af814f29ae9283490afee82e}\label{class__qrbp___1_1__pid___1_1pid_ab4ecf7a6af814f29ae9283490afee82e}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!compute\_u1\_eta\_d@{compute\_u1\_eta\_d}}
@@ -224,7 +259,15 @@ Function to compute the thrust (u1) and the desired angles.
 \end{DoxyParams}
 
 
-Definition at line 214 of file PID.\+cpp.
+Definition at line 223 of file PID.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+pitch\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+pitch\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+roll\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+A\+\_\+filter\+\_\+roll\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+pitch\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+pitch\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+roll\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+B\+\_\+filter\+\_\+roll\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+pitch\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+pitch\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+roll\+\_\+dot\+\_\+ref, \+\_\+qrbp\+\_\+\+::\+C\+\_\+filter\+\_\+roll\+\_\+ref, cim, csm, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+acceleration\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+roll\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::internal\+\_\+state\+\_\+roll\+\_\+dot\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+J, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+I\+\_\+J, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+pitch\+\_\+dot\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+d\+\_\+filter, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::state\+\_\+roll\+\_\+dot\+\_\+d\+\_\+filter, and \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_ace94108a8f0b3910123a34fcd12874bc}\label{class__qrbp___1_1__pid___1_1pid_ace94108a8f0b3910123a34fcd12874bc}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!debug2terminal@{debug2terminal}}
@@ -243,7 +286,11 @@ Function to print to terminal.
 \end{DoxyParams}
 
 
-Definition at line 296 of file PID.\+cpp.
+Definition at line 305 of file PID.\+cpp.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a8a5072617a2822a3492a10560cad13ff}\label{class__qrbp___1_1__pid___1_1pid_a8a5072617a2822a3492a10560cad13ff}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!get\_t1@{get\_t1}}
@@ -253,7 +300,11 @@ Definition at line 296 of file PID.\+cpp.
 
 
 
-Definition at line 337 of file PID.\+cpp.
+Definition at line 346 of file PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a7228b7c2fd8908f08f5091d6701eddc0}\label{class__qrbp___1_1__pid___1_1pid_a7228b7c2fd8908f08f5091d6701eddc0}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!get\_t2@{get\_t2}}
@@ -263,7 +314,11 @@ Definition at line 337 of file PID.\+cpp.
 
 
 
-Definition at line 341 of file PID.\+cpp.
+Definition at line 350 of file PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a873ed7a2fe123dd81b44e3d241e52642}\label{class__qrbp___1_1__pid___1_1pid_a873ed7a2fe123dd81b44e3d241e52642}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!get\_t3@{get\_t3}}
@@ -273,7 +328,11 @@ Definition at line 341 of file PID.\+cpp.
 
 
 
-Definition at line 345 of file PID.\+cpp.
+Definition at line 354 of file PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a4152ac70315efb47d6424d93e6a7f5b2}\label{class__qrbp___1_1__pid___1_1pid_a4152ac70315efb47d6424d93e6a7f5b2}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!get\_t4@{get\_t4}}
@@ -283,7 +342,11 @@ Definition at line 345 of file PID.\+cpp.
 
 
 
-Definition at line 349 of file PID.\+cpp.
+Definition at line 358 of file PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_aeec7f78b0897b416ec8b088bc51dc420}\label{class__qrbp___1_1__pid___1_1pid_aeec7f78b0897b416ec8b088bc51dc420}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!get\_t5@{get\_t5}}
@@ -293,7 +356,11 @@ Definition at line 349 of file PID.\+cpp.
 
 
 
-Definition at line 353 of file PID.\+cpp.
+Definition at line 362 of file PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a40942f138e213dab0ad5cbe531bcbfb0}\label{class__qrbp___1_1__pid___1_1pid_a40942f138e213dab0ad5cbe531bcbfb0}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!get\_t6@{get\_t6}}
@@ -303,7 +370,11 @@ Definition at line 353 of file PID.\+cpp.
 
 
 
-Definition at line 357 of file PID.\+cpp.
+Definition at line 366 of file PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_ac73273cfb0df771b98e69e5fb8a1ae36}\label{class__qrbp___1_1__pid___1_1pid_ac73273cfb0df771b98e69e5fb8a1ae36}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!get\_t7@{get\_t7}}
@@ -313,7 +384,11 @@ Definition at line 357 of file PID.\+cpp.
 
 
 
-Definition at line 361 of file PID.\+cpp.
+Definition at line 370 of file PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a5218f46c4cf3a510a28814d7df391c21}\label{class__qrbp___1_1__pid___1_1pid_a5218f46c4cf3a510a28814d7df391c21}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!get\_t8@{get\_t8}}
@@ -323,7 +398,11 @@ Definition at line 361 of file PID.\+cpp.
 
 
 
-Definition at line 365 of file PID.\+cpp.
+Definition at line 374 of file PID.\+cpp.
+
+
+
+References \+\_\+control\+\_\+algorithm\+\_\+base\+\_\+\+::controller\+\_\+base\+::control\+\_\+input.
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_ad3275e4b7fe7df4b5ac417b908b21f06}\label{class__qrbp___1_1__pid___1_1pid_ad3275e4b7fe7df4b5ac417b908b21f06}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!init@{init}}
@@ -333,7 +412,15 @@ Definition at line 365 of file PID.\+cpp.
 
 
 
-Definition at line 91 of file PID.\+cpp.
+Definition at line 100 of file PID.\+cpp.
+
+
+
+References dy, \+\_\+qrbp\+\_\+\+::is\+\_\+biplane, \+\_\+qrbp\+\_\+\+::momentary\+\_\+button, y, and zeros.
+
+
+
+Referenced by pid().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a6807dc41270dc734eb791d85d7fdb3a0}\label{class__qrbp___1_1__pid___1_1pid_a6807dc41270dc734eb791d85d7fdb3a0}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!model@{model}}
@@ -354,6 +441,10 @@ Define the model.
 {\em t} & \\
 \hline
 \end{DoxyParams}
+
+
+Referenced by run().
+
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a57a173e349dd8c3c413f14640bae0cfc}\label{class__qrbp___1_1__pid___1_1pid_a57a173e349dd8c3c413f14640bae0cfc}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!read\_params@{read\_params}}
 \index{read\_params@{read\_params}!\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}}
@@ -362,7 +453,15 @@ Define the model.
 
 
 
-Definition at line 73 of file PID.\+cpp.
+Definition at line 82 of file PID.\+cpp.
+
+
+
+References cip, file(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kd\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Ki\+\_\+tran, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+rot, and \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+parameters\+::\+Kp\+\_\+tran.
+
+
+
+Referenced by pid().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a6ff71997a17ca87105e4243cc9be885f}\label{class__qrbp___1_1__pid___1_1pid_a6ff71997a17ca87105e4243cc9be885f}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!run@{run}}
@@ -381,7 +480,11 @@ Implementing functions from controller\+\_\+base.
 \end{DoxyParams}
 
 
-Definition at line 301 of file PID.\+cpp.
+Definition at line 310 of file PID.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+duration, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+end\+\_\+time, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+start\+\_\+time, cim, compute\+\_\+normalized\+\_\+thrusts(), compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), compute\+\_\+u1\+\_\+eta\+\_\+d(), debug2terminal(), logger, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+\_\+logger\+::log\+Log\+Data(), model(), rk4, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::t, and y.
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a11ea18f5efe774521ca4f1c4121e0bc3}\label{class__qrbp___1_1__pid___1_1pid_a11ea18f5efe774521ca4f1c4121e0bc3}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!update@{update}}
@@ -391,7 +494,11 @@ Definition at line 301 of file PID.\+cpp.
 
 
 
-Definition at line 106 of file PID.\+cpp.
+Definition at line 115 of file PID.\+cpp.
+
+
+
+References \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+start\+\_\+time, assign\+\_\+from\+\_\+rk4(), cim, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+acceleration\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d, \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Acceleration(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Position(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Velocity(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Yaw(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Yaw\+Rate(), \+\_\+user\+\_\+defined\+\_\+trajectory\+\_\+base\+\_\+\+::trajectory\+\_\+base\+::get\+User\+Defined\+Yaw\+Rate\+Dot(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Jacobian\+\_\+inv, \+\_\+utilities\+\_\+\+::jacobian\+Matrix\+Inverse(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::omega\+\_\+rot, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::q, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+ddot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+dot\+\_\+user, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+I\+\_\+J, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+R\+\_\+\+J\+\_\+I, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+user, \+\_\+utilities\+\_\+\+::rotation\+Matrix321\+Global\+To\+Local(), \+\_\+utilities\+\_\+\+::rotation\+Matrix321\+Local\+To\+Global(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::t, ud, \+\_\+piecewise\+\_\+polynomial\+\_\+trajectory\+\_\+\+::piecewise\+\_\+polynomial\+\_\+trajectory\+::update\+User\+Defined\+Trajectory(), \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+pos, \+\_\+qrbp\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+vel, and y.
 
 
 
@@ -406,6 +513,10 @@ Definition at line 106 of file PID.\+cpp.
 
 Definition at line 158 of file PID.\+hpp.
 
+
+
+Referenced by compute\+\_\+normalized\+\_\+thrusts(), compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), compute\+\_\+u1\+\_\+eta\+\_\+d(), run(), and update().
+
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_aaab01747dfb55049c44937f7ea8e2520}\label{class__qrbp___1_1__pid___1_1pid_aaab01747dfb55049c44937f7ea8e2520}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!cip@{cip}}
 \index{cip@{cip}!\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}}
@@ -415,6 +526,10 @@ Definition at line 158 of file PID.\+hpp.
 
 
 Definition at line 155 of file PID.\+hpp.
+
+
+
+Referenced by compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), and read\+\_\+params().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_ad3f5da9abc4a79de3efc9908fbdfe1cb}\label{class__qrbp___1_1__pid___1_1pid_ad3f5da9abc4a79de3efc9908fbdfe1cb}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!csm@{csm}}
@@ -426,6 +541,10 @@ Definition at line 155 of file PID.\+hpp.
 
 Definition at line 161 of file PID.\+hpp.
 
+
+
+Referenced by assign\+\_\+from\+\_\+rk4(), compute\+\_\+rotational\+\_\+control(), compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I(), and compute\+\_\+u1\+\_\+eta\+\_\+d().
+
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a2bb46a25d8e71ca7782f6d3609d583a2}\label{class__qrbp___1_1__pid___1_1pid_a2bb46a25d8e71ca7782f6d3609d583a2}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!dy@{dy}}
 \index{dy@{dy}!\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}}
@@ -435,6 +554,10 @@ Definition at line 161 of file PID.\+hpp.
 
 
 Definition at line 136 of file PID.\+hpp.
+
+
+
+Referenced by init().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_ab0f8513da1a182b04eb304c35997d5a3}\label{class__qrbp___1_1__pid___1_1pid_ab0f8513da1a182b04eb304c35997d5a3}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!logger@{logger}}
@@ -446,6 +569,10 @@ Definition at line 136 of file PID.\+hpp.
 
 Definition at line 131 of file PID.\+hpp.
 
+
+
+Referenced by run().
+
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a2b258c34780b9b52fbe819b005401bda}\label{class__qrbp___1_1__pid___1_1pid_a2b258c34780b9b52fbe819b005401bda}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!rk4@{rk4}}
 \index{rk4@{rk4}!\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}}
@@ -455,6 +582,10 @@ Definition at line 131 of file PID.\+hpp.
 
 
 Definition at line 152 of file PID.\+hpp.
+
+
+
+Referenced by run().
 
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a8261d11816e861dff5302574fb843bf7}\label{class__qrbp___1_1__pid___1_1pid_a8261d11816e861dff5302574fb843bf7}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!ud@{ud}}
@@ -466,6 +597,10 @@ Definition at line 152 of file PID.\+hpp.
 
 Definition at line 128 of file PID.\+hpp.
 
+
+
+Referenced by update().
+
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a5fd716c2b5038ac92550837bfaa73fc6}\label{class__qrbp___1_1__pid___1_1pid_a5fd716c2b5038ac92550837bfaa73fc6}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!y@{y}}
 \index{y@{y}!\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}}
@@ -476,6 +611,10 @@ Definition at line 128 of file PID.\+hpp.
 
 Definition at line 135 of file PID.\+hpp.
 
+
+
+Referenced by assign\+\_\+from\+\_\+rk4(), init(), run(), and update().
+
 \mbox{\Hypertarget{class__qrbp___1_1__pid___1_1pid_a5705992cf0c6a99b6031aeb9f12f254c}\label{class__qrbp___1_1__pid___1_1pid_a5705992cf0c6a99b6031aeb9f12f254c}} 
 \index{\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}!zeros@{zeros}}
 \index{zeros@{zeros}!\_qrbp\_::\_pid\_::pid@{\_qrbp\_::\_pid\_::pid}}
@@ -485,6 +624,10 @@ Definition at line 135 of file PID.\+hpp.
 
 
 Definition at line 139 of file PID.\+hpp.
+
+
+
+Referenced by init().
 
 
 

@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        PID_TD.cpp
- * Author:      Giri Mugundan Kumar
- * Date:        July 10, 2024
+ * File:        PID_TD.cpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        July 10, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -45,7 +46,14 @@
 */
 
 #include "PID_TD.hpp"
-
+/**
+ * @file PID_TD.cpp
+ * @brief PID for the rostestdrone
+ * 
+ *  Inherts the class controller_base for the basic functionality that is to be used for all control algorithms.
+ * 
+ * Classes used are referenced in @ref PID_TD.hpp
+ */
 namespace _rostestdrone_{
 namespace _pid_{
 

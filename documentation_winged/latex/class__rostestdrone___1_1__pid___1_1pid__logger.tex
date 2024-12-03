@@ -68,7 +68,11 @@ Definition at line 69 of file PID\+\_\+\+TD\+\_\+logger.\+hpp.
 
 
 
-Definition at line 51 of file PID\+\_\+\+TD\+\_\+logger.\+cpp.
+Definition at line 59 of file PID\+\_\+\+TD\+\_\+logger.\+cpp.
+
+
+
+References \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+INFO(), and log\+Init\+Logging().
 
 
 
@@ -85,7 +89,15 @@ Initialize headers.
 
 
 
-Definition at line 61 of file PID\+\_\+\+TD\+\_\+logger.\+cpp.
+Definition at line 69 of file PID\+\_\+\+TD\+\_\+logger.\+cpp.
+
+
+
+References \+\_\+flight\+\_\+log\+\_\+\+::blackbox\+::logger\+\_\+logdata.
+
+
+
+Referenced by log\+Init\+Logging().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid__logger_a8385db603031b8348f91126b9a6c141f}\label{class__rostestdrone___1_1__pid___1_1pid__logger_a8385db603031b8348f91126b9a6c141f}} 
 \index{\_rostestdrone\_::\_pid\_::pid\_logger@{\_rostestdrone\_::\_pid\_::pid\_logger}!logInitLogging@{logInitLogging}}
@@ -95,7 +107,15 @@ Definition at line 61 of file PID\+\_\+\+TD\+\_\+logger.\+cpp.
 
 
 
-Definition at line 137 of file PID\+\_\+\+TD\+\_\+logger.\+cpp.
+Definition at line 145 of file PID\+\_\+\+TD\+\_\+logger.\+cpp.
+
+
+
+References flight\+\_\+run\+\_\+log\+\_\+directory, \+\_\+flightstack\+\_\+\+::\+FLIGHTSTACK\+\_\+\+ERROR(), \+\_\+flight\+\_\+log\+\_\+\+::blackbox\+::logger\+\_\+logdata, and log\+Init\+Headers().
+
+
+
+Referenced by pid\+\_\+logger().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid__logger_ab7b0ccc45c3bdae7ef8412cf58e262f3}\label{class__rostestdrone___1_1__pid___1_1pid__logger_ab7b0ccc45c3bdae7ef8412cf58e262f3}} 
 \index{\_rostestdrone\_::\_pid\_::pid\_logger@{\_rostestdrone\_::\_pid\_::pid\_logger}!logLogData@{logLogData}}
@@ -109,7 +129,15 @@ Start loggin data.
 
 
 
-Definition at line 235 of file PID\+\_\+\+TD\+\_\+logger.\+cpp.
+Definition at line 243 of file PID\+\_\+\+TD\+\_\+logger.\+cpp.
+
+
+
+References \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::alg\+\_\+duration, CIM, cntrl\+\_\+input, CSM, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+eta, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+eta\+\_\+I, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+eta\+\_\+rate, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+pos, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+integrated\+\_\+state\+\_\+members\+::e\+\_\+tran\+\_\+pos\+\_\+I, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::e\+\_\+tran\+\_\+vel, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+acceleration\+\_\+d, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+d, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::eta\+\_\+rot\+\_\+rate\+\_\+d, \+\_\+flight\+\_\+log\+\_\+\+::blackbox\+::logger\+\_\+logdata, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+I, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::mu\+\_\+tran\+\_\+J, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+dot\+\_\+user, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::r\+\_\+user, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::t, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::\+Thrust, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::u, \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+pos, and \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::controller\+\_\+internal\+\_\+members\+::x\+\_\+tran\+\_\+vel.
+
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::run().
 
 
 
@@ -124,6 +152,10 @@ Definition at line 235 of file PID\+\_\+\+TD\+\_\+logger.\+cpp.
 
 Definition at line 92 of file PID\+\_\+\+TD\+\_\+logger.\+hpp.
 
+
+
+Referenced by log\+Log\+Data().
+
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid__logger_a0209dc7d5629fd1f5a0a88b140aa5c9a}\label{class__rostestdrone___1_1__pid___1_1pid__logger_a0209dc7d5629fd1f5a0a88b140aa5c9a}} 
 \index{\_rostestdrone\_::\_pid\_::pid\_logger@{\_rostestdrone\_::\_pid\_::pid\_logger}!cntrl\_input@{cntrl\_input}}
 \index{cntrl\_input@{cntrl\_input}!\_rostestdrone\_::\_pid\_::pid\_logger@{\_rostestdrone\_::\_pid\_::pid\_logger}}
@@ -133,6 +165,10 @@ Definition at line 92 of file PID\+\_\+\+TD\+\_\+logger.\+hpp.
 
 
 Definition at line 98 of file PID\+\_\+\+TD\+\_\+logger.\+hpp.
+
+
+
+Referenced by log\+Log\+Data().
 
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid__logger_a6017dad49cee0210f63d60318cd63df6}\label{class__rostestdrone___1_1__pid___1_1pid__logger_a6017dad49cee0210f63d60318cd63df6}} 
 \index{\_rostestdrone\_::\_pid\_::pid\_logger@{\_rostestdrone\_::\_pid\_::pid\_logger}!CSM@{CSM}}
@@ -144,6 +180,10 @@ Definition at line 98 of file PID\+\_\+\+TD\+\_\+logger.\+hpp.
 
 Definition at line 95 of file PID\+\_\+\+TD\+\_\+logger.\+hpp.
 
+
+
+Referenced by log\+Log\+Data().
+
 \mbox{\Hypertarget{class__rostestdrone___1_1__pid___1_1pid__logger_a65b403d314f5a8249d760cfd215319a9}\label{class__rostestdrone___1_1__pid___1_1pid__logger_a65b403d314f5a8249d760cfd215319a9}} 
 \index{\_rostestdrone\_::\_pid\_::pid\_logger@{\_rostestdrone\_::\_pid\_::pid\_logger}!flight\_run\_log\_directory@{flight\_run\_log\_directory}}
 \index{flight\_run\_log\_directory@{flight\_run\_log\_directory}!\_rostestdrone\_::\_pid\_::pid\_logger@{\_rostestdrone\_::\_pid\_::pid\_logger}}
@@ -153,6 +193,10 @@ Definition at line 95 of file PID\+\_\+\+TD\+\_\+logger.\+hpp.
 
 
 Definition at line 101 of file PID\+\_\+\+TD\+\_\+logger.\+hpp.
+
+
+
+Referenced by log\+Init\+Logging().
 
 
 

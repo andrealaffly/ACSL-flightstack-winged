@@ -1,6 +1,6 @@
 <map id="ACSL&#45;flightstack&#45;winged/src/acsl_flight/include/utils/control_algorithm_base/control_algorithm_base.hpp" name="ACSL&#45;flightstack&#45;winged/src/acsl_flight/include/utils/control_algorithm_base/control_algorithm_base.hpp">
 <area shape="rect" id="node1" title="Utilities for Controller Base Definition." alt="" coords="857,5,1103,76"/>
-<area shape="rect" id="node2" href="$vehicle__class_8hpp.html" title=" " alt="" coords="911,124,1049,151"/>
+<area shape="rect" id="node2" href="$vehicle__class_8hpp.html" title="Header for the vehicle class object." alt="" coords="911,124,1049,151"/>
 <area shape="rect" id="node5" href="$flight__params_8hpp.html" title=" " alt="" coords="436,124,575,151"/>
 <area shape="rect" id="node18" href="$helper__functions_8hpp.html" title="Definitions of some standard templates used in all controllers." alt="" coords="2559,124,2718,151"/>
 <area shape="rect" id="node3" title=" " alt="" coords="887,206,953,233"/>

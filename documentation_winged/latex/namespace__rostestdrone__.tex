@@ -74,41 +74,6 @@ const Eigen\+::\+Matrix3d \mbox{\hyperlink{namespace__rostestdrone___ae83e095d89
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L\textquotesingle{}Afflitto. All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
-
-
-\begin{DoxyEnumerate}
-\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-\item Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-\end{DoxyEnumerate}
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “\+AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. File\+: PID\+\_\+\+TD.\+cpp Author\+: Giri Mugundan Kumar Date\+: July 10, 2024 For info\+: Andrea L\textquotesingle{}Afflitto \href{mailto:a.lafflitto@vt.edu}{\texttt{ a.\+lafflitto@vt.\+edu}}
-
-Description\+: PID for the rostestdrone. Inherts the class controller\+\_\+base for the basic functionality that is to be used for all control algorithms.
-
-Git\+Hub\+: \href{https://github.com/andrealaffly/ACSL-flightstack-winged}{\texttt{ https\+://github.\+com/andrealaffly/\+ACSL-\/flightstack-\/winged}}
-
-Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L\textquotesingle{}Afflitto. All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
-
-
-\begin{DoxyEnumerate}
-\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-\item Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-\end{DoxyEnumerate}
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “\+AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. File\+: PID\+\_\+\+TD\+\_\+logger.\+cpp Author\+: Giri Mugundan Kumar Date\+: July 10, 2024 For info\+: Andrea L\textquotesingle{}Afflitto \href{mailto:a.lafflitto@vt.edu}{\texttt{ a.\+lafflitto@vt.\+edu}}
-
-Description\+: logging for the PID controller. Inherits the Blackbox class for logging and takes in the internal members for the PID.
-
-Git\+Hub\+: \href{https://github.com/andrealaffly/ACSL-flightstack-winged}{\texttt{ https\+://github.\+com/andrealaffly/\+ACSL-\/flightstack-\/winged}} 
-
 \doxysubsection{Variable Documentation}
 \mbox{\Hypertarget{namespace__rostestdrone___a1eb114f4b8c66da9ab905d1d45b9dc41}\label{namespace__rostestdrone___a1eb114f4b8c66da9ab905d1d45b9dc41}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!A\_filter\_pitch\_dot\_ref@{A\_filter\_pitch\_dot\_ref}}
@@ -128,6 +93,10 @@ Git\+Hub\+: \href{https://github.com/andrealaffly/ACSL-flightstack-winged}{\text
 
 Definition at line 128 of file rostestdrone.\+hpp.
 
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+u1\+\_\+eta\+\_\+d().
+
 \mbox{\Hypertarget{namespace__rostestdrone___a7c5854059c496893b64ad61c0adb242e}\label{namespace__rostestdrone___a7c5854059c496893b64ad61c0adb242e}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!A\_filter\_pitch\_ref@{A\_filter\_pitch\_ref}}
 \index{A\_filter\_pitch\_ref@{A\_filter\_pitch\_ref}!\_rostestdrone\_@{\_rostestdrone\_}}
@@ -145,6 +114,10 @@ Definition at line 128 of file rostestdrone.\+hpp.
 
 
 Definition at line 98 of file rostestdrone.\+hpp.
+
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+u1\+\_\+eta\+\_\+d().
 
 \mbox{\Hypertarget{namespace__rostestdrone___a9d4df997a2705fd135c08e2cc2245b2c}\label{namespace__rostestdrone___a9d4df997a2705fd135c08e2cc2245b2c}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!A\_filter\_roll\_dot\_ref@{A\_filter\_roll\_dot\_ref}}
@@ -164,6 +137,10 @@ Definition at line 98 of file rostestdrone.\+hpp.
 
 Definition at line 113 of file rostestdrone.\+hpp.
 
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+u1\+\_\+eta\+\_\+d().
+
 \mbox{\Hypertarget{namespace__rostestdrone___aba2157806cddcd99a15721df02934dde}\label{namespace__rostestdrone___aba2157806cddcd99a15721df02934dde}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!A\_filter\_roll\_ref@{A\_filter\_roll\_ref}}
 \index{A\_filter\_roll\_ref@{A\_filter\_roll\_ref}!\_rostestdrone\_@{\_rostestdrone\_}}
@@ -182,6 +159,10 @@ Definition at line 113 of file rostestdrone.\+hpp.
 
 Definition at line 83 of file rostestdrone.\+hpp.
 
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+u1\+\_\+eta\+\_\+d().
+
 \mbox{\Hypertarget{namespace__rostestdrone___ab82e649fc4679e12888a7d921e70dd09}\label{namespace__rostestdrone___ab82e649fc4679e12888a7d921e70dd09}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!B\_filter\_pitch\_dot\_ref@{B\_filter\_pitch\_dot\_ref}}
 \index{B\_filter\_pitch\_dot\_ref@{B\_filter\_pitch\_dot\_ref}!\_rostestdrone\_@{\_rostestdrone\_}}
@@ -191,6 +172,10 @@ Definition at line 83 of file rostestdrone.\+hpp.
 
 
 Definition at line 134 of file rostestdrone.\+hpp.
+
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+u1\+\_\+eta\+\_\+d().
 
 \mbox{\Hypertarget{namespace__rostestdrone___a251f74c215f29f1f682a63c774efcb20}\label{namespace__rostestdrone___a251f74c215f29f1f682a63c774efcb20}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!B\_filter\_pitch\_ref@{B\_filter\_pitch\_ref}}
@@ -202,6 +187,10 @@ Definition at line 134 of file rostestdrone.\+hpp.
 
 Definition at line 104 of file rostestdrone.\+hpp.
 
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+u1\+\_\+eta\+\_\+d().
+
 \mbox{\Hypertarget{namespace__rostestdrone___af2f61931a8774c7a2ccf3ab8a3abcdde}\label{namespace__rostestdrone___af2f61931a8774c7a2ccf3ab8a3abcdde}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!B\_filter\_roll\_dot\_ref@{B\_filter\_roll\_dot\_ref}}
 \index{B\_filter\_roll\_dot\_ref@{B\_filter\_roll\_dot\_ref}!\_rostestdrone\_@{\_rostestdrone\_}}
@@ -211,6 +200,10 @@ Definition at line 104 of file rostestdrone.\+hpp.
 
 
 Definition at line 119 of file rostestdrone.\+hpp.
+
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+u1\+\_\+eta\+\_\+d().
 
 \mbox{\Hypertarget{namespace__rostestdrone___ab119aa494df12072d230f5a3e517d0b6}\label{namespace__rostestdrone___ab119aa494df12072d230f5a3e517d0b6}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!B\_filter\_roll\_ref@{B\_filter\_roll\_ref}}
@@ -222,6 +215,10 @@ Definition at line 119 of file rostestdrone.\+hpp.
 
 Definition at line 89 of file rostestdrone.\+hpp.
 
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+u1\+\_\+eta\+\_\+d().
+
 \mbox{\Hypertarget{namespace__rostestdrone___a9d8dcbefb27f661b1baf26bcedb2b864}\label{namespace__rostestdrone___a9d8dcbefb27f661b1baf26bcedb2b864}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!C\_filter\_pitch\_dot\_ref@{C\_filter\_pitch\_dot\_ref}}
 \index{C\_filter\_pitch\_dot\_ref@{C\_filter\_pitch\_dot\_ref}!\_rostestdrone\_@{\_rostestdrone\_}}
@@ -231,6 +228,10 @@ Definition at line 89 of file rostestdrone.\+hpp.
 
 
 Definition at line 137 of file rostestdrone.\+hpp.
+
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+u1\+\_\+eta\+\_\+d().
 
 \mbox{\Hypertarget{namespace__rostestdrone___a475decd873ed46da88f31f5ce6153eaf}\label{namespace__rostestdrone___a475decd873ed46da88f31f5ce6153eaf}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!C\_filter\_pitch\_ref@{C\_filter\_pitch\_ref}}
@@ -242,6 +243,10 @@ Definition at line 137 of file rostestdrone.\+hpp.
 
 Definition at line 107 of file rostestdrone.\+hpp.
 
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+u1\+\_\+eta\+\_\+d().
+
 \mbox{\Hypertarget{namespace__rostestdrone___a141d3f74ae74bc88361fea2afb87912c}\label{namespace__rostestdrone___a141d3f74ae74bc88361fea2afb87912c}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!C\_filter\_roll\_dot\_ref@{C\_filter\_roll\_dot\_ref}}
 \index{C\_filter\_roll\_dot\_ref@{C\_filter\_roll\_dot\_ref}!\_rostestdrone\_@{\_rostestdrone\_}}
@@ -252,6 +257,10 @@ Definition at line 107 of file rostestdrone.\+hpp.
 
 Definition at line 122 of file rostestdrone.\+hpp.
 
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+u1\+\_\+eta\+\_\+d().
+
 \mbox{\Hypertarget{namespace__rostestdrone___ab4c834d483ee5a4f09171cd0649362ef}\label{namespace__rostestdrone___ab4c834d483ee5a4f09171cd0649362ef}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!C\_filter\_roll\_ref@{C\_filter\_roll\_ref}}
 \index{C\_filter\_roll\_ref@{C\_filter\_roll\_ref}!\_rostestdrone\_@{\_rostestdrone\_}}
@@ -261,6 +270,10 @@ Definition at line 122 of file rostestdrone.\+hpp.
 
 
 Definition at line 92 of file rostestdrone.\+hpp.
+
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+u1\+\_\+eta\+\_\+d().
 
 \mbox{\Hypertarget{namespace__rostestdrone___a3ad6ec1565a3536c8725916f36c88f35}\label{namespace__rostestdrone___a3ad6ec1565a3536c8725916f36c88f35}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!CT\_MOTOR@{CT\_MOTOR}}
@@ -332,6 +345,10 @@ Definition at line 67 of file rostestdrone.\+hpp.
 
 Definition at line 156 of file rostestdrone.\+hpp.
 
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I().
+
 \mbox{\Hypertarget{namespace__rostestdrone___aae967685750b7966ae79c2dd9845ae4e}\label{namespace__rostestdrone___aae967685750b7966ae79c2dd9845ae4e}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!G@{G}}
 \index{G@{G}!\_rostestdrone\_@{\_rostestdrone\_}}
@@ -341,6 +358,10 @@ Definition at line 156 of file rostestdrone.\+hpp.
 
 
 Definition at line 63 of file rostestdrone.\+hpp.
+
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I().
 
 \mbox{\Hypertarget{namespace__rostestdrone___ae83e095d89145faf2dd8642939187778}\label{namespace__rostestdrone___ae83e095d89145faf2dd8642939187778}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!inertia\_matrix\_q@{inertia\_matrix\_q}}
@@ -360,6 +381,10 @@ Definition at line 63 of file rostestdrone.\+hpp.
 
 
 Definition at line 197 of file rostestdrone.\+hpp.
+
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+rotational\+\_\+control().
 
 \mbox{\Hypertarget{namespace__rostestdrone___ac86959d9806a5c60f83e3f74258941d6}\label{namespace__rostestdrone___ac86959d9806a5c60f83e3f74258941d6}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!LX@{LX}}
@@ -391,6 +416,10 @@ Definition at line 73 of file rostestdrone.\+hpp.
 
 Definition at line 71 of file rostestdrone.\+hpp.
 
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+translational\+\_\+control\+\_\+in\+\_\+\+I().
+
 \mbox{\Hypertarget{namespace__rostestdrone___aa2c4992f551132bc89a7f81398b7ee01}\label{namespace__rostestdrone___aa2c4992f551132bc89a7f81398b7ee01}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!MAX\_THRUST@{MAX\_THRUST}}
 \index{MAX\_THRUST@{MAX\_THRUST}!\_rostestdrone\_@{\_rostestdrone\_}}
@@ -401,6 +430,10 @@ Definition at line 71 of file rostestdrone.\+hpp.
 
 Definition at line 79 of file rostestdrone.\+hpp.
 
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+normalized\+\_\+thrusts().
+
 \mbox{\Hypertarget{namespace__rostestdrone___ad3da92907955645e2485cb16d904ae24}\label{namespace__rostestdrone___ad3da92907955645e2485cb16d904ae24}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!MIN\_THRUST@{MIN\_THRUST}}
 \index{MIN\_THRUST@{MIN\_THRUST}!\_rostestdrone\_@{\_rostestdrone\_}}
@@ -410,6 +443,10 @@ Definition at line 79 of file rostestdrone.\+hpp.
 
 
 Definition at line 80 of file rostestdrone.\+hpp.
+
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+normalized\+\_\+thrusts().
 
 \mbox{\Hypertarget{namespace__rostestdrone___ae44e98ecf2c09d0c93f7e7c8c3164452}\label{namespace__rostestdrone___ae44e98ecf2c09d0c93f7e7c8c3164452}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!mixer\_matrix\_qrbp@{mixer\_matrix\_qrbp}}
@@ -450,6 +487,10 @@ Definition at line 80 of file rostestdrone.\+hpp.
 
 
 Definition at line 165 of file rostestdrone.\+hpp.
+
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+normalized\+\_\+thrusts().
 
 \mbox{\Hypertarget{namespace__rostestdrone___a4742d020fef0898c55594cdca53a053b}\label{namespace__rostestdrone___a4742d020fef0898c55594cdca53a053b}} 
 \index{\_rostestdrone\_@{\_rostestdrone\_}!PI@{PI}}
@@ -514,4 +555,8 @@ Definition at line 64 of file rostestdrone.\+hpp.
 
 
 Definition at line 144 of file rostestdrone.\+hpp.
+
+
+
+Referenced by \+\_\+rostestdrone\+\_\+\+::\+\_\+pid\+\_\+\+::pid\+::compute\+\_\+normalized\+\_\+thrusts().
 

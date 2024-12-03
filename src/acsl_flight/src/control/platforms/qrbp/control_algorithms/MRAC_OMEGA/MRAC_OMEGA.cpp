@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,12 +22,12 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        MRAC_OMEGA.cpp
- * Author:      Giri Mugundan Kumar
- * Date:        August 07, 2024
- * For info:    Andrea L'Afflitto 
+ * File:        MRAC_OMEGA.cpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        August 07, 2024 \n 
+ * For info:    Andrea L'Afflitto \n 
  *              a.lafflitto@vt.edu
  * 
  * Description: MRAC with angular velocities for the QRBP. Inherts the
@@ -49,11 +50,21 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
 */
 
 #include "MRAC_OMEGA.hpp"
-
+/**
+ * @file MRAC_OMEGA.cpp
+ * @brief MRAC with angular velocities for the QRBP. Inherts the
+ *              class controller_base for the basic functionality that 
+ *              is to be used for all control algorithms.
+ * 
+ * Classes used are referenced in @ref MRAC_OMEGA.hpp
+ */
 namespace _qrbp_{
 namespace _mrac_omega_{
 
 // Concstructor - Take care to initilaize the logger
+/**
+ * @class mrac_omega
+ */
 mrac_omega::mrac_omega(flight_params* p, const std::string & controller_log_dir_) : 
 						controller_base(p), ud(p), logger(&cim, &csm, &control_input, controller_log_dir_) {
 

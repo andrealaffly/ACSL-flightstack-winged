@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,7 +22,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond
  /**********************************************************************************************************************  
  * Part of the code in this file leverages the following material.
  *
@@ -42,9 +43,9 @@
  **********************************************************************************************************************/
 
 /***********************************************************************************************************************
- * File:        udp_driver.cpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 21, 2024
+ * File:        udp_driver.cpp \n
+ * Author:      Giri Mugundan Kumar \n
+ * Date:        April 21, 2024 \n
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -54,7 +55,12 @@
  **********************************************************************************************************************/
 
 #include "udp_driver.hpp"
-
+/**
+ * @file udp_driver.cpp
+ * @brief Class definition for UDP driver
+ * 
+ * Classes used are referenced in @ref udp_driver.hpp
+ */
 namespace _drivers_
 {
 namespace _udp_driver_

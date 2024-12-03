@@ -1,3 +1,4 @@
+///@cond
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,7 +22,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond
  /**********************************************************************************************************************  
  * Part of the code in this file leverages the following material.
  *
@@ -42,9 +43,9 @@
  **********************************************************************************************************************/
 
 /***********************************************************************************************************************
- * File:        mocap.cpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 20, 2024
+ * File:        mocap.cpp \n
+ * Author:      Giri Mugundan Kumar \n
+ * Date:        April 20, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -56,6 +57,16 @@
  **********************************************************************************************************************/
 
 #include "mocap.hpp"
+
+/**
+ * @file mocap.cpp
+ * @brief Node definition for UDP socket as a lifecycle node.
+ * 
+ *          Writes messages to pixhawk mocap_odometry topic for 
+ *          EFK2 fusion.
+ * 
+ * Classes used are referenced in @ref mocap.hpp
+ */
 
 namespace lc = rclcpp_lifecycle;
 using LNI = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface;
