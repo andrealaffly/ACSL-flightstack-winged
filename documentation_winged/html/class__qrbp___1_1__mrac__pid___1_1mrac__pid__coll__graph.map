@@ -1,9 +1,9 @@
 <map id="_qrbp_::_mrac_pid_::mrac_pid" name="_qrbp_::_mrac_pid_::mrac_pid">
 <area shape="rect" id="node1" title=" " alt="" coords="1363,690,1509,731"/>
 <area shape="rect" id="node2" href="$class__control__algorithm__base___1_1controller__base.html" title="controller_base definition" alt="" coords="1095,114,1269,155"/>
-<area shape="rect" id="node3" href="$structflight__params.html" title=" " alt="" coords="760,79,871,105"/>
+<area shape="rect" id="node3" href="$structflight__params.html" title="If you are adding more parameters to your flight in /src/acsl_flight/params/flight_params...." alt="" coords="760,79,871,105"/>
 <area shape="rect" id="node5" href="$class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory.html" title="Piecwise polynomial trajectory." alt="" coords="1095,264,1269,320"/>
-<area shape="rect" id="node4" href="$structPiecewisePolynomialTrajectoryInfo.html" title=" " alt="" coords="321,5,571,32"/>
+<area shape="rect" id="node4" href="$structPiecewisePolynomialTrajectoryInfo.html" title="Struct containing the trajectory info coming from the .json file." alt="" coords="321,5,571,32"/>
 <area shape="rect" id="node6" href="$class__user__defined__trajectory__base___1_1trajectory__base.html" title="base trajectory for pixhawk" alt="" coords="724,130,907,171"/>
 <area shape="rect" id="node7" title=" " alt="" coords="407,189,485,216"/>
 <area shape="rect" id="node8" title=" " alt="" coords="775,320,855,347"/>

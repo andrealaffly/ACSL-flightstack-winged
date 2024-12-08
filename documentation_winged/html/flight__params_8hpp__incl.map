@@ -1,5 +1,5 @@
 <map id="ACSL&#45;flightstack&#45;winged/src/acsl_flight/include/flight_params/flight_params.hpp" name="ACSL&#45;flightstack&#45;winged/src/acsl_flight/include/flight_params/flight_params.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="311,5,547,61"/>
+<area shape="rect" id="node1" title="Header file for the main flight parameters that will be used for the entire controller." alt="" coords="311,5,547,61"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,184,64,211"/>
 <area shape="rect" id="node3" title=" " alt="" coords="326,109,399,136"/>
 <area shape="rect" id="node4" title=" " alt="" coords="424,109,571,136"/>

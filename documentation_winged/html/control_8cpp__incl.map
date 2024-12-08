@@ -1,52 +1,52 @@
 <map id="ACSL&#45;flightstack&#45;winged/src/acsl_flight/src/control/control.cpp" name="ACSL&#45;flightstack&#45;winged/src/acsl_flight/src/control/control.cpp">
-<area shape="rect" id="node1" title="Control node definition. Runs all the control algorithms. Adds as a hub for all the control actions." alt="" coords="1997,5,2184,61"/>
-<area shape="rect" id="node2" href="$control_8hpp.html" title="Class declaration for computing and publishing the control." alt="" coords="2043,109,2138,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="1237,370,1369,397"/>
-<area shape="rect" id="node4" href="$vehicle__class_8hpp.html" title="Header for the vehicle class object." alt="" coords="1586,370,1723,397"/>
-<area shape="rect" id="node7" href="$px4__defines_8hpp.html" title="Contains useful constant defines for use in the flight stack in a central location." alt="" coords="643,452,771,479"/>
-<area shape="rect" id="node9" title=" " alt="" coords="2596,191,2671,218"/>
-<area shape="rect" id="node10" title=" " alt="" coords="2695,184,2873,225"/>
-<area shape="rect" id="node11" title=" " alt="" coords="2897,184,3076,225"/>
-<area shape="rect" id="node12" title=" " alt="" coords="3100,184,3271,225"/>
-<area shape="rect" id="node13" title=" " alt="" coords="3295,184,3465,225"/>
-<area shape="rect" id="node14" title=" " alt="" coords="3054,370,3093,397"/>
-<area shape="rect" id="node15" href="$global__helpers_8hpp.html" title="Inline functions for all the classes of the flighstack to use." alt="" coords="874,452,1019,479"/>
-<area shape="rect" id="node21" href="$flight__bridge_8hpp.html" title=" " alt="" coords="1431,191,1561,218"/>
-<area shape="rect" id="node42" href="$flight__params_8hpp.html" title=" " alt="" coords="137,370,276,397"/>
-<area shape="rect" id="node48" href="$control__config_8hpp.html" title="Just a header file for configuring which platform and controller to pick during compilation." alt="" coords="2888,370,3029,397"/>
-<area shape="rect" id="node5" title=" " alt="" coords="1044,452,1111,479"/>
-<area shape="rect" id="node6" title=" " alt="" coords="1623,452,1686,479"/>
-<area shape="rect" id="node8" title=" " alt="" coords="579,527,645,553"/>
-<area shape="rect" id="node16" title=" " alt="" coords="669,527,749,553"/>
-<area shape="rect" id="node17" title=" " alt="" coords="1732,527,1791,553"/>
-<area shape="rect" id="node18" title=" " alt="" coords="1825,527,1900,553"/>
-<area shape="rect" id="node19" title=" " alt="" coords="901,527,993,553"/>
-<area shape="rect" id="node20" title=" " alt="" coords="774,527,877,553"/>
-<area shape="rect" id="node22" title=" " alt="" coords="1393,370,1460,397"/>
-<area shape="rect" id="node23" title=" " alt="" coords="292,281,356,307"/>
-<area shape="rect" id="node24" title=" " alt="" coords="380,281,463,307"/>
-<area shape="rect" id="node25" title=" " alt="" coords="553,452,618,479"/>
-<area shape="rect" id="node26" title=" " alt="" coords="2357,370,2416,397"/>
-<area shape="rect" id="node27" title=" " alt="" coords="487,281,630,307"/>
-<area shape="rect" id="node28" title=" " alt="" coords="522,370,609,397"/>
-<area shape="rect" id="node29" title=" " alt="" coords="2567,452,2644,479"/>
-<area shape="rect" id="node30" title=" " alt="" coords="655,281,719,307"/>
-<area shape="rect" id="node31" title=" " alt="" coords="2095,370,2158,397"/>
-<area shape="rect" id="node32" title=" " alt="" coords="743,281,811,307"/>
-<area shape="rect" id="node33" title=" " alt="" coords="835,281,919,307"/>
-<area shape="rect" id="node34" title=" " alt="" coords="943,281,1091,307"/>
-<area shape="rect" id="node35" title=" " alt="" coords="2182,363,2333,404"/>
-<area shape="rect" id="node36" title=" " alt="" coords="1115,273,1266,315"/>
-<area shape="rect" id="node37" href="$read__pix_8hpp.html" title="Class decleartion for reading pixhawk data." alt="" coords="1443,281,1549,307"/>
-<area shape="rect" id="node46" href="$mocap_8hpp.html" title="Class declaration for UDP socket as a lifecycle node." alt="" coords="2274,281,2369,307"/>
-<area shape="rect" id="node50" href="$vio_8hpp.html" title="Class decleration for Intel Realsense T265 tracking camera as a lifecycle node." alt="" coords="1777,281,1847,307"/>
-<area shape="rect" id="node38" title=" " alt="" coords="685,370,745,397"/>
-<area shape="rect" id="node39" title=" " alt="" coords="769,370,855,397"/>
-<area shape="rect" id="node40" title=" " alt="" coords="879,370,1060,397"/>
-<area shape="rect" id="node41" title=" " alt="" coords="1900,363,2071,404"/>
-<area shape="rect" id="node43" title=" " alt="" coords="403,452,477,479"/>
-<area shape="rect" id="node44" title=" " alt="" coords="133,452,280,479"/>
-<area shape="rect" id="node45" title=" " alt="" coords="304,452,379,479"/>
-<area shape="rect" id="node47" href="$udp__driver_8hpp.html" title="Class decleration for UDP driver." alt="" coords="2694,370,2813,397"/>
-<area shape="rect" id="node49" href="$PID__OMEGA_8hpp.html" title="PID with angular veocities for the QRBP." alt="" coords="2895,452,3023,479"/>
+<area shape="rect" id="node1" title="Control node definition. Runs all the control algorithms. Adds as a hub for all the control actions." alt="" coords="3078,5,3265,61"/>
+<area shape="rect" id="node2" href="$control_8hpp.html" title="Class declaration for computing and publishing the control." alt="" coords="3124,109,3219,136"/>
+<area shape="rect" id="node3" title=" " alt="" coords="1708,191,1840,218"/>
+<area shape="rect" id="node4" href="$vehicle__class_8hpp.html" title="Header for the vehicle class object." alt="" coords="1825,594,1963,621"/>
+<area shape="rect" id="node7" href="$px4__defines_8hpp.html" title="Contains useful constant defines for use in the flight stack in a central location." alt="" coords="3161,676,3289,703"/>
+<area shape="rect" id="node9" title=" " alt="" coords="2759,758,2834,785"/>
+<area shape="rect" id="node10" title=" " alt="" coords="3209,184,3387,225"/>
+<area shape="rect" id="node11" title=" " alt="" coords="3411,184,3590,225"/>
+<area shape="rect" id="node12" title=" " alt="" coords="3614,184,3785,225"/>
+<area shape="rect" id="node13" title=" " alt="" coords="3809,184,3979,225"/>
+<area shape="rect" id="node14" title=" " alt="" coords="4004,191,4043,218"/>
+<area shape="rect" id="node15" href="$global__helpers_8hpp.html" title="Inline functions for all the classes of the flighstack to use." alt="" coords="2940,676,3085,703"/>
+<area shape="rect" id="node21" href="$flight__bridge_8hpp.html" title=" " alt="" coords="4067,191,4198,218"/>
+<area shape="rect" id="node22" href="$flight__params_8hpp.html" title="Header file for the main flight parameters that will be used for the entire controller." alt="" coords="2707,594,2846,621"/>
+<area shape="rect" id="node27" href="$control__config_8hpp.html" title="Just a header file for configuring which platform and controller to pick during compilation." alt="" coords="2671,191,2813,218"/>
+<area shape="rect" id="node5" title=" " alt="" coords="2399,758,2466,785"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,758,68,785"/>
+<area shape="rect" id="node8" title=" " alt="" coords="3261,758,3327,785"/>
+<area shape="rect" id="node16" title=" " alt="" coords="2858,758,2938,785"/>
+<area shape="rect" id="node17" title=" " alt="" coords="2962,758,3021,785"/>
+<area shape="rect" id="node18" title=" " alt="" coords="3045,758,3119,785"/>
+<area shape="rect" id="node19" title=" " alt="" coords="3144,758,3236,785"/>
+<area shape="rect" id="node20" title=" " alt="" coords="2272,758,2375,785"/>
+<area shape="rect" id="node23" title=" " alt="" coords="2491,758,2564,785"/>
+<area shape="rect" id="node24" title=" " alt="" coords="2589,758,2735,785"/>
+<area shape="rect" id="node25" title=" " alt="" coords="2649,676,2715,703"/>
+<area shape="rect" id="node26" title=" " alt="" coords="2739,676,2814,703"/>
+<area shape="rect" id="node28" href="$PID__OMEGA_8hpp.html" title="PID with angular veocities for the QRBP." alt="" coords="2510,273,2638,300"/>
+<area shape="rect" id="node29" href="$control__algorithm__base_8hpp.html" title="Utilities for Controller Base Definition." alt="" coords="1915,505,2118,531"/>
+<area shape="rect" id="node44" href="$PID__OMEGA__members_8hpp.html" title="PID with angular velocities controller class members." alt="" coords="2271,423,2469,449"/>
+<area shape="rect" id="node47" href="$PID__OMEGA__logger_8hpp.html" title="Logger for the PID controller." alt="" coords="2487,348,2661,375"/>
+<area shape="rect" id="node49" href="$piecewise__polynomial__trajectory_8hpp.html" title="Header file for piecewise polynomial trajectory." alt="" coords="2675,497,2841,539"/>
+<area shape="rect" id="node30" href="$helper__functions_8hpp.html" title="Definitions of some standard templates used in all controllers." alt="" coords="1937,676,2096,703"/>
+<area shape="rect" id="node31" title=" " alt="" coords="93,758,149,785"/>
+<area shape="rect" id="node32" title=" " alt="" coords="173,758,295,785"/>
+<area shape="rect" id="node33" title=" " alt="" coords="320,758,471,785"/>
+<area shape="rect" id="node34" title=" " alt="" coords="495,758,701,785"/>
+<area shape="rect" id="node35" title=" " alt="" coords="725,758,913,785"/>
+<area shape="rect" id="node36" title=" " alt="" coords="938,758,1135,785"/>
+<area shape="rect" id="node37" title=" " alt="" coords="1159,751,1351,792"/>
+<area shape="rect" id="node38" title=" " alt="" coords="1375,751,1530,792"/>
+<area shape="rect" id="node39" title=" " alt="" coords="1554,751,1709,792"/>
+<area shape="rect" id="node40" title=" " alt="" coords="1733,758,1970,785"/>
+<area shape="rect" id="node41" title=" " alt="" coords="1994,758,2061,785"/>
+<area shape="rect" id="node42" title=" " alt="" coords="2085,758,2156,785"/>
+<area shape="rect" id="node43" title=" " alt="" coords="2181,758,2247,785"/>
+<area shape="rect" id="node45" href="$qrbp_8hpp.html" title="Vehicle Information of the QRBP with the NACA 0012 wings and the Velox V2808 kv1300 motors used in al..." alt="" coords="2193,594,2272,621"/>
+<area shape="rect" id="node46" href="$aero__qrbp_8hpp.html" title="Aerodynamics class for all algorithms to use with the grbp platform of ACSL." alt="" coords="2193,505,2307,531"/>
+<area shape="rect" id="node48" href="$flight__log_8hpp.html" title="Utilities for logging flight data." alt="" coords="2412,676,2523,703"/>
+<area shape="rect" id="node50" href="$user__defined__trajectory__base_8hpp.html" title="User Defined Trajectory Base Definition." alt="" coords="2361,587,2536,628"/>
 </map>

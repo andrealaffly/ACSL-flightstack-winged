@@ -1,9 +1,9 @@
 <map id="_qrbp_::_pid_omega_::pid_omega" name="_qrbp_::_pid_omega_::pid_omega">
 <area shape="rect" id="node1" title="public controller_base" alt="" coords="1363,625,1515,666"/>
 <area shape="rect" id="node2" href="$class__control__algorithm__base___1_1controller__base.html" title="controller_base definition" alt="" coords="1095,211,1269,253"/>
-<area shape="rect" id="node3" href="$structflight__params.html" title=" " alt="" coords="760,27,871,53"/>
+<area shape="rect" id="node3" href="$structflight__params.html" title="If you are adding more parameters to your flight in /src/acsl_flight/params/flight_params...." alt="" coords="760,27,871,53"/>
 <area shape="rect" id="node6" href="$class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory.html" title="Piecwise polynomial trajectory." alt="" coords="1095,469,1269,525"/>
-<area shape="rect" id="node4" href="$structPiecewisePolynomialTrajectoryInfo.html" title=" " alt="" coords="321,27,571,53"/>
+<area shape="rect" id="node4" href="$structPiecewisePolynomialTrajectoryInfo.html" title="Struct containing the trajectory info coming from the .json file." alt="" coords="321,27,571,53"/>
 <area shape="rect" id="node5" href="$struct__qrbp___1_1__pid__omega___1_1controller__integrated__state__members.html" title="Structure for the members that are mapped tot he rk4 vector after integration." alt="" coords="729,632,902,688"/>
 <area shape="rect" id="node17" href="$class__qrbp___1_1__pid__omega___1_1pid__omega__logger.html" title="PID_OMEGA logger class." alt="" coords="1103,735,1261,777"/>
 <area shape="rect" id="node7" href="$class__user__defined__trajectory__base___1_1trajectory__base.html" title="base trajectory for pixhawk" alt="" coords="724,478,907,519"/>

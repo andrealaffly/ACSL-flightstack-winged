@@ -140,7 +140,7 @@ public:
     */
     /**
      * @brief NonBlocking receive operation
-     * @param Functor func
+     * @param func
      */
     void asyncReceive(Functor func);
 

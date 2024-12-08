@@ -1,3 +1,4 @@
+///@cond
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        flight_params.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 30, 2024
+ * File:        flight_params.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        April 30, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -37,6 +38,11 @@
 
 #ifndef FLIGHT_PARAMS_HPP_
 #define FLIGHT_PARAMS_HPP_
+
+/**
+ * @file flight_params.hpp
+ * @brief Header file for the main flight parameters that will be used for the entire controller.
+ */
 
 #include <string>
 #include <fstream>
@@ -60,6 +66,10 @@ using json = nlohmann::json;
 using namespace _flightstack_;
 
 // Struct containing the trajectory info coming from the .json file 
+/**
+ * @struct PiecewisePolynomialTrajectoryInfo
+ * @brief Struct containing the trajectory info coming from the .json file 
+ */
 struct PiecewisePolynomialTrajectoryInfo {
     // times at which I want to reach the waypoints
 	std::vector<double> waypoint_times_; 
@@ -73,6 +83,11 @@ struct PiecewisePolynomialTrajectoryInfo {
 
 // If you are adding more parameters to your flight in /src/acsl_flight/params/flight_params.json,
 // please include it here and modify as needed in the flight_main.cpp/hpp.
+/**
+ * @struct flight_params
+ * @brief If you are adding more parameters to your flight in /src/acsl_flight/params/flight_params.json,
+ * please include it here and modify as needed in the flight_main.cpp/hpp.
+ */
 struct flight_params {
 
     // Piecewise Polynomial Trajectory Info
@@ -119,6 +134,10 @@ struct flight_params {
 namespace _flight_params_
 {
 // Class for handling flight parameters
+/**
+ * @class FlightConfigReader
+ * @brief Class for handling flight parameters
+ */
 class FlightConfigReader {
 public:
     // Constructor
@@ -131,6 +150,10 @@ public:
     PiecewisePolynomialTrajectoryInfo readTrajectoryConfig(const std::string& fileName);
 
     // Method to print the flight parameters at the start of the code
+    /**
+     * @brief Method to print the flight parameters at the start of the code
+     * @param run_params 
+     */
     void printParameterTable(const flight_params& run_params);
     
 };

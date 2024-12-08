@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="structflight__params.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="structflight__params.html" target="_top" xlink:title="If you are adding more parameters to your flight in /src/acsl_flight/params/flight_params....">
 <polygon fill="white" stroke="black" points="566,-615.5 566,-634.5 649,-634.5 649,-615.5 566,-615.5"/>
 <text text-anchor="middle" x="607.5" y="-622.5" font-family="Helvetica,sans-Serif" font-size="10.00">flight_params</text>
 </a>
@@ -72,7 +72,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="structPiecewisePolynomialTrajectoryInfo.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="structPiecewisePolynomialTrajectoryInfo.html" target="_top" xlink:title="Struct containing the trajectory info coming from the .json file.">
 <polygon fill="white" stroke="black" points="237,-615.5 237,-634.5 424,-634.5 424,-615.5 237,-615.5"/>
 <text text-anchor="middle" x="330.5" y="-622.5" font-family="Helvetica,sans-Serif" font-size="10.00">PiecewisePolynomialTrajectoryInfo</text>
 </a>

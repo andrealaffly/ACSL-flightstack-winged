@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,12 +22,12 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        flight_main.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 16, 2024
- * For info:    Andrea L'Afflitto 
+ * File:        flight_main.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        April 16, 2024 \n 
+ * For info:    Andrea L'Afflitto \n 
  *              a.lafflitto@vt.edu
  * 
  * Description: Header file for the main function that just sources all 
@@ -37,6 +38,11 @@
 
 #ifndef FLIGHT_MAIN_HPP_
 #define FLIGHT_MAIN_HPP_
+
+/**
+ * @file flight_main.hpp
+ * @brief Header file for the main function that just sources all the other header files.
+ */
 
 #include "rclcpp/rclcpp.hpp"
 #include "flight_bridge.hpp"

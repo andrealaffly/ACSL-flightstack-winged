@@ -13,10 +13,10 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="68.5,-156.5 68.5,-197.5 233.5,-197.5 233.5,-156.5 68.5,-156.5"/>
-<text text-anchor="start" x="76.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
-<text text-anchor="start" x="76.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/include</text>
-<text text-anchor="middle" x="151" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/flight_bridge/flight_bridge.hpp</text>
+<polygon fill="#bfbfbf" stroke="black" points="149.5,-156.5 149.5,-197.5 314.5,-197.5 314.5,-156.5 149.5,-156.5"/>
+<text text-anchor="start" x="157.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
+<text text-anchor="start" x="157.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/include</text>
+<text text-anchor="middle" x="232" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/flight_bridge/flight_bridge.hpp</text>
 </a>
 </g>
 </g>
@@ -34,13 +34,13 @@
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M116.6,-149.78C105.5,-139.84 93.79,-128.72 84.81,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="114.33,-152.45 124.15,-156.43 118.96,-147.19 114.33,-152.45"/>
+<path fill="none" stroke="midnightblue" d="M180.95,-152.05C158.6,-141.57 132.72,-129.42 111.58,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="179.74,-155.35 190.28,-156.43 182.71,-149.01 179.74,-155.35"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="flight__main_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="flight__main_8hpp.html" target="_top" xlink:title="Header file for the main function that just sources all the other header files.">
 <polygon fill="white" stroke="black" points="155.5,-78.5 155.5,-119.5 308.5,-119.5 308.5,-78.5 155.5,-78.5"/>
 <text text-anchor="start" x="163.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="163.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/include</text>
@@ -49,10 +49,10 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
-<g id="edge4" class="edge">
+<g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M179.25,-149.49C189.76,-139.63 201.49,-128.63 211.21,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="176.76,-147.03 171.86,-156.43 181.55,-152.14 176.76,-147.03"/>
+<path fill="none" stroke="midnightblue" d="M232,-146.3C232,-137.3 232,-127.65 232,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="228.5,-146.43 232,-156.43 235.5,-146.43 228.5,-146.43"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
@@ -66,16 +66,10 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
-<g id="edge6" class="edge">
+<g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M223.42,-153.44C258.05,-142.66 299.11,-129.87 332.38,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="222.34,-150.11 213.84,-156.43 224.42,-156.8 222.34,-150.11"/>
-</g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge2" class="edge">
-<title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M104.32,-126.15C115.42,-136.08 127.13,-147.21 136.13,-156.43"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="106.59,-123.49 96.77,-119.51 101.96,-128.74 106.59,-123.49"/>
+<path fill="none" stroke="midnightblue" d="M283.07,-152.19C305.62,-141.67 331.8,-129.47 353.17,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="281.56,-149.03 273.98,-156.43 284.52,-155.37 281.56,-149.03"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -89,7 +83,7 @@
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M70,-68.3C70,-59.3 70,-49.65 70,-41.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="66.5,-68.43 70,-78.43 73.5,-68.43 66.5,-68.43"/>
@@ -106,7 +100,7 @@
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
-<g id="edge5" class="edge">
+<g id="edge4" class="edge">
 <title>Node4&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M232,-68.3C232,-59.3 232,-49.65 232,-41.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="228.5,-68.43 232,-78.43 235.5,-68.43 228.5,-68.43"/>

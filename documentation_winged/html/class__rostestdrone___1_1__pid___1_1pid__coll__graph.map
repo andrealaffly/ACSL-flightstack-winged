@@ -1,9 +1,9 @@
 <map id="_rostestdrone_::_pid_::pid" name="_rostestdrone_::_pid_::pid">
 <area shape="rect" id="node1" title="class pid : public controller_base, public blackbox" alt="" coords="1047,585,1200,626"/>
 <area shape="rect" id="node2" href="$class__control__algorithm__base___1_1controller__base.html" title="controller_base definition" alt="" coords="779,149,953,190"/>
-<area shape="rect" id="node3" href="$structflight__params.html" title=" " alt="" coords="444,23,555,49"/>
+<area shape="rect" id="node3" href="$structflight__params.html" title="If you are adding more parameters to your flight in /src/acsl_flight/params/flight_params...." alt="" coords="444,23,555,49"/>
 <area shape="rect" id="node5" href="$class__piecewise__polynomial__trajectory___1_1piecewise__polynomial__trajectory.html" title="Piecwise polynomial trajectory." alt="" coords="779,387,953,443"/>
-<area shape="rect" id="node4" href="$structPiecewisePolynomialTrajectoryInfo.html" title=" " alt="" coords="5,23,255,49"/>
+<area shape="rect" id="node4" href="$structPiecewisePolynomialTrajectoryInfo.html" title="Struct containing the trajectory info coming from the .json file." alt="" coords="5,23,255,49"/>
 <area shape="rect" id="node6" href="$class__user__defined__trajectory__base___1_1trajectory__base.html" title="base trajectory for pixhawk" alt="" coords="408,453,591,494"/>
 <area shape="rect" id="node7" title=" " alt="" coords="91,460,169,487"/>
 <area shape="rect" id="node8" title=" " alt="" coords="459,524,539,551"/>

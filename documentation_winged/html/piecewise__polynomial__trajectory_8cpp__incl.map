@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title="Implementation of the piecewise polynomial trajectory." alt="" coords="3333,5,3574,76"/>
 <area shape="rect" id="node2" href="$piecewise__polynomial__trajectory_8hpp.html" title="Header file for piecewise polynomial trajectory." alt="" coords="3370,124,3537,165"/>
 <area shape="rect" id="node3" href="$user__defined__trajectory__base_8hpp.html" title="User Defined Trajectory Base Definition." alt="" coords="3113,213,3287,255"/>
-<area shape="rect" id="node35" href="$flight__params_8hpp.html" title=" " alt="" coords="3384,221,3523,247"/>
+<area shape="rect" id="node35" href="$flight__params_8hpp.html" title="Header file for the main flight parameters that will be used for the entire controller." alt="" coords="3384,221,3523,247"/>
 <area shape="rect" id="node40" href="$global__helpers_8hpp.html" title="Inline functions for all the classes of the flighstack to use." alt="" coords="3731,303,3877,329"/>
 <area shape="rect" id="node4" title=" " alt="" coords="3054,467,3157,493"/>
 <area shape="rect" id="node5" href="$helper__functions_8hpp.html" title="Definitions of some standard templates used in all controllers." alt="" coords="1583,303,1742,329"/>

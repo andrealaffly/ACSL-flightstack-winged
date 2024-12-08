@@ -1,7 +1,7 @@
 <map id="ACSL&#45;flightstack&#45;winged/src/acsl_flight/include/piecewise_polynomial_trajectory/piecewise_polynomial_trajectory.hpp" name="ACSL&#45;flightstack&#45;winged/src/acsl_flight/include/piecewise_polynomial_trajectory/piecewise_polynomial_trajectory.hpp">
 <area shape="rect" id="node1" title="Header file for piecewise polynomial trajectory." alt="" coords="3320,5,3587,76"/>
 <area shape="rect" id="node2" href="$user__defined__trajectory__base_8hpp.html" title="User Defined Trajectory Base Definition." alt="" coords="3113,124,3287,165"/>
-<area shape="rect" id="node34" href="$flight__params_8hpp.html" title=" " alt="" coords="3384,131,3523,158"/>
+<area shape="rect" id="node34" href="$flight__params_8hpp.html" title="Header file for the main flight parameters that will be used for the entire controller." alt="" coords="3384,131,3523,158"/>
 <area shape="rect" id="node39" href="$global__helpers_8hpp.html" title="Inline functions for all the classes of the flighstack to use." alt="" coords="3731,213,3877,240"/>
 <area shape="rect" id="node3" title=" " alt="" coords="3054,377,3157,404"/>
 <area shape="rect" id="node4" href="$helper__functions_8hpp.html" title="Definitions of some standard templates used in all controllers." alt="" coords="1583,213,1742,240"/>

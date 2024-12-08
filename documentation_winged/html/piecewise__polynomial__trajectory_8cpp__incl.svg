@@ -102,7 +102,7 @@ var sectionId = 'dynsection-0';
 <!-- Node35 -->
 <g id="node35" class="node">
 <title>Node35</title>
-<g id="a_node35"><a xlink:href="flight__params_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node35"><a xlink:href="flight__params_8hpp.html" target="_top" xlink:title="Header file for the main flight parameters that will be used for the entire controller.">
 <polygon fill="white" stroke="black" points="2534,-185 2534,-204 2638,-204 2638,-185 2534,-185"/>
 <text text-anchor="middle" x="2586" y="-192" font-family="Helvetica,sans-Serif" font-size="10.00">flight_params.hpp</text>
 </a>

@@ -115,7 +115,7 @@ var sectionId = 'dynsection-1';
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="structflight__params.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="structflight__params.html" target="_top" xlink:title="If you are adding more parameters to your flight in /src/acsl_flight/params/flight_params....">
 <polygon fill="white" stroke="black" points="566,-580.5 566,-599.5 649,-599.5 649,-580.5 566,-580.5"/>
 <text text-anchor="middle" x="607.5" y="-587.5" font-family="Helvetica,sans-Serif" font-size="10.00">flight_params</text>
 </a>
@@ -156,7 +156,7 @@ var sectionId = 'dynsection-1';
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="structPiecewisePolynomialTrajectoryInfo.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="structPiecewisePolynomialTrajectoryInfo.html" target="_top" xlink:title="Struct containing the trajectory info coming from the .json file.">
 <polygon fill="white" stroke="black" points="237,-580.5 237,-599.5 424,-599.5 424,-580.5 237,-580.5"/>
 <text text-anchor="middle" x="330.5" y="-587.5" font-family="Helvetica,sans-Serif" font-size="10.00">PiecewisePolynomialTrajectoryInfo</text>
 </a>
