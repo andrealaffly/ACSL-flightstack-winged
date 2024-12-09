@@ -79,6 +79,7 @@
 #include "continuous_lyapunov_equation.hpp"
 
 /**
+ * @file continuous_lyapunov_equation.cpp   
  * @brief The following code uses a different convention from MATLAB
  * 
  * This code solves the equation: `AᵀX + XA + Q = 0`

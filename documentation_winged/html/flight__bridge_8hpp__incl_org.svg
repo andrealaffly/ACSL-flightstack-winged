@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Utilities for multithreading.">
 <polygon fill="#bfbfbf" stroke="black" points="1565.17,-246.5 1565.17,-287.5 1730.17,-287.5 1730.17,-246.5 1565.17,-246.5"/>
 <text text-anchor="start" x="1573.17" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">ACSL&#45;flightstack&#45;winged</text>
 <text text-anchor="start" x="1573.17" y="-264.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/acsl_flight/include</text>
@@ -340,7 +340,7 @@
 <!-- Node29 -->
 <g id="node29" class="node">
 <title>Node29</title>
-<g id="a_node29"><a xlink:href="flight__params_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node29"><a xlink:href="flight__params_8hpp.html" target="_top" xlink:title="Header file for the main flight parameters that will be used for the entire controller.">
 <polygon fill="white" stroke="black" points="642.67,-118 642.67,-137 746.67,-137 746.67,-118 642.67,-118"/>
 <text text-anchor="middle" x="694.67" y="-125" font-family="Helvetica,sans-Serif" font-size="10.00">flight_params.hpp</text>
 </a>

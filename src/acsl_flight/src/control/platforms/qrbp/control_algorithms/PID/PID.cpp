@@ -51,8 +51,9 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
 
 #include "PID.hpp"
 /**
- * @file PID for the QRBP
- * @brief Inherts the class controller_base for the basic functionality that is to be used for all control algorithms.
+ * @file PID.cpp
+ * @brief PID for the QRBP
+ * Inherts the class controller_base for the basic functionality that is to be used for all control algorithms.
  * 
  * Classes used are referenced in @ref PID.hpp
  */
