@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,7 +22,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond
  /**********************************************************************************************************************  
  * Part of the code in this file leverages the following material.
  *
@@ -42,9 +43,9 @@
  **********************************************************************************************************************/
 
 /***********************************************************************************************************************
- * File:        udp_socket.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 21, 2024
+ * File:        udp_socket.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        April 21, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -55,6 +56,11 @@
 
 #ifndef UDP_SOCKET_HPP_
 #define UDP_SOCKET_HPP_
+
+/**
+ * @file udp_socket.hpp
+ * @brief Class declaration for UDP socket creation using IoContext.
+ */
 
 #include <array>
 #include <string>
@@ -80,6 +86,10 @@ namespace _udp_driver_
 
 using Functor = std::function<void (const std::vector<uint8_t> &)>;
 
+/**
+ * @class UdpSocket
+ * @brief UdpSocket class
+ */
 class UdpSocket
 {
 public:
@@ -120,11 +130,18 @@ public:
     /*
     * NonBlocking Send Operation
     */
+    /**
+     * @brief NonBlocing Send Operation
+     */
     void asyncSend(std::vector<uint8_t> & buff);
 
     /*
     * NonBlocking Receive Operation
     */
+    /**
+     * @brief NonBlocking receive operation
+     * @param func
+     */
     void asyncReceive(Functor func);
 
 private:

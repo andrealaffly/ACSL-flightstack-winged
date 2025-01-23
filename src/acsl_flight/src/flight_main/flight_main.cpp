@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        flight_main.cpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 16, 2024
+ * File:        flight_main.cpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        April 16, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -36,7 +37,12 @@
 
 #include "flight_main.hpp"
 #include "global_helpers.hpp"
-
+/**
+ * @file flight_main.cpp
+ * @brief Main function to initiate ROS2
+ * 
+ * Classes used are referenced in @ref flight_main.hpp and @ref global_helpers.hpp
+ */
 using namespace _flight_bridge_;
 using namespace _flightstack_;
 

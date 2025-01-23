@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        px4_defines.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        September 11, 2024
+ * File:        px4_defines.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        September 11, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -36,6 +37,11 @@
 
 #ifndef _PX4_DEFINES_
 #define _PX4_DEFINES_
+
+/**
+ * @file px4_defines.hpp
+ * @brief Contains useful constant defines for use in the flight stack in a central location
+ */
 
 #include <cstdint>   // For uint8_t, uint16_t
 

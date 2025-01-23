@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        read_pix.cpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 12, 2024
+ * File:        read_pix.cpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        April 12, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -35,7 +36,12 @@
  **********************************************************************************************************************/
 
 #include "read_pix.hpp"
-
+/**
+ * @file  read_pix.cpp
+ * @brief Class definiton for reading pixhawk data.
+ * 
+ * Classes used are referenced in @ref read_pix.hpp
+ */
 namespace _read_pix_
 {
     /***********************************************************************************************/

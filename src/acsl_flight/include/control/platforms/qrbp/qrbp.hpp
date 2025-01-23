@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        qrbp.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        May 29, 2024
+ * File:        qrbp.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        May 29, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -48,6 +49,10 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
         _________\//////___\///________\///__\/////////////____\///______________
 */
 
+/**
+ * @file qrbp.hpp
+ * @brief Vehicle Information of the QRBP with the NACA 0012 wings and the Velox V2808 kv1300 motors used in all the control algorithms
+ */
 #ifndef QRBP_HPP_
 #define QRBP_HPP_
 
@@ -56,6 +61,9 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
 #include <math.h>
 #include "helper_functions.hpp"  // Include the helper functions for using the rotation matrices
 
+/**
+ * @namespace qrbp
+ */
 namespace _qrbp_{
         
     // Constants
@@ -282,6 +290,13 @@ namespace _qrbp_{
     const Eigen::Quaterniond PITCH_90_INV = PITCH_90.inverse();
 
     // Inline function to compute the switch from Quadcopter mode to Biplane Mode and vice versa
+    /**
+     * @brief Inline function to compute the switch from Quadcopter mode to Biplane Mode and vice versa
+     * 
+     * @param pitch 
+     * @param is_biplane 
+     * @param mnt_btn 
+     */
     inline void QRBPswitchFun(double pitch, bool& is_biplane, bool& mnt_btn)
     {
         // Uncomment based on your requirement
@@ -323,6 +338,16 @@ namespace _qrbp_{
 
     // Inline Function to update the biplane mode states - Goes in the inner loop bridge.
     // Need to modify. This function is written assuming that we are only going in forward flight in a straight line!!!
+    /**
+     * @brief Inline Function to update the biplane mode states - Goes in the inner loop bridge.
+     * 
+     * Need to modify. This function is written assuming that we are only going in forward flight in a straight line!!!
+     * 
+     * @param eta 
+     * @param omega 
+     * @param eta_b 
+     * @param omega_b 
+     */
     inline void update_states_to_biplane_mode(const Vector3d eta,const Vector3d omega, 
                                               Vector3d& eta_b, Vector3d& omega_b) 
     {
@@ -402,6 +427,14 @@ namespace _qrbp_{
     }
 
     // Code written by Giri Mugundan Kumar to switch states - yet to be debugged
+    /**
+     * @brief Code written by Giri Mugundan Kumar to switch states - yet to be debugged
+     * 
+     * @param q_q 
+     * @param omega 
+     * @param eta_b 
+     * @param omega_b 
+     */
     inline void update_states_to_biplane_quaternion_gmk(const Eigen::Quaterniond q_q, const Vector3d omega,
                                                         Vector3d& eta_b, Vector3d& omega_b)
     {
@@ -460,6 +493,14 @@ namespace _qrbp_{
     }
 
     // Code from the PX4 Repository to switch states - might need debugging
+    /**
+     * @brief Code from the PX4 Repository to switch states - might need debugging
+     * 
+     * @param q_q 
+     * @param omega 
+     * @param eta_b 
+     * @param omega_b 
+     */
     inline void update_states_to_biplane_quaternions(const Eigen::Quaterniond q_q, const Vector3d omega, 
                                                      Vector3d& eta_b, Vector3d& omega_b)
     {

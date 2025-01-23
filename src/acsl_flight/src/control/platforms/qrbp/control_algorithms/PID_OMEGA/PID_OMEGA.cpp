@@ -1,3 +1,4 @@
+///@cond
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        PID_OMEGA.cpp
- * Author:      Giri Mugundan Kumar
- * Date:        July 25, 2024
+ * File:        PID_OMEGA.cpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        July 25, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -50,10 +51,22 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
 
 #include "PID_OMEGA.hpp"
 
+/**
+ * @file PID_OMEGA.cpp
+ * @brief PID  with angular velocities for the QRBP.
+ * 
+ * Inherts the class controller_base for the basic functionality that is to be used for all control algorithms.
+ * 
+ * Classes used are referenced in @ref PID_OMEGA.hpp
+ */
+
 namespace _qrbp_{
 namespace _pid_omega_{
 
 // Constructor - Take care to initialize the logger
+/**
+ * @class pid_omega
+ */
 pid_omega::pid_omega(flight_params* p, const std::string & controller_log_dir_) :
            controller_base(p), ud(p), logger(&cim, &csm, &control_input, controller_log_dir_) {
 

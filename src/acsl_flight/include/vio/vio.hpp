@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,7 +22,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /**********************************************************************************************************************  
  * Part of the code in this file leverages the following material.
  *
@@ -42,10 +43,10 @@
  **********************************************************************************************************************/
 
 /***********************************************************************************************************************
- * File:        vio.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        September 05, 2024
- * For info:    Andrea L'Afflitto 
+ * File:        vio.hpp \n 
+ * Author:      Giri Mugundan Kumar \n  
+ * Date:        September 05, 2024 \n 
+ * For info:    Andrea L'Afflitto \n 
  *              a.lafflitto@vt.edu
  * 
  * Description: Class declaration for Intel Realsense T265 tracking camera as a lifecycle node.
@@ -55,6 +56,11 @@
 
 #ifndef VIO_HPP_
 #define VIO_HPP_
+
+/**
+ * @file vio.hpp
+ * @brief Class decleration for Intel Realsense T265 tracking camera as a lifecycle node.
+ */
 
 #include "control_config.hpp"                     // Include this for creating the logging file.
 #include "librealsense2/rs.hpp"										// Include for the librealsense2 sdk.
@@ -116,6 +122,10 @@ namespace _t265_
 {
 
 // Struct for vio states that come over the USB 3.0 Link
+/**
+ * @struct vio_states
+ * @brief Struct for vio states that come over the USB 3.0 Link
+ */
 struct vio_states
 {
 	double control_time;						// Common synced controller time from control thread
@@ -147,6 +157,10 @@ namespace _vio_
 {
 
 /// \brief VioT265Node class which can recieve position tracking from the Realsense T265
+/**
+ * @class VioT265Node
+ * @brief VioT265Node class which can recieve position tracking from the Realsense T265
+ */
 class VioT265Node final
 	:	public lc::LifecycleNode, public fl::blackbox
 {

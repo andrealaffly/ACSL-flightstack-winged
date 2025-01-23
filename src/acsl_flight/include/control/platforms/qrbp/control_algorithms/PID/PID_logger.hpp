@@ -1,3 +1,4 @@
+///@cond
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        PID_logger.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        June 26, 2024
+ * File:        PID_logger.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        June 26, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -47,6 +48,12 @@ ________/\\\__________/\\\\\\\\\______/\\\\\\\\\\\\\____/\\\\\\\\\\\\\___
         _________\//////___\///________\///__\/////////////____\///______________
 */
 
+/**
+ * @file PID_logger.hpp
+ * @brief logging for the PID controller
+ * 
+ * Inherits the Blackbox class for logging and takes in the internal members for the PID.
+ */
 #ifndef CONTROLLERS_PID_LOGGER_HPP_
 #define CONTROLLERS_PID_LOGGER_HPP_
 
@@ -61,6 +68,10 @@ using namespace _flight_log_;
 namespace _qrbp_{
 namespace _pid_{
 
+/**
+ * @class pid_logger
+ * @brief Logger for the pid
+ */
 class pid_logger : public blackbox
 {
 public:
@@ -71,8 +82,22 @@ public:
                const std::string & controller_log_dir_);
 
     // Implementing functions from blackbox
+    /**
+     * @brief Initializing headers
+     * @param None
+     */
     void logInitHeaders();
+
+    /**
+     * @brief Initialize logging
+     * @param None
+     */
     bool logInitLogging();
+
+    /**
+     * @brief logging data
+     * @param None
+     */
     void logLogData();
 
 private:

@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        PID_TD_logger.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        July 10, 2024
+ * File:        PID_TD_logger.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        July 10, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -46,6 +47,10 @@
 #ifndef CONTROLLERS_PID_TD_LOGGER_HPP_
 #define CONTROLLERS_PID_TD_LOGGER_HPP_
 
+/**
+ * @file PID_TD_logger.hpp
+ * @brief Logging for the PID controller.
+ */
 #include "PID_TD_members.hpp"         // Include for all the members of the PID class
 #include "flight_log.hpp"             // Include for the virtual class for logging
 #include "global_helpers.hpp"         // Include for the logging functionality
@@ -57,6 +62,10 @@ using namespace _flight_log_;
 namespace _rostestdrone_{
 namespace _pid_{
 
+/**
+ * @class pid_logger
+ * @brief Class to log PID
+ */
 class pid_logger : public blackbox
 {
 public:
@@ -67,8 +76,15 @@ public:
                const std::string & controller_log_dir_);
 
     // Implementing functions from blackbox
+    /**
+     * @brief Initialize headers
+     */
     void logInitHeaders();
     bool logInitLogging();
+
+    /**
+     * @brief Start loggin data
+     */
     void logLogData();
 
 private:

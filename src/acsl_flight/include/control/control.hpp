@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        control.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 12, 2024
+ * File:        control.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        April 12, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -36,6 +37,13 @@
 
 #ifndef CONTROL_HPP_
 #define CONTROL_HPP_
+
+/**
+ * @file control.hpp
+ * @brief Class declaration for computing and publishing the control
+ * 
+ * Adds as a hub for all the control actions.
+ */
 
 #include "rclcpp/rclcpp.hpp"   // ROS2 Client Library C++ header
 #include "vehicle_class.hpp"
@@ -77,6 +85,10 @@ public:
   virtual ~controlNode() = default;
 
 private: 
+  /**
+   * @brief control_timer_callback_
+   * @param None
+   */
   void control_timer_callback_();
 
   double get_rk4_timestep();
@@ -92,6 +104,10 @@ private:
   std::atomic<double> time_current_; 
 
   /// Update function for the current time
+  /**
+   * @brief Update function for the current time
+   * @param None
+   */
   void updateCurrentTime();
 
   /// Timer for running the control node at a fixed rate
@@ -110,25 +126,57 @@ private:
   bool disarm_info_bool_ = false; // Boolean to Print out RCL_INFO if disarmed
 
   /// Function that runs the control loop
+  /**
+   * @brief Function that runs the control loop
+   * @param None
+   */
   void run();
 
   /// Function that computes the control from the control algorithms and publishes them
+  /**
+   * @brief Function that computes the control from the control algorithms and publishes them
+   * @param None
+   */
   void compute_and_publish_control();
 
   /// Function to arm the vehicle
+  /**
+   * @brief Function to arm the vehicle
+   * @param None
+   */
   void arm();
 
   /// Function to disarm the vehicle
+  /**
+   * @brief Function to disarm the vehicle
+   * @param None
+   */
   void disarm();
 
   /// Function to publish offboard control mode
+  /**
+   * @brief Function to publish offboard control mode
+   * @param None
+   */
   void publish_offboard_control_mode();
 
   /// Function to publish vehicle command 
   // -> switches to offboard mode and arms the vehicle
+  /**
+   * @brief Function to publish vehicle comman
+   * 
+   * switches to offboard mode and arms the vehicle
+   * 
+   * @param command 
+   * @param param1 
+   * @param param2 
+   */
   void publish_vehicle_command(uint16_t command, float param1 = 0.0, float param2 = 0.0);
 
   /// Function to publish motor thrust commands
+  /**
+   * @brief Function to publish motor thrust commands
+   */
   void publish_actuator_motors(const float t1,
                                const float t2,
                                const float t3,
@@ -147,6 +195,10 @@ private:
   flight_params* flight_params_ptr;
 
   /// Function to debug vehicle states to the screen.
+  /**
+   * @brief Function to debug vehicle states to the screen.
+   * @param None
+   */
   void debug2screen();
 
   /// ------- CREATE CONTROLLER OBJECT -------- ///

@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,11 +22,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
 /***********************************************************************************************************************
- * File:        global_helpers.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        September 12, 2024
+ * File:        global_helpers.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        September 12, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -36,6 +37,11 @@
 
 #ifndef GLOBAL_HELPERS_HPP_
 #define GLOBAL_HELPERS_HPP_
+
+/**
+ * @file global_helpers.hpp
+ * @brief Inline functions for all the classes of the flighstack to use.
+ */
 
 #include <iostream>     // For std::cout, std::cerr
 #include <string>       // For std::string
@@ -55,6 +61,10 @@ namespace _flightstack_
 
 // Function to print a single message of any type
 template <typename T>
+/**
+ * @brief Function to print a single message of any type
+ * @param msg 
+ */
 inline void FLIGHTSTACK_INFO(const T& msg)
 {
   std::cout << "[INFO] [--ACSL FLIGHTSTACK--] " << msg << " " << std::endl;
@@ -62,6 +72,11 @@ inline void FLIGHTSTACK_INFO(const T& msg)
 
 // Function to print a string and another data type together
 template <typename T1, typename T2>
+/**
+ * @brief Function to print a string and another data type together
+ * @param str 
+ * @param value 
+ */
 inline void FLIGHTSTACK_INFO(const T1& str, const T2& value)
 {
   std::cout << "[INFO] [--ACSL FLIGHTSTACK--] " << str << " " << value << " " << std::endl;
@@ -69,6 +84,11 @@ inline void FLIGHTSTACK_INFO(const T1& str, const T2& value)
 
 // Throttled single message
 template <typename T>
+/**
+ * @brief Throttled a single message
+ * @param msg 
+ * @param throttle_interval_ms 
+ */
 inline void FLIGHTSTACK_INFO(const T& msg, int throttle_interval_ms)
 {
     static auto last_time = std::chrono::steady_clock::now();
@@ -84,6 +104,12 @@ inline void FLIGHTSTACK_INFO(const T& msg, int throttle_interval_ms)
 
 // Throttled string and another data type
 template <typename T1, typename T2>
+/**
+ * @brief Throttled string and another data type
+ * @param str 
+ * @param value 
+ * @param throttle_interval_ms 
+ */
 inline void FLIGHTSTACK_INFO(const T1& str, const T2& value, int throttle_interval_ms)
 {
     static auto last_time = std::chrono::steady_clock::now();
@@ -99,6 +125,11 @@ inline void FLIGHTSTACK_INFO(const T1& str, const T2& value, int throttle_interv
 
 // Function to print a string and an Eigen matrix
 template <typename T, int Rows, int Cols>
+/**
+ * @brief Function to print a string and an Eigen matrix
+ * @param str 
+ * @param mat 
+ */
 inline void FLIGHTSTACK_INFO_MATRIX(const std::string& str, const Eigen::Matrix<T, Rows, Cols>& mat)
 {
     std::cout << "[INFO] [--ACSL FLIGHTSTACK--] \n" << str << ":\n" << mat << "\n" << std::endl;
@@ -106,6 +137,10 @@ inline void FLIGHTSTACK_INFO_MATRIX(const std::string& str, const Eigen::Matrix<
 
 // Function to print a single message of any type with carriage return
 template <typename T>
+/**
+ * @brief Function to print a single message of any type with carriage return
+ * @param msg 
+ */
 inline void FLIGHTSTACK_INFO_STREAM(const T& msg)
 {
   std::cout << COLOR_GREEN << "\r" << "[INFO] [--ACSL FLIGHTSTACK--] " << msg << " " << COLOR_RESET << std::flush;
@@ -113,6 +148,10 @@ inline void FLIGHTSTACK_INFO_STREAM(const T& msg)
 
 // Function to print a single message of any type with carriage return - NO TAG
 template <typename T>
+/**
+ * @brief Function to print a single message of any type with carriage return - NO TAG
+ * @param msg 
+ */
 inline void FLIGHTSTACK_INFO_STREAM_NO_TAG(const T& msg)
 {
   std::cout << COLOR_GREEN << "\r" << msg << " " << COLOR_RESET << std::flush;
@@ -121,6 +160,11 @@ inline void FLIGHTSTACK_INFO_STREAM_NO_TAG(const T& msg)
 
 // Function to print a string and another data type with carriage return
 template <typename T1, typename T2>
+/**
+ * @brief Function to print a string and another data type with carriage return
+ * @param str 
+ * @param value 
+ */
 inline void FLIGHTSTACK_INFO_STREAM(const T1& str, const T2& value)
 {
   std::cout << COLOR_GREEN << "\r" << "[INFO] [--ACSL FLIGHTSTACK--] " << str << " " << value << " " << COLOR_RESET << std::flush;
@@ -128,6 +172,11 @@ inline void FLIGHTSTACK_INFO_STREAM(const T1& str, const T2& value)
 
 // Function to print a string and another data type with carriage return - NO TAG
 template <typename T1, typename T2>
+/**
+ * @brief Function to print a string and another data type with carriage return - NO TAG
+ * @param str 
+ * @param value 
+ */
 inline void FLIGHTSTACK_INFO_STREAM_NO_TAG(const T1& str, const T2& value)
 {
   std::cout << COLOR_GREEN << "\r" << str << " " << value << " " << COLOR_RESET << std::flush;
@@ -135,6 +184,11 @@ inline void FLIGHTSTACK_INFO_STREAM_NO_TAG(const T1& str, const T2& value)
 
 // Throttled single message with carriage return
 template <typename T>
+/**
+ * @brief Throttled single message with carriage return
+ * @param msg 
+ * @param throttle_interval_ms 
+ */
 inline void FLIGHTSTACK_INFO_STREAM(const T& msg, int throttle_interval_ms)
 {
     static auto last_time = std::chrono::steady_clock::now();
@@ -150,6 +204,11 @@ inline void FLIGHTSTACK_INFO_STREAM(const T& msg, int throttle_interval_ms)
 
 // Throttled single message with carriage return - NO TAG
 template <typename T>
+/**
+ * @brief Throttled single message with carriage return - NO TAG
+ * @param msg 
+ * @param throttle_interval_ms 
+ */
 inline void FLIGHTSTACK_INFO_STREAM_NO_TAG(const T& msg, int throttle_interval_ms)
 {
     static auto last_time = std::chrono::steady_clock::now();
@@ -165,6 +224,12 @@ inline void FLIGHTSTACK_INFO_STREAM_NO_TAG(const T& msg, int throttle_interval_m
 
 // Throttled string and another data type with carriage return
 template <typename T1, typename T2>
+/**
+ * @brief Throttled string and another data type with carriage return
+ * @param str 
+ * @param value 
+ * @param throttle_interval_ms 
+ */
 inline void FLIGHTSTACK_INFO_STREAM(const T1& str, const T2& value, int throttle_interval_ms)
 {
     static auto last_time = std::chrono::steady_clock::now();
@@ -180,6 +245,12 @@ inline void FLIGHTSTACK_INFO_STREAM(const T1& str, const T2& value, int throttle
 
 // Throttled string and another data type with carriage return - NO TAG
 template <typename T1, typename T2>
+/**
+ * @brief Throttled string and another data type with carriage return - NO TAG
+ * @param str 
+ * @param value 
+ * @param throttle_interval_ms 
+ */
 inline void FLIGHTSTACK_INFO_STREAM_NO_TAG(const T1& str, const T2& value, int throttle_interval_ms)
 {
     static auto last_time = std::chrono::steady_clock::now();
@@ -195,6 +266,10 @@ inline void FLIGHTSTACK_INFO_STREAM_NO_TAG(const T1& str, const T2& value, int t
 
 // Function to print an error message of any type and terminate the program
 template <typename T>
+/**
+ * @brief Function to print an error message of any type and terminate the program
+ * @param msg 
+ */
 inline void FLIGHTSTACK_ERROR(const T& msg)
 {
     std::cerr << COLOR_RED << "[ERROR] [--ACSL FLIGHTSTACK--] " << msg << " " << COLOR_RESET << std::endl;
@@ -203,6 +278,11 @@ inline void FLIGHTSTACK_ERROR(const T& msg)
 
 // Function to print a string and another data type as an error and terminate the program
 template <typename T1, typename T2>
+/**
+ * @brief Function to print a string and another data type as an error and terminate the program
+ * @param str 
+ * @param value 
+ */
 inline void FLIGHTSTACK_ERROR(const T1& str, const T2& value)
 {
     std::cerr << COLOR_RED << "[ERROR] [--ACSL FLIGHTSTACK--] " << str << " " << value << " " << COLOR_RESET << std::endl;
@@ -211,6 +291,10 @@ inline void FLIGHTSTACK_ERROR(const T1& str, const T2& value)
 
 // Function to print a warning message of any type
 template <typename T>
+/**
+ * @brief Function to print a warning message of any type
+ * @param msg 
+ */
 inline void FLIGHTSTACK_WARNING(const T& msg)
 {
   std::cout << COLOR_ORANGE << "[WARN] [--ACSL FLIGHTSTACK--] " << msg << " " << COLOR_RESET << std::endl;
@@ -218,6 +302,11 @@ inline void FLIGHTSTACK_WARNING(const T& msg)
 
 // Function to print a string and another data type as a warning
 template <typename T1, typename T2>
+/**
+ * @brief Function to print a string and another data type as a warning
+ * @param str 
+ * @param value 
+ */
 inline void FLIGHTSTACK_WARNING(const T1& str, const T2& value)
 {
   std::cout << COLOR_ORANGE << "[WARN] [--ACSL FLIGHTSTACK--] " << str << " " << value << " " << COLOR_RESET << std::endl;

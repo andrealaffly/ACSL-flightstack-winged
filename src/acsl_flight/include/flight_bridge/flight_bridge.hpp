@@ -1,3 +1,4 @@
+///@cond 
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,7 +22,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
  /**********************************************************************************************************************  
  * Part of the code in this file leverages the following material.
  *
@@ -42,9 +43,9 @@
  **********************************************************************************************************************/
 
 /***********************************************************************************************************************
- * File:        flight_bridge.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 12, 2024
+ * File:        flight_bridge.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        April 12, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -55,7 +56,10 @@
 
 #ifndef FLIGHT_BRIDGE_HPP_
 #define FLIGHT_BRIDGE_HPP_
-
+/**
+ * @file flight_bridge.hpp
+ * @brief Utilities for multithreading.
+ */
 #include <chrono>
 #include <string>
 #include <thread>
@@ -102,6 +106,11 @@ namespace _flight_bridge_{
 /*                                  HELPER FUNCTIONS                                           */
 /***********************************************************************************************/
 /// Retrieves the value of the given seconds parameter in std::chrono nanoseconds.
+/**
+ * @brief etrieves the value of the given seconds parameter in std::chrono nanoseconds.
+ * @param node
+ * @param name
+ */
 inline std::chrono::milliseconds get_millis_from_secs_parameter(
     const rclcpp::Node * node,
     const std::string & name)
@@ -113,6 +122,10 @@ inline std::chrono::milliseconds get_millis_from_secs_parameter(
 }
 
 /// Enum for simple configuration of threads in two priority classes.
+/**
+ * @class ThreadPriority
+ * @brief Enum for simple configuration of threads in two priority classes.
+ */
 enum class ThreadPriority
 {
     LOW,
@@ -125,6 +138,18 @@ enum class ThreadPriority
 /// Furthermore, if a non-negative CPU id is given, the thread is pinned
 /// to that CPU.
 template<typename T>
+/**
+ * @brief Sets the priority of the given native thread to max or min as given.
+ * 
+ * The exact priority value depends on the operating system. On Linux, this requires elevated privileges.
+ * Furthermore, if a non-negative CPU id is given, the thread is pinned to that CPU.
+ * 
+ * @param native_handle 
+ * @param priority 
+ * @param cpu_id 
+ * @return true 
+ * @return false 
+ */
 bool configure_native_thread(T native_handle, ThreadPriority priority, int cpu_id)
 {
     bool success = true;
@@ -152,6 +177,17 @@ bool configure_native_thread(T native_handle, ThreadPriority priority, int cpu_i
 /// requires elevated privileges.
 /// Furthermore, if a non-negative CPU id is given, the thread is pinned
 /// to that CPU.
+/**
+ * @brief Sets the priority of the given thread to max or min as given. 
+ * The exact scheduler priority depends on the operating system.
+ * On Linux, this requires elevated privileges.
+ * Furthermore, if a non-negative CPU id is given, the thread is pinned to that CPU.
+ * 
+ * @param thread
+ * @param priority
+ * @param cpu_id
+ * @return thread.native_handle()
+ */
 inline bool configure_thread(std::thread & thread, ThreadPriority priority, int cpu_id)
 {
     return configure_native_thread(thread.native_handle(), priority, cpu_id);
@@ -160,6 +196,12 @@ inline bool configure_thread(std::thread & thread, ThreadPriority priority, int 
 /// Returns the time of the given native thread handle as std::chrono
 /// timestamp. This allows measuring the execution time of this thread.
 template<typename T>
+/**
+ * @brief Returns the time of the given native thread handle as std::chrono
+ * timestamp. This allows measuring the execution time of this thread.
+ * @param native_handle 
+ * @return std::chrono::nanoseconds 
+ */
 std::chrono::nanoseconds get_native_thread_time(T native_handle)
 {
     // i.e., Linux platform.
@@ -173,6 +215,12 @@ std::chrono::nanoseconds get_native_thread_time(T native_handle)
 
 /// Returns the time of the given thread as std::chrono timestamp.
 /// This allows measuring the execution time of this thread.
+/**
+ * @brief Returns the time of the given thread as std::chrono timestamp.
+ * This allows measuring the execution time of this thread.
+ * @param thread
+ * @return thread.native_handle()
+ */
 inline std::chrono::nanoseconds get_thread_time(std::thread & thread)
 {
     return get_native_thread_time(thread.native_handle());
@@ -180,6 +228,12 @@ inline std::chrono::nanoseconds get_thread_time(std::thread & thread)
 
 /// Returns the time of the current thread as std::chrono timestamp.
 /// This allows measuring the execution time of this thread.
+/**
+ * @brief Returns the time of the current thread as std::chrono timestamp.
+ * This allows measuring the execution time of this thread.
+ * 
+ * @param None
+ */
 inline std::chrono::nanoseconds get_current_thread_time()
 {
     return get_native_thread_time(pthread_self());
@@ -188,6 +242,13 @@ inline std::chrono::nanoseconds get_current_thread_time()
 /// Retruns the global log file directory as a string to be used in logging mocap, vio, control data.
 /// This allows us to unify the data collection directory as vio and mocap are often times slower to 
 /// start than the control thread.
+/**
+ * @brief Retruns the global log file directory as a string to be used in logging mocap, vio, control data.
+ * This allows us to unify the data collection directory as vio and mocap are often times slower to start than the control thread.
+ * 
+ * @param platform
+ * @return flight_run_log_directory
+ */
 inline std::string create_global_log_directory(const std::string& platform_)
 {
     // Get the current time and date
@@ -226,6 +287,10 @@ inline std::string create_global_log_directory(const std::string& platform_)
 /***********************************************************************************************/
 /*                                  FLIGHT BRIDGE CLASS                                        */
 /***********************************************************************************************/
+/**
+ * @class flight_bridge
+ * @brief flight_bridge class
+ */
 class flight_bridge
 {
     public:

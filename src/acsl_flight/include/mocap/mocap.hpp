@@ -1,3 +1,4 @@
+///@cond
 /***********************************************************************************************************************
  * Copyright (c) 2024 Giri M. Kumar, Mattia Gramuglia, Andrea L'Afflitto. All rights reserved.
  * 
@@ -21,7 +22,7 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************************************/
-
+///@endcond 
  /**********************************************************************************************************************  
  * Part of the code in this file leverages the following material.
  *
@@ -42,9 +43,9 @@
  **********************************************************************************************************************/
 
 /***********************************************************************************************************************
- * File:        mocap.hpp
- * Author:      Giri Mugundan Kumar
- * Date:        April 20, 2024
+ * File:        mocap.hpp \n 
+ * Author:      Giri Mugundan Kumar \n 
+ * Date:        April 20, 2024 \n 
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
@@ -55,6 +56,11 @@
 
 #ifndef MOCAP_HPP_
 #define MOCAP_HPP_
+
+/**
+ * @file mocap.hpp
+ * @brief Class declaration for UDP socket as a lifecycle node.
+ */
 
 #include "udp_driver.hpp"
 #include "control_config.hpp"                     // Include this for creating the logging file.
@@ -107,6 +113,10 @@ namespace _udp_driver_
 {
 
 // Struct for mocap states that come over the udp.
+/**
+ * @struct moacp_states
+ * @brief Struct for mocap states that come over the udp.
+ */
 struct mocap_states
 {
   double control_time;
