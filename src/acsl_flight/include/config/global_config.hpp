@@ -29,8 +29,12 @@
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
- * Description: Just a header file for configuring which platform and 
- *              controller to pick during compilation.
+ * Description: Global build configuration: UDP networking, the SIMULATION LOCKSTEP switch, and the compile-time
+ *              feature flags (_config_param_).
+ *              >> LEAF HEADER: must NOT include any project header. << It is included by low-level headers
+ *              (piecewise_polynomial_trajectory.hpp, control_algorithm_base.hpp) that the controller headers include,
+ *              so including a controller from here would create an include cycle. Platform and controller
+ *              selection lives in control_config.hpp.
  * 
  * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
@@ -57,110 +61,47 @@ inline constexpr uint16_t WEATHER_PORT = 53000; // <-- Confirm this matches the 
 #define TESTING_UDP_COMMUNICATION false
 
 /*********************************************************************************************************************
-  PLATFORM selection
+  SIMULATION LOCKSTEP selection
 **********************************************************************************************************************
 */
-// Define named constants for controller types
-#define __QRBP__ 1
-#define __QUADM__ 2
+// 0 -> normal flight build (default). Trajectory from piecewise_polynomial_trajectory (the trajectory file),
+//      flight_bridge launches the usual odometry / control / mocap nodes talking to PX4.
+// 1 -> simulation lockstep build. The simulator (acsl-chrono-simulator) owns the trajectory, physics and clock:
+//      flight_bridge launches only the lockstep node, the trajectory class is swapped for lockstep_trajectory
+//      (reference injected by the simulator every step), and only the controller runs on this computer.
+//
+// A #define (not an inline constexpr bool like the flags below) because it is used in preprocessor #if blocks to
+// choose class declarations and which nodes/headers are compiled.
+// piecewise_polynomial_trajectory.hpp includes this header, so every file that uses the trajectory class sees this
+// switch. That rules out silently compiling the wrong trajectory.
+// Rebuild (colcon) after changing it. utils/start_lockstep.sh refuses to start unless it is 1.
+// NEVER fly a binary built with 1: it has no trajectory of its own.
+#define SIMULATION_LOCKSTEP 0
 
 /*********************************************************************************************************************
-  CONTROLLER selection
+  FEATURE FLAGS (compile-time)
 **********************************************************************************************************************
 */
-// Define named constants for controller types
-#define __PID__            1
-#define __MRAC_PID__       2
-#define __PID_OMEGA__      3
-#define __MRAC_OMEGA__     4
-#define __MRAC_OBSERVER__  6
-#define __MRAC_GEOMETRIC__ 7
+// Kept here (not in control_config.hpp) because the controllers reach them through control_algorithm_base.hpp,
+// which must not include control_config.hpp (include cycle, see the description above).
+namespace _config_param_
+{
+  // Flag for enable/disable publishing data to motors
+  inline constexpr bool PUBLISH_ACTUATOR  = true;
 
-// SELECT here the PLATFORM you are using ---------------------------------------------------------------------------
-#define SELECTED_PLATFORM __QUADM__
+  // Flag to enable/disable the MRAC Projection Operator
+  inline constexpr bool USE_PROJECTION_OPERATOR = true;
 
-// SELECT here the CONTROLLER you want to run -----------------------------------------------------------------------
-#define SELECTED_CONTROLLER __MRAC_GEOMETRIC__
+  // Flag to enable/disable using a sine wave function for 
+  // the inner loop desired orientation.
+  inline constexpr bool USE_SINEWAVE_INL_CMD = false;
+
+}
 
 /*********************************************************************************************************************
-  HELPER BLOCK OF CODE - MODIFY ONLY IF THERE ARE CHANGES TO CONTROLLERS OR UDP NETWORKING
+  HELPER BLOCK OF CODE - MODIFY ONLY IF THERE ARE CHANGES TO UDP NETWORKING
 **********************************************************************************************************************
 */
-/// ------- INITIALIZING THE CONTROLLER -------- ///
-#if SELECTED_PLATFORM == __QRBP__
-
-    // Define the platform of choice for sending to the mocap file.
-    // This directory name should be used in the logger for all your controllers! - DO NOT FORGET
-    constexpr const char* platform_of_choice = "qrbp"; 
-
-    // Define ControlType based on SELECTED_CONTROLLER using type aliasing
-    #if SELECTED_CONTROLLER == __PID__ 
-
-        #include "PID.hpp"
-        // Remember the class name you used in control_algorithms
-        using _picked_controller_ = _qrbp_::_pid_::pid;    
-        
-    #elif  SELECTED_CONTROLLER == __MRAC_PID__ 
-
-        #include "MRAC_PID.hpp"
-        // Remember the class name you used in control_algorithms
-        using _picked_controller_ = _qrbp_::_mrac_pid_::mrac_pid;    
-
-    #elif SELECTED_CONTROLLER == __PID_OMEGA__
-
-        #include "PID_OMEGA.hpp"
-        // Remember the class name you used in control_algorithms
-        using _picked_controller_ = _qrbp_::_pid_omega_::pid_omega;    
-
-    #elif SELECTED_CONTROLLER == __MRAC_OMEGA__
-
-        #include "MRAC_OMEGA.hpp"
-        // Remember the class name you used in control_algorithms
-        using _picked_controller_ = _qrbp_::_mrac_omega_::mrac_omega;
-
-    #elif SELECTED_CONTROLLER == __MRAC_OBSERVER__
-        #include "MRAC_OBSERVER.hpp"
-        // Remember the class name you used in control_algorithms
-        using _picked_controller_ = _qrbp_::_mrac_observer_::mrac_observer;
-
-    #else 
-
-        #error "ERROR: Unsupported controller type selected"
-
-    #endif
-
-#elif SELECTED_PLATFORM == __QUADM__
-
-    // Define the platform of choice for sending to the mocap file.
-    // This directory name should be used in the logger for all your controllers! - DO NOT FORGET
-    constexpr const char* platform_of_choice = "quadm";
-
-    // Define ControlType based on SELECTED_CONTROLLER using type aliasing
-    #if SELECTED_CONTROLLER == __PID__ 
-
-        #include "PID_TD.hpp"
-        // Remember the class name you used in control_algorithms
-        using _picked_controller_ = _quadm_::_pid_::pid;    
-
-    #elif SELECTED_CONTROLLER == __MRAC_GEOMETRIC__
-
-        #include "MRAC_GEOMETRIC_TD.hpp"
-        // Remember the class name you used in control_algoritms
-        using _picked_controller_ = _quadm_::_mrac_geometric_::mrac_geometric;
-
-    #else 
-
-        #error "ERROR: Unsupported controller type selected"
-
-    #endif
-
-#else 
-
-    #error "ERROR: Platform not defined"
-
-#endif
-
-
 /// ------- INITIALIZING THE UDP COMMUNICATION -------- ///
 // Block of code that decides if we are testing using the ground station or running the weather capture on the ODroid.
 #if TESTING_UDP_COMMUNICATION

@@ -43,6 +43,13 @@
 #include "user_defined_trajectory_base.hpp" // Include for the base trajectory class
 #include "flight_params.hpp"                // Include for the flight params
 #include "global_helpers.hpp"               // Include for the flightstack global functions
+#include "global_config.hpp"                // Include for the SIMULATION_LOCKSTEP switch
+
+// SIMULATION_LOCKSTEP: pull in the lockstep trajectroy only when the switch is on.
+// See global_config.hpp and lockstep_trajectory.hpp for details.
+#if SIMULATION_LOCKSTEP
+#include "lockstep_trajectory.hpp"          // Include for the lockstep trajectory class
+#endif
 
 using namespace _user_defined_trajectory_base_;
 
@@ -50,6 +57,8 @@ using namespace _user_defined_trajectory_base_;
 using namespace _flightstack_;
 
 namespace _piecewise_polynomial_trajectory_{
+
+#if !SIMULATION_LOCKSTEP // Normal flight build: the real class (reads the trajectory file and computes the trajectory)
 
 class piecewise_polynomial_trajectory : public trajectory_base
 {
@@ -158,6 +167,13 @@ class piecewise_polynomial_trajectory : public trajectory_base
              0.0
         ).finished();
 };
+
+#else  // SIMULATION_LOCKSTEP build: same name, simulator-fed implementation
+// Every controller declares "piecewise_polynomial_trajectory ud;". This alias makes it a lockstep_trajectory,
+// which ignores the controller time and returns the reference the simulator sent this step.
+// No controller code changes.
+using piecewise_polynomial_trajectory = lockstep_trajectory;
+#endif // SIMULATION_LOCKSTEP
 
 } // namespace _piecewise_polynomial_trajectory_
 

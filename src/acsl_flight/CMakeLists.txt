@@ -56,6 +56,7 @@ find_package(std_msgs REQUIRED)
 find_package(px4_msgs REQUIRED)
 find_package(lifecycle_msgs REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
+find_package(acsl_lockstep_interfaces REQUIRED)  # Simulation lockstep services (src/acsl_lockstep_interfaces)
 find_package(realsense2 REQUIRED)  # For VIO                                        
 find_package(Boost 1.86 REQUIRED COMPONENTS log log_setup system filesystem thread)   # Most systems have 1.71.0. Change it to that if needed.
 
@@ -84,6 +85,8 @@ include_directories(${Boost_INCLUDE_DIRS}
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/vehicle_class/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/flight_params/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/piecewise_polynomial_trajectory/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/lockstep_trajectory/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/lockstep/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/control/                  
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/qrbp/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/qrbp/aerodynamics/
@@ -113,6 +116,8 @@ set(SOURCES
   src/control/control.cpp
   src/flight_params/flight_params.cpp
   src/piecewise_polynomial_trajectory/piecewise_polynomial_trajectory.cpp
+  src/lockstep_trajectory/lockstep_trajectory.cpp
+  src/lockstep/lockstep_node.cpp
   src/control/platforms/qrbp/control_algorithms/PID/PID.cpp
   src/control/platforms/qrbp/control_algorithms/PID/PID_logger.cpp
   src/control/platforms/qrbp/control_algorithms/PID_OMEGA/PID_OMEGA.cpp
@@ -136,7 +141,7 @@ add_executable(start ${SOURCES})
 target_link_libraries(start ${Boost_LIBRARIES} realsense2::realsense2)
 
 # ament dependencies
-ament_target_dependencies(start rclcpp px4_msgs std_msgs lifecycle_msgs rclcpp_lifecycle)
+ament_target_dependencies(start rclcpp px4_msgs std_msgs lifecycle_msgs rclcpp_lifecycle acsl_lockstep_interfaces)
 
 # install targets
 install(TARGETS

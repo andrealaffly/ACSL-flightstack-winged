@@ -83,6 +83,7 @@
 #include "read_pix.hpp"
 #include "vehicle_class.hpp"
 #include "control.hpp"
+#include "lockstep_node.hpp"   // Simulation lockstep node (started only when SIMULATION_LOCKSTEP is 1)
 #include "mocap.hpp"
 #include "vio.hpp"
 #include "weatherapp.hpp"
@@ -238,6 +239,9 @@ class flight_bridge
 
         // Add Callback Group
         void init();
+
+        /// SIMULATION LOCKSTEP: starts only the lockstep node (no PX4 / odometry / mocap / vio / weather)
+        void init_lockstep();
 
     private:
         /// Thread creation boolean

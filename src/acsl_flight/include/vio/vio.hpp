@@ -109,7 +109,7 @@ inline const Eigen::Quaternionf q_J_c = Eigen::Quaternionf(  cos(YAW/2.0),      
 inline const Eigen::Quaternionf q_J_c_inv = q_J_c.inverse();
 
 // Cache the rotation matrix that rotates the translational data in the camera frame to the NED inertial frame
-inline const Eigen::Matrix3f R_c_C = rotationMatrix321GlobalToLocal(ROLL, PITCH, YAW);
+inline const Eigen::Matrix3f R_c_C = _utilities_::rotationMatrix321GlobalToLocal(ROLL, PITCH, YAW);
 
 // Namespace for the Intel Realsense T265 Cameras
 namespace _t265_

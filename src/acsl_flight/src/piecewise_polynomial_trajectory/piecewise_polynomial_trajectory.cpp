@@ -39,6 +39,11 @@
 
 #include "piecewise_polynomial_trajectory.hpp"
 
+// SIMULATION LOCKSTEP: in lockstep builds piecewise_polynomial_trajectory is an alias of lockstep_trajectory
+// (see the header), so these member definitions must not be compiled. Lockstep's implementation is in
+// lockstep_trajectory.cpp.
+#if !SIMULATION_LOCKSTEP
+
 namespace _piecewise_polynomial_trajectory_{
 
 // Constructor
@@ -335,3 +340,5 @@ double piecewise_polynomial_trajectory::yawDotDotComputation(const VectorXd& Vx_
 
 
 } // namespace _piecewise_polynomial_trajectory_
+
+#endif // !SIMULATION_LOCKSTEP

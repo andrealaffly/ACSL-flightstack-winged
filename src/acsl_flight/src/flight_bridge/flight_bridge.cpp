@@ -66,7 +66,14 @@ flight_bridge::flight_bridge(flight_params* p) : flight_params_ptr(p)
 }
 
 void flight_bridge::init()
-{        
+{   
+    // Compile-time HIL/SIL mode.     
+    #if SIMULATION_LOCKSTEP
+        // HIL/SIL build: the simulator owns the platform, physics and clock. Only the lockstep node runs.
+        // The normal flight configurations below are not compiled in this build.
+        init_lockstep();
+    #else
+
     /// ----------------------------------------- THREAD CONFIGURATIONS ----------------------------------------- ///
 
     // Create bitmask for the differnt thread configurations | bit 1 - MOCAP | bit 2 - VIO | bit 3 - weatherApp
@@ -739,6 +746,48 @@ void flight_bridge::init()
     }   
 
     /// ----------------------------------------- END OF CONFIGURATIONS ----------------------------------------- ///
+    #endif // SIMULATION_LOCKSTEP
+}
+
+/// SIMULATION LOCKSTEP: one executor, one thread, pined and SCHED_FIFO like the control executor.
+void flight_bridge::init_lockstep()
+{
+    // Inform the user that the lockstep node is starting
+    FLIGHTSTACK_INFO("HIL/SIL build: Starting node");
+
+    // Create Executor ------------------------------------------------------------------------- >>
+    // -> High priority lockstep service executor (handshake + step)
+    rclcpp::executors::StaticSingleThreadedExecutor high_prio_lockstep_executor;
+
+    // Create the node instance ---------------------------------------------------------------- >>
+    // Same flight params and global log directory as the control node, so the controller logs land in the usual place
+    auto lockstep_node = std::make_shared<_lockstep_::lockstepNode>(flight_params_ptr, global_log_dir);
+
+    // Add the node instance to the executor --------------------------------------------------- >>
+    high_prio_lockstep_executor.add_node(lockstep_node);
+
+    // Create a thread for the executor -------------------------------------------------------- >>
+    auto high_prio_lockstep_executor_thread = std::thread(
+        [&]() {
+            high_prio_lockstep_executor.spin();
+        });
+
+    // Pin the thread to a CPU core ------------------------------------------------------------ >>
+    // Same core as the control executor. WARNING (not ERROR, which exits): lockstep still works unpinned,
+    // only with worse timing. start_lockstep.sh runs as root, so this normally succeeds.
+    ret = configure_thread(high_prio_lockstep_executor_thread, ThreadPriority::HIGH, CPU_ONE);
+    if (!ret) {
+        FLIGHTSTACK_WARNING("HIL/SIL build: Lockstep executor thread could not be pinned / set to SCHED_FIFO. Try running as root.");
+    }
+    else {
+        nanoseconds high_prio_lockstep_executor_thread_begin_time = get_thread_time(high_prio_lockstep_executor_thread);
+        FLIGHTSTACK_INFO("HIL/SIL build: Lockstep executor thread created (ns):", high_prio_lockstep_executor_thread_begin_time.count());
+    }
+
+    FLIGHTSTACK_INFO("HIL/SIL build: Waiting for the simulator handshake on /acsl_lockstep/handshake");
+
+    // Join the thread (returns on Ctrl+C: rclcpp shuts down, spin() returns, the node and controller logger close)
+    high_prio_lockstep_executor_thread.join();
 }
 
 } // namespace _flight_bridge_

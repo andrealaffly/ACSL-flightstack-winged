@@ -1,0 +1,9 @@
+# Simulation lockstep finish. Called ONCE by the simulator when the simulation ends (trajectory end or debug stop).
+# The flightstack replies with its own step count, prints a summary, then shuts down cleanly (exit code 0).
+# KEEP THIS FILE IDENTICAL IN BOTH REPOSITORIES (see Handshake.srv).
+
+uint64  steps_sent          # Number of Steps the simulator sent (its next seq)
+float64 time                # Simulation time at the end [s]
+---
+bool    ok                  # true if the flightstack computed exactly steps_sent Steps
+uint64  steps_done          # Number of Steps the flightstack computed

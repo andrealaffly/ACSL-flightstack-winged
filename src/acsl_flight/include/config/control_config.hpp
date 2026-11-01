@@ -29,8 +29,11 @@
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
- * Description: Just a header file for configuring some of the features of the controller. 
- *              >> All controllers use this <<. Also used by the control.cpp file.
+ * Description: Header file for configuring which platform and controller to pick during compilation.
+ *              Used by control.hpp (and through it flight_bridge).
+ *              >> Do NOT include this from control_algorithm_base.hpp, the trajectory headers or any controller
+ *              header: it includes the controller headers, so that would create an include cycle. <<
+ *              Global build settings (UDP, SIMULATION_LOCKSTEP, feature flags) are in global_config.hpp.
  * 
  * GitHub:    https://github.com/andrealaffly/ACSL-flightstack-winged
  **********************************************************************************************************************/
@@ -38,18 +41,124 @@
 #ifndef CONTROL_CONFIG_HPP_
 #define CONTROL_CONFIG_HPP_
 
-namespace _config_param_
-{
-  // Flag for enable/disable publishing data to motors
-  inline constexpr bool PUBLISH_ACTUATOR  = true;
+/*********************************************************************************************************************
+  PLATFORM selection
+**********************************************************************************************************************
+*/
+// Define named constants for controller types
+#define __QRBP__ 1
+#define __QUADM__ 2
 
-  // Flag to enable/disable the MRAC Projection Operator
-  inline constexpr bool USE_PROJECTION_OPERATOR = true;
+/*********************************************************************************************************************
+  CONTROLLER selection
+**********************************************************************************************************************
+*/
+// Define named constants for controller types
+#define __PID__            1
+#define __MRAC_PID__       2
+#define __PID_OMEGA__      3
+#define __MRAC_OMEGA__     4
+#define __MRAC_OBSERVER__  6
+#define __MRAC_GEOMETRIC__ 7
 
-  // Flag to enable/disable using a sine wave function for 
-  // the inner loop desired orientation.
-  inline constexpr bool USE_SINEWAVE_INL_CMD = false;
+// SELECT here the PLATFORM you are using ---------------------------------------------------------------------------
+#define SELECTED_PLATFORM __QUADM__
 
-}
+// SELECT here the CONTROLLER you want to run -----------------------------------------------------------------------
+#define SELECTED_CONTROLLER __MRAC_GEOMETRIC__
+
+/*********************************************************************************************************************
+  HELPER BLOCK OF CODE - MODIFY ONLY IF THERE ARE CHANGES TO CONTROLLERS
+**********************************************************************************************************************
+*/
+/// ------- INITIALIZING THE CONTROLLER -------- ///
+#if SELECTED_PLATFORM == __QRBP__
+
+    // Define the platform of choice for sending to the mocap file.
+    // This directory name should be used in the logger for all your controllers! - DO NOT FORGET
+    // SIMULATION LOCKSTEP: must also match the platform key in the simulator's sim-config.yaml (handshake check).
+    constexpr const char* platform_of_choice = "qrbp"; 
+
+    // Define ControlType based on SELECTED_CONTROLLER using type aliasing
+    #if SELECTED_CONTROLLER == __PID__ 
+
+        #include "PID.hpp"
+        // Remember the class name you used in control_algorithms
+        using _picked_controller_ = _qrbp_::_pid_::pid;    
+        // Lockstep handshake name, must match the controller key in the simulator's sim-config.yaml
+        constexpr const char* controller_of_choice = "pid";
+        
+    #elif  SELECTED_CONTROLLER == __MRAC_PID__ 
+
+        #include "MRAC_PID.hpp"
+        // Remember the class name you used in control_algorithms
+        using _picked_controller_ = _qrbp_::_mrac_pid_::mrac_pid;    
+        // Lockstep handshake name, must match the controller key in the simulator's sim-config.yaml
+        constexpr const char* controller_of_choice = "mrac_pid";
+
+    #elif SELECTED_CONTROLLER == __PID_OMEGA__
+
+        #include "PID_OMEGA.hpp"
+        // Remember the class name you used in control_algorithms
+        using _picked_controller_ = _qrbp_::_pid_omega_::pid_omega;    
+        // Lockstep handshake name, must match the controller key in the simulator's sim-config.yaml
+        constexpr const char* controller_of_choice = "pid_omega";
+
+    #elif SELECTED_CONTROLLER == __MRAC_OMEGA__
+
+        #include "MRAC_OMEGA.hpp"
+        // Remember the class name you used in control_algorithms
+        using _picked_controller_ = _qrbp_::_mrac_omega_::mrac_omega;
+        // Lockstep handshake name, must match the controller key in the simulator's sim-config.yaml
+        constexpr const char* controller_of_choice = "mrac_omega";
+
+    #elif SELECTED_CONTROLLER == __MRAC_OBSERVER__
+        #include "MRAC_OBSERVER.hpp"
+        // Remember the class name you used in control_algorithms
+        using _picked_controller_ = _qrbp_::_mrac_observer_::mrac_observer;
+        // Lockstep handshake name, must match the controller key in the simulator's sim-config.yaml
+        constexpr const char* controller_of_choice = "mrac_observer";
+
+    #else 
+
+        #error "ERROR: Unsupported controller type selected"
+
+    #endif
+
+#elif SELECTED_PLATFORM == __QUADM__
+
+    // Define the platform of choice for sending to the mocap file.
+    // This directory name should be used in the logger for all your controllers! - DO NOT FORGET
+    // SIMULATION LOCKSTEP: must also match the platform key in the simulator's sim-config.yaml (handshake check).
+    constexpr const char* platform_of_choice = "quadm";
+
+    // Define ControlType based on SELECTED_CONTROLLER using type aliasing
+    #if SELECTED_CONTROLLER == __PID__ 
+
+        #include "PID_TD.hpp"
+        // Remember the class name you used in control_algorithms
+        using _picked_controller_ = _quadm_::_pid_::pid;    
+        // Lockstep handshake name, must match the controller key in the simulator's sim-config.yaml
+        constexpr const char* controller_of_choice = "pid";
+
+    #elif SELECTED_CONTROLLER == __MRAC_GEOMETRIC__
+
+        #include "MRAC_GEOMETRIC_TD.hpp"
+        // Remember the class name you used in control_algoritms
+        using _picked_controller_ = _quadm_::_mrac_geometric_::mrac_geometric;
+        // Lockstep handshake name, must match the controller key in the simulator's sim-config.yaml
+        constexpr const char* controller_of_choice = "mrac_geometric";
+
+    #else 
+
+        #error "ERROR: Unsupported controller type selected"
+
+    #endif
+
+#else 
+
+    #error "ERROR: Platform not defined"
 
 #endif
+
+#endif  // CONTROL_CONFIG_HPP_

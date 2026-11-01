@@ -1,0 +1,38 @@
+# Simulation lockstep step. Called by the simulator EVERY step after an accepted Handshake.
+# Request: state (same order as the controller's update(...)) plus this step's reference. Response: the 8 motor thrusts.
+# KEEP THIS FILE IDENTICAL IN BOTH REPOSITORIES (see Handshake.srv).
+
+uint64  seq                     # Step counter from the simulator (0, 1, 2, ...). Echoed back in the response
+
+# ---- State: same order as controller update(time, x, y, z, vx, vy, vz, q0..q3, roll, pitch, yaw, p, q, r) ----
+float64 time                    # Simulation time [s]
+float64 x                       # Position [m]
+float64 y
+float64 z
+float64 vx                      # Velocity [m/s]
+float64 vy
+float64 vz
+float64 q0                      # Attitude quaternion, scalar first
+float64 q1
+float64 q2
+float64 q3
+float64 roll                    # Euler angles [rad]
+float64 pitch
+float64 yaw
+float64 p                       # Body angular velocity [rad/s]
+float64 q
+float64 r
+
+# ---- Reference: 1:1 with lockstep_reference / trajectory_base (same frames and units as the trajectory class) ----
+float64[3] ref_position
+float64[3] ref_velocity
+float64[3] ref_acceleration
+float64[3] ref_angle                # roll, pitch, yaw
+float64[3] ref_angular_rate         # roll, pitch, yaw rates
+float64[3] ref_angular_rate_dot
+float64[3] ref_angular_velocity     # omega x, y, z
+float64[3] ref_angular_acceleration # alpha x, y, z
+---
+bool       ok                   # false -> no accepted handshake yet, or the controller produced a non-finite output
+uint64     seq                  # Echo of the request seq
+float64[8] motors               # Normalized motor thrusts, the same values the simulator's own controller gives get_t1..get_t8

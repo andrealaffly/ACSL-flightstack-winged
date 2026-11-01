@@ -48,6 +48,7 @@
 #define COLOR_GREEN "\033[1;32m"      // Green ANSI Code
 #define COLOR_RED "\033[1;31m"        // Red ANSI Code
 #define COLOR_ORANGE "\033[38;5;214m" // Orange color using the 256-color palette
+#define COLOR_YELLOW "\033[1;33m"     // Yellow ANSI Code
 #define COLOR_RESET "\033[0m"         // Reset to default color
 
 namespace _flightstack_

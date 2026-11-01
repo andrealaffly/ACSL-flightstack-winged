@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>acsl_lockstep_interfaces</name>
+  <version>0.0.1</version>
+  <!-- Simulation lockstep services between acsl-chrono-simulator (client) and ACSL-flightstack-winged (server).
+       An IDENTICAL copy lives in both repositories (not a submodule): keep the .srv files byte-identical and bump
+       PROTOCOL_VERSION in Handshake.srv in BOTH copies whenever either changes. -->
+  <description>Lockstep services between the ACSL Chrono simulator and the ACSL flightstack</description>
+  <maintainer email="girimugundan@vt.edu">girimugundankumar</maintainer>
+  <license>BSD-3-Clause</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Code generation for the .srv files (same on Jazzy and Galactic) -->
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -36,6 +36,7 @@
 
 #include "flight_main.hpp"
 #include "global_helpers.hpp"
+#include "global_config.hpp"   // Include for SIMULATION_LOCKSTEP
 
 using namespace _flight_bridge_;
 using namespace _flightstack_;
@@ -55,8 +56,15 @@ int main(int argc, char * argv[])
     // Read in the flight parameters
     flight_params run_params = reader.readFlightConfig("./src/acsl_flight/params/flight_params/flight_main_params.json");
 
-    // Print the flight parameter table
-    reader.printParameterTable(run_params);
+    #if SIMULATION_LOCKSTEP
+        // HIL/SIL build: the parameter table describes a real flight, so print the mode banner instead.
+        // The params are still read above, because the controller constructor takes them.
+        std::cout << "\n" << COLOR_YELLOW << "HIL/SIL LOCKSTEP MODE: SIMULATOR OWNS PHYSICS, TRAJECTORY AND CLOCK"
+                << COLOR_RESET << "\n" << std::endl;
+    #else
+        // Print the flight parameter table
+        reader.printParameterTable(run_params);
+    #endif
 
     // Initialize ROS2
     FLIGHTSTACK_INFO("Initializing ROS2");

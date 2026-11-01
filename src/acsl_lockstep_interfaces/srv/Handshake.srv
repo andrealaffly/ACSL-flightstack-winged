@@ -1,0 +1,16 @@
+# Simulation lockstep handshake. Called ONCE by the simulator before the first Step.
+# The flightstack accepts only if the protocol version, platform and controller all match its build.
+# KEEP THIS FILE IDENTICAL IN BOTH REPOSITORIES. Bump PROTOCOL_VERSION in both whenever any lockstep .srv changes.
+
+uint16 PROTOCOL_VERSION=2
+
+uint16  protocol_version    # Simulator fills in its PROTOCOL_VERSION
+string  platform            # Simulator's active platform key in sim-config.yaml (e.g. "quadm"). Must equal platform_of_choice
+string  controller          # Simulator's active controller key in sim-config.yaml (e.g. "mrac_geometric"). Must equal controller_of_choice
+float64 step_size           # Simulator step size [s]. Used directly as the controller's RK4 step (controller_.run(step_size))
+---
+bool    accepted            # true -> the simulator may start calling Step
+uint16  protocol_version    # Flightstack's PROTOCOL_VERSION (for the error message on a mismatch)
+string  platform            # Flightstack's platform_of_choice
+string  controller          # Flightstack's controller_of_choice
+string  message             # Reason for a rejection (empty when accepted)

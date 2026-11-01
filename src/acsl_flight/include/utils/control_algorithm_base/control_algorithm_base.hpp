@@ -42,7 +42,7 @@
 #include "vehicle_class.hpp"
 #include "flight_params.hpp"
 #include "helper_functions.hpp"
-#include "control_config.hpp"
+#include "global_config.hpp"   // Include for the _config_param_ feature flags (leaf header; NOT control_config.hpp - include cycle)
 
 using namespace _utilities_;
 
