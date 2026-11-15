@@ -1,0 +1,20 @@
+# Simulation lockstep trajectory upload. Called by the SIMULATOR right after an accepted Handshake, in chunks,
+# before the first Step. The flightstack caches the whole trajectory and answers every reference request from the
+# cache (MPC horizons included), so nothing is added to the per-step traffic.
+# KEEP THIS FILE IDENTICAL IN BOTH REPOSITORIES (see Handshake.srv).
+
+float64 dt                  # Sample spacing [s] (= simulator step size). Sample i is at time i * dt
+uint32  total_samples       # Samples in the whole trajectory (t = 0 .. Tmax)
+uint32  first_index         # Index of the first sample in this chunk
+# Flattened, 3 values per sample [x0 y0 z0 x1 y1 z1 ...]. All 8 arrays hold 3 * (samples in this chunk) values
+float64[] ref_position
+float64[] ref_velocity
+float64[] ref_acceleration
+float64[] ref_angle                 # roll, pitch, yaw
+float64[] ref_angular_rate          # roll, pitch, yaw rates
+float64[] ref_angular_rate_dot
+float64[] ref_angular_velocity      # omega x, y, z
+float64[] ref_angular_acceleration  # alpha x, y, z
+---
+bool   ok                   # false -> rejected (no handshake yet, already stepping, or bad chunk sizes)
+string message              # Reason for a rejection

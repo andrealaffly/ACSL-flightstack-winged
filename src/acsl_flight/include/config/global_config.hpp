@@ -76,7 +76,7 @@ inline constexpr uint16_t WEATHER_PORT = 53000; // <-- Confirm this matches the 
 // switch. That rules out silently compiling the wrong trajectory.
 // Rebuild (colcon) after changing it. utils/start_lockstep.sh refuses to start unless it is 1.
 // NEVER fly a binary built with 1: it has no trajectory of its own.
-#define SIMULATION_LOCKSTEP 0
+#define SIMULATION_LOCKSTEP 1
 
 /*********************************************************************************************************************
   FEATURE FLAGS (compile-time)

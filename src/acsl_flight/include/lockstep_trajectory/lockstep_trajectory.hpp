@@ -48,6 +48,7 @@
 #include <Eigen/Dense>                          // Include for Eigen vectors
 #include "user_defined_trajectory_base.hpp"     // Include for the base trajectory class
 #include "flight_params.hpp"                    // Include for the flight params (same constructor as the original class)
+#include <vector>                               // Include for the trajectory cache
 
 // Same namespace as piecewise_polynomial_trajectory: every controller does
 // "using namespace _piecewise_polynomial_trajectory_;", and the lockstep alias lives here too.
@@ -68,6 +69,15 @@ struct lockstep_reference
 };
 
 inline lockstep_reference lockstep_reference_store;
+
+// Time of the reference in lockstep_reference_store (= this Step's time). Requests at exactly this time use the
+// store; any other time (e.g. an MPC horizon sample) is read from lockstep_reference_cache.
+inline double lockstep_reference_time = 0.0;
+
+// Whole trajectory uploaded by the simulator once, right after the handshake (Trajectory.srv).
+// Sample i is the reference at t = i * lockstep_reference_dt (simulator step size).
+inline std::vector<lockstep_reference> lockstep_reference_cache;
+inline double lockstep_reference_dt = 0.0;
 
 // Inhertis from the base trajectory class, but ignores time and copies the stored reference into the base fields.
 class lockstep_trajectory : public _user_defined_trajectory_base_::trajectory_base

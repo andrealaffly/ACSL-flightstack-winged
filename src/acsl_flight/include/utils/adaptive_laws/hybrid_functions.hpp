@@ -43,6 +43,7 @@
 
 #include "helper_functions.hpp"
 #include "global_helpers.hpp"
+#include <utility>          // For std::pair (error norm hybrid step result)
 
 using namespace _utilities_;
 using namespace _flightstack_;
@@ -273,5 +274,83 @@ inline void hybrid_main_logic(const double& current_time, const Eigen::Matrix<Sc
 }
 
 } // namespace _hybrid_functions_
+
+namespace _adaptive_laws_hybrid_error_norm_
+{
+
+  /*
+    Hybrid MRAC with reference model resets triggered by the norm of the trajectory tracking error.
+    For reference: G. M. Kumar, X. E. Casanova Pabon, A. L'Afflitto, "Interconnected Nonlinear MPC and Hybrid MRAC
+                   with Applications to Multi-Rotor UAVs", Sec. II-A.4, Eqs. (19)-(22).
+    - Trigger: ||e_trigger|| >= threshold  AND  (t - t_last_reset) >= dwell_time
+    - Reset:   x_ref(t+) = x(t+) - rho * e(t)        (single mode, so P^{-1/2} P^{1/2} = I in Eq. (19))
+               which gives e(t+) = rho * e(t), so e'Pe is contracted by rho^2 at every reset (Eq. (22)).
+    - The adaptive gains are retained at every reset (Eq. (20)), so they are not touched here.
+    Ported from the simulator (sim-utilities/adaptive-laws.hpp, namespace _shared_::_adaptive_laws_hybrid_error_norm_).
+  */
+
+  /*
+    Check the reset condition.
+    - The dwell time keeps the resets strictly separated in time (Assumption 1) and stops back to back resets
+      when rho * ||e_trigger|| is still above the threshold right after a jump.
+  */
+  inline bool checkErrorNormResetCondition(double error_norm,
+                                           double threshold,
+                                           double time_now,
+                                           double time_of_last_reset,
+                                           double dwell_time)
+  {
+    // Error is large enough AND enough time has elapsed since the last reset
+    return (error_norm >= threshold) && ((time_now - time_of_last_reset) >= dwell_time);
+  }
+
+  /*
+    Compute the post reset reference model state: x_ref(t+) = x - rho * e
+  */
+  template <typename VectorType>
+  inline VectorType computeResetReferenceState(const VectorType& x, const VectorType& e, double rho)
+  {
+    static_assert(static_cast<int>(VectorType::ColsAtCompileTime) == 1, "x and e must be column vectors");
+
+    // Jump the reference model so that the new tracking error is rho times the old one
+    VectorType x_ref_reset = x - rho * e;
+
+    return x_ref_reset;
+  }
+
+  /*
+    Execute one hybrid MRAC step:
+    - Check the reset condition on the norm of e_trigger (e.g. the position part of the tracking error)
+    - If satisfied, jump the reference model state and update the time of the last reset
+    Returns {reset_triggered, time_of_last_reset}
+  */
+  template <typename VectorType, typename TriggerType, typename DerivedRef>
+  inline std::pair<bool, double> runErrorNormHybridStep(
+    const VectorType& x,
+    const VectorType& e,
+    const TriggerType& e_trigger,
+    double threshold,
+    double rho,
+    double dwell_time,
+    double time_now,
+    double time_of_last_reset,
+    Eigen::MatrixBase<DerivedRef>& reference_model_state_map
+  )
+  {
+    static_assert(static_cast<int>(VectorType::ColsAtCompileTime) == 1, "x and e must be column vectors");
+
+    // No reset, keep the reference model and the time of the last reset
+    if (!checkErrorNormResetCondition(e_trigger.norm(), threshold, time_now, time_of_last_reset, dwell_time))
+    {
+      return {false, time_of_last_reset};
+    }
+
+    // Reset the reference model state (Eq. (19))
+    reference_model_state_map = computeResetReferenceState(x, e, rho);
+
+    return {true, time_now};
+  }
+
+} // namespace _adaptive_laws_hybrid_error_norm_
 
 #endif  // HYBRID_FUNCTIONS_HPP_

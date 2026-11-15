@@ -33,6 +33,6 @@ float64[3] ref_angular_rate_dot
 float64[3] ref_angular_velocity     # omega x, y, z
 float64[3] ref_angular_acceleration # alpha x, y, z
 ---
-bool       ok                   # false -> no accepted handshake yet, or the controller produced a non-finite output
+bool       ok                   # false -> no accepted handshake yet, the trajectory upload is incomplete, or a non-finite output
 uint64     seq                  # Echo of the request seq
 float64[8] motors               # Normalized motor thrusts, the same values the simulator's own controller gives get_t1..get_t8

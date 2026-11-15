@@ -37,18 +37,30 @@
 
 #include "lockstep_trajectory.hpp"  // Include for the lockstep trajectory class
 
+#include <algorithm>  // For std::clamp
+#include <cmath>      // For std::lround
+
 namespace _piecewise_polynomial_trajectory_{
 
 // Constructor: store the flight params pointer only. Load nothing.
 lockstep_trajectory::lockstep_trajectory(flight_params* p) : flight_params_ptr(p) {}
 
-// Called by the controller every step. The controller time is ignored on purose: the lockstep node 
-// has already written this step's refernce into lockstep_refernce_store before calling the controller.
-// Copies every field into trajectory_base with its own setters, so the controller's gettters 
+// Called by the controller with the time it wants the reference at.
+//   - This Step's time: the reference that came with the Step (no extra call). Every non-MPC controller ends here.
+//   - Any other time (e.g. an MPC horizon sample): the nearest sample of the trajectory cache, held at the ends.
+//     Nearest (not interpolated): the requested times land on the simulator's step grid, and yaw never gets
+//     interpolated across +-pi.
+// Copies every field into trajectory_base with its own setters, so the controller's getters
 // return the simulator's reference.
-void lockstep_trajectory::updateUserDefinedTrajectory([[maybe_unused]] double controller_time)
+void lockstep_trajectory::updateUserDefinedTrajectory(double controller_time)
 {
-    const lockstep_reference& ref = lockstep_reference_store;  // Copy the reference from the store
+    lockstep_reference ref = lockstep_reference_store;
+
+    if (controller_time != lockstep_reference_time && !lockstep_reference_cache.empty()) {
+        const long last  = static_cast<long>(lockstep_reference_cache.size()) - 1;
+        const long index = std::clamp(std::lround(controller_time / lockstep_reference_dt), 0L, last);
+        ref = lockstep_reference_cache[static_cast<size_t>(index)];
+    }
 
     setUserDefinedPosition(ref.position);
     setUserDefinedVelocity(ref.velocity);

@@ -66,6 +66,11 @@ lockstepNode::lockstepNode(flight_params* p, const std::string & global_log_dir)
         "/acsl_lockstep/finish",
         std::bind(&lockstepNode::finish_callback, this, _1, _2));        
 
+    // Trajectory upload from the simulator (once, after the handshake), cached for MPC horizons
+    trajectory_service_ = this->create_service<Trajectory>(
+        "/acsl_lockstep/trajectory",
+        std::bind(&lockstepNode::trajectory_callback, this, _1, _2));
+
     FLIGHTSTACK_INFO("HIL/SIL Lockstep node ready. Platform:", platform_of_choice);
     FLIGHTSTACK_INFO("HIL/SIL Lockstep node ready. Controller:", controller_of_choice);
     FLIGHTSTACK_INFO("Lockstep protocol version:", Handshake::Request::PROTOCOL_VERSION);
@@ -131,6 +136,88 @@ void lockstepNode::handshake_callback(const std::shared_ptr<Handshake::Request> 
 }
 
 /***********************************************************************************************/
+/*                                  TRAJECTORY UPLOAD                                          */
+/***********************************************************************************************/
+// Called by the simulator in chunks after an accepted handshake, before the first Step. Fills the trajectory cache
+// that lockstep_trajectory reads for any time other than the Step's own time (MPC horizons).
+void lockstepNode::trajectory_callback(const std::shared_ptr<Trajectory::Request> request,
+                                       std::shared_ptr<Trajectory::Response> response)
+{
+    response->ok = false;
+
+    // Only between an accepted handshake and the first Step
+    if (!handshake_done_) {
+        response->message = "Trajectory upload before an accepted handshake.";
+        FLIGHTSTACK_WARNING(response->message);
+        return;
+    }
+    if (steps_done_ > 0) {
+        response->message = "Trajectory upload after the first Step.";
+        FLIGHTSTACK_WARNING(response->message);
+        return;
+    }
+
+    auto & cache = _piecewise_polynomial_trajectory_::lockstep_reference_cache;
+
+    // The first chunk (re)starts the upload
+    if (request->first_index == 0) {
+        if (request->total_samples == 0 || !(request->dt > 0.0)) {
+            response->message = "Trajectory upload with no samples or a non-positive dt.";
+            FLIGHTSTACK_WARNING(response->message);
+            return;
+        }
+        cache.assign(request->total_samples, _piecewise_polynomial_trajectory_::lockstep_reference{});
+        _piecewise_polynomial_trajectory_::lockstep_reference_dt = request->dt;
+        samples_received_ = 0;
+    }
+
+    // Chunks must arrive in order, with the same total, and all 8 arrays must hold 3 values per sample
+    const size_t count = request->ref_position.size() / 3;
+    const bool sizes_ok =
+        request->total_samples == cache.size() &&
+        request->first_index == samples_received_ &&
+        count > 0 && request->first_index + count <= cache.size() &&
+        request->ref_position.size()             == 3 * count &&
+        request->ref_velocity.size()             == 3 * count &&
+        request->ref_acceleration.size()         == 3 * count &&
+        request->ref_angle.size()                == 3 * count &&
+        request->ref_angular_rate.size()         == 3 * count &&
+        request->ref_angular_rate_dot.size()     == 3 * count &&
+        request->ref_angular_velocity.size()     == 3 * count &&
+        request->ref_angular_acceleration.size() == 3 * count;
+
+    if (!sizes_ok) {
+        response->message = "Trajectory upload chunk out of order or with bad sizes (first_index " +
+                            std::to_string(request->first_index) + ", total " +
+                            std::to_string(request->total_samples) + ").";
+        FLIGHTSTACK_WARNING(response->message);
+        return;
+    }
+
+    // Unpack the flattened arrays [x0 y0 z0 x1 y1 z1 ...]
+    for (size_t k = 0; k < count; ++k) {
+        auto & ref = cache[request->first_index + k];
+        for (size_t i = 0; i < 3; ++i) {
+            ref.position(i)             = request->ref_position[3 * k + i];
+            ref.velocity(i)             = request->ref_velocity[3 * k + i];
+            ref.acceleration(i)         = request->ref_acceleration[3 * k + i];
+            ref.angle(i)                = request->ref_angle[3 * k + i];
+            ref.angular_rate(i)         = request->ref_angular_rate[3 * k + i];
+            ref.angular_rate_dot(i)     = request->ref_angular_rate_dot[3 * k + i];
+            ref.angular_velocity(i)     = request->ref_angular_velocity[3 * k + i];
+            ref.angular_acceleration(i) = request->ref_angular_acceleration[3 * k + i];
+        }
+    }
+    samples_received_ += count;
+
+    if (samples_received_ == cache.size()) {
+        FLIGHTSTACK_INFO("HIL/SIL trajectory cached. Samples:", samples_received_);
+    }
+
+    response->ok = true;
+}
+
+/***********************************************************************************************/
 /*                                  STEP                                                       */
 /***********************************************************************************************/
 void lockstepNode::step_callback(const std::shared_ptr<Step::Request> request,
@@ -147,12 +234,22 @@ void lockstepNode::step_callback(const std::shared_ptr<Step::Request> request,
         return;
     }
 
+    // No controller output before the whole trajectory is cached (MPC horizons read it)
+    const auto & cache = _piecewise_polynomial_trajectory_::lockstep_reference_cache;
+    if (cache.empty() || samples_received_ != cache.size()) {
+        FLIGHTSTACK_WARNING("Lockstep step before the trajectory upload finished. Ignored, seq:", request->seq);
+        return;
+    }
+
     // Lost or repeated steps show up as a seq jump (warning only, the step is still computed)
     if (request->seq != expected_seq_) {
         FLIGHTSTACK_WARNING("Lockstep seq jump. Expected " + std::to_string(expected_seq_) + ", got",
                             request->seq);
     }
     expected_seq_ = request->seq + 1;
+
+    // Time of the reference that comes with this Step (requests at any other time are read from the cache)
+    _piecewise_polynomial_trajectory_::lockstep_reference_time = request->time;
 
     // 1) Inject this step's reference. The controller reads it through
     //    ud.updateUserDefinedTrajectory() -> lockstep_trajectory (same thread, same callback).

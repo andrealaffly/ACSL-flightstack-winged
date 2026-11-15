@@ -508,7 +508,79 @@ namespace _utilities_
         std::copy(entity.data(), entity.data() + elements_to_copy, X.begin() + index);
     }
 
+    // ---------------------------------------------------------------------------------------------------------------
+    // SO(3) utilities (ported from the simulator: sim-helpers, namespace _shared_::_transformations_)
+    // ---------------------------------------------------------------------------------------------------------------
 
+    // Computes the skew symmetric matrix of a vector v such that skewSymmetric(a) * b = a x b
+    //   v = [v1 v2 v3]^T
+    //   m = [  0 -v3  v2]
+    //       [ v3   0 -v1]
+    //       [-v2  v1   0]
+    inline Eigen::Matrix3d skewSymmetric(Eigen::Matrix<double, 3, 1> v)
+    {
+        Eigen::Matrix3d m;
+
+        m <<  0.0, -v(2),  v(1),
+              v(2),  0.0, -v(0),
+             -v(1), v(0),   0.0;
+
+        return m;
+    }
+
+    // Extracts the vector v from a skew symmetric matrix m (inverse of skewSymmetric)
+    // Only the lower triangular entries are read, so m is assumed to be skew symmetric
+    //   v = [v1 v2 v3]^T = [m(2,1) m(0,2) m(1,0)]^T
+    inline Eigen::Vector3d veeMap(const Eigen::Matrix3d& m)
+    {
+        Eigen::Vector3d v;
+
+        v << m(2, 1), m(0, 2), m(1, 0);
+
+        return v;
+    }
+
+    // Computes the rotation matrix from a rotation vector (exponential map of SO(3))
+    // Rodrigues formula through Eigen's angle-axis representation, phi = angle * axis
+    // A zero rotation (|phi| < 1e-12) has no defined axis, so the identity is returned
+    inline Eigen::Matrix3d expSO3(const Eigen::Vector3d& phi)
+    {
+        const double angle = phi.norm();
+
+        if (angle < 1e-12) {
+            return Eigen::Matrix3d::Identity();
+        }
+
+        return Eigen::AngleAxisd(angle, phi / angle).toRotationMatrix();
+    }
+
+    // Computes the rotation vector from a rotation matrix (logarithmic map of SO(3))
+    // Inverse of expSO3: R -> angle * axis, with the angle in [0, pi]. R must be a valid element of SO(3)
+    inline Eigen::Vector3d logSO3(const Eigen::Matrix3d& R)
+    {
+        const Eigen::AngleAxisd aa(R);
+
+        return aa.angle() * aa.axis();
+    }
+
+    // ---------------------------------------------------------------------------------------------------------------
+    // JSON utilities (ported from the simulator: sim-helpers, namespace _shared_::_deserialize_)
+    // ---------------------------------------------------------------------------------------------------------------
+
+    // Extract a dynamically sized Eigen::MatrixXd from JSON with scaling
+    // Expects JSON like: { "matrix": [[...],...], "scaling_coef": value }
+    // Example usage: Eigen::MatrixXd Q = jsonToScaledMatrixXd(j["COST"]["Q_diagonal"], 1, 12);
+    inline Eigen::MatrixXd jsonToScaledMatrixXd(const nlohmann::json& jsonMatrix, int rows, int cols)
+    {
+        double scaling_coef = jsonMatrix["scaling_coef"];
+        const auto& arr = jsonMatrix["matrix"];
+        Eigen::MatrixXd matrix(rows, cols);
+        for (int i = 0; i < rows; ++i)
+            for (int j = 0; j < cols; ++j)
+                matrix(i, j) = arr[i][j];
+        matrix *= scaling_coef;
+        return matrix;
+    }
 
 } // namespace _utilities_
 

@@ -98,6 +98,8 @@ include_directories(${Boost_INCLUDE_DIRS}
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/quadm/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/quadm/control_algorithms/PID/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/quadm/control_algorithms/MRAC_GEOMETRIC/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/quadm/control_algorithms/NMPC/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/control/platforms/quadm/control_algorithms/NMPC_HYBRID/
                   )
 
 # add source files
@@ -132,6 +134,10 @@ set(SOURCES
   src/control/platforms/quadm/control_algorithms/PID/PID_TD_logger.cpp
   src/control/platforms/quadm/control_algorithms/MRAC_GEOMETRIC/MRAC_GEOMETRIC_TD.cpp
   src/control/platforms/quadm/control_algorithms/MRAC_GEOMETRIC/MRAC_GEOMETRIC_TD_logger.cpp
+  src/control/platforms/quadm/control_algorithms/NMPC/NMPC_TD.cpp
+  src/control/platforms/quadm/control_algorithms/NMPC/NMPC_TD_logger.cpp
+  src/control/platforms/quadm/control_algorithms/NMPC_HYBRID/NMPC_HYBRID_TD.cpp
+  src/control/platforms/quadm/control_algorithms/NMPC_HYBRID/NMPC_HYBRID_TD_logger.cpp
 )
 
 # add executable

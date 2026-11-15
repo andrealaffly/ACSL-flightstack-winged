@@ -2,7 +2,7 @@
 # The flightstack accepts only if the protocol version, platform and controller all match its build.
 # KEEP THIS FILE IDENTICAL IN BOTH REPOSITORIES. Bump PROTOCOL_VERSION in both whenever any lockstep .srv changes.
 
-uint16 PROTOCOL_VERSION=2
+uint16 PROTOCOL_VERSION=3          # 3: Trajectory.srv upload (simulator -> flightstack) after the handshake
 
 uint16  protocol_version    # Simulator fills in its PROTOCOL_VERSION
 string  platform            # Simulator's active platform key in sim-config.yaml (e.g. "quadm"). Must equal platform_of_choice

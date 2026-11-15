@@ -55,12 +55,13 @@
 #include "acsl_lockstep_interfaces/srv/handshake.hpp"   // Lockstep handshake service
 #include "acsl_lockstep_interfaces/srv/step.hpp"        // Lockstep step service
 #include "acsl_lockstep_interfaces/srv/finish.hpp"      // Lockstep finish service
+#include "acsl_lockstep_interfaces/srv/trajectory.hpp"  // Lockstep trajectory upload service
 
 #include "flight_params.hpp"                            // Include for the flight params (controller constructor)
 #include "global_helpers.hpp"                           // Include for the flightstack print functions
 #include "global_config.hpp"                            // Include for SIMULATION_LOCKSTEP
 #include "control_config.hpp"                           // Include for _picked_controller_, platform_of_choice, controller_of_choice
-#include "lockstep_trajectory.hpp"                      // Include for lockstep_reference_store
+#include "lockstep_trajectory.hpp"                      // Include for lockstep_reference_store and the trajectory cache
 
 namespace _lockstep_
 {
@@ -77,6 +78,7 @@ namespace _lockstep_
             using Handshake = acsl_lockstep_interfaces::srv::Handshake;
             using Step = acsl_lockstep_interfaces::srv::Step;
             using Finish = acsl_lockstep_interfaces::srv::Finish;
+            using Trajectory = acsl_lockstep_interfaces::srv::Trajectory;
 
             // Service callbacks (signature validated for ROS2 Foxy -- Jazzy as of 10/2026)
             void handshake_callback(const std::shared_ptr<Handshake::Request> request,
@@ -88,13 +90,18 @@ namespace _lockstep_
             void finish_callback(const std::shared_ptr<Finish::Request> request,
                                  std::shared_ptr<Finish::Response> response);
 
+            void trajectory_callback(const std::shared_ptr<Trajectory::Request> request,
+                                     std::shared_ptr<Trajectory::Response> response);
+
             // Services
             rclcpp::Service<Handshake>::SharedPtr handshake_service_;
             rclcpp::Service<Step>::SharedPtr step_service_;
             rclcpp::Service<Finish>::SharedPtr finish_service_;
+            rclcpp::Service<Trajectory>::SharedPtr trajectory_service_;
 
             // Lockstep state
             bool handshake_done_ = false;  // True after a good handshake.
+            uint64_t samples_received_ = 0; // trajectory samples cached so far (Steps run once the cache is complete)
             double step_size_ = 0.0;        // RK4 step [s] from the simulator, used in controller_.run()
             uint64_t steps_done_ = 0;       // number of Steps computed (a new handshake is refused once this is > 0)
             uint64_t expected_seq_ = 0;     // next seq expected from the simulator (warning only on mismatch)

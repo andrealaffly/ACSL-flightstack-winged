@@ -10,6 +10,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/Handshake.srv"
   "srv/Step.srv"
   "srv/Finish.srv"
+  "srv/Trajectory.srv"
 )
 
 ament_export_dependencies(rosidl_default_runtime)

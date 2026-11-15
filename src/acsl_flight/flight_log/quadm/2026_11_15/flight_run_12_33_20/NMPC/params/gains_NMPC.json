@@ -1,0 +1,44 @@
+{
+"HORIZON": {
+    "dt_mpc": 0.03,
+    "max_iterations": 2,
+    "line_search_steps": 6,
+    "regularization": 1e-6
+  },
+"COST": {
+    "Q_diagonal": {
+      "scaling_coef": 1.0,
+      "matrix": [
+        [30.0, 30.0, 30.0,   3.0, 3.0, 3.0,   5.0, 5.0, 5.0,   0.2, 0.2, 0.2]
+      ]
+    },
+    "Qf_diagonal": {
+      "scaling_coef": 10.0,
+      "matrix": [
+        [30.0, 30.0, 30.0,   3.0, 3.0, 3.0,   5.0, 5.0, 5.0,   0.2, 0.2, 0.2]
+      ]
+    },
+    "R_diagonal": {
+      "scaling_coef": 1.0,
+      "matrix": [
+        [0.5, 0.5, 0.5, 0.5]
+      ]
+    }
+  },
+"DISTURBANCE": {
+    "KI_translational": {
+      "scaling_coef": 1.0,
+      "matrix": [
+        [1.0, 0.0, 0.0],
+        [0.0, 1.0, 0.0],
+        [0.0, 0.0, 2.0]
+      ]
+    },
+    "d_hat_max": {
+      "scaling_coef": 1.0,
+      "matrix": [
+        [3.0, 3.0, 3.0]
+      ]
+    }
+  }
+}

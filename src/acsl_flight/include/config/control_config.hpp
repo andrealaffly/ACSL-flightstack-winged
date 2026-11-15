@@ -60,12 +60,14 @@
 #define __MRAC_OMEGA__     4
 #define __MRAC_OBSERVER__  6
 #define __MRAC_GEOMETRIC__ 7
+#define __NMPC__           8
+#define __NMPC_HYBRID__    9
 
 // SELECT here the PLATFORM you are using ---------------------------------------------------------------------------
 #define SELECTED_PLATFORM __QUADM__
 
 // SELECT here the CONTROLLER you want to run -----------------------------------------------------------------------
-#define SELECTED_CONTROLLER __MRAC_GEOMETRIC__
+#define SELECTED_CONTROLLER __NMPC_HYBRID__
 
 /*********************************************************************************************************************
   HELPER BLOCK OF CODE - MODIFY ONLY IF THERE ARE CHANGES TO CONTROLLERS
@@ -149,7 +151,23 @@
         // Lockstep handshake name, must match the controller key in the simulator's sim-config.yaml
         constexpr const char* controller_of_choice = "mrac_geometric";
 
-    #else 
+    #elif SELECTED_CONTROLLER == __NMPC__
+
+        #include "NMPC_TD.hpp"
+        // Remember the class name you used in control_algoritms
+        using _picked_controller_ = _quadm_::_nmpc_::nmpc;
+        // Lockstep handshake name, must match the controller key in the simulator's sim-config.yaml
+        constexpr const char* controller_of_choice = "nmpc";
+
+    #elif SELECTED_CONTROLLER == __NMPC_HYBRID__
+
+        #include "NMPC_HYBRID_TD.hpp"
+        // Remember the class name you used in control_algoritms
+        using _picked_controller_ = _quadm_::_nmpc_hybrid_::nmpc_hybrid;
+        // Lockstep handshake name, must match the controller key in the simulator's sim-config.yaml
+        constexpr const char* controller_of_choice = "nmpc_hybrid";
+
+    #else
 
         #error "ERROR: Unsupported controller type selected"
 
