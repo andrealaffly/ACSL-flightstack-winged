@@ -57,6 +57,23 @@ namespace _flight_params_
         read.weatherApp = j["FlightMainParams"]["weatherApp"];
         read.controller_rate = j["FlightMainParams"]["controller_rate"];
 
+        // Motor failure emulation (optional section: disabled if it is missing)
+        if (j.contains("MotorFailureParams")) {
+            const auto& mf = j["MotorFailureParams"];
+            read.motor_failure.enabled                    = mf["enabled"];
+            read.motor_failure.motor_id                   = mf["motor_id"];
+            read.motor_failure.failure_time_after_takeoff = mf["failure_time_after_takeoff"];
+            read.motor_failure.total_efficiency           = mf["total_efficiency"];
+
+            if (read.motor_failure.motor_id < 1 || read.motor_failure.motor_id > 8 ||
+                read.motor_failure.failure_time_after_takeoff < 0.0 ||
+                read.motor_failure.total_efficiency < 0.0 || read.motor_failure.total_efficiency > 1.0) {
+                FLIGHTSTACK_ERROR("MotorFailureParams: motor_id must be 1..8, failure_time_after_takeoff >= 0 and "
+                                  "total_efficiency 0..1");
+                std::exit(EXIT_FAILURE);
+            }
+        }
+
         // Read in the trajectory info from the trajectory file.
         read.traj_params = readTrajectoryConfig(read.user_defined_trajectory_file);
 
@@ -148,6 +165,17 @@ namespace _flight_params_
 
         std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "TOTAL FLIGHT TIME:" << COLOR_RESET
                   << COLOR_GREEN << run_params.end_time << "s" COLOR_RESET << std::endl;
+
+        std::cout << std::setw(COL_WIDTH) << COLOR_BLUE << "MOTOR FAILURE:" << COLOR_RESET;
+        if (run_params.motor_failure.enabled) {
+            std::cout << COLOR_RED << "MOTOR " << run_params.motor_failure.motor_id << " -> "
+                      << run_params.motor_failure.total_efficiency * 100.0 << "% AT "
+                      << run_params.motor_failure.failure_time_after_takeoff << "s AFTER TAKEOFF (FLIGHT TIME "
+                      << run_params.start_time + run_params.motor_failure.failure_time_after_takeoff << "s)"
+                      << COLOR_RESET << std::endl;
+        } else {
+            std::cout << COLOR_GREEN << "NO" << COLOR_RESET << std::endl;
+        }
 
     }
 

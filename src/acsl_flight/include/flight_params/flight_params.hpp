@@ -46,6 +46,7 @@
 #include <unistd.h>           // FOr usleep function
 #include "px4_defines.hpp"    // Include for the PX4_define terms in a central location
 #include "global_helpers.hpp" // Include for the flightstack global functions
+#include <array>              // For the motor command array in applyMotorFailure
 
 /*********************************************************************************************************************
   FLIGHT PARAMETER defines -------> ================== DO NOT CHANGE ==================
@@ -83,6 +84,33 @@ struct PiecewisePolynomialTrajectoryInfo {
     // number of waypoints
     int num_waypts;
 };
+
+// Motor failure emulation, same rule as the simulator's motor_disturbances: once the failure time is reached, the
+// normalized command of motor_id is multiplied by total_efficiency, after the controller (the controller does not know).
+// The time is measured from TAKEOFF = the start of the trajectory:
+//   - Real flight / HIL : flight time - start_time   (the trajectory starts at start_time)
+//   - SIL (lockstep)    : simulator time             (the simulator's trajectory starts at t = 0)
+// so the same value fails the motor at the same point of the trajectory in MIL, SIL and in flight
+// (in MIL, put the same value in the simulator's motor_disturbances.time_of_disturbance).
+struct MotorFailureParams {
+    bool enabled = false;                       // Switch for the emulated failure
+    int motor_id = 1;                           // Motor that fails (1 .. 8)
+    double failure_time_after_takeoff = 0.0;    // Failure time measured from the start of the trajectory [s]
+    double total_efficiency = 1.0;              // Remaining efficiency: 1.0 = healthy, 0.0 = dead motor [-]
+};
+
+// Applies the emulated motor failure to the 8 normalized motor commands.
+//   time_after_takeoff: time since the start of the trajectory (see MotorFailureParams). Returns true once active.
+template <typename T>
+inline bool applyMotorFailure(const MotorFailureParams& mf, double time_after_takeoff, std::array<T, 8>& motors)
+{
+    if (!mf.enabled || time_after_takeoff < mf.failure_time_after_takeoff) {
+        return false;
+    }
+
+    motors[mf.motor_id - 1] *= static_cast<T>(mf.total_efficiency);
+    return true;
+}
 
 // If you are adding more parameters to your flight in /src/acsl_flight/params/flight_params.json,
 // please include it here and modify as needed in the flight_main.cpp/hpp.
@@ -125,7 +153,10 @@ struct flight_params {
     double landing_end_time;
 
     // 12. Flight End time
-    double end_time;      
+    double end_time;
+
+    // 13. Motor failure emulation
+    MotorFailureParams motor_failure;
 };
 
 namespace _flight_params_

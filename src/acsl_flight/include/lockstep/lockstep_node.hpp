@@ -102,6 +102,8 @@ namespace _lockstep_
             // Lockstep state
             bool handshake_done_ = false;  // True after a good handshake.
             uint64_t samples_received_ = 0; // trajectory samples cached so far (Steps run once the cache is complete)
+            flight_params* flight_params_ptr_;    // flight params (motor failure emulation)
+            bool motor_failure_reported_ = false; // True once the emulated motor failure has been reported
             double step_size_ = 0.0;        // RK4 step [s] from the simulator, used in controller_.run()
             uint64_t steps_done_ = 0;       // number of Steps computed (a new handshake is refused once this is > 0)
             uint64_t expected_seq_ = 0;     // next seq expected from the simulator (warning only on mismatch)

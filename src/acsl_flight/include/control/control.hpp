@@ -144,6 +144,9 @@ private:
   /// flight_main.cpp
   flight_params* flight_params_ptr;
 
+  /// True once the emulated motor failure has been reported (printed once)
+  bool motor_failure_reported_ = false;
+
   /// ------- CREATE CONTROLLER OBJECT -------- ///
   _picked_controller_ controller_;
 

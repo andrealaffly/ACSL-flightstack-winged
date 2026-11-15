@@ -48,7 +48,7 @@ namespace _lockstep_
 /*                                  NODE CONSTRUCTOR                                           */
 /***********************************************************************************************/
 lockstepNode::lockstepNode(flight_params* p, const std::string & global_log_dir)
-: rclcpp::Node("lockstep_node"), controller_(p, global_log_dir)
+: rclcpp::Node("lockstep_node"), flight_params_ptr_(p), controller_(p, global_log_dir)
 {
     using std::placeholders::_1;
     using std::placeholders::_2;
@@ -286,6 +286,14 @@ void lockstepNode::step_callback(const std::shared_ptr<Step::Request> request,
     response->motors[5] = controller_.get_t6();
     response->motors[6] = controller_.get_t7();
     response->motors[7] = controller_.get_t8();
+
+    // Emulated motor failure. The simulator's trajectory starts at t = 0, so the simulator time is the time after
+    // takeoff (start_time is not used in lockstep, like the trajectory)
+    if (applyMotorFailure(flight_params_ptr_->motor_failure, request->time, response->motors) &&
+        !motor_failure_reported_) {
+        FLIGHTSTACK_WARNING("Emulated motor failure active. Motor:", flight_params_ptr_->motor_failure.motor_id);
+        motor_failure_reported_ = true;
+    }
 
     // NaN / inf guard: report it, the simulator decides what to do (it stops on ok == false)
     bool finite = true;

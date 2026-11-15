@@ -347,14 +347,20 @@ namespace _control_
         publish_offboard_control_mode();
         if constexpr (_config_param_::PUBLISH_ACTUATOR)
         {
-            publish_actuator_motors(controller_.get_t1(), 
-                                    controller_.get_t2(), 
-                                    controller_.get_t3(), 
-                                    controller_.get_t4(), 
-                                    controller_.get_t5(), 
-                                    controller_.get_t6(), 
-                                    controller_.get_t7(), 
-                                    controller_.get_t8());
+            std::array<float, 8> motors = {controller_.get_t1(), controller_.get_t2(), controller_.get_t3(),
+                                           controller_.get_t4(), controller_.get_t5(), controller_.get_t6(),
+                                           controller_.get_t7(), controller_.get_t8()};
+
+            // Emulated motor failure, timed from takeoff (= start of the trajectory at start_time)
+            const double time_after_takeoff = time_current_ - flight_params_ptr->start_time;
+            if (applyMotorFailure(flight_params_ptr->motor_failure, time_after_takeoff, motors) &&
+                !motor_failure_reported_) {
+                FLIGHTSTACK_WARNING("Emulated motor failure active. Motor:", flight_params_ptr->motor_failure.motor_id);
+                motor_failure_reported_ = true;
+            }
+
+            publish_actuator_motors(motors[0], motors[1], motors[2], motors[3],
+                                    motors[4], motors[5], motors[6], motors[7]);
         }
         else
         {

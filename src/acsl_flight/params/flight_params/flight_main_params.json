@@ -9,5 +9,11 @@
 		"vio": false,
 		"weatherApp": false,
 		"controller_rate": 10
+	},
+	"MotorFailureParams": {
+		"enabled": false,
+		"motor_id": 1,
+		"failure_time_after_takeoff": 17.0,
+		"total_efficiency": 0.5
 	}
 }

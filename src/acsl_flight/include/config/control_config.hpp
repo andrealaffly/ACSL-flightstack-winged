@@ -67,7 +67,7 @@
 #define SELECTED_PLATFORM __QUADM__
 
 // SELECT here the CONTROLLER you want to run -----------------------------------------------------------------------
-#define SELECTED_CONTROLLER __NMPC_HYBRID__
+#define SELECTED_CONTROLLER __NMPC__
 
 /*********************************************************************************************************************
   HELPER BLOCK OF CODE - MODIFY ONLY IF THERE ARE CHANGES TO CONTROLLERS
